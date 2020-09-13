@@ -1,0 +1,1587 @@
+<!DOCTYPE HTML>
+<html lang="zh-CN">
+
+
+<head>
+    <meta charset="utf-8">
+    <meta name="keywords" content="matlab基础使用(更新中), MilkTeaAddicted">
+    <meta name="description" content="生活就是奶茶">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
+    <meta name="renderer" content="webkit|ie-stand|ie-comp">
+    <meta name="mobile-web-app-capable" content="yes">
+    <meta name="format-detection" content="telephone=no">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+    <!-- Global site tag (gtag.js) - Google Analytics -->
+
+
+    <title>matlab基础使用(更新中) | MilkTeaAddicted</title>
+    <link rel="icon" type="image/png" href="/favicon.png">
+
+    <link rel="stylesheet" type="text/css" href="/libs/awesome/css/all.css">
+    <link rel="stylesheet" type="text/css" href="/libs/materialize/materialize.min.css">
+    <link rel="stylesheet" type="text/css" href="/libs/aos/aos.css">
+    <link rel="stylesheet" type="text/css" href="/libs/animate/animate.min.css">
+    <link rel="stylesheet" type="text/css" href="/libs/lightGallery/css/lightgallery.min.css">
+    <link rel="stylesheet" type="text/css" href="/css/matery.css">
+    <link rel="stylesheet" type="text/css" href="/css/my.css">
+
+    <script src="/libs/jquery/jquery.min.js"></script>
+
+<meta name="generator" content="Hexo 5.0.2"><link rel="alternate" href="/atom.xml" title="MilkTeaAddicted" type="application/atom+xml">
+</head>
+
+
+<body>
+    <!-- 页面点击小红心 -->
+    <script type="text/javascript" src="/js/click_show_text.js"></script>
+
+    <!-- <canvas class="fireworks" style="position: fixed;left: 0;top: 0;z-index: 1; pointer-events: none;" ></canvas> 
+    <script type="text/javascript" src="//cdn.bootcss.com/animejs/2.2.0/anime.min.js"></script> 
+    <script type="text/javascript" src="/js/fireworks.js"></script> -->
+
+
+    <header class="navbar-fixed">
+    <nav id="headNav" class="bg-color nav-transparent">
+        <div id="navContainer" class="nav-wrapper container">
+            <div class="brand-logo">
+                <a href="/" class="waves-effect waves-light">
+                    
+                    <img src="/medias/logo.png" class="logo-img" alt="LOGO">
+                    
+                    <span class="logo-span">MilkTeaAddicted</span>
+                </a>
+            </div>
+            
+
+<a href="#" data-target="mobile-nav" class="sidenav-trigger button-collapse"><i class="fas fa-bars"></i></a>
+<ul class="right nav-menu">
+  
+  <li class="hide-on-med-and-down nav-item">
+    
+    <a href="/" class="waves-effect waves-light">
+      
+      <i class="fas fa-home" style="zoom: 0.6;"></i>
+      
+      <span>首页</span>
+    </a>
+    
+  </li>
+  
+  <li class="hide-on-med-and-down nav-item">
+    
+    <a href="/tags" class="waves-effect waves-light">
+      
+      <i class="fas fa-tags" style="zoom: 0.6;"></i>
+      
+      <span>标签</span>
+    </a>
+    
+  </li>
+  
+  <li class="hide-on-med-and-down nav-item">
+    
+    <a href="/categories" class="waves-effect waves-light">
+      
+      <i class="fas fa-bookmark" style="zoom: 0.6;"></i>
+      
+      <span>分类</span>
+    </a>
+    
+  </li>
+  
+  <li class="hide-on-med-and-down nav-item">
+    
+    <a href="/archives" class="waves-effect waves-light">
+      
+      <i class="fas fa-archive" style="zoom: 0.6;"></i>
+      
+      <span>归档</span>
+    </a>
+    
+  </li>
+  
+  <li class="hide-on-med-and-down nav-item">
+    
+    <a href="/about" class="waves-effect waves-light">
+      
+      <i class="fas fa-user-circle" style="zoom: 0.6;"></i>
+      
+      <span>关于</span>
+    </a>
+    
+  </li>
+  
+  <li class="hide-on-med-and-down nav-item">
+    
+    <a href="/contact" class="waves-effect waves-light">
+      
+      <i class="fas fa-comments" style="zoom: 0.6;"></i>
+      
+      <span>留言板</span>
+    </a>
+    
+  </li>
+  
+  <li class="hide-on-med-and-down nav-item">
+    
+    <a href="/friends" class="waves-effect waves-light">
+      
+      <i class="fas fa-address-book" style="zoom: 0.6;"></i>
+      
+      <span>友情链接</span>
+    </a>
+    
+  </li>
+  
+  <li>
+    <a href="#searchModal" class="modal-trigger waves-effect waves-light">
+      <i id="searchIcon" class="fas fa-search" title="搜索" style="zoom: 0.85;"></i>
+    </a>
+  </li>
+</ul>
+
+
+<div id="mobile-nav" class="side-nav sidenav">
+
+    <div class="mobile-head bg-color">
+        
+        <img src="/medias/logo.png" class="logo-img circle responsive-img">
+        
+        <div class="logo-name">MilkTeaAddicted</div>
+        <div class="logo-desc">
+            
+            生活就是奶茶
+            
+        </div>
+    </div>
+
+    
+
+    <ul class="menu-list mobile-menu-list">
+        
+        <li class="m-nav-item">
+	  
+		<a href="/" class="waves-effect waves-light">
+			
+			    <i class="fa-fw fas fa-home"></i>
+			
+			首页
+		</a>
+          
+        </li>
+        
+        <li class="m-nav-item">
+	  
+		<a href="/tags" class="waves-effect waves-light">
+			
+			    <i class="fa-fw fas fa-tags"></i>
+			
+			标签
+		</a>
+          
+        </li>
+        
+        <li class="m-nav-item">
+	  
+		<a href="/categories" class="waves-effect waves-light">
+			
+			    <i class="fa-fw fas fa-bookmark"></i>
+			
+			分类
+		</a>
+          
+        </li>
+        
+        <li class="m-nav-item">
+	  
+		<a href="/archives" class="waves-effect waves-light">
+			
+			    <i class="fa-fw fas fa-archive"></i>
+			
+			归档
+		</a>
+          
+        </li>
+        
+        <li class="m-nav-item">
+	  
+		<a href="/about" class="waves-effect waves-light">
+			
+			    <i class="fa-fw fas fa-user-circle"></i>
+			
+			关于
+		</a>
+          
+        </li>
+        
+        <li class="m-nav-item">
+	  
+		<a href="/contact" class="waves-effect waves-light">
+			
+			    <i class="fa-fw fas fa-comments"></i>
+			
+			留言板
+		</a>
+          
+        </li>
+        
+        <li class="m-nav-item">
+	  
+		<a href="/friends" class="waves-effect waves-light">
+			
+			    <i class="fa-fw fas fa-address-book"></i>
+			
+			友情链接
+		</a>
+          
+        </li>
+        
+        
+        <li><div class="divider"></div></li>
+        <li>
+            <a href="https://github.com/blinkfox/hexo-theme-matery" class="waves-effect waves-light" target="_blank">
+                <i class="fab fa-github-square fa-fw"></i>Fork Me
+            </a>
+        </li>
+        
+    </ul>
+</div>
+
+
+        </div>
+
+        
+            <style>
+    .nav-transparent .github-corner {
+        display: none !important;
+    }
+
+    .github-corner {
+        position: absolute;
+        z-index: 10;
+        top: 0;
+        right: 0;
+        border: 0;
+        transform: scale(1.1);
+    }
+
+    .github-corner svg {
+        color: #0f9d58;
+        fill: #fff;
+        height: 64px;
+        width: 64px;
+    }
+
+    .github-corner:hover .octo-arm {
+        animation: a 0.56s ease-in-out;
+    }
+
+    .github-corner .octo-arm {
+        animation: none;
+    }
+
+    @keyframes a {
+        0%,
+        to {
+            transform: rotate(0);
+        }
+        20%,
+        60% {
+            transform: rotate(-25deg);
+        }
+        40%,
+        80% {
+            transform: rotate(10deg);
+        }
+    }
+</style>
+
+<a href="https://github.com/blinkfox/hexo-theme-matery" class="github-corner tooltipped hide-on-med-and-down" target="_blank"
+   data-tooltip="Fork Me" data-position="left" data-delay="50">
+    <svg viewBox="0 0 250 250" aria-hidden="true">
+        <path d="M0,0 L115,115 L130,115 L142,142 L250,250 L250,0 Z"></path>
+        <path d="M128.3,109.0 C113.8,99.7 119.0,89.6 119.0,89.6 C122.0,82.7 120.5,78.6 120.5,78.6 C119.2,72.0 123.4,76.3 123.4,76.3 C127.3,80.9 125.5,87.3 125.5,87.3 C122.9,97.6 130.6,101.9 134.4,103.2"
+              fill="currentColor" style="transform-origin: 130px 106px;" class="octo-arm"></path>
+        <path d="M115.0,115.0 C114.9,115.1 118.7,116.5 119.8,115.4 L133.7,101.6 C136.9,99.2 139.9,98.4 142.2,98.6 C133.8,88.0 127.5,74.4 143.8,58.0 C148.5,53.4 154.0,51.2 159.7,51.0 C160.3,49.4 163.2,43.6 171.4,40.1 C171.4,40.1 176.1,42.5 178.8,56.2 C183.1,58.6 187.2,61.8 190.9,65.4 C194.5,69.0 197.7,73.2 200.1,77.6 C213.8,80.2 216.3,84.9 216.3,84.9 C212.7,93.1 206.9,96.0 205.4,96.6 C205.1,102.4 203.0,107.8 198.3,112.5 C181.9,128.9 168.3,122.5 157.7,114.1 C157.9,116.9 156.7,120.9 152.7,124.9 L141.0,136.5 C139.8,137.7 141.6,141.9 141.8,141.8 Z"
+              fill="currentColor" class="octo-body"></path>
+    </svg>
+</a>
+        
+    </nav>
+
+</header>
+
+    
+<script src="/libs/cryptojs/crypto-js.min.js"></script>
+<script>
+    (function() {
+        let pwd = '';
+        if (pwd && pwd.length > 0) {
+            if (pwd !== CryptoJS.SHA256(prompt('请输入访问本文章的密码')).toString(CryptoJS.enc.Hex)) {
+                alert('密码错误，返回主页');
+                location.href = '/';
+            }
+        }
+    })();
+</script>
+
+
+
+
+<div class="bg-cover pd-header post-cover" style="background-image: url('/medias/featureimages/4.jpg')">
+    <div class="container" style="right: 0px;left: 0px;">
+        <div class="row">
+            <div class="col s12 m12 l12">
+                <div class="brand">
+                    <h1 class="description center-align post-title">matlab基础使用(更新中)</h1>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+
+
+<main class="post-container content">
+
+    
+    <link rel="stylesheet" href="/libs/tocbot/tocbot.css">
+<style>
+    #articleContent h1::before,
+    #articleContent h2::before,
+    #articleContent h3::before,
+    #articleContent h4::before,
+    #articleContent h5::before,
+    #articleContent h6::before {
+        display: block;
+        content: " ";
+        height: 100px;
+        margin-top: -100px;
+        visibility: hidden;
+    }
+
+    #articleContent :focus {
+        outline: none;
+    }
+
+    .toc-fixed {
+        position: fixed;
+        top: 64px;
+    }
+
+    .toc-widget {
+        width: 345px;
+        padding-left: 20px;
+    }
+
+    .toc-widget .toc-title {
+        margin: 35px 0 15px 0;
+        padding-left: 17px;
+        font-size: 1.5rem;
+        font-weight: bold;
+        line-height: 1.5rem;
+    }
+
+    .toc-widget ol {
+        padding: 0;
+        list-style: none;
+    }
+
+    #toc-content {
+        height: calc(100vh - 250px);
+        overflow: auto;
+    }
+
+    #toc-content ol {
+        padding-left: 10px;
+    }
+
+    #toc-content ol li {
+        padding-left: 10px;
+    }
+
+    #toc-content .toc-link:hover {
+        color: #42b983;
+        font-weight: 700;
+        text-decoration: underline;
+    }
+
+    #toc-content .toc-link::before {
+        background-color: transparent;
+        max-height: 25px;
+
+        position: absolute;
+        right: 23.5vw;
+        display: block;
+    }
+
+    #toc-content .is-active-link {
+        color: #42b983;
+    }
+
+    #floating-toc-btn {
+        position: fixed;
+        right: 15px;
+        bottom: 76px;
+        padding-top: 15px;
+        margin-bottom: 0;
+        z-index: 998;
+    }
+
+    #floating-toc-btn .btn-floating {
+        width: 48px;
+        height: 48px;
+    }
+
+    #floating-toc-btn .btn-floating i {
+        line-height: 48px;
+        font-size: 1.4rem;
+    }
+</style>
+<div class="row">
+    <div id="main-content" class="col s12 m12 l9">
+        <!-- 文章内容详情 -->
+<div id="artDetail">
+    <div class="card">
+        <div class="card-content article-info">
+            <div class="row tag-cate">
+                <div class="col s7">
+                    
+                    <div class="article-tag">
+                        
+                            <a href="/tags/matlab/">
+                                <span class="chip bg-color">matlab</span>
+                            </a>
+                        
+                    </div>
+                    
+                </div>
+                <div class="col s5 right-align">
+                    
+                    <div class="post-cate">
+                        <i class="fas fa-bookmark fa-fw icon-category"></i>
+                        
+                            <a href="/categories/%E6%95%B0%E5%AD%A6%E5%BB%BA%E6%A8%A1/" class="post-category">
+                                数学建模
+                            </a>
+                        
+                    </div>
+                    
+                </div>
+            </div>
+
+            <div class="post-info">
+                
+                <div class="post-date info-break-policy">
+                    <i class="far fa-calendar-minus fa-fw"></i>发布日期:&nbsp;&nbsp;
+                    2020-08-15
+                </div>
+                
+
+                
+                <div class="post-date info-break-policy">
+                    <i class="far fa-calendar-check fa-fw"></i>更新日期:&nbsp;&nbsp;
+                    2020-08-28
+                </div>
+                
+
+                
+
+                
+
+                
+                    <div id="busuanzi_container_page_pv" class="info-break-policy">
+                        <i class="far fa-eye fa-fw"></i>阅读次数:&nbsp;&nbsp;
+                        <span id="busuanzi_value_page_pv"></span>
+                    </div>
+				
+            </div>
+        </div>
+        <hr class="clearfix">
+        <div class="card-content article-card-content">
+            <div id="articleContent">
+                <h1 id="Matlab基础使用"><a href="#Matlab基础使用" class="headerlink" title="Matlab基础使用"></a>Matlab基础使用</h1><h2 id="写在前面"><a href="#写在前面" class="headerlink" title="写在前面"></a>写在前面</h2><p>和之前那篇不同的是，这篇文章记录了matlab基础使用的方法，总共也就那么几个部分</p>
+<ul>
+<li>向量运算</li>
+<li>多项式运算</li>
+<li>矩阵运算</li>
+<li>符号运算</li>
+<li>数列求和与函数极限与导数操作</li>
+<li>函数积分</li>
+<li>方程求解</li>
+<li>微分方程//曲线方程</li>
+<li>拟合插值（这个我更倾向于excel）</li>
+<li>程序设计</li>
+<li>二维绘图</li>
+<li>三维绘图</li>
+</ul>
+<p>大概基础就这么多了，之前知识都是散的于是来个汇总。真·边复习高数线代边用matlab解高数线代题。</p>
+<h2 id="向量操作"><a href="#向量操作" class="headerlink" title="向量操作"></a>向量操作</h2><p>向量：行矩阵列矩阵，秩数为1</p>
+<h3 id="向量创建"><a href="#向量创建" class="headerlink" title="向量创建"></a>向量创建</h3><ul>
+<li>直接创建：a=[1,2,3,4]</li>
+<li>步距创建：a=1:4</li>
+<li>函数生成：a=linspace(0,10,6),从0到10共六个数的向量,自动求步距</li>
+<li>对数分割：a=logspace(1,3,3),表示三个数，10的1次到10的3次</li>
+</ul>
+<h4 id="向量运算"><a href="#向量运算" class="headerlink" title="向量运算"></a>向量运算</h4><pre><code>- 加法
+- 减法
+- 数乘
+- 求内积：dot(a，b)
+- 求外积：cross(a,b)
+- 混合积：dot(a,cross(b,c))</code></pre>
+<h2 id="特殊变量"><a href="#特殊变量" class="headerlink" title="特殊变量"></a>特殊变量</h2><h3 id="单元型变量"><a href="#单元型变量" class="headerlink" title="单元型变量"></a>单元型变量</h3><ul>
+<li>类似于结构体</li>
+<li>cell来表示，排列方式又类似于矩阵</li>
+</ul>
+<h3 id="结构体变量"><a href="#结构体变量" class="headerlink" title="结构体变量"></a>结构体变量</h3><ul>
+<li>struct创建</li>
+<li>要求键值对对应：struct(‘a’,{A});</li>
+</ul>
+<h2 id="多项式操作"><a href="#多项式操作" class="headerlink" title="多项式操作"></a>多项式操作</h2><h4 id="多项式创建"><a href="#多项式创建" class="headerlink" title="多项式创建"></a>多项式创建</h4><ul>
+<li>直接创建：’ax+bx^n’</li>
+<li>向量加函数创建：ploy2sym(p)，p中元素按照顺序分别为n次到0次的系数</li>
+</ul>
+<h4 id="多项式运算"><a href="#多项式运算" class="headerlink" title="多项式运算"></a>多项式运算</h4><ul>
+<li>乘法：conv(a,b),ab分别为向量</li>
+<li>除法：decov(a,b),同上</li>
+</ul>
+<h4 id="多项式求导"><a href="#多项式求导" class="headerlink" title="多项式求导"></a>多项式求导</h4><p>​    步骤：</p>
+<pre><code>- 先向量创建成多项式符号函数
+- 利用polyder()给多项式求导，得出导数的系数向量
+- 然后在系数向量创建</code></pre>
+<h2 id="矩阵操作"><a href="#矩阵操作" class="headerlink" title="矩阵操作"></a>矩阵操作</h2><p>基础操作：</p>
+<h3 id="矩阵创建："><a href="#矩阵创建：" class="headerlink" title="矩阵创建："></a>矩阵创建：</h3><ul>
+<li>rand()</li>
+<li>zeros()</li>
+<li>ones()</li>
+<li>eye()</li>
+</ul>
+<p>主要就是这些</p>
+<h3 id="矩阵运算"><a href="#矩阵运算" class="headerlink" title="矩阵运算"></a>矩阵运算</h3><h4 id="修改"><a href="#修改" class="headerlink" title="修改"></a>修改</h4><ul>
+<li>删除元素：将某一行设置为空列表，例如：a(m;:)=[]</li>
+<li>元素赋值，a(m,n)=b</li>
+<li>组合矩阵</li>
+</ul>
+<h4 id="变维变向抽取"><a href="#变维变向抽取" class="headerlink" title="变维变向抽取"></a>变维变向抽取</h4><ul>
+<li>变维：reshape():根据顺序以列的顺序上下重排元素</li>
+<li>变向：翻转，基本上不用</li>
+<li>抽取元素：<ul>
+<li>diag()</li>
+<li>tril()，下三角</li>
+<li>triu(),上三角</li>
+</ul>
+</li>
+</ul>
+<h3 id="数学运算"><a href="#数学运算" class="headerlink" title="数学运算"></a>数学运算</h3><ul>
+<li>加法</li>
+<li>减法</li>
+<li>数乘</li>
+<li>乘法</li>
+<li>点乘，A.*B</li>
+<li>除法，记得区分左除\和一般除法/（右除）</li>
+<li>幂运算:A^n,  A.^n</li>
+<li>求逆：inv(A)，pinv(A)</li>
+<li>求秩：rank(A)</li>
+<li>转置：s’</li>
+<li>求行列式det(C)</li>
+</ul>
+<h2 id="符号运算"><a href="#符号运算" class="headerlink" title="符号运算"></a>符号运算</h2><h3 id="符号与数值转换"><a href="#符号与数值转换" class="headerlink" title="符号与数值转换"></a>符号与数值转换</h3><ul>
+<li><p>sym():数值转换成分数</p>
+</li>
+<li><p>eval():分数转化为小数（同时也可以用vpa()对某个表达式求数值解）</p>
+</li>
+<li><p>设置表达式数值精度：digits(D)//d为有效数字个数-&gt;vpa(s)或者vpa(s,d)</p>
+</li>
+</ul>
+<h3 id="符号创建"><a href="#符号创建" class="headerlink" title="符号创建"></a>符号创建</h3><ul>
+<li>x=sym(‘x’)创建符号变量</li>
+<li>syms x 进行定义</li>
+<li>矩阵创建sym(‘a’,n);</li>
+</ul>
+<h3 id="数值带入表达式"><a href="#数值带入表达式" class="headerlink" title="数值带入表达式"></a>数值带入表达式</h3><ul>
+<li>sub(f，x,c)：f为表达式，x是变量，c是数值</li>
+</ul>
+<h3 id="符号运算-1"><a href="#符号运算-1" class="headerlink" title="符号运算"></a>符号运算</h3><ul>
+<li>因式分解：factor(f)：f是表达式，或者用sym()转化的数值，转化为质数乘积表达式</li>
+<li>幂函数展开：expand(f):比如展开x（x+1)</li>
+<li>求通分后的分子分母：[n，m]=numden(F)，n是分子，m是分母</li>
+</ul>
+<h2 id="数列求和求积与函数极限与导数操作与级数求和"><a href="#数列求和求积与函数极限与导数操作与级数求和" class="headerlink" title="数列求和求积与函数极限与导数操作与级数求和"></a>数列求和求积与函数极限与导数操作与级数求和</h2><h3 id="数列求和"><a href="#数列求和" class="headerlink" title="数列求和"></a>数列求和</h3><h4 id="sum"><a href="#sum" class="headerlink" title="sum"></a>sum</h4><ul>
+<li>sum(1:n)返回1到n的累加和</li>
+<li>sun（a),a是矩阵，返回各个列的累加和，结果组成行矩阵</li>
+<li>sum(a,1or2),1表示不求和，2表示求和结果等于原来数列的和，若a是矩阵，啧1对列求和2对行求和</li>
+<li>nansum(),忽略累加中的nan</li>
+</ul>
+<h4 id="cumsum"><a href="#cumsum" class="headerlink" title="cumsum"></a>cumsum</h4><ul>
+<li>求该元素前的累积和加上该元素的和</li>
+</ul>
+<h3 id="数列求积-数值求和"><a href="#数列求积-数值求和" class="headerlink" title="数列求积(数值求和)"></a>数列求积(数值求和)</h3><h4 id="prod"><a href="#prod" class="headerlink" title="prod"></a>prod</h4><ul>
+<li>用法同sum,但是是求积</li>
+</ul>
+<h4 id="cumprod"><a href="#cumprod" class="headerlink" title="cumprod"></a>cumprod</h4><ul>
+<li>用法同cumsum，但是求积</li>
+</ul>
+<h3 id="求极限"><a href="#求极限" class="headerlink" title="求极限"></a>求极限</h3><h4 id="limit"><a href="#limit" class="headerlink" title="limit"></a>limit</h4><p>默认求极小值</p>
+<p>使用步骤：</p>
+<p>1.定义变量syms x</p>
+<p>2.带入limit(f,范围)，例子：limit((1+1/n)^n,inf)</p>
+<p><strong>多元求极限</strong>：</p>
+<p>syms x y</p>
+<p>f=(exp(x+exp(y))/(cos(x)-sin(y))</p>
+<p>limit(limit(f,x,0),y,0)</p>
+<h3 id="求导"><a href="#求导" class="headerlink" title="求导"></a>求导</h3><h4 id="diff"><a href="#diff" class="headerlink" title="diff"></a>diff</h4><p>diff(f,x,n):求f函数关于x的n阶数导</p>
+<p>diff(f，n):求n阶导数</p>
+<p>可知可以通过这种方式求偏导</p>
+<h3 id="级数求和（符号求和）"><a href="#级数求和（符号求和）" class="headerlink" title="级数求和（符号求和）"></a>级数求和（符号求和）</h3><h4 id="symsum"><a href="#symsum" class="headerlink" title="symsum"></a>symsum</h4><ul>
+<li>symsum（f，x,a,b),f关于x从a到b的所有和</li>
+<li>结果用vpa()转换</li>
+<li>无穷级数symsum(f,0,inf)表示，结果用vpa转换</li>
+</ul>
+<h2 id="函数积分"><a href="#函数积分" class="headerlink" title="函数积分"></a>函数积分</h2><h3 id="定积分和不定积分"><a href="#定积分和不定积分" class="headerlink" title="定积分和不定积分"></a>定积分和不定积分</h3><h4 id="int"><a href="#int" class="headerlink" title="int"></a>int</h4><ul>
+<li>int(f,x,a,b):求f关于x在a到b上的定积分，然后用vpa表示数值</li>
+<li>int(f,x,0,inf):求反常积分</li>
+<li>不定积分就相对于定积分少一个范围参数</li>
+</ul>
+<h3 id="重积分"><a href="#重积分" class="headerlink" title="重积分"></a>重积分</h3><h4 id="dblquad（二重积分求解快捷方式）"><a href="#dblquad（二重积分求解快捷方式）" class="headerlink" title="dblquad（二重积分求解快捷方式）"></a>dblquad（二重积分求解快捷方式）</h4><ul>
+<li><p>dblquad(f,xm,xM,ym,yM)</p>
+<p>或者也可以用int来求解,int（）通过调换参数可以实现多元积分</p>
+</li>
+</ul>
+<h3 id="泰勒展开"><a href="#泰勒展开" class="headerlink" title="泰勒展开"></a>泰勒展开</h3><h4 id="taylor"><a href="#taylor" class="headerlink" title="taylor()"></a>taylor()</h4><ul>
+<li>taylor(f,m,a),求f以x0=a，的情况下的m阶泰勒展开，当a舍去的时候，求麦克劳林展开</li>
+<li>taylor(f,’order’,n)求n阶麦克劳林展开</li>
+</ul>
+<h4 id="傅里叶展开"><a href="#傅里叶展开" class="headerlink" title="傅里叶展开"></a>傅里叶展开</h4><h4 id="Fourierzpi"><a href="#Fourierzpi" class="headerlink" title="Fourierzpi()"></a>Fourierzpi()</h4><ul>
+<li>[a0,an,bn]=Fourierzpi(f)直接出表达式</li>
+</ul>
+<h2 id="方程求解"><a href="#方程求解" class="headerlink" title="方程求解"></a>方程求解</h2><h3 id="线性方程求解"><a href="#线性方程求解" class="headerlink" title="线性方程求解"></a>线性方程求解</h3><ul>
+<li><p>除法求解：（当解唯一时）</p>
+<p>​    X=A\B 注意是左除即左乘上A的逆矩阵</p>
+</li>
+<li><p>求齐次通解：</p>
+<p>​    1 判断是否是：唯一解，无穷解，有解</p>
+<p>​    2 null函数求通解：X=null(A,’r’),A是齐次方程的系数矩阵，’r’表示有理数形式返回</p>
+</li>
+<li><p>求非齐次通解：</p>
+<p>​    1 先用伪逆求特解：x0=pinv(A)*B,不用A满秩</p>
+<p>​    2 然后求同届 null(A,’r’);</p>
+</li>
+<li><p>将增广矩阵化为行阶梯型，求行阶梯型矩阵，</p>
+<p>​    1x=rref(AB);AB是增广矩阵</p>
+<p>​    2解为曾广矩阵最后一列</p>
+</li>
+</ul>
+<h3 id="非线性方程求解"><a href="#非线性方程求解" class="headerlink" title="非线性方程求解"></a>非线性方程求解</h3><ul>
+<li>x=fzero(f,x0)</li>
+</ul>
+<h3 id="非线性方程组求解"><a href="#非线性方程组求解" class="headerlink" title="非线性方程组求解"></a>非线性方程组求解</h3><ul>
+<li>x=fsolve(f,x0)</li>
+</ul>
+<h2 id="微分方程求解"><a href="#微分方程求解" class="headerlink" title="微分方程求解"></a>微分方程求解</h2><ul>
+<li><p>dsolve</p>
+<ul>
+<li><p>示例：</p>
+<p>y=dsolve(‘(Dy)^2-x*Dy+y=0’,’x);</p>
+</li>
+</ul>
+</li>
+</ul>
+<h3 id="微分方程求特解"><a href="#微分方程求特解" class="headerlink" title="微分方程求特解"></a>微分方程求特解</h3><p>示例：y=dsolve(‘(D2y)*x-5Dy=-x^3’,’y(1)=0,y(5)=0’,x)</p>
+<h2 id="线性回归"><a href="#线性回归" class="headerlink" title="线性回归"></a>线性回归</h2><p>建议excel</p>
+<h2 id="曲线拟合"><a href="#曲线拟合" class="headerlink" title="曲线拟合"></a>曲线拟合</h2><h3 id="polyfit"><a href="#polyfit" class="headerlink" title="polyfit"></a>polyfit</h3><p>y=polyfit(x,y,n),用<strong>n阶多项式</strong>来拟合x，y数据</p>
+<p>注意，最后呈现的不是一个曲线形式而是求出一个多项式的系数向量；</p>
+<h3 id="linefit"><a href="#linefit" class="headerlink" title="linefit"></a>linefit</h3><p>顾名思义，直线拟合，基于最小二乘法</p>
+<p>[k,b]=linefit(x,y),求出系数和截距</p>
+<p>然后用y1=polyval([k,b],x);生成多项式函数</p>
+
+            </div>
+            <hr/>
+
+            
+
+    <div class="reprint" id="reprint-statement">
+        
+            <div class="reprint__author">
+                <span class="reprint-meta" style="font-weight: bold;">
+                    <i class="fas fa-user">
+                        文章作者:
+                    </i>
+                </span>
+                <span class="reprint-info">
+                    <a href="/about" rel="external nofollow noreferrer">晓沐</a>
+                </span>
+            </div>
+            <div class="reprint__type">
+                <span class="reprint-meta" style="font-weight: bold;">
+                    <i class="fas fa-link">
+                        文章链接:
+                    </i>
+                </span>
+                <span class="reprint-info">
+                    <a href="http://sweetheart.huangtao.xyz/2020/08/15/matlab%E5%9F%BA%E7%A1%80%E4%BD%BF%E7%94%A8/">http://sweetheart.huangtao.xyz/2020/08/15/matlab%E5%9F%BA%E7%A1%80%E4%BD%BF%E7%94%A8/</a>
+                </span>
+            </div>
+            <div class="reprint__notice">
+                <span class="reprint-meta" style="font-weight: bold;">
+                    <i class="fas fa-copyright">
+                        版权声明:
+                    </i>
+                </span>
+                <span class="reprint-info">
+                    本博客所有文章除特別声明外，均采用
+                    <a href="https://creativecommons.org/licenses/by/4.0/deed.zh" rel="external nofollow noreferrer" target="_blank">CC BY 4.0</a>
+                    许可协议。转载请注明来源
+                    <a href="/about" target="_blank">晓沐</a>
+                    !
+                </span>
+            </div>
+        
+    </div>
+
+    <script async defer>
+      document.addEventListener("copy", function (e) {
+        let toastHTML = '<span>复制成功，请遵循本文的转载规则</span><button class="btn-flat toast-action" onclick="navToReprintStatement()" style="font-size: smaller">查看</a>';
+        M.toast({html: toastHTML})
+      });
+
+      function navToReprintStatement() {
+        $("html, body").animate({scrollTop: $("#reprint-statement").offset().top - 80}, 800);
+      }
+    </script>
+
+
+
+            <div class="tag_share" style="display: block;">
+                <div class="post-meta__tag-list" style="display: inline-block;">
+                    
+                        <div class="article-tag">
+                            
+                                <a href="/tags/matlab/">
+                                    <span class="chip bg-color">matlab</span>
+                                </a>
+                            
+                        </div>
+                    
+                </div>
+                <div class="post_share" style="zoom: 80%; width: fit-content; display: inline-block; float: right; margin: -0.15rem 0;">
+                    <link rel="stylesheet" type="text/css" href="/libs/share/css/share.min.css">
+<div id="article-share">
+
+    
+    <div class="social-share" data-sites="twitter,facebook,google,qq,qzone,wechat,weibo,douban,linkedin" data-wechat-qrcode-helper="<p>微信扫一扫即可分享！</p>"></div>
+    <script src="/libs/share/js/social-share.min.js"></script>
+    
+
+    
+
+</div>
+
+                </div>
+            </div>
+            
+                <style>
+    #reward {
+        margin: 40px 0;
+        text-align: center;
+    }
+
+    #reward .reward-link {
+        font-size: 1.4rem;
+        line-height: 38px;
+    }
+
+    #reward .btn-floating:hover {
+        box-shadow: 0 6px 12px rgba(0, 0, 0, 0.2), 0 5px 15px rgba(0, 0, 0, 0.2);
+    }
+
+    #rewardModal {
+        width: 320px;
+        height: 350px;
+    }
+
+    #rewardModal .reward-title {
+        margin: 15px auto;
+        padding-bottom: 5px;
+    }
+
+    #rewardModal .modal-content {
+        padding: 10px;
+    }
+
+    #rewardModal .close {
+        position: absolute;
+        right: 15px;
+        top: 15px;
+        color: rgba(0, 0, 0, 0.5);
+        font-size: 1.3rem;
+        line-height: 20px;
+        cursor: pointer;
+    }
+
+    #rewardModal .close:hover {
+        color: #ef5350;
+        transform: scale(1.3);
+        -moz-transform:scale(1.3);
+        -webkit-transform:scale(1.3);
+        -o-transform:scale(1.3);
+    }
+
+    #rewardModal .reward-tabs {
+        margin: 0 auto;
+        width: 210px;
+    }
+
+    .reward-tabs .tabs {
+        height: 38px;
+        margin: 10px auto;
+        padding-left: 0;
+    }
+
+    .reward-content ul {
+        padding-left: 0 !important;
+    }
+
+    .reward-tabs .tabs .tab {
+        height: 38px;
+        line-height: 38px;
+    }
+
+    .reward-tabs .tab a {
+        color: #fff;
+        background-color: #ccc;
+    }
+
+    .reward-tabs .tab a:hover {
+        background-color: #ccc;
+        color: #fff;
+    }
+
+    .reward-tabs .wechat-tab .active {
+        color: #fff !important;
+        background-color: #22AB38 !important;
+    }
+
+    .reward-tabs .alipay-tab .active {
+        color: #fff !important;
+        background-color: #019FE8 !important;
+    }
+
+    .reward-tabs .reward-img {
+        width: 210px;
+        height: 210px;
+    }
+</style>
+
+<div id="reward">
+    <a href="#rewardModal" class="reward-link modal-trigger btn-floating btn-medium waves-effect waves-light red">赏</a>
+
+    <!-- Modal Structure -->
+    <div id="rewardModal" class="modal">
+        <div class="modal-content">
+            <a class="close modal-close"><i class="fas fa-times"></i></a>
+            <h4 class="reward-title">你的赏识是我前进的动力</h4>
+            <div class="reward-content">
+                <div class="reward-tabs">
+                    <ul class="tabs row">
+                        <li class="tab col s6 alipay-tab waves-effect waves-light"><a href="#alipay">支付宝</a></li>
+                        <li class="tab col s6 wechat-tab waves-effect waves-light"><a href="#wechat">微 信</a></li>
+                    </ul>
+                    <div id="alipay">
+                        <img src="/medias/reward/alipay.jpg" class="reward-img" alt="支付宝打赏二维码">
+                    </div>
+                    <div id="wechat">
+                        <img src="/medias/reward/wechat.png" class="reward-img" alt="微信打赏二维码">
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<script>
+    $(function () {
+        $('.tabs').tabs();
+    });
+</script>
+
+            
+        </div>
+    </div>
+
+    
+
+    
+
+    
+
+    
+
+    
+        <style>
+    .valine-card {
+        margin: 1.5rem auto;
+    }
+
+    .valine-card .card-content {
+        padding: 20px 20px 5px 20px;
+    }
+
+    #vcomments textarea {
+        box-sizing: border-box;
+        background: url("/medias/comment_bg.png") 100% 100% no-repeat;
+    }
+
+    #vcomments p {
+        margin: 2px 2px 10px;
+        font-size: 1.05rem;
+        line-height: 1.78rem;
+    }
+
+    #vcomments blockquote p {
+        text-indent: 0.2rem;
+    }
+
+    #vcomments a {
+        padding: 0 2px;
+        color: #4cbf30;
+        font-weight: 500;
+        text-decoration: none;
+    }
+
+    #vcomments img {
+        max-width: 100%;
+        height: auto;
+        cursor: pointer;
+    }
+
+    #vcomments ol li {
+        list-style-type: decimal;
+    }
+
+    #vcomments ol,
+    ul {
+        display: block;
+        padding-left: 2em;
+        word-spacing: 0.05rem;
+    }
+
+    #vcomments ul li,
+    ol li {
+        display: list-item;
+        line-height: 1.8rem;
+        font-size: 1rem;
+    }
+
+    #vcomments ul li {
+        list-style-type: disc;
+    }
+
+    #vcomments ul ul li {
+        list-style-type: circle;
+    }
+
+    #vcomments table, th, td {
+        padding: 12px 13px;
+        border: 1px solid #dfe2e5;
+    }
+
+    #vcomments table, th, td {
+        border: 0;
+    }
+
+    table tr:nth-child(2n), thead {
+        background-color: #fafafa;
+    }
+
+    #vcomments table th {
+        background-color: #f2f2f2;
+        min-width: 80px;
+    }
+
+    #vcomments table td {
+        min-width: 80px;
+    }
+
+    #vcomments h1 {
+        font-size: 1.85rem;
+        font-weight: bold;
+        line-height: 2.2rem;
+    }
+
+    #vcomments h2 {
+        font-size: 1.65rem;
+        font-weight: bold;
+        line-height: 1.9rem;
+    }
+
+    #vcomments h3 {
+        font-size: 1.45rem;
+        font-weight: bold;
+        line-height: 1.7rem;
+    }
+
+    #vcomments h4 {
+        font-size: 1.25rem;
+        font-weight: bold;
+        line-height: 1.5rem;
+    }
+
+    #vcomments h5 {
+        font-size: 1.1rem;
+        font-weight: bold;
+        line-height: 1.4rem;
+    }
+
+    #vcomments h6 {
+        font-size: 1rem;
+        line-height: 1.3rem;
+    }
+
+    #vcomments p {
+        font-size: 1rem;
+        line-height: 1.5rem;
+    }
+
+    #vcomments hr {
+        margin: 12px 0;
+        border: 0;
+        border-top: 1px solid #ccc;
+    }
+
+    #vcomments blockquote {
+        margin: 15px 0;
+        border-left: 5px solid #42b983;
+        padding: 1rem 0.8rem 0.3rem 0.8rem;
+        color: #666;
+        background-color: rgba(66, 185, 131, .1);
+    }
+
+    #vcomments pre {
+        font-family: monospace, monospace;
+        padding: 1.2em;
+        margin: .5em 0;
+        background: #272822;
+        overflow: auto;
+        border-radius: 0.3em;
+        tab-size: 4;
+    }
+
+    #vcomments code {
+        font-family: monospace, monospace;
+        padding: 1px 3px;
+        font-size: 0.92rem;
+        color: #e96900;
+        background-color: #f8f8f8;
+        border-radius: 2px;
+    }
+
+    #vcomments pre code {
+        font-family: monospace, monospace;
+        padding: 0;
+        color: #e8eaf6;
+        background-color: #272822;
+    }
+
+    #vcomments pre[class*="language-"] {
+        padding: 1.2em;
+        margin: .5em 0;
+    }
+
+    #vcomments code[class*="language-"],
+    pre[class*="language-"] {
+        color: #e8eaf6;
+    }
+
+    #vcomments [type="checkbox"]:not(:checked), [type="checkbox"]:checked {
+        position: inherit;
+        margin-left: -1.3rem;
+        margin-right: 0.4rem;
+        margin-top: -1px;
+        vertical-align: middle;
+        left: unset;
+        visibility: visible;
+    }
+
+    #vcomments b,
+    strong {
+        font-weight: bold;
+    }
+
+    #vcomments dfn {
+        font-style: italic;
+    }
+
+    #vcomments small {
+        font-size: 85%;
+    }
+
+    #vcomments cite {
+        font-style: normal;
+    }
+
+    #vcomments mark {
+        background-color: #fcf8e3;
+        padding: .2em;
+    }
+
+    #vcomments table, th, td {
+        padding: 12px 13px;
+        border: 1px solid #dfe2e5;
+    }
+
+    table tr:nth-child(2n), thead {
+        background-color: #fafafa;
+    }
+
+    #vcomments table th {
+        background-color: #f2f2f2;
+        min-width: 80px;
+    }
+
+    #vcomments table td {
+        min-width: 80px;
+    }
+
+    #vcomments [type="checkbox"]:not(:checked), [type="checkbox"]:checked {
+        position: inherit;
+        margin-left: -1.3rem;
+        margin-right: 0.4rem;
+        margin-top: -1px;
+        vertical-align: middle;
+        left: unset;
+        visibility: visible;
+    }
+</style>
+
+<div class="card valine-card" data-aos="fade-up">
+    <div class="comment_headling" style="font-size: 20px; font-weight: 700; position: relative; padding-left: 20px; top: 15px; padding-bottom: 5px;">
+        <i class="fas fa-comments fa-fw" aria-hidden="true"></i>
+        <span>评论</span>
+    </div>
+    <div id="vcomments" class="card-content" style="display: grid">
+    </div>
+</div>
+
+<script src="/libs/valine/av-min.js"></script>
+<script src="/libs/valine/Valine.min.js"></script>
+<script>
+    new Valine({
+        el: '#vcomments',
+        appId: 'u30D1CO9OfbaiwTGXosh5V4w-9Nh9j0Va',
+        appKey: 'C8tqhbCO1ECosUk9URqAElSu',
+        notify: 'false' === 'true',
+        verify: 'false' === 'true',
+        visitor: 'true' === 'true',
+        avatar: 'mm',
+        pageSize: '10',
+        lang: 'zh-cn',
+        placeholder: '有什么想说的欢迎留言鸭~'
+    });
+</script>
+
+    
+
+    
+
+    
+
+<article id="prenext-posts" class="prev-next articles">
+    <div class="row article-row">
+        
+        <div class="article col s12 m6" data-aos="fade-up" data-aos="fade-up">
+            <div class="article-badge left-badge text-color">
+                <i class="far fa-dot-circle"></i>&nbsp;本篇
+            </div>
+            <div class="card">
+                <a href="/2020/08/15/matlab%E5%9F%BA%E7%A1%80%E4%BD%BF%E7%94%A8/">
+                    <div class="card-image">
+                        
+                        
+                        <img src="/medias/featureimages/4.jpg" class="responsive-img" alt="matlab基础使用(更新中)">
+                        
+                        <span class="card-title">matlab基础使用(更新中)</span>
+                    </div>
+                </a>
+                <div class="card-content article-content">
+                    <div class="summary block-with-text">
+                        
+                            Matlab基础使用写在前面和之前那篇不同的是，这篇文章记录了matlab基础使用的方法，总共也就那么几个部分
+
+向量运算
+多项式运算
+矩阵运算
+符号运算
+数列求和与函数极限与导数操作
+函数积分
+方程求解
+微分方程//曲线方程
+拟合插值（这
+                        
+                    </div>
+                    <div class="publish-info">
+                            <span class="publish-date">
+                                <i class="far fa-clock fa-fw icon-date"></i>2020-08-15
+                            </span>
+                        <span class="publish-author">
+                            
+                            <i class="fas fa-bookmark fa-fw icon-category"></i>
+                            
+                            <a href="/categories/%E6%95%B0%E5%AD%A6%E5%BB%BA%E6%A8%A1/" class="post-category">
+                                    数学建模
+                                </a>
+                            
+                            
+                        </span>
+                    </div>
+                </div>
+
+                
+                <div class="card-action article-tags">
+                    
+                    <a href="/tags/matlab/">
+                        <span class="chip bg-color">matlab</span>
+                    </a>
+                    
+                </div>
+                
+            </div>
+        </div>
+        
+        
+        <div class="article col s12 m6" data-aos="fade-up">
+            <div class="article-badge right-badge text-color">
+                下一篇&nbsp;<i class="fas fa-chevron-right"></i>
+            </div>
+            <div class="card">
+                <a href="/2020/08/15/%E8%92%9F%E8%92%BB%E7%9A%84matlab%E5%AE%9E%E6%88%98%E7%AC%94%E8%AE%B0/">
+                    <div class="card-image">
+                        
+                        
+                        <img src="/medias/featureimages/19.jpg" class="responsive-img" alt="蒟蒻的matlab实战笔记（更新中）">
+                        
+                        <span class="card-title">蒟蒻的matlab实战笔记（更新中）</span>
+                    </div>
+                </a>
+                <div class="card-content article-content">
+                    <div class="summary block-with-text">
+                        
+                            Matlab 实战笔记写在前面暑假为了参加国赛学习了matlab（白给的可能性比较大毕竟第一次参加比赛还撞上开学考试），看了也快有半月多一点了，之前基本上就是看书，会了点线性规划图论微分方程积分等等，然而实践出真知，具体问题还得具体分析。于
+                        
+                    </div>
+                    <div class="publish-info">
+                            <span class="publish-date">
+                                <i class="far fa-clock fa-fw icon-date"></i>2020-08-15
+                            </span>
+                        <span class="publish-author">
+                            
+                            <i class="fas fa-bookmark fa-fw icon-category"></i>
+                            
+                            <a href="/categories/%E6%95%B0%E5%AD%A6%E5%BB%BA%E6%A8%A1/" class="post-category">
+                                    数学建模
+                                </a>
+                            
+                            
+                        </span>
+                    </div>
+                </div>
+                
+                <div class="card-action article-tags">
+                    
+                    <a href="/tags/matlab/">
+                        <span class="chip bg-color">matlab</span>
+                    </a>
+                    
+                </div>
+                
+            </div>
+        </div>
+        
+    </div>
+</article>
+
+</div>
+
+
+
+<!-- 代码块功能依赖 -->
+<script type="text/javascript" src="/libs/codeBlock/codeBlockFuction.js"></script>
+
+<!-- 代码语言 -->
+
+<script type="text/javascript" src="/libs/codeBlock/codeLang.js"></script>
+
+
+<!-- 代码块复制 -->
+
+<script type="text/javascript" src="/libs/codeBlock/codeCopy.js"></script>
+
+
+<!-- 代码块收缩 -->
+
+<script type="text/javascript" src="/libs/codeBlock/codeShrink.js"></script>
+
+
+<!-- 代码块折行 -->
+
+<style type="text/css">
+code[class*="language-"], pre[class*="language-"] { white-space: pre !important; }
+</style>
+
+
+    </div>
+    <div id="toc-aside" class="expanded col l3 hide-on-med-and-down">
+        <div class="toc-widget">
+            <div class="toc-title"><i class="far fa-list-alt"></i>&nbsp;&nbsp;目录</div>
+            <div id="toc-content"></div>
+        </div>
+    </div>
+</div>
+
+<!-- TOC 悬浮按钮. -->
+
+<div id="floating-toc-btn" class="hide-on-med-and-down">
+    <a class="btn-floating btn-large bg-color">
+        <i class="fas fa-list-ul"></i>
+    </a>
+</div>
+
+
+<script src="/libs/tocbot/tocbot.min.js"></script>
+<script>
+    $(function () {
+        tocbot.init({
+            tocSelector: '#toc-content',
+            contentSelector: '#articleContent',
+            headingsOffset: -($(window).height() * 0.4 - 45),
+            collapseDepth: Number('0'),
+            headingSelector: 'h2, h3, h4'
+        });
+
+        // modify the toc link href to support Chinese.
+        let i = 0;
+        let tocHeading = 'toc-heading-';
+        $('#toc-content a').each(function () {
+            $(this).attr('href', '#' + tocHeading + (++i));
+        });
+
+        // modify the heading title id to support Chinese.
+        i = 0;
+        $('#articleContent').children('h2, h3, h4').each(function () {
+            $(this).attr('id', tocHeading + (++i));
+        });
+
+        // Set scroll toc fixed.
+        let tocHeight = parseInt($(window).height() * 0.4 - 64);
+        let $tocWidget = $('.toc-widget');
+        $(window).scroll(function () {
+            let scroll = $(window).scrollTop();
+            /* add post toc fixed. */
+            if (scroll > tocHeight) {
+                $tocWidget.addClass('toc-fixed');
+            } else {
+                $tocWidget.removeClass('toc-fixed');
+            }
+        });
+
+        
+        /* 修复文章卡片 div 的宽度. */
+        let fixPostCardWidth = function (srcId, targetId) {
+            let srcDiv = $('#' + srcId);
+            if (srcDiv.length === 0) {
+                return;
+            }
+
+            let w = srcDiv.width();
+            if (w >= 450) {
+                w = w + 21;
+            } else if (w >= 350 && w < 450) {
+                w = w + 18;
+            } else if (w >= 300 && w < 350) {
+                w = w + 16;
+            } else {
+                w = w + 14;
+            }
+            $('#' + targetId).width(w);
+        };
+
+        // 切换TOC目录展开收缩的相关操作.
+        const expandedClass = 'expanded';
+        let $tocAside = $('#toc-aside');
+        let $mainContent = $('#main-content');
+        $('#floating-toc-btn .btn-floating').click(function () {
+            if ($tocAside.hasClass(expandedClass)) {
+                $tocAside.removeClass(expandedClass).hide();
+                $mainContent.removeClass('l9');
+            } else {
+                $tocAside.addClass(expandedClass).show();
+                $mainContent.addClass('l9');
+            }
+            fixPostCardWidth('artDetail', 'prenext-posts');
+        });
+        
+    });
+</script>
+
+    
+
+</main>
+
+
+
+
+    <footer class="page-footer bg-color">
+    
+    <div class="container row center-align" style="margin-bottom: 0px !important;">
+        <div class="col s12 m8 l8 copy-right">
+            Copyright&nbsp;&copy;
+            <span id="year">2020</span>
+            <a href="/about" target="_blank">晓沐</a>
+            |&nbsp;Powered by&nbsp;<a href="https://hexo.io/" target="_blank">Hexo</a>
+            |&nbsp;Theme&nbsp;<a href="https://github.com/blinkfox/hexo-theme-matery" target="_blank">Matery</a>
+            <br>
+            
+            
+            
+            
+            
+            
+            <span id="busuanzi_container_site_pv">
+                |&nbsp;<i class="far fa-eye"></i>&nbsp;总访问量:&nbsp;<span id="busuanzi_value_site_pv"
+                    class="white-color"></span>&nbsp;次
+            </span>
+            
+            
+            <span id="busuanzi_container_site_uv">
+                |&nbsp;<i class="fas fa-users"></i>&nbsp;总访问人数:&nbsp;<span id="busuanzi_value_site_uv"
+                    class="white-color"></span>&nbsp;人
+            </span>
+            
+            <br>
+            
+            <br>
+            
+        </div>
+        <div class="col s12 m4 l4 social-link social-statis">
+    <a href="https://github.com/MilkTeaAddicted" class="tooltipped" target="_blank" data-tooltip="访问我的GitHub" data-position="top" data-delay="50">
+        <i class="fab fa-github"></i>
+    </a>
+
+
+
+    <a href="mailto:3364268153@qq.com" class="tooltipped" target="_blank" data-tooltip="邮件联系我" data-position="top" data-delay="50">
+        <i class="fas fa-envelope-open"></i>
+    </a>
+
+
+
+
+
+    <a href="https://twitter.com/MilkTeaAddicted" class="tooltipped" target="_blank" data-tooltip="关注我的Twitter: https://twitter.com/MilkTeaAddicted" data-position="top" data-delay="50">
+        <i class="fab fa-twitter"></i>
+    </a>
+
+
+
+    <a href="tencent://AddContact/?fromId=50&fromSubId=1&subcmd=all&uin=3364268153" class="tooltipped" target="_blank" data-tooltip="QQ联系我: 3364268153" data-position="top" data-delay="50">
+        <i class="fab fa-qq"></i>
+    </a>
+
+
+
+
+
+
+
+</div>
+    </div>
+</footer>
+
+<div class="progress-bar"></div>
+
+
+    <!-- 搜索遮罩框 -->
+<div id="searchModal" class="modal">
+    <div class="modal-content">
+        <div class="search-header">
+            <span class="title"><i class="fas fa-search"></i>&nbsp;&nbsp;搜索</span>
+            <input type="search" id="searchInput" name="s" placeholder="请输入搜索的关键字"
+                   class="search-input">
+        </div>
+        <div id="searchResult"></div>
+    </div>
+</div>
+
+<script src="/js/search.js"></script>
+<script type="text/javascript">
+$(function () {
+    searchFunc("/search.xml", 'searchInput', 'searchResult');
+});
+</script>
+
+    <!-- 回到顶部按钮 -->
+<div id="backTop" class="top-scroll">
+    <a class="btn-floating btn-large waves-effect waves-light" href="#!">
+        <i class="fas fa-arrow-up"></i>
+    </a>
+</div>
+
+
+    <script src="/libs/materialize/materialize.min.js"></script>
+    <script src="/libs/masonry/masonry.pkgd.min.js"></script>
+    <script src="/libs/aos/aos.js"></script>
+    <script src="/libs/scrollprogress/scrollProgress.min.js"></script>
+    <script src="/libs/lightGallery/js/lightgallery-all.min.js"></script>
+    <script src="/js/matery.js"></script>
+
+    <!-- Baidu Analytics -->
+
+    <!-- Baidu Push -->
+
+<script>
+    (function () {
+        var bp = document.createElement('script');
+        var curProtocol = window.location.protocol.split(':')[0];
+        if (curProtocol === 'https') {
+            bp.src = 'https://zz.bdstatic.com/linksubmit/push.js';
+        } else {
+            bp.src = 'http://push.zhanzhang.baidu.com/push.js';
+        }
+        var s = document.getElementsByTagName("script")[0];
+        s.parentNode.insertBefore(bp, s);
+    })();
+</script>
+
+    
+    <script src="/libs/others/clicklove.js" async="async"></script>
+    
+    
+    <script async src="/libs/others/busuanzi.pure.mini.js"></script>
+    
+
+    
+
+    
+
+    
+    <script type="text/javascript" color="0,0,255"
+        pointColor="0,0,255" opacity='0.7'
+        zIndex="-1" count="99"
+        src="/libs/background/canvas-nest.js"></script>
+    
+
+    
+
+    
+    <script type="text/javascript" src="/libs/background/ribbon-dynamic.js" async="async"></script>
+    
+
+    
+    <script src="/libs/instantpage/instantpage.js" type="module"></script>
+    
+
+</body>
+
+</html>
