@@ -6,7 +6,7 @@
   <link href="http://sweetheart.huangtao.xyz/atom.xml" rel="self"/>
   
   <link href="http://sweetheart.huangtao.xyz/"/>
-  <updated>2020-08-28T06:45:10.236Z</updated>
+  <updated>2020-10-04T02:06:50.750Z</updated>
   <id>http://sweetheart.huangtao.xyz/</id>
   
   <author>
@@ -15,6 +15,32 @@
   </author>
   
   <generator uri="https://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>vue学习笔记</title>
+    <link href="http://sweetheart.huangtao.xyz/2020/09/22/vue%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/"/>
+    <id>http://sweetheart.huangtao.xyz/2020/09/22/vue%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/</id>
+    <published>2020-09-22T07:29:00.000Z</published>
+    <updated>2020-10-04T02:06:50.750Z</updated>
+    
+    <content type="html"><![CDATA[<h1 id="vue学习笔记"><a href="#vue学习笔记" class="headerlink" title="vue学习笔记"></a>vue学习笔记</h1><h2 id="写在前面"><a href="#写在前面" class="headerlink" title="写在前面"></a>写在前面</h2><p>最近在学习vue框架，vue就不介绍了反正都懂，本笔记只是为了方便查找进行创建，同时也为了交流学习（不过应该没有人会和我这种蒟蒻交流学习吧，总之开始了：</p><p>附上必用文档<a href="https://cn.vuejs.org/index.html">vue官方文档</a></p><h2 id="vue组件"><a href="#vue组件" class="headerlink" title="vue组件"></a>vue组件</h2><p>基本写法：</p><p>在vue实例外中新建组件的写法：</p><pre><code class="vue">Vue.component(&#39;button-counter&#39;, &amp;#123; //注意这创建了一个button的组件  data: function () &amp;#123;//定义方法    return &amp;#123;      count: 0    &amp;#125;  &amp;#125;,  template: &#39;&lt;button v-on:click=&quot;count++&quot;&gt;You clicked me &amp;#123;&amp;#123; count &amp;#125;&amp;#125; times.&lt;/button&gt;&#39;&amp;#125;)</code></pre><p>示例：采用es6写法</p><pre><code>vue.component(&quot;greeting&quot;,itemplate: `data:function()ireturn iname:&quot;鹿晗&quot;I&amp;#125;&amp;#125;,methods:ichangeName: function()ithis.name = &quot;Henry&quot; ;&amp;#125;&amp;#125;)new Vue(&amp;#123;el: &quot;#vue-app-one&quot;&amp;#125;&amp;#125;:大家好，给大家介绍一下我的女朋友@关晓彤&lt;/p&gt;</code></pre>]]></content>
+    
+    
+      
+      
+    <summary type="html">&lt;h1 id=&quot;vue学习笔记&quot;&gt;&lt;a href=&quot;#vue学习笔记&quot; class=&quot;headerlink&quot; title=&quot;vue学习笔记&quot;&gt;&lt;/a&gt;vue学习笔记&lt;/h1&gt;&lt;h2 id=&quot;写在前面&quot;&gt;&lt;a href=&quot;#写在前面&quot; class=&quot;headerlink&quot; titl</summary>
+      
+    
+    
+    
+    <category term="前端" scheme="http://sweetheart.huangtao.xyz/categories/%E5%89%8D%E7%AB%AF/"/>
+    
+    
+    <category term="web" scheme="http://sweetheart.huangtao.xyz/tags/web/"/>
+    
+    <category term="vue" scheme="http://sweetheart.huangtao.xyz/tags/vue/"/>
+    
+  </entry>
   
   <entry>
     <title>matlab基础使用(更新中)</title>
