@@ -4,7 +4,7 @@
 
 <head>
     <meta charset="utf-8">
-    <meta name="keywords" content="vue学习笔记, MilkTeaAddicted">
+    <meta name="keywords" content="机器学习之sklearn, MilkTeaAddicted">
     <meta name="description" content="生活就是奶茶">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
@@ -16,7 +16,7 @@
     <!-- Global site tag (gtag.js) - Google Analytics -->
 
 
-    <title>vue学习笔记 | MilkTeaAddicted</title>
+    <title>机器学习之sklearn | MilkTeaAddicted</title>
     <link rel="icon" type="image/png" href="/favicon.png">
 
     <link rel="stylesheet" type="text/css" href="/libs/awesome/css/all.css">
@@ -330,12 +330,12 @@
 
 
 
-<div class="bg-cover pd-header post-cover" style="background-image: url('/medias/featureimages/20.jpg')">
+<div class="bg-cover pd-header post-cover" style="background-image: url('/medias/featureimages/15.jpg')">
     <div class="container" style="right: 0px;left: 0px;">
         <div class="row">
             <div class="col s12 m12 l12">
                 <div class="brand">
-                    <h1 class="description center-align post-title">vue学习笔记</h1>
+                    <h1 class="description center-align post-title">机器学习之sklearn</h1>
                 </div>
             </div>
         </div>
@@ -452,12 +452,12 @@
                     
                     <div class="article-tag">
                         
-                            <a href="/tags/web/">
-                                <span class="chip bg-color">web</span>
+                            <a href="/tags/sklearn/">
+                                <span class="chip bg-color">sklearn</span>
                             </a>
                         
-                            <a href="/tags/vue/">
-                                <span class="chip bg-color">vue</span>
+                            <a href="/tags/machine-learning/">
+                                <span class="chip bg-color">machine learning</span>
                             </a>
                         
                     </div>
@@ -468,8 +468,8 @@
                     <div class="post-cate">
                         <i class="fas fa-bookmark fa-fw icon-category"></i>
                         
-                            <a href="/categories/%E5%89%8D%E7%AB%AF/" class="post-category">
-                                前端
+                            <a href="/categories/machine-learning/" class="post-category">
+                                machine learning
                             </a>
                         
                     </div>
@@ -481,14 +481,14 @@
                 
                 <div class="post-date info-break-policy">
                     <i class="far fa-calendar-minus fa-fw"></i>发布日期:&nbsp;&nbsp;
-                    2020-09-22
+                    2020-10-21
                 </div>
                 
 
                 
                 <div class="post-date info-break-policy">
                     <i class="far fa-calendar-check fa-fw"></i>更新日期:&nbsp;&nbsp;
-                    2020-10-04
+                    2020-10-22
                 </div>
                 
 
@@ -507,36 +507,356 @@
         <hr class="clearfix">
         <div class="card-content article-card-content">
             <div id="articleContent">
-                <h1 id="vue学习笔记"><a href="#vue学习笔记" class="headerlink" title="vue学习笔记"></a>vue学习笔记</h1><h2 id="写在前面"><a href="#写在前面" class="headerlink" title="写在前面"></a>写在前面</h2><p>最近在学习vue框架，vue就不介绍了反正都懂，本笔记只是为了方便查找进行创建，同时也为了交流学习（不过应该没有人会和我这种蒟蒻交流学习吧，总之开始了：</p>
-<p>附上必用文档<a target="_blank" rel="noopener" href="https://cn.vuejs.org/index.html">vue官方文档</a></p>
-<h2 id="vue组件"><a href="#vue组件" class="headerlink" title="vue组件"></a>vue组件</h2><p>基本写法：</p>
-<p>在vue实例外中新建组件的写法：</p>
-<pre><code class="vue">Vue.component(&#39;button-counter&#39;, &amp;#123; //注意这创建了一个button的组件
-  data: function () &amp;#123;//定义方法
-    return &amp;#123;
-      count: 0
-    &amp;#125;
-  &amp;#125;,
-  template: &#39;&lt;button v-on:click=&quot;count++&quot;&gt;You clicked me &amp;#123;&amp;#123; count &amp;#125;&amp;#125; times.&lt;/button&gt;&#39;
-&amp;#125;)</code></pre>
-<p>示例：采用es6写法</p>
-<pre><code>vue.component(&quot;greeting&quot;,i
-template: `
-data:function()i
-return i
-name:&quot;鹿晗&quot;
-I
-&amp;#125;
-&amp;#125;,
-methods:i
-changeName: function()i
-this.name = &quot;Henry&quot; ;
-&amp;#125;
-&amp;#125;)
-new Vue(&amp;#123;
-el: &quot;#vue-app-one&quot;
-&amp;#125;&amp;#125;:大家好，给大家介绍一下我的女朋友@关晓彤&lt;/p&gt;
+                <h1 id="机器学习笔记之sklearn"><a href="#机器学习笔记之sklearn" class="headerlink" title="机器学习笔记之sklearn"></a>机器学习笔记之sklearn</h1><p>  sklearn是机器学习中重要的测试数据集来源之一，并且可以提供特征提取以及降维聚类等功能</p>
+<p>   蒟蒻从今天起开始机器学习调库调参的第一步，</p>
+<h3 id="sklearn数据集介绍"><a href="#sklearn数据集介绍" class="headerlink" title="sklearn数据集介绍"></a>sklearn数据集介绍</h3><h3 id="引入："><a href="#引入：" class="headerlink" title="引入："></a>引入：</h3><p>数据集的操作有:</p>
+<ul>
+<li>load_*获取自带的较小的数据集</li>
+<li>fetchg_*获取外部的较大的数据集</li>
+</ul>
+<pre><code class="python">import sklearn.datasets 
+from sklearn.datasets import load_iris //导入鸢尾花数据集
+iris=load_iris()
+print(&quot;鸢尾花的数据集返回值&quot;,iris)
+print(&quot;鸢尾花数据的描述&quot;,iris[&quot;DESCR&quot;])
+print(&quot;鸢尾花数据的特征值&quot;,iris.data)
+print(&quot;鸢尾花的目标值&quot;,iris.target)
+print(&quot;鸢尾花的特征值名字&quot;,iris.data.shape)
+print(&quot;鸢尾花的特征值名字&quot;,iris.feture_name)</code></pre>
+<p>sklearn返回值介绍：</p>
+<ul>
+<li>load 和fetch返回的是字典格式<ul>
+<li>data：特征数据集</li>
+<li>target:标签数据</li>
+<li>DESCR:数据描述</li>
+<li>feature_names:特征名字，新闻数据，手写数字，回归数据集没有</li>
+<li>target_name:标签名</li>
+</ul>
+</li>
+</ul>
+<h3 id="数据集划分"><a href="#数据集划分" class="headerlink" title="数据集划分"></a>数据集划分</h3><p>进行机器学习的时候我们要对数据集进行划分，划分成训练集和测试集</p>
+<p>​    一般来说，测试集所占比例比较少：</p>
+<ul>
+<li>一般：测试集一般占比20%~30%{sklearn库中划分函数默认25%}</li>
+<li>训练集特征值，测试集特征值，训练集特征值。测试目标集特征值分别是：x_train x_test  y_train y_test</li>
+</ul>
+<p>训练集划分api：</p>
+<pre><code class="python">from sklearn.datasets import load_iris
+from sklearn.model_selection import train_test_split
+iris=load_iris()
+print(&quot;鸢尾花的数据集返回值&quot;, iris)
+print(&quot;鸢尾花数据的描述&quot;, iris[&quot;DESCR&quot;])
+print(&quot;鸢尾花数据的特征值&quot;, iris.data)
+print(&quot;鸢尾花的目标值&quot;, iris.target)
+print(&quot;鸢尾花的特征值名字&quot;, iris.data.shape)
+print(&quot;鸢尾花的特征值名字&quot;, iris.feature_names)
+x_train,x_test,y_train,y_test=train_test_split(iris.data,iris.target,test_size=0.2,random_state=22)
+//第一个参数：数据集x的特征值，第二个参数数据集y的特征值，测试集的占比,第三个随机分配时数种子
+//返回：训练集特征值，测试集特征值，训练集目标值，测试集目标值</code></pre>
+<h3 id="特征提取"><a href="#特征提取" class="headerlink" title="特征提取"></a>特征提取</h3><p>即是对一些非数值的数据，比如对文本语音图像等，将其转换成数值化，便于进行矩阵运算</p>
+<p>特征提取用于降维等等</p>
+<p>特征工程：</p>
+<p>一般用sklearn进行特征提取、</p>
+<p>而用pandas进行数据清洗，数据抽取，等预处理工作</p>
+<ul>
+<li><p>目标</p>
+<ul>
+<li>应用DicVectorizer实现对类别特征进行数值化离散化</li>
+<li>应用CountVectorizer实现对文本特征进行数值化</li>
+<li>应用TfidVectorizer实现对文本特征进行数值化</li>
+</ul>
+</li>
+<li><p>特征提取api</p>
+<pre><code class="python">sklearn.feature_extraction</code></pre>
+</li>
+</ul>
+<h4 id="对字典进行数值化抽取"><a href="#对字典进行数值化抽取" class="headerlink" title="对字典进行数值化抽取"></a>对字典进行数值化抽取</h4><pre><code class="python">from sklearn.feature_extraction import DictVectorizer
+def dict_demo():
+    data = [&amp;#123;&#39;city&#39;: &#39;beijing&#39;, &#39;number&#39;: 1&amp;#125;, &amp;#123;&#39;city&#39;: &#39;guangdong&#39;, &#39;number&#39;: 4&amp;#125;, &amp;#123;&#39;city&#39;: &#39;shanghai&#39;, &#39;number&#39;: 3&amp;#125;]
+    transfer = DictVectorizer()  # 实例化转换器
+    data_new = transfer.fit_transform(data)
+    print(&quot;data_new:&quot;, data_new)
+    print(&quot;data_new的名字:&quot;, transfer.feature_names_)#查看矩阵各列代表属性
+    return None
+if __name__ == &quot;__main__&quot;:
+    dict_demo()</code></pre>
+<p>返回的矩阵：</p>
+<pre><code>data_new:   (0, 0)    1.0
+  (0, 3)    1.0
+  (1, 1)    1.0
+  (1, 3)    4.0
+  (2, 2)    1.0
+  (2, 3)    3.0
+
+返回的是一个稀疏矩阵，当把稀疏矩阵转换成矩阵形式的时候，设置稀疏矩阵false
+transfer = DictVectorizer(sparse=False)
+输出：
+data_new: [[1. 0. 0. 1.]
+ [0. 1. 0. 4.]
+ [0. 0. 1. 3.]]
+ data_new的名字: [&#39;city=beijing&#39;, &#39;city=guangdong&#39;, &#39;city=shanghai&#39;, &#39;number&#39;]</code></pre>
+<h4 id="文本特征提取"><a href="#文本特征提取" class="headerlink" title="文本特征提取"></a>文本特征提取</h4><pre><code class="python">from sklearn.feature_extraction.text import CountVectorizer
+
+def count_demo():
+    data = [&quot;lfe is short l like python&quot;, &quot;life is short ,code more&quot;]
+    transfer = CountVectorizer()
+    data_new = transfer.fit_transform(data)
+    print(&quot;data_new:\n&quot;, data_new)
+     print(&quot;特征名字：\n&quot;,transfer.get_feature_names())#调用此方法获取矩阵的值
+    return None
+
+
+if __name__ == &quot;__main__&quot;:
+    count_demo()
 </code></pre>
+<p>同样返回的是一个稀疏矩阵：</p>
+<pre><code class="python">data_new:
+   (0, 2)    1
+  (0, 1)    1
+  (0, 7)    1
+  (0, 4)    1
+  (0, 6)    1
+  (1, 1)    1
+  (1, 7)    1
+  (1, 3)    1
+  (1, 0)    1
+  (1, 5)    1
+  特征名字：
+ [&#39;code&#39;, &#39;is&#39;, &#39;lfe&#39;, &#39;life&#39;, &#39;like&#39;, &#39;more&#39;, &#39;python&#39;, &#39;short&#39;]
+    #可见过滤了I等低频词汇
+    #若对中文进行词频抽取，要用空格隔开词语</code></pre>
+<h4 id="中文文本抽取"><a href="#中文文本抽取" class="headerlink" title="中文文本抽取"></a>中文文本抽取</h4><p>from sklearn.feature_extraction.text import CountVectorizer(stop_word=[])</p>
+<p>这里的stop_word是跳过词，抽取时忽略这个词，自然语言处理时用停顿词表进行无关词语忽略</p>
+<p>这里把把is和like作为停顿词</p>
+<pre><code class="python">transfer = CountVectorizer(stop_words=[&#39;is&#39;, &#39;like&#39;])</code></pre>
+<p>输出特征名字：<br> [‘code’, ‘lfe’, ‘life’, ‘more’, ‘python’, ‘short’]</p>
+<p>中文文本抽取：</p>
+<p>由于中文文本在CountVectorizer中使用必需分词，所以要调用jieba的分词函数</p>
+<pre><code class="python">import jieba  # 对中文文本进行分词处理
+
+def cut_word(text):
+    # 中文文本分词函数
+    text = &quot;&quot;.join(list(jieba.cut(text)))
+    # jibe分词函数-&gt;转化成；列表—&gt;转化成字符串
+    return text
+
+
+def count_Chinese():
+    data = [&quot;一种还是一种今天很残酷，明天更加残酷，但是对大部分人来说&quot;, &quot;进行机器学习的时候我们要对数据集进行划分，划分成训练集和测试集&quot;, &quot;一般来说，测试集所占比例比较少&quot;,
+            &quot;训练集特征值，测试集特征值，训练集特征值。测试目标集特征值分别是：x_train x_test  y_train y_test&quot;]
+    data_new = []
+    for i in data:
+        data_new.append(cut_word(i))
+    print(data_new)
+    return None
+
+
+if __name__ == &quot;__main__&quot;:
+    count_Chinese()</code></pre>
+<p>然后对生成列表进行特征抽取</p>
+<p>然而这样的特征抽取没有突出高频率词汇，所以要对高频率词汇进行提取</p>
+<p>但是有些词比较辣鸡，不该作为信息抽取</p>
+<h4 id="文本特征抽取2"><a href="#文本特征抽取2" class="headerlink" title="文本特征抽取2"></a>文本特征抽取2</h4><p>关键词：在某一个类别的文章中出现次数多，但在其他文章中出现次数少的词汇，标志了一个文本的特征</p>
+<p>Tf-idf文本特征抽取原理即是如此</p>
+<p>tf:词频</p>
+<p>idf:逆向文本频率:</p>
+<p>由文本文件数目除以包含词语的文件的数目，再将得到的商取以10为底的对数</p>
+<p>Tf-idf=tf*idf</p>
+<p>举例：</p>
+<p>语料库：1000文章</p>
+<p>100文章有非常</p>
+<p>10偏有经济</p>
+<p>两篇文章：</p>
+<p>​    A文章（100词）：经济10词</p>
+<p>​        ‘经济’：</p>
+<p>​            tf=0.1</p>
+<p>​            idf=log 10 1000/10=2</p>
+<p>​            Tf-idf=0.2</p>
+<p>​    B文章（100词）：非常10词</p>
+<p>​        ‘非常’：</p>
+<p>​        tf=0.1</p>
+<p>​        idf=log 10 1000/100=1</p>
+<p>​        Tf-idf=0.1</p>
+<p>ApI</p>
+<pre><code class="python">from sklearn.feature_extraction.text import TfidfVectorizer
+def Tfidf_demo():
+    data = [&quot;lfe is short l like python&quot;, &quot;life is short ,code more&quot;]
+    transfer = TfidfVectorizer(stop_words=[&#39;is&#39;, &#39;like&#39;])
+    data_new = transfer.fit_transform(data)
+    print(&quot;data_new:\n&quot;, data_new)
+    print(&quot;特征名字：\n&quot;, transfer.get_feature_names())
+    return None
+#就实例化的时候改了下转换器的名字
+
+if __name__ == &quot;__main__&quot;:
+    Tfidf_demo()</code></pre>
+<p>实例化和提取操作类似于CountVectorizer，同样有停顿词功能</p>
+<p>返回：</p>
+<pre><code class="python">data_new:
+   (0, 4)    0.6316672017376245
+  (0, 5)    0.4494364165239821
+  (0, 1)    0.6316672017376245
+  (1, 3)    0.534046329052269
+  (1, 0)    0.534046329052269
+  (1, 2)    0.534046329052269
+  (1, 5)    0.37997836159100784
+特征名字：
+ [&#39;code&#39;, &#39;lfe&#39;, &#39;life&#39;, &#39;more&#39;, &#39;python&#39;, &#39;short&#39;]</code></pre>
+<h3 id="数据预处理"><a href="#数据预处理" class="headerlink" title="数据预处理"></a>数据预处理</h3><h4 id="归一化"><a href="#归一化" class="headerlink" title="归一化"></a>归一化</h4><p>为了使数据更加适合算法模型处理</p>
+<p>归一化就是在将数据处理在一定中范围内</p>
+<p>如果不对数据进行归一化处理，那么数据将会由于某一个特征值过于巨大而导致其他特征值被忽略，（在聚类中的欧式距离计算中尤为明显）</p>
+<p>所以要将几个数据项的值固定在一个统一的范围内：</p>
+<p>数学上叫做无量纲化</p>
+<p>公式</p>
+<pre><code class="python">x&#39;=(x-min)/(max-min)
+x&#39;&#39;=x&#39;*(mx-mi)+mi</code></pre>
+<p>例如有数据[90,60,75]</p>
+<p>对于数据90：</p>
+<p>x’=(90-60)/(90-60)=1</p>
+<p>x”=1*(1)+0=1   #放缩到1-0区间，mx=1，mi=0</p>
+<p>ApI:</p>
+<pre><code class="python">import pandas as pd#调用pandas清洗函数
+from sklearn.preprocessing import MinMaxScaler#调用归一化函数
+def minmax():
+    data=pd.read_csv(&quot;titanic/test.csv&quot;)
+    data=data.iloc[:6, :2]
+    #截取数据前两列前6行
+    trans=MinMaxScaler()#实例化转换器
+    datanew=trans.fit_transform(data)
+    print(datanew)
+    return None
+
+
+if __name__ == &quot;__main__&quot;:
+    minmax()</code></pre>
+<p>输出：</p>
+<pre><code class="python">[[0.  1. ]
+ [0.2 1. ]
+ [0.4 0. ]
+ [0.6 1. ]
+ [0.8 1. ]
+ [1.  1. ]]</code></pre>
+<p>这样在处理聚类数据的时候可以减少特征值之间的差距</p>
+<h4 id="标准化处理"><a href="#标准化处理" class="headerlink" title="标准化处理"></a>标准化处理</h4><p>当数据中有缺失值和异常值，做归一化处理得到的数据可能会有缺陷，这种方式鲁棒性较差，只适合传统的精确度小的数据处理</p>
+<p>异常值通常是：</p>
+<ul>
+<li>最大值</li>
+<li>最小值</li>
+</ul>
+<p>标准化定义</p>
+<p>对原始数据变换将数据变为均值为0，标准差为1</p>
+<p>公式：</p>
+<p>x’=(x-mean)/std</p>
+<p>std=标准差</p>
+<p>API</p>
+<pre><code class="python">from sklearn.preprocessing import MinMaxScaler,StandardScaler
+#即在原来归一化基础上实例的时候改了转换器就行
+def std_demo():
+    data = pd.read_csv(&quot;titanic/test.csv&quot;)
+    data = data.iloc[:6, :2]
+    # 截取数据前两列前6行
+    trans = StandardScaler() # 实例化转换器
+    datanew = trans.fit_transform(data)
+    print(datanew)
+    return None
+
+
+if __name__ == &quot;__main__&quot;:
+    std_demo()</code></pre>
+<p>返回：</p>
+<pre><code class="python">[[-1.46385011  0.4472136 ]
+ [-0.87831007  0.4472136 ]
+ [-0.29277002 -2.23606798]
+ [ 0.29277002  0.4472136 ]
+ [ 0.87831007  0.4472136 ]
+ [ 1.46385011  0.4472136 ]]</code></pre>
+<h3 id="降维"><a href="#降维" class="headerlink" title="降维"></a>降维</h3><p>降维是在某些限定的条件，降低随机特征的个数，得到一组不相关主变量的过程</p>
+<p>维数：嵌套层数</p>
+<ul>
+<li>0维：标量</li>
+<li>1维：向量</li>
+<li>2维：矩阵</li>
+</ul>
+<p>降低的对象：二维数组</p>
+<p>此处降维：降低列数</p>
+<ul>
+<li>相关特征：<ul>
+<li>相对湿度与降雨量之间的关系</li>
+<li>等等</li>
+</ul>
+</li>
+</ul>
+<blockquote>
+<p>正是因为在进行训练的时候，我们都是使用特征进行学习的，如果有特征本身存在问题或者特征之间相关性比较强，对于算法学习的预测影响会比较大</p>
+</blockquote>
+<p>降维的两种方法：</p>
+<ul>
+<li>特征选择</li>
+<li>主成分分析</li>
+</ul>
+<p>特征选择：</p>
+<p>数据中包含冗余的或相关变量，希望在原有特征中找出主要特征</p>
+<p>方法：</p>
+<ul>
+<li>filter过滤式<ul>
+<li>方差选择法：低方差特征过滤（说明此属性共有不必要）</li>
+<li>相关系数法：特征与特征之间的相关程度</li>
+</ul>
+</li>
+<li>embeded嵌入式<ul>
+<li>决策树</li>
+<li>正则化</li>
+<li>深度学习</li>
+</ul>
+</li>
+</ul>
+<h4 id="低方差特征过滤"><a href="#低方差特征过滤" class="headerlink" title="低方差特征过滤"></a>低方差特征过滤</h4><p>API</p>
+<pre><code class="python">import pandas as pd
+from sklearn.feature_selection import VarianceThreshold
+def varianse_demo():
+    # 过滤低方差
+    data = pd.read_csv(&quot;titanic/test.csv&quot;)
+    data = data.iloc[:5, :2]
+    transfer = VarianceThreshold()
+    data = transfer.fit_transform(data)
+    print(data)
+    return None
+
+if __name__ == &quot;__main__&quot;:
+    varianse_demo()</code></pre>
+<h4 id="相关系数"><a href="#相关系数" class="headerlink" title="相关系数"></a>相关系数</h4><p>皮尔森相关系数:</p>
+<p>公式略</p>
+<p>特点：</p>
+<ul>
+<li>当r&gt;0正相关，R&lt;0负相关</li>
+<li>当r=-1or1完全相关，r=0表示毫无关系</li>
+<li>越近于1相关性越强</li>
+<li>0.4&lt;abs(r)&lt;0.7说明有一定相关性</li>
+</ul>
+<p>Api:</p>
+<pre><code class="python">import pandas as pd
+from scipy.stats import pearsonr
+def varianse_demo():
+    # 过滤低方差
+    data = pd.read_csv(&quot;titanic/test.csv&quot;)
+    data = data.iloc[:5, :2]
+    r = pearsonr(data[&quot;pe_ratio&quot;], data[&quot;pb_ratio&quot;])
+    print(r)
+    return None
+
+
+if __name__ == &quot;__main__&quot;:
+    varianse_demo()
+</code></pre>
+<p>如果特征与多个特征之间相关性很高：</p>
+<ul>
+<li><p>选取其中一个</p>
+</li>
+<li><p>加权求和</p>
+</li>
+<li><p>主成分分析</p>
+</li>
+</ul>
 
             </div>
             <hr/>
@@ -562,7 +882,7 @@ el: &quot;#vue-app-one&quot;
                     </i>
                 </span>
                 <span class="reprint-info">
-                    <a href="http://sweetheart.huangtao.xyz/2020/09/22/vue%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/">http://sweetheart.huangtao.xyz/2020/09/22/vue%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/</a>
+                    <a href="http://sweetheart.huangtao.xyz/2020/10/21/%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0%E4%B9%8Bsklearn/">http://sweetheart.huangtao.xyz/2020/10/21/%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0%E4%B9%8Bsklearn/</a>
                 </span>
             </div>
             <div class="reprint__notice">
@@ -600,12 +920,12 @@ el: &quot;#vue-app-one&quot;
                     
                         <div class="article-tag">
                             
-                                <a href="/tags/web/">
-                                    <span class="chip bg-color">web</span>
+                                <a href="/tags/sklearn/">
+                                    <span class="chip bg-color">sklearn</span>
                                 </a>
                             
-                                <a href="/tags/vue/">
-                                    <span class="chip bg-color">vue</span>
+                                <a href="/tags/machine-learning/">
+                                    <span class="chip bg-color">machine learning</span>
                                 </a>
                             
                         </div>
@@ -1036,9 +1356,10 @@ el: &quot;#vue-app-one&quot;
 <article id="prenext-posts" class="prev-next articles">
     <div class="row article-row">
         
-        <div class="article col s12 m6" data-aos="fade-up">
+        <div class="article col s12 m6" data-aos="fade-up" data-aos="fade-up">
             <div class="article-badge left-badge text-color">
-                <i class="fas fa-chevron-left"></i>&nbsp;上一篇</div>
+                <i class="far fa-dot-circle"></i>&nbsp;本篇
+            </div>
             <div class="card">
                 <a href="/2020/10/21/%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0%E4%B9%8Bsklearn/">
                     <div class="card-image">
@@ -1060,9 +1381,9 @@ load_*获取
                         
                     </div>
                     <div class="publish-info">
-                        <span class="publish-date">
-                            <i class="far fa-clock fa-fw icon-date"></i>2020-10-21
-                        </span>
+                            <span class="publish-date">
+                                <i class="far fa-clock fa-fw icon-date"></i>2020-10-21
+                            </span>
                         <span class="publish-author">
                             
                             <i class="fas fa-bookmark fa-fw icon-category"></i>
@@ -1075,6 +1396,7 @@ load_*获取
                         </span>
                     </div>
                 </div>
+
                 
                 <div class="card-action article-tags">
                     
@@ -1097,41 +1419,34 @@ load_*获取
                 下一篇&nbsp;<i class="fas fa-chevron-right"></i>
             </div>
             <div class="card">
-                <a href="/2020/08/15/matlab%E5%9F%BA%E7%A1%80%E4%BD%BF%E7%94%A8/">
+                <a href="/2020/09/22/vue%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/">
                     <div class="card-image">
                         
                         
-                        <img src="/medias/featureimages/4.jpg" class="responsive-img" alt="matlab基础使用(更新中)">
+                        <img src="/medias/featureimages/20.jpg" class="responsive-img" alt="vue学习笔记">
                         
-                        <span class="card-title">matlab基础使用(更新中)</span>
+                        <span class="card-title">vue学习笔记</span>
                     </div>
                 </a>
                 <div class="card-content article-content">
                     <div class="summary block-with-text">
                         
-                            Matlab基础使用写在前面和之前那篇不同的是，这篇文章记录了matlab基础使用的方法，总共也就那么几个部分
-
-向量运算
-多项式运算
-矩阵运算
-符号运算
-数列求和与函数极限与导数操作
-函数积分
-方程求解
-微分方程//曲线方程
-拟合插值（这
+                            vue学习笔记写在前面最近在学习vue框架，vue就不介绍了反正都懂，本笔记只是为了方便查找进行创建，同时也为了交流学习（不过应该没有人会和我这种蒟蒻交流学习吧，总之开始了：
+附上必用文档vue官方文档
+vue组件基本写法：
+在vue实例外
                         
                     </div>
                     <div class="publish-info">
                             <span class="publish-date">
-                                <i class="far fa-clock fa-fw icon-date"></i>2020-08-15
+                                <i class="far fa-clock fa-fw icon-date"></i>2020-09-22
                             </span>
                         <span class="publish-author">
                             
                             <i class="fas fa-bookmark fa-fw icon-category"></i>
                             
-                            <a href="/categories/%E6%95%B0%E5%AD%A6%E5%BB%BA%E6%A8%A1/" class="post-category">
-                                    数学建模
+                            <a href="/categories/%E5%89%8D%E7%AB%AF/" class="post-category">
+                                    前端
                                 </a>
                             
                             
@@ -1141,8 +1456,12 @@ load_*获取
                 
                 <div class="card-action article-tags">
                     
-                    <a href="/tags/matlab/">
-                        <span class="chip bg-color">matlab</span>
+                    <a href="/tags/web/">
+                        <span class="chip bg-color">web</span>
+                    </a>
+                    
+                    <a href="/tags/vue/">
+                        <span class="chip bg-color">vue</span>
                     </a>
                     
                 </div>
