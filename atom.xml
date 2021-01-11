@@ -6,7 +6,7 @@
   <link href="http://sweetheart.huangtao.xyz/atom.xml" rel="self"/>
   
   <link href="http://sweetheart.huangtao.xyz/"/>
-  <updated>2021-01-02T09:01:03.998Z</updated>
+  <updated>2021-01-11T14:22:56.803Z</updated>
   <id>http://sweetheart.huangtao.xyz/</id>
   
   <author>
@@ -15,6 +15,36 @@
   </author>
   
   <generator uri="https://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>css前端页面布局</title>
+    <link href="http://sweetheart.huangtao.xyz/2021/01/02/css%E5%89%8D%E7%AB%AF%E9%A1%B5%E9%9D%A2%E5%B8%83%E5%B1%80/"/>
+    <id>http://sweetheart.huangtao.xyz/2021/01/02/css%E5%89%8D%E7%AB%AF%E9%A1%B5%E9%9D%A2%E5%B8%83%E5%B1%80/</id>
+    <published>2021-01-02T10:38:03.000Z</published>
+    <updated>2021-01-11T14:22:56.803Z</updated>
+    
+    <content type="html"><![CDATA[<h1 id="css前端页面布局"><a href="#css前端页面布局" class="headerlink" title="css前端页面布局"></a>css前端页面布局</h1><p>前端三件套里面除了javascript之外，比较难学的就是css的页面布局操作，可以说css掌握好布局那么基本上就能写出一个一般通俗的静态页面了，其他都可以现学现抄</p><h2 id="浮动布局"><a href="#浮动布局" class="headerlink" title="浮动布局"></a>浮动布局</h2><p>浮动布局指：</p><ul><li>将元素排除在普通流之外</li><li>元素不在页面占据空间</li><li>将浮动元素放置在包含框的左右边</li><li>浮动元素依旧位于包含框之内</li></ul><p>浮动的框可以向左或者向右移动，直到外边缘碰到包含框或另一个浮动边框为止</p><ul><li>浮动元素的外边缘不会超过其父元素的内边缘</li><li>浮动元素不会相互重叠</li><li>浮动元素不会上下浮动</li><li>任何一个元素浮动，display属性完全失效，并且不会独占一行</li></ul><p>语法：</p><ul><li>float:none/left/right;</li></ul><pre><code class="html">&lt;!DOCTYPE html&gt;&lt;html lang=&quot;en&quot;&gt;&lt;head&gt;    &lt;meta charset=&quot;UTF-8&quot;&gt;    &lt;meta name=&quot;viewport&quot; content=&quot;width=device-width, initial-scale=1.0&quot;&gt;    &lt;title&gt;Document&lt;/title&gt;    &lt;style&gt;        #box&amp;#123;            width: 600px;            height: 600px;            background: deeppink;        &amp;#125;        #box&gt;div:first-child&amp;#123;            width: 200px;            height: 200px;            background: green;        &amp;#125;        #box&gt;div:nth-child(2)        &amp;#123;            width: 200px;            height: 200px;            background: blue;        &amp;#125;        #box&gt;div:nth-child(3        )        &amp;#123;            width: 200px;            height: 200px;            background:red;        &amp;#125;    &lt;/style&gt;&lt;/head&gt;&lt;body&gt;    &lt;div id=&quot;box&quot;&gt;        &lt;div&gt;&lt;/div&gt;        &lt;div&gt;&lt;/div&gt;        &lt;div&gt;&lt;/div&gt;    &lt;/div&gt;&lt;/body&gt;&lt;/html&gt;</code></pre><p>效果图如下:</p><p><img src="http://pan-yz.chaoxing.com/preview/showpreview_555513261589626880.html?v=1610374614000"></p><p>倘若设置浮动：</p><pre><code class="css">    &lt;style&gt;        #box&amp;#123;            width: 600px;            height: 600px;            background: deeppink;        &amp;#125;        #box&gt;div:first-child&amp;#123;            width: 200px;            height: 200px;            background: green;            float: right;        &amp;#125;        #box&gt;div:nth-child(2)        &amp;#123;            width: 200px;            height: 200px;            background: blue;            float: right;        &amp;#125;        #box&gt;div:nth-child(3        )        &amp;#123;            width: 200px;            height: 200px;            background:red;        &amp;#125;    &lt;/style&gt;</code></pre><p>效果图如下：</p><p><img src="http://pan-yz.chaoxing.com/preview/showpreview_555513256077426688.html?v=1610374826000"></p><p>说明float碰到边缘停止，</p><p>打个比方，大的div外边框相当于七巧板的框</p><p>而不浮动的div相当于七巧板的框内花纹，而浮动的div相当于七巧板，碰到同样的七巧板或者边框就停止</p><p>原有的行容不下div的时候，会自动到下一行找更大空间</p><p>覆盖关系由孩子关系决定</p><ul><li>div的本质属性是不设置宽度的时候独占一行，</li><li>span标签的特点是没有宽高属性，并且不会独占一行</li><li>如果设置了float，给无宽高属性的元素会生效宽高属性</li></ul><p>如果父元素没有设置宽高，而子元素有设置宽高，那么父元素会根据子元素调整自己的宽高属性</p><p>例如：</p><pre><code class="css">  &lt;style&gt;        #box&amp;#123;            /* width: 600px;            height: 600px; */            background: deeppink;        &amp;#125;        #box&gt;div:first-child&amp;#123;            width: 200px;            height: 200px;            background: green;            /* float: right; */        &amp;#125;        #box&gt;div:nth-child(2)        &amp;#123;            width: 200px;            height: 200px;            background: blue;            /* float: right; */        &amp;#125;        #box&gt;div:nth-child(3        )        &amp;#123;            width: 200px;            height: 200px;            background:red;        &amp;#125;    &lt;/style&gt;</code></pre><p>效果图如下，说明:</p><ul><li>div的本质属性是不设置宽度的时候独占一行，<ul><li>所以父元素占了一整行</li><li>子元素虽然宽没有满行，但是依旧占了一整行，导致排成一列</li></ul></li><li>父div根据子div调整宽高</li></ul><p>如果给部分元素恢复浮动，如下：</p><pre><code class="css">    &lt;style&gt;        #box&amp;#123;            /* width: 600px;            height: 600px; */            background: deeppink;        &amp;#125;        #box&gt;div:first-child&amp;#123;            width: 200px;            height: 200px;            background: green;            float: right;        &amp;#125;        #box&gt;div:nth-child(2)        &amp;#123;            width: 200px;            height: 200px;            background: blue;            float: right;        &amp;#125;        #box&gt;div:nth-child(3        )        &amp;#123;            width: 200px;            height: 200px;            background:red;        &amp;#125;    &lt;/style&gt;</code></pre><p>效果图如下：</p><p><img src="http://pan-yz.chaoxing.com/preview/showpreview_555513241930924032.html?v=1610374864000"></p><p>那么说明在有浮动条件下div感受根据浮动调整，可以认为外边框是一个可伸缩的长方形边框</p><p>内部元素float的情况下，父亲感知不到内元素高度</p><p>解决方法：</p><ul><li><p>设置父元素宽高</p></li><li><p>父元素设置overflow:hidden;</p><p>如下：</p><pre><code class="css">  &lt;style&gt;        #box&amp;#123;            /* width: 600px;            height: 600px; */            background: deeppink;            overflow: hidden;        &amp;#125;        #box&gt;div:first-child&amp;#123;            width: 200px;            height: 200px;            background: green;            float: right;        &amp;#125;        #box&gt;div:nth-child(2)        &amp;#123;            width: 200px;            height: 200px;            background: blue;            float: right;        &amp;#125;        #box&gt;div:nth-child(3        )        &amp;#123;            width: 200px;            height: 200px;            background:red;            float: right;        &amp;#125;    &lt;/style&gt;</code></pre><p>如下图所示：</p></li><li><p>父类设置浮动,兄弟元素清除浮动clear</p></li></ul><p>注意浮动是优先在行内操作</p><p>假设现在有一个div，宽度不比行内宽度小，所以不足以移到下一行，若想移到下一行，则要设置</p><pre><code class="css">clear:both;/*清除两边浮动*/</code></pre><p>这个可以抵消其他元素浮动对当前元素的影响</p><p>属性：clear</p><p>值：left,right,both</p><h2 id="头部布局以及font字体图标使用"><a href="#头部布局以及font字体图标使用" class="headerlink" title="头部布局以及font字体图标使用"></a>头部布局以及font字体图标使用</h2><p>网页布局的时候一般是先水平再垂直，头部布局一般适用于网页导航栏</p><p>这里先学习导航栏的布局：</p><p>html：</p><pre><code class="html">&lt;!DOCTYPE html&gt;&lt;html&gt;    &lt;head&gt;        &lt;meta charset=&quot;utf-8&quot; /&gt;        &lt;title&gt;test&lt;/title&gt;        &lt;link rel=&quot;stylesheet&quot; type=&quot;text/css&quot; href=&quot;./css/style.css&quot;/&gt;        &lt;!-- 这里引入css文件 --&gt;    &lt;/head&gt;    &lt;body&gt;        &lt;div id=&quot;header&quot;&gt;            &lt;div class=&quot;header&quot;&gt;                &lt;div class=&quot;header_left&quot;&gt;                &lt;/div&gt;                &lt;div class=&quot;header_right&quot;&gt;                &lt;/div&gt;            &lt;/div&gt;        &lt;/div&gt;    &lt;/body&gt;&lt;/html&gt;</code></pre><p>引入的css文件：</p><pre><code class="css">#header&amp;#123;    width: 100%;    height: 40px;    background: red;&amp;#125;.header&amp;#123;    width: 50%;    height: 40px;    background: green;&amp;#125;.header_left&amp;#123;    width: 200px;    height: 40px;    background: aqua;&amp;#125;.header_right&amp;#123;    width: 300px;    height: 40px;    background: pink;&amp;#125;</code></pre><p>初步的效果图如下：</p><p><img src="http://pan-yz.chaoxing.com/preview/showpreview_555513260343988224.html?v=1610374496000"></p><p>但是注意到由于div独占一行的原因</p><p>这里pink的div出来了，说明等待解决问题</p><p>利用上次学到的浮动属性，让pink和aqua在green里面浮动：</p><pre><code class="css">#header&amp;#123;    width: 100%;    height: 40px;    background: red;&amp;#125;.header&amp;#123;    width: 50%;    height: 40px;    background: green;&amp;#125;.header_left&amp;#123;    width: 200px;    height: 40px;    background: aqua;    float: left;&amp;#125;.header_right&amp;#123;    width: 300px;    height: 40px;    background: pink;    float: right;&amp;#125;</code></pre><p>效果图如下：</p><p>​                                                               图丢了</p><p>这时首页头部的基本框架搭好了，取消父类容器颜色，并且加入子类文字：</p><p>html:</p><pre><code class="html">&lt;!DOCTYPE html&gt;&lt;html&gt;    &lt;head&gt;        &lt;meta charset=&quot;utf-8&quot; /&gt;        &lt;title&gt;test&lt;/title&gt;        &lt;link rel=&quot;stylesheet&quot; type=&quot;text/css&quot; href=&quot;./css/style.css&quot;/&gt;        &lt;!-- 这里引入css文件 --&gt;    &lt;/head&gt;    &lt;body&gt;        &lt;div id=&quot;header&quot;&gt;            &lt;div class=&quot;header&quot;&gt;                &lt;div class=&quot;header_left&quot;&gt;                    &lt;div &gt;                        &lt;span &gt;                            我是头部                        &lt;/span&gt;                    &lt;/div&gt;                &lt;/div&gt;                &lt;div class=&quot;header_right&quot;&gt;                &lt;/div&gt;            &lt;/div&gt;        &lt;/div&gt;    &lt;/body&gt;&lt;/html&gt;</code></pre><p>css:</p><pre><code class="css">#header&amp;#123;    width: 100%;    height: 40px;    /* background: red; */&amp;#125;.header&amp;#123;    width: 50%;    height: 40px;    /* background: green; */    border:1px solid #FF0000;&amp;#125;.header_left&amp;#123;    width: 200px;    height: 40px;    /* background: aqua; 取消父类容器颜色*/    float: left;&amp;#125;.header_right&amp;#123;    width: 300px;    height: 40px;    background: pink;    float: right;&amp;#125;.header_left&gt;div&amp;#123;    float: left;    line-height: 40px;    color: dimgray;    /* 设置字体颜色，在父类中 */&amp;#125;.header_left&gt;div&gt;span&amp;#123;    font-weight: bold;    /* 设置字体加粗 */&amp;#125;</code></pre><p>效果如下</p><p>​                                                                            图又无了</p><p>设置超链接：</p><pre><code class="html">&lt;div &gt;    &lt;a href=&quot;&quot;&gt;        &lt;img src=&quot;&quot; alt=&quot;&quot; &gt;        核心产品        &lt;i&gt;&lt;/i&gt;    &lt;/a&gt;&lt;/div&gt;</code></pre><p>为了清除原有超链接丑不拉几的样式，css里面设置为</p><pre><code class="css">a&amp;#123;    text-decoration: none;&amp;#125;</code></pre><p>这样去掉了下划线的样式</p><p>然后设置添加图片</p><p>html:</p><pre><code class="html">&lt;body&gt;        &lt;div id=&quot;header&quot;&gt;            &lt;div class=&quot;header&quot;&gt;                &lt;div class=&quot;header_left&quot;&gt;                    &lt;div &gt;                        &lt;span &gt;                            我是头部                        &lt;/span&gt;                    &lt;/div&gt;                    &lt;div &gt;                        &lt;a href=&quot;&quot;&gt;                            &lt;img src=&quot;./img/imag.png&quot; alt=&quot;&quot; &gt;                            核心产品                            &lt;i&gt;&lt;/i&gt;                        &lt;/a&gt;                    &lt;/div&gt;                &lt;/div&gt;                &lt;div class=&quot;header_right&quot;&gt;                &lt;/div&gt;            &lt;/div&gt;        &lt;/div&gt;    &lt;/body&gt;</code></pre><p>css:</p><pre><code class="css">.header&gt;div:nth-child(2)&gt;a,.header_left&gt;div:nth-child(2)&gt;a&gt;img,.header_left&gt;div:nth-child(2)&gt;a&gt;i&amp;#123;    float: left;&amp;#125;.header_left&gt;div:nth-child(2)&gt;a&gt;img&amp;#123;    width: 17px;&amp;#125;</code></pre><p>这里全部设置为浮动布局，并且调整了图片大小如图：</p><p><img src="http://pan-yz.chaoxing.com/preview/showpreview_555513259392987136.html?v=1610374390000"></p><p>下面是给文字添加图标：</p><p>阿里图标库，找到想要的图标后</p><ul><li><p>点击加入购物车</p></li><li><p>点击购物车添加到项目</p></li><li><p>点击项目更新代码</p></li><li><p>复制更新后的链接，引入到页面的css的link，这样：</p><pre><code class="css">&lt;linkrel=&quot;stylesheet&quot;type=&quot;text/css&quot;href=&quot;//at.alicdn.com/t/font_2076021_pp0wtm9fh8j.css&quot;/&gt;</code></pre></li><li><p>复制好想要的图标的代码后，如下(注意复制好代码后再标注iconfont才能显示出来)：</p><pre><code class="html">&lt;div &gt;    &lt;a href=&quot;&quot;&gt;        &lt;img src=&quot;./img/imag.png&quot; alt=&quot;&quot; &gt;        核心产品        &lt;i class=&quot;icon-arrow-down iconfont&quot;&gt;&lt;/i&gt;    &lt;/a&gt;&lt;/div&gt;</code></pre></li><li><p>取消i标签的浮动(不取消浮动i标签跑前面去)，并且修改超链接字体颜色：</p><p>去除样式的一篇参考blog:<a href="https://blog.csdn.net/hl_qianduan/article/details/84964511?ops_request_misc=%25257B%252522request%25255Fid%252522%25253A%252522161037371816780266298133%252522%25252C%252522scm%252522%25253A%25252220140713.130102334.pc%25255Fall.%252522%25257D&request_id=161037371816780266298133&biz_id=0&utm_medium=distribute.pc_search_result.none-task-blog-2~all~first_rank_v2~rank_v29-1-84964511.pc_search_result_cache&utm_term=%E5%8E%BB%E9%99%A4%E9%BB%98%E8%AE%A4%E6%A0%B7%E5%BC%8F">去除css中的默认样式</a></p><pre><code class="css">.header&gt;div:nth-child(2)&gt;a,.header_left&gt;div:nth-child(2)&gt;a&gt;img,&amp;#123;    float: left;    color:dimgrey;&amp;#125;.header_left&gt;div:nth-child(2)&gt;a&gt;img&amp;#123;    width: 17px;&amp;#125; a&amp;#123;text-decoration: none;color:#333;&amp;#125; a:hover, a:visited, a:link, a:active &amp;#123;    color:dimgrey;    // 设置使所有a标签的四种状态都和本身颜色保持一致，样式代码自己写&amp;#125;</code></pre></li></ul><p>最终的效果图如下：</p><p><img src="http://pan-yz.chaoxing.com/preview/showpreview_555513257500176384.html?v=1610374336000"></p>]]></content>
+    
+    
+      
+      
+    <summary type="html">&lt;h1 id=&quot;css前端页面布局&quot;&gt;&lt;a href=&quot;#css前端页面布局&quot; class=&quot;headerlink&quot; title=&quot;css前端页面布局&quot;&gt;&lt;/a&gt;css前端页面布局&lt;/h1&gt;&lt;p&gt;前端三件套里面除了javascript之外，比较难学的就是css的页面布局操作，可以</summary>
+      
+    
+    
+    
+    <category term="web" scheme="http://sweetheart.huangtao.xyz/categories/web/"/>
+    
+    <category term="前端" scheme="http://sweetheart.huangtao.xyz/categories/web/%E5%89%8D%E7%AB%AF/"/>
+    
+    
+    <category term="前端" scheme="http://sweetheart.huangtao.xyz/tags/%E5%89%8D%E7%AB%AF/"/>
+    
+    <category term="css" scheme="http://sweetheart.huangtao.xyz/tags/css/"/>
+    
+    <category term="html" scheme="http://sweetheart.huangtao.xyz/tags/html/"/>
+    
+  </entry>
   
   <entry>
     <title>tensoflow基础</title>
@@ -95,32 +125,6 @@
     <category term="matplotlib" scheme="http://sweetheart.huangtao.xyz/tags/matplotlib/"/>
     
     <category term="文件批量操作" scheme="http://sweetheart.huangtao.xyz/tags/%E6%96%87%E4%BB%B6%E6%89%B9%E9%87%8F%E6%93%8D%E4%BD%9C/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>vue学习笔记</title>
-    <link href="http://sweetheart.huangtao.xyz/2020/09/22/vue%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/"/>
-    <id>http://sweetheart.huangtao.xyz/2020/09/22/vue%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/</id>
-    <published>2020-09-22T07:29:00.000Z</published>
-    <updated>2020-10-04T02:06:50.750Z</updated>
-    
-    <content type="html"><![CDATA[<h1 id="vue学习笔记"><a href="#vue学习笔记" class="headerlink" title="vue学习笔记"></a>vue学习笔记</h1><h2 id="写在前面"><a href="#写在前面" class="headerlink" title="写在前面"></a>写在前面</h2><p>最近在学习vue框架，vue就不介绍了反正都懂，本笔记只是为了方便查找进行创建，同时也为了交流学习（不过应该没有人会和我这种蒟蒻交流学习吧，总之开始了：</p><p>附上必用文档<a href="https://cn.vuejs.org/index.html">vue官方文档</a></p><h2 id="vue组件"><a href="#vue组件" class="headerlink" title="vue组件"></a>vue组件</h2><p>基本写法：</p><p>在vue实例外中新建组件的写法：</p><pre><code class="vue">Vue.component(&#39;button-counter&#39;, &amp;#123; //注意这创建了一个button的组件  data: function () &amp;#123;//定义方法    return &amp;#123;      count: 0    &amp;#125;  &amp;#125;,  template: &#39;&lt;button v-on:click=&quot;count++&quot;&gt;You clicked me &amp;#123;&amp;#123; count &amp;#125;&amp;#125; times.&lt;/button&gt;&#39;&amp;#125;)</code></pre><p>示例：采用es6写法</p><pre><code>vue.component(&quot;greeting&quot;,itemplate: `data:function()ireturn iname:&quot;鹿晗&quot;I&amp;#125;&amp;#125;,methods:ichangeName: function()ithis.name = &quot;Henry&quot; ;&amp;#125;&amp;#125;)new Vue(&amp;#123;el: &quot;#vue-app-one&quot;&amp;#125;&amp;#125;:大家好，给大家介绍一下我的女朋友@关晓彤&lt;/p&gt;</code></pre>]]></content>
-    
-    
-      
-      
-    <summary type="html">&lt;h1 id=&quot;vue学习笔记&quot;&gt;&lt;a href=&quot;#vue学习笔记&quot; class=&quot;headerlink&quot; title=&quot;vue学习笔记&quot;&gt;&lt;/a&gt;vue学习笔记&lt;/h1&gt;&lt;h2 id=&quot;写在前面&quot;&gt;&lt;a href=&quot;#写在前面&quot; class=&quot;headerlink&quot; titl</summary>
-      
-    
-    
-    
-    <category term="前端" scheme="http://sweetheart.huangtao.xyz/categories/%E5%89%8D%E7%AB%AF/"/>
-    
-    
-    <category term="web" scheme="http://sweetheart.huangtao.xyz/tags/web/"/>
-    
-    <category term="vue" scheme="http://sweetheart.huangtao.xyz/tags/vue/"/>
     
   </entry>
   
@@ -216,11 +220,11 @@
     
     
     
-    <category term="web" scheme="http://sweetheart.huangtao.xyz/tags/web/"/>
+    <category term="css" scheme="http://sweetheart.huangtao.xyz/tags/css/"/>
     
     <category term="html" scheme="http://sweetheart.huangtao.xyz/tags/html/"/>
     
-    <category term="css" scheme="http://sweetheart.huangtao.xyz/tags/css/"/>
+    <category term="web" scheme="http://sweetheart.huangtao.xyz/tags/web/"/>
     
     <category term="markdown" scheme="http://sweetheart.huangtao.xyz/tags/markdown/"/>
     
