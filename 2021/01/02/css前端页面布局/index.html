@@ -452,16 +452,16 @@
                     
                     <div class="article-tag">
                         
-                            <a href="/tags/%E5%89%8D%E7%AB%AF/">
-                                <span class="chip bg-color">前端</span>
+                            <a href="/tags/html/">
+                                <span class="chip bg-color">html</span>
                             </a>
                         
                             <a href="/tags/css/">
                                 <span class="chip bg-color">css</span>
                             </a>
                         
-                            <a href="/tags/html/">
-                                <span class="chip bg-color">html</span>
+                            <a href="/tags/%E5%89%8D%E7%AB%AF/">
+                                <span class="chip bg-color">前端</span>
                             </a>
                         
                     </div>
@@ -496,7 +496,7 @@
                 
                 <div class="post-date info-break-policy">
                     <i class="far fa-calendar-check fa-fw"></i>更新日期:&nbsp;&nbsp;
-                    2021-01-11
+                    2021-01-14
                 </div>
                 
 
@@ -516,6 +516,12 @@
         <div class="card-content article-card-content">
             <div id="articleContent">
                 <h1 id="css前端页面布局"><a href="#css前端页面布局" class="headerlink" title="css前端页面布局"></a>css前端页面布局</h1><p>前端三件套里面除了javascript之外，比较难学的就是css的页面布局操作，可以说css掌握好布局那么基本上就能写出一个一般通俗的静态页面了，其他都可以现学现抄</p>
+<p>开始前补充关于div几个比较重要的知识点：</p>
+<ul>
+<li>div独占一行，所以第二个div默认情况下永远在div的下面，纵向排列</li>
+<li>即使div设置了宽高，依旧会根据孩子进行宽高调整，而我们设置的宽高只是背景颜色范围，这也是为什么很多时候子div看起来溢出了页面的原因</li>
+<li>div有自身的固有属性，比如总是会有8px的margin，为了美观记得消除margin等效果</li>
+</ul>
 <h2 id="浮动布局"><a href="#浮动布局" class="headerlink" title="浮动布局"></a>浮动布局</h2><p>浮动布局指：</p>
 <ul>
 <li>将元素排除在普通流之外</li>
@@ -963,6 +969,220 @@
 </ul>
 <p>最终的效果图如下：</p>
 <p><img src="http://pan-yz.chaoxing.com/preview/showpreview_555513257500176384.html?v=1610374336000"></p>
+<h2 id="定位属性"><a href="#定位属性" class="headerlink" title="定位属性"></a>定位属性</h2><p>接下来由于时间原因进行总结性概括，不再进行详细描述，反正csdn都能找到</p>
+<h3 id="相对定位"><a href="#相对定位" class="headerlink" title="相对定位"></a>相对定位</h3><p>相对于div原有位置进行的定位，相对于自己</p>
+<pre><code class="css">position:relative;
+top:200px;
+left:200;</code></pre>
+<p>会占有原有位置</p>
+<h3 id="绝对定位"><a href="#绝对定位" class="headerlink" title="绝对定位"></a>绝对定位</h3><p>绝对定位相对于整个大的div的右上角定位</p>
+<pre><code class="css">position:absolute;
+top:200px;
+left:200;</code></pre>
+<p>不会占有原有位置</p>
+<h3 id="相对父容器的绝对定位"><a href="#相对父容器的绝对定位" class="headerlink" title="相对父容器的绝对定位"></a>相对父容器的绝对定位</h3><p>由于决定定位是全局的，若要设置局部绝对</p>
+<p>父类（外层谁设置相对谁）的position设置为相对，或者absulute（非static默认</p>
+<p>子类为absolute；</p>
+<p>可以实现子类相对于父类的绝对定位</p>
+<p>如果元素外层没有一个设置为定位，那么参考点就是body</p>
+<h3 id="固定定位"><a href="#固定定位" class="headerlink" title="固定定位"></a>固定定位</h3><p>很多吧不随滚动条移动的效果就是用这个做出来的</p>
+<p>视差网页也是这样</p>
+<pre><code class="css">position:fixed;
+right:200px;
+top:200px;</code></pre>
+<h3 id="堆叠顺序"><a href="#堆叠顺序" class="headerlink" title="堆叠顺序"></a>堆叠顺序</h3><p>z-index</p>
+<ul>
+<li>一旦修改了元素的定位方式，则元素可能会发生堆叠</li>
+<li>可以使用z-index属性来控制元素框出现的重叠顺序</li>
+<li>z-index仅能在定位的元素上生效</li>
+<li>z-index属性:<ul>
+<li><strong>值为数值，数值越大表示堆叠顺序越高，即离用户越近</strong></li>
+<li>可以设置为负值，表示离用户更远，一般不要设置</li>
+<li><strong>Z-index仅能在定位元素上奏效</strong></li>
+</ul>
+</li>
+</ul>
+<p>比如当元素进行absolute定位产生堆叠的时候</p>
+<p>写法如下：</p>
+<pre><code class="css">z-index:1;
+z-index:2;
+z-index:3;</code></pre>
+<h2 id="display属性"><a href="#display属性" class="headerlink" title="display属性"></a>display属性</h2><p>根据CSS规范的规定，每一个网页元素都有一个display属性，用于确定该元素的类型，每一个元素都有默认的display属性值，比如div元素，它的默认display属性值为“block”，称为块元素，而span元素的默认display属性值为“inline”，称为“行内”元素。</p>
+<p>块元素与行元素是可以转换的，也就是说display的属性值可以由我们来改变</p>
+<p>display常见属性值：</p>
+<ul>
+<li><ol>
+<li>none:隐藏对象，<strong>体积同样消失，不占据原有位置</strong><ul>
+<li>visibility：hidden同样可以隐藏，但是占据空间</li>
+<li>opacity：50%设置透明度</li>
+<li>怎么隐藏怎么显示</li>
+</ul>
+</li>
+<li>inline:指定对象为内联元素<strong>在行内布局，没有宽高属性</strong></li>
+<li>block:指定对象为块元素<strong>独占一行</strong></li>
+<li>inline-block:指定对象为内联块元素<strong>让几个div在行内并列显示，有宽高属性</strong></li>
+<li>table-cell:指定对象作为表格单元格<strong>同上</strong></li>
+<li><strong>flex:弹性盒</strong></li>
+</ol>
+</li>
+</ul>
+<h2 id="标准盒子模型"><a href="#标准盒子模型" class="headerlink" title="标准盒子模型"></a>标准盒子模型</h2><p>盒子模型是css中一个重要的概念，理解了盒子模型才能更好的排版。W3C组织建议把网页上元素看成是一个个盒子。盒模型主要定义四个区域:内容(content)内边距(padding)、边框(border)、外边距(margin)。转换到我们日常生活中，可以拿手机盒来对比，手机=内容，内边距=盒子中的填充物，边框-盒子的厚度，外边距两个手机盒之间的距离。</p>
+<p>通常我们设置的宽和高是指“手机”content的宽高，一整个盒子还包含了“填充物”、盒子、盒子与盒子的距离</p>
+<p>关系如图：</p>
+<p><img src="http://pan-yz.chaoxing.com/preview/showpreview_556533883375620096.html?v=1610617629000" alt="示意图"></p>
+<p>margin与padding的写法不再赘述；自己查csdn；</p>
+<h3 id="关于margin"><a href="#关于margin" class="headerlink" title="关于margin"></a>关于margin</h3><ul>
+<li><p>利用margin可以设置块状元素居中</p>
+<pre><code class="css"> margin:10px auto;</code></pre>
+<p>上下10px,内部居中</p>
+</li>
+<li><p>上下margin会合并<strong>无左右合并</strong></p>
+<p>比如上容器margin-bottom：150px；下容器margin-top=50px;但是这两者间距是150px，取最大值margin</p>
+<p>浮动元素不合并；</p>
+</li>
+<li><p><strong>包含式margin合并</strong></p>
+<p>子容器的margin并不会导致与父容器内部产生距离，而是会让父容器也有一个margin</p>
+<p>建议父容器padding或者bottom;</p>
+</li>
+<li><p>margin可以负值</p>
+</li>
+</ul>
+<h3 id="关于border"><a href="#关于border" class="headerlink" title="关于border"></a>关于border</h3><ul>
+<li><p>写法见csdn：宽度 样式 颜色</p>
+</li>
+<li><p>style（实线或者虚线）属性为空，边框不出现</p>
+</li>
+<li><p>style取值：</p>
+<ul>
+<li>点：dotted</li>
+<li>实线：solid</li>
+<li>双线：double（需要三像素以上</li>
+<li>虚线：dashed</li>
+<li>无边框：none</li>
+</ul>
+</li>
+</ul>
+<h3 id="关于padding"><a href="#关于padding" class="headerlink" title="关于padding"></a>关于padding</h3><ul>
+<li><p>简写：</p>
+<ul>
+<li>padding :value(四个方向相同);</li>
+<li>padding: value(上下) value(左右);</li>
+<li>padding: value (上) value(左右)vadue(下);</li>
+<li>padding: value(上) value(右) value(下）value(左);</li>
+</ul>
+</li>
+<li><p>当内边距挤压子容器的时候，内边距会扩大外部容器，并不会覆盖子容器，border也是</p>
+<p>所以容器原始大小设置因为padding与border改动,margin不会</p>
+</li>
+</ul>
+<h2 id="怪异盒子模型"><a href="#怪异盒子模型" class="headerlink" title="怪异盒子模型"></a>怪异盒子模型</h2><p>适配ie浏览器的盒子模型，</p>
+<p>特点是padding与border不会改变盒子大小</p>
+<p>其他不赘述</p>
+<h2 id="浏览器私有前缀"><a href="#浏览器私有前缀" class="headerlink" title="浏览器私有前缀"></a>浏览器私有前缀</h2><p>根据不同的浏览器内核，css前缀会有不同。最基本的浏览器内核有如下四种，其它的内核都是基于此四种进行再研发的。</p>
+<ul>
+<li><ol>
+<li>Gecko内核    前缀为-moz-火狐浏览器</li>
+<li>Webkit内核    前缀为-webkit-也叫谷歌内核，chrome浏览器最先开发使用，safari浏览器也使用,该内核。国内很多浏览器也使用了webkit内核，如360极速、世界之窗、猎豹等。</li>
+<li>Trident内核   前缀为-ms-也称IE内核</li>
+<li>Presto内核  前缀-o-目前只有opera采用</li>
+</ol>
+</li>
+</ul>
+<p>为了适配不同浏览器，如果写法是css3实验性阶段的语句，保险起见不但要吧所有浏览器前缀写一遍，还要再写一次原属性</p>
+<p>但是如果都是css2标准就不用啦~~</p>
+<h2 id="圆角边框与阴影渐变"><a href="#圆角边框与阴影渐变" class="headerlink" title="圆角边框与阴影渐变"></a>圆角边框与阴影渐变</h2><p>这里给出一个好用的圆角边框生成网站,以及参考blog：</p>
+<p><a target="_blank" rel="noopener" href="https://neumorphism.io/#586d79">懒癌专用</a></p>
+<p><a target="_blank" rel="noopener" href="https://blog.csdn.net/qq_42221334/article/details/87806624?ops_request_misc=%257B%2522request%255Fid%2522%253A%2522161060780016780277083403%2522%252C%2522scm%2522%253A%252220140713.130102334.pc%255Fall.%2522%257D&request_id=161060780016780277083403&biz_id=0&utm_medium=distribute.pc_search_result.none-task-blog-2~all~first_rank_v2~rank_v29-1-87806624.pc_search_result_cache&utm_term=css%E9%98%B4%E5%BD%B1&spm=1018.2226.3001.4187">具体阴影调整写法</a></p>
+<p><a target="_blank" rel="noopener" href="https://blog.csdn.net/qq_42039281/article/details/82153805?ops_request_misc=%257B%2522request%255Fid%2522%253A%2522161060796616780255218050%2522%252C%2522scm%2522%253A%252220140713.130102334.pc%255Fall.%2522%257D&request_id=161060796616780255218050&biz_id=0&utm_medium=distribute.pc_search_result.none-task-blog-2~all~first_rank_v2~rank_v29-2-82153805.pc_search_result_cache&utm_term=css%E6%B8%90%E5%8F%98&spm=1018.2226.3001.4187">渐变设置</a></p>
+<p>好了你已经学完了</p>
+<h2 id="hover应用之小标签实战"><a href="#hover应用之小标签实战" class="headerlink" title="hover应用之小标签实战"></a>hover应用之小标签实战</h2><p>CSS部分：</p>
+<pre><code class="css">#box&amp;#123;
+    /* border: 1px solid blue; */
+    float: left;
+    position: relative;
+&amp;#125;
+/* 父容器设置相对定位,让子容器能对父容器定位 */
+#box&gt;div&amp;#123;
+    /* border: 1px solid green; */
+    float: left;
+    padding: 10px 20px;
+    color: #fff;
+    font-weight: bold;
+&amp;#125;
+/* 每个头标签的基本配置 */
+#box&gt;div:first-child&amp;#123;
+    background-color: #009764;
+&amp;#125;
+#box&gt;div:nth-child(2)&amp;#123;
+    background-color:#da1941;
+&amp;#125;
+#box&gt;div:last-child&amp;#123;
+    background-color: #eab719;
+&amp;#125;
+#box&gt;div&gt;div&amp;#123;
+    position: absolute;
+/*     border: #DA1941 solid 1px; */
+    top: 40px;
+    left: 0px;
+    padding: 20px;
+    width: 205px;
+    height: 80px;
+    display: none;
+&amp;#125;
+/* 先将块元素隐藏,absolu下标签会一个一个覆盖 */
+#box&gt;div:hover&gt;div&amp;#123;
+    display: block;
+&amp;#125;
+/* 当鼠标移到标签的时候,设置展示 */
+#box&gt;div:first-child&gt;div&amp;#123;
+    background:linear-gradient(50deg,#009764,#009764);
+
+&amp;#125;
+#box&gt;div:nth-child(2)&gt;div&amp;#123;
+    background:linear-gradient(50deg,#da1941,#da1941);
+&amp;#125;
+#box&gt;div:last-child&gt;div&amp;#123;
+    background:linear-gradient(50deg,#eab719,#eab719);
+&amp;#125;</code></pre>
+<p>HTML部分：</p>
+<pre><code class="html">&lt;!DOCTYPE html&gt;
+&lt;html&gt;
+    &lt;head&gt;
+        &lt;meta charset=&quot;utf-8&quot; /&gt;
+        &lt;title&gt;小标签&lt;/title&gt;
+        &lt;link rel=&quot;stylesheet&quot; type=&quot;text/css&quot; href=&quot;./css/style.css&quot;/&gt;
+        &lt;!-- 这里引入css文件 --&gt;
+        &lt;link rel=&quot;stylesheet&quot; type=&quot;text/css&quot; href=&quot;//at.alicdn.com/t/font_2076021_pp0wtm9fh8j.css&quot;/&gt;
+    &lt;/head&gt;
+    &lt;body&gt;
+        &lt;div id=&quot;box&quot;&gt;
+            &lt;div &gt;
+                标签1
+                &lt;div &gt;
+                    标签1的内容
+                &lt;/div&gt;
+            &lt;/div&gt;
+            &lt;div &gt;
+                标签2
+                &lt;div&gt;
+                    标签2的内容
+                &lt;/div&gt;
+            &lt;/div&gt;
+            &lt;div &gt;
+                标签3
+                &lt;div&gt;
+                    标签3的内容
+                &lt;/div&gt;
+            &lt;/div&gt;
+        &lt;/div&gt;
+
+    &lt;/body&gt;
+&lt;/html&gt;
+</code></pre>
+<p>最后效果如图：</p>
+<p><img src="http://pan-yz.chaoxing.com/preview/showpreview_556533843555368960.html?v=1610617723000" alt="鼠标不触碰div"></p>
+<p><img src="http://pan-yz.chaoxing.com/preview/showpreview_556533879492800512.html?v=1610617775000" alt="鼠标移到div上"></p>
+<p><img src="http://pan-yz.chaoxing.com/preview/showpreview_556533902329606144.html?v=1610617834000" alt="鼠标移到div上"></p>
 
             </div>
             <hr/>
@@ -1026,16 +1246,16 @@
                     
                         <div class="article-tag">
                             
-                                <a href="/tags/%E5%89%8D%E7%AB%AF/">
-                                    <span class="chip bg-color">前端</span>
+                                <a href="/tags/html/">
+                                    <span class="chip bg-color">html</span>
                                 </a>
                             
                                 <a href="/tags/css/">
                                     <span class="chip bg-color">css</span>
                                 </a>
                             
-                                <a href="/tags/html/">
-                                    <span class="chip bg-color">html</span>
+                                <a href="/tags/%E5%89%8D%E7%AB%AF/">
+                                    <span class="chip bg-color">前端</span>
                                 </a>
                             
                         </div>
@@ -1466,64 +1686,50 @@
 <article id="prenext-posts" class="prev-next articles">
     <div class="row article-row">
         
-        <div class="article col s12 m6" data-aos="fade-up" data-aos="fade-up">
+        <div class="article col s12 m6" data-aos="fade-up">
             <div class="article-badge left-badge text-color">
-                <i class="far fa-dot-circle"></i>&nbsp;本篇
-            </div>
+                <i class="fas fa-chevron-left"></i>&nbsp;上一篇</div>
             <div class="card">
-                <a href="/2021/01/02/css%E5%89%8D%E7%AB%AF%E9%A1%B5%E9%9D%A2%E5%B8%83%E5%B1%80/">
+                <a href="/2021/01/14/%E5%AF%92%E5%81%87%E7%AE%97%E6%B3%95%E8%AE%AD%E7%BB%83/">
                     <div class="card-image">
                         
                         
-                        <img src="/medias/featureimages/7.jpg" class="responsive-img" alt="css前端页面布局">
+                        <img src="/medias/featureimages/1.jpg" class="responsive-img" alt="寒假算法训练">
                         
-                        <span class="card-title">css前端页面布局</span>
+                        <span class="card-title">寒假算法训练</span>
                     </div>
                 </a>
                 <div class="card-content article-content">
                     <div class="summary block-with-text">
                         
-                            css前端页面布局前端三件套里面除了javascript之外，比较难学的就是css的页面布局操作，可以说css掌握好布局那么基本上就能写出一个一般通俗的静态页面了，其他都可以现学现抄
-浮动布局浮动布局指：
-
-将元素排除在普通流之外
-元素不在
+                            寒假算法练习写在前面​    作为转专业fw自认为算法功底不如土著，本人认为对于计算机专业来说蓝桥杯的重要性大于美赛（事实上是因为美赛只剩下20天了参加也是白给，还不如参加两个月后的蓝桥杯，总之并不希望白给两场比赛），再加上刚学完数据结构，
                         
                     </div>
                     <div class="publish-info">
-                            <span class="publish-date">
-                                <i class="far fa-clock fa-fw icon-date"></i>2021-01-02
-                            </span>
+                        <span class="publish-date">
+                            <i class="far fa-clock fa-fw icon-date"></i>2021-01-14
+                        </span>
                         <span class="publish-author">
                             
                             <i class="fas fa-bookmark fa-fw icon-category"></i>
                             
-                            <a href="/categories/web/" class="post-category">
-                                    web
-                                </a>
-                            
-                            <a href="/categories/web/%E5%89%8D%E7%AB%AF/" class="post-category">
-                                    前端
+                            <a href="/categories/%E7%AE%97%E6%B3%95/" class="post-category">
+                                    算法
                                 </a>
                             
                             
                         </span>
                     </div>
                 </div>
-
                 
                 <div class="card-action article-tags">
                     
-                    <a href="/tags/%E5%89%8D%E7%AB%AF/">
-                        <span class="chip bg-color">前端</span>
+                    <a href="/tags/%E7%AE%97%E6%B3%95/">
+                        <span class="chip bg-color">算法</span>
                     </a>
                     
-                    <a href="/tags/css/">
-                        <span class="chip bg-color">css</span>
-                    </a>
-                    
-                    <a href="/tags/html/">
-                        <span class="chip bg-color">html</span>
+                    <a href="/tags/c/">
+                        <span class="chip bg-color">c++</span>
                     </a>
                     
                 </div>
