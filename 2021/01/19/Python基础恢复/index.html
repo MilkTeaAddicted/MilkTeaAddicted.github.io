@@ -484,7 +484,7 @@
                 
                 <div class="post-date info-break-policy">
                     <i class="far fa-calendar-check fa-fw"></i>更新日期:&nbsp;&nbsp;
-                    2021-01-23
+                    2021-02-09
                 </div>
                 
 
@@ -822,7 +822,55 @@ print(&quot;b的值是：&quot;,b)
 # b的值是： tf.Tensor(10.234021, shape=(), dtype=float32)</code></pre>
 <p>可见结果同上一题，说明这是最小二乘法变式</p>
 <p>注意tf.size()无法获取张量元素数（准确说的返回值不是数字），这里用len 来表示</p>
+<h2 id="练习10："><a href="#练习10：" class="headerlink" title="练习10："></a>练习10：</h2><p>下载lena.tiff图像（见7.2小节课件），将R、G、B三通道分离，采用灰度图表示颜色的亮度，并分别对各个通道按要求进行处理，结果显示在如图1所示的画布中。</p>
+<p><img src="https://edu-image.nosdn.127.net/14BD7293AF3873250E1366CFC141517E.png?imageView&thumbnail=890x0&quality=100"></p>
+<p>要求：</p>
+<p>(1)将R通道的图像缩小为50×50，显示在子图1中，子标题为:“R-缩放”，字体大小为14；</p>
+<p>(2)将G通道的图像先水平镜像，再顺时针旋转90度，显示在子图2中，子标题为:“G-镜像+旋转”，字体大小为14，并显示坐标轴；</p>
+<p>(3)对B通道的图像进行裁剪，裁剪位置：左上角(0, 0) 右下角(150, 150)，显示在子图3中，子标题为:“B-裁剪”，字体大小为14；</p>
+<p>(4)将原始的R、G、B通道的图像合并，显示在子图4中，子标题显示图像的色彩模式，字体大小为14；</p>
+<p>(5)将要求(4)的处理结果保存为PNG格式的图片，路径为当前工作目录，文件名为“test.png”，如图2所示；</p>
+<p>(6)将以上生成的4幅图像显示在2×2的画布中，全局标题为“图像基本操作”，标题字体大小为20，颜色为蓝色。</p>
+<p>代码如下：</p>
+<pre><code class="python">from PIL import Image
+import matplotlib.pyplot as plt
+lenna=Image.open(&quot;Lenna.jpg&quot;)
+lenna_r,lenna_g,lenna_b=lenna.split()
+plt.rcParams[&#39;font.sans-serif&#39;]=[&#39;SimHei&#39;]
+plt.rcParams[&#39;axes.unicode_minus&#39;]=False
+plt.figure(figsize=(10,10))
 
+plt.subplot(221)
+plt.axis(&quot;off&quot;)
+r_resize=lenna_r.resize((50,50))
+plt.imshow(r_resize,cmap=&quot;gray&quot;)
+plt.title(&quot;R-缩放&quot;,fontsize=14)
+
+plt.subplot(222)
+g_trans=lenna_g.transpose(Image.FLIP_LEFT_RIGHT).transpose(Image.ROTATE_270)
+plt.imshow(g_trans,cmap=&quot;gray&quot;)
+plt.title(&quot;G-镜像+旋转&quot;,fontsize=14)
+
+plt.subplot(223)
+plt.axis(&quot;off&quot;)
+b_sub=lenna_b.crop((0,0,150,150))
+plt.imshow(b_sub,cmap=&quot;gray&quot;)
+plt.title(&quot;B-剪切&quot;,fontsize=14)
+
+plt.subplot(224)
+plt.axis(&quot;off&quot;)
+merge=Image.merge(&quot;RGB&quot;,[lenna_r,lenna_g,lenna_b])
+plt.imshow(merge)
+plt.title(&quot;RGB&quot;,fontsize=14)
+
+plt.tight_layout()
+plt.suptitle(&quot;图像基本操作 &quot;,x=0.5,y=1.02, fontsize=20,color=&quot;blue&quot;)
+plt.show()
+plt.savefig(&quot;test.png&quot;)</code></pre>
+<p>展示图片如下：</p>
+<p><img src="http://pan-yz.chaoxing.com/preview/showpreview_565779590795227136.html?v=1612821971000" alt="lenna图"></p>
+<p>这里用的图是网上下载的，所以出来的结果和展示不一样（尺寸问题）</p>
+<h2 id="练习11："><a href="#练习11：" class="headerlink" title="练习11："></a>练习11：</h2>
             </div>
             <hr/>
 
