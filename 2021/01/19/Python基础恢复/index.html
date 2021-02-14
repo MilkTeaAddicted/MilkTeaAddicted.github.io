@@ -4,7 +4,7 @@
 
 <head>
     <meta charset="utf-8">
-    <meta name="keywords" content="神经网络与深度学习作业, MilkTeaAddicted">
+    <meta name="keywords" content="神经网络与深度学习练习, MilkTeaAddicted">
     <meta name="description" content="生活就是奶茶">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
@@ -16,7 +16,7 @@
     <!-- Global site tag (gtag.js) - Google Analytics -->
 
 
-    <title>神经网络与深度学习作业 | MilkTeaAddicted</title>
+    <title>神经网络与深度学习练习 | MilkTeaAddicted</title>
     <link rel="icon" type="image/png" href="/favicon.png">
 
     <link rel="stylesheet" type="text/css" href="/libs/awesome/css/all.css">
@@ -330,12 +330,12 @@
 
 
 
-<div class="bg-cover pd-header post-cover" style="background-image: url('/medias/featureimages/23.jpg')">
+<div class="bg-cover pd-header post-cover" style="background-image: url('/medias/featureimages/6.jpg')">
     <div class="container" style="right: 0px;left: 0px;">
         <div class="row">
             <div class="col s12 m12 l12">
                 <div class="brand">
-                    <h1 class="description center-align post-title">神经网络与深度学习作业</h1>
+                    <h1 class="description center-align post-title">神经网络与深度学习练习</h1>
                 </div>
             </div>
         </div>
@@ -484,7 +484,7 @@
                 
                 <div class="post-date info-break-policy">
                     <i class="far fa-calendar-check fa-fw"></i>更新日期:&nbsp;&nbsp;
-                    2021-02-09
+                    2021-02-15
                 </div>
                 
 
@@ -506,6 +506,7 @@
                 <h1 id="神经网络与深度学习作业"><a href="#神经网络与深度学习作业" class="headerlink" title="神经网络与深度学习作业"></a>神经网络与深度学习作业</h1><p>大垃圾一年没写python辣（其实去年也学的稀烂），今年要机器学习不得不捡起py开始学</p>
 <p>为了逐步把自己的算法水平移植到py上，于是决定开始Py恢复训练(<strong>其实就是重新学</strong>)</p>
 <p>然后这个笔记主要是存放西安科技大学的神经网络与深度学习的作业代码</p>
+<p>然后也会放一些自己在kaggle或者其他网站数据分析的练习</p>
 <h2 id="练习1："><a href="#练习1：" class="headerlink" title="练习1："></a>练习1：</h2><blockquote>
 <p>( 20分 )</p>
 <p>作业题1</p>
@@ -720,8 +721,7 @@ import numpy as np
 
 
 iris=load_iris()
-x_train,x_test,y_train,y_test=train_test_split(test_size=0)
-
+x_train,x_test,y_train,y_test=train_test_split(iris.data,iris.target,test_size=0)
 
 plt.rcParams[&#39;font.sans-serif&#39;] = [&#39;SimHei&#39;]
 plt.rcParams[&#39;axes.unicode_minus&#39;] = False
@@ -822,7 +822,8 @@ print(&quot;b的值是：&quot;,b)
 # b的值是： tf.Tensor(10.234021, shape=(), dtype=float32)</code></pre>
 <p>可见结果同上一题，说明这是最小二乘法变式</p>
 <p>注意tf.size()无法获取张量元素数（准确说的返回值不是数字），这里用len 来表示</p>
-<h2 id="练习10："><a href="#练习10：" class="headerlink" title="练习10："></a>练习10：</h2><p>下载lena.tiff图像（见7.2小节课件），将R、G、B三通道分离，采用灰度图表示颜色的亮度，并分别对各个通道按要求进行处理，结果显示在如图1所示的画布中。</p>
+<h2 id="练习10："><a href="#练习10：" class="headerlink" title="练习10："></a>练习10：</h2><blockquote>
+<p>下载lena.tiff图像（见7.2小节课件），将R、G、B三通道分离，采用灰度图表示颜色的亮度，并分别对各个通道按要求进行处理，结果显示在如图1所示的画布中。</p>
 <p><img src="https://edu-image.nosdn.127.net/14BD7293AF3873250E1366CFC141517E.png?imageView&thumbnail=890x0&quality=100"></p>
 <p>要求：</p>
 <p>(1)将R通道的图像缩小为50×50，显示在子图1中，子标题为:“R-缩放”，字体大小为14；</p>
@@ -832,6 +833,7 @@ print(&quot;b的值是：&quot;,b)
 <p>(5)将要求(4)的处理结果保存为PNG格式的图片，路径为当前工作目录，文件名为“test.png”，如图2所示；</p>
 <p>(6)将以上生成的4幅图像显示在2×2的画布中，全局标题为“图像基本操作”，标题字体大小为20，颜色为蓝色。</p>
 <p>代码如下：</p>
+</blockquote>
 <pre><code class="python">from PIL import Image
 import matplotlib.pyplot as plt
 lenna=Image.open(&quot;Lenna.jpg&quot;)
@@ -870,7 +872,387 @@ plt.savefig(&quot;test.png&quot;)</code></pre>
 <p>展示图片如下：</p>
 <p><img src="http://pan-yz.chaoxing.com/preview/showpreview_565779590795227136.html?v=1612821971000" alt="lenna图"></p>
 <p>这里用的图是网上下载的，所以出来的结果和展示不一样（尺寸问题）</p>
-<h2 id="练习11："><a href="#练习11：" class="headerlink" title="练习11："></a>练习11：</h2>
+<h2 id="练习11："><a href="#练习11：" class="headerlink" title="练习11："></a>练习11：</h2><blockquote>
+<p>使用9.5小节中的“商品房销售记录表”作为样本数据，编程实现一个房价预测系统。</p>
+<p>要求：</p>
+<p>\1. 矩阵运算部分采用TensorFlow实现，数据加载、输入、输出等可以根据需要采用Python/NumPy来实现。</p>
+<p>\2. 提示用户输入商品房面积和房间数，并进行输入校验。合理的输入如下：</p>
+<p>面积：20-500之间的实数</p>
+<p>房间数：1-10之间的整数</p>
+<p>如果输入正确，根据模型估计房价，并显示。</p>
+<p>如果输入数据类型错误，或者输入数据范围不合理，根据错误类型提示，并等待用户重新输入。</p>
+<p>\3. 可视化数据以及预测超平面</p>
+<p>提示：TensorFlow中矩阵求逆函数tf.linalg.inv(）</p>
+<p>数据（符合对应关系）：</p>
+<p>面积：[137.97,104.50,100.00,124.32,79.20,99.00,124.00,114.00,106.69,138.05,53.75,46.91,68.00,63.02,81.26,86.21]</p>
+<p>房间数：</p>
+<p>[3,2,2,3,1,2,3,2,2,3,1,1,1,1,2,2]</p>
+<p>销售价格：</p>
+<p>[145.00,110.00,93.00,116.00,65.32,104.00,118.00,91.00,62.00,133.00,51.00,45.00,78.50,69.65,75.69,95.30]</p>
+</blockquote>
+<p>代码如下：</p>
+<p>解析法：</p>
+<pre><code class="python">import numpy as  np
+import tensorflow as tf
+import matplotlib.pyplot as plt
+from mpl_toolkits.mplot3d import Axes3D
+plt.rcParams[&#39;font.sans-serif&#39;]=[&#39;SimHei&#39;]
+x1=np.array([137.97,104.50,100.00,124.32,79.20,99.00,124.00,114.00,106.69,138.05,53.75,46.91,68.00,63.02,81.26,86.21])
+x2=np.array([3,2,2,3,1,2,3,2,2,3,1,1,1,1,2,2])
+y=np.array([145.00,110.00,93.00,116.00,65.32,104.00,118.00,91.00,62.00,133.00,51.00,45.00,78.50,69.65,75.69,95.30])
+x0=np.ones(len(x1))
+X=np.stack((x0,x1,x2),axis=1)
+Y=np.array(y).reshape(-1,1)
+Xt=np.transpose(X)
+XtX_1=np.linalg.inv(np.matmul(Xt,X))
+XtX_1Xt=np.matmul(XtX_1,Xt)
+W=np.matmul(XtX_1Xt,Y)
+W=W.reshape(-1)
+Y_pre=W[1]*x1+W[2]*x2+W[0]
+X=np.arange(20,150.1)
+Y=np.arange(1,10,0.1)
+X,Y=np.meshgrid(X,Y)
+Z=W[1]*X+W[2]*Y+W[0]
+fig=plt.figure()
+ax3d=Axes3D(fig)
+surf=ax3d.plot_surface(X,Y,Z,cmap=&quot;rainbow&quot;)
+ax3d.set_xlabel(&quot;X&quot;,color=&quot;r&quot;,fontsize=14)
+ax3d.set_ylabel(&quot;Y&quot;,color=&quot;r&quot;,fontsize=14)
+ax3d.set_zlabel(&quot;price&quot;,color=&quot;r&quot;,fontsize=14)
+ax3d.scatter(x1,x2,y,color=&quot;b&quot;,marker=&quot;*&quot;,label=&quot;label&quot;)
+ax3d.scatter(x1,x2,Y_pre,color=&quot;r&quot;,marker=&quot;+&quot;,label=&quot;pred&quot;)
+plt.suptitle(&quot;回归图&quot;,fontsize=20)
+print(&quot;请输入商品房面积和房间数,要求符合：\n面积：20-150之间的实数\n房间数：1-10之间的整数&quot;)
+a=float(input(&quot;请输入面积：&quot;))
+b=int(input(&quot;请输入房间数：&quot;))
+# 懒得做输入校验了
+pred=W[1]*a+W[2]*b+W[0]
+print(&quot;预测的价格是：%.3f&quot;%pred)
+ax3d.scatter(a,b,pred,color=&quot;g&quot;,label=&quot;U_pred&quot;)
+plt.legend()
+plt.show()</code></pre>
+<p>结果如下：</p>
+<blockquote>
+<p>请输入商品房面积和房间数,要求符合：<br>面积：20-150之间的实数<br>房间数：1-10之间的整数<br>请输入面积：&gt;? 120<br>请输入房间数：&gt;? 4<br>预测的价格是：133.480</p>
+<p><img src="http://pan-yz.chaoxing.com/preview/showpreview_565801624826130432.html?v=1612827291000" alt="图片1"></p>
+<p><img src="http://pan-yz.chaoxing.com/preview/showpreview_565801623249072128.html?v=1612827322000" alt="图片1"></p>
+</blockquote>
+<p>梯度下降法：</p>
+<pre><code class="python">import numpy as  np
+import tensorflow as tf
+import matplotlib.pyplot as plt
+from mpl_toolkits.mplot3d import Axes3D
+plt.rcParams[&#39;font.sans-serif&#39;]=[&#39;SimHei&#39;]
+area=np.array([137.97,104.50,100.00,124.32,79.20,99.00,124.00,114.00,106.69,138.05,53.75,46.91,68.00,63.02,81.26,86.21])
+room=np.array([3,2,2,3,1,2,3,2,2,3,1,1,1,1,2,2])
+price=np.array([145.00,110.00,93.00,116.00,65.32,104.00,118.00,91.00,62.00,133.00,51.00,45.00,78.50,69.65,75.69,95.30])
+
+num=len(area)
+x0=np.ones(num)
+#归一化处理
+x1=(area-area.min())/(area.max()-area.min())
+x2=(room-room.min())/(room.max()-room.min())
+X=np.stack((x0,x1,x2),axis=1)
+Y=price.reshape(-1,1)
+
+learn_rate=0.2
+epoch=50
+
+display_step=5
+np.random.seed(612)
+W=tf.Variable(np.random.randn(3,1))
+
+mse=[]
+for i in range(0,epoch+1):
+    with tf.GradientTape() as tape:
+        Pred=tf.matmul(X,W)
+        Loss=0.5*tf.reduce_mean(tf.square(Y-Pred))
+    mse.append(Loss)
+
+    dL_dw=tape.gradient(Loss,W)
+    W.assign_sub(learn_rate*dL_dw)
+
+    if i % display_step==0:
+        print(&quot;第%d轮的损失为：%f&quot;%(i,Loss))
+plt.figure(figsize=(20,8),dpi=120)
+n=range(0,epoch+1)
+plt.plot(n,mse,label=&quot;损失函数&quot;)
+plt.legend(loc=&quot;best&quot;)
+plt.suptitle(&quot;损失曲线&quot;)
+plt.show()</code></pre>
+<p><img src="http://pan-yz.chaoxing.com/preview/showpreview_567790281488953344.html?v=1613301355000" alt="损失可视化"></p>
+<h2 id="练习11：-1"><a href="#练习11：-1" class="headerlink" title="练习11："></a>练习11：</h2><blockquote>
+<p>( 20分 )</p>
+<p>使用波士顿房价数据集中的“低收入人口比例”属性，来训练和测试一元线性回归模型，并对模型进行可视化。</p>
+<p>要求：程序+文本（记录下超参数的调试过程，并简要总结。）</p>
+</blockquote>
+<p>结论就是线性回归train不起来</p>
+<p>首先，这个数据长这个样子：</p>
+<p><img src="http://pan-yz.chaoxing.com/preview/showpreview_567849056738590720.html?v=1613315371000"></p>
+<p>我用线性回归硬train了一发，然后显示预测数据nan（无穷大），然后查看损失，损失可视化显示训练到某一轮的时候突然增大，大概是梯度下降的时候出现问题了</p>
+<p>怀疑是数据的问题，然后我就改了下，选择的数据改成了房间数（就改了数据集切片其他一点也没动）</p>
+<p>然后成功了</p>
+<pre><code class="python">import numpy as  np
+import tensorflow as tf
+import matplotlib.pyplot as plt
+boston_housing=tf.keras.datasets.boston_housing
+(train_x,train_y),(test_x,test_y)=boston_housing.load_data()
+x_train=train_x[:,5]
+y_train=train_y
+x_test=test_x[:,5]
+y_test=test_y
+
+learn_rate=0.04
+epoch=2000
+display_step=200
+np.random.seed(612)
+w=tf.Variable(np.random.randn(),dtype=tf.float32)
+b=tf.Variable(np.random.randn(),dtype=tf.float32)
+
+mse_train=[]
+mse_test=[]
+
+for i in range(0,epoch+1):
+    with tf.GradientTape() as tape:
+        pred_train=w*x_train+b
+        loss=0.5*tf.reduce_mean(tf.square(y_train-pred_train))
+        pred_test=w*x_test+b
+        loss_=0.5*tf.reduce_mean(tf.square(y_test-pred_test))
+    mse_train.append(loss)
+    mse_test.append(loss_)
+    dl_dw,dl_db=tape.gradient(loss,[w,b])
+    w.assign_sub(learn_rate*dl_dw)
+    b.assign_sub(learn_rate*dl_db)
+
+plt.figure(figsize=(15,10),dpi=150)
+plt.rcParams[&#39;font.sans-serif&#39;] = [&#39;SimHei&#39;]
+plt.subplot(221)
+plt.scatter(x_train,y_train,color=&quot;blue&quot;,label=&quot;data&quot;)
+plt.plot(x_train,pred_train,color=&quot;red&quot;,label=&quot;predict&quot;)
+plt.legend(loc=&quot;upper right&quot;)
+plt.title(&quot;数据与预测曲线&quot;)
+
+plt.subplot(222)
+plt.plot(mse_train,color=&quot;blue&quot;,linewidth=3,label=&quot;train loss&quot;)
+plt.plot(mse_test,color=&quot;red&quot;,linewidth=1.5,label=&quot;test loss&quot;)
+plt.legend(loc=&quot;upper right&quot;)
+plt.title(&quot;损失可视化&quot;)
+
+plt.subplot(223)
+plt.plot(y_train,color=&quot;blue&quot;,marker=&quot;*&quot;,label=&quot;true_price&quot;)
+plt.plot(pred_train,color=&quot;red&quot;,marker=&quot;.&quot;,label=&quot;predict&quot;)
+plt.legend()
+plt.title(&quot;训练集对照&quot;)
+
+plt.subplot(224)
+plt.plot(y_test,color=&quot;blue&quot;,marker=&quot;*&quot;,label=&quot;true_price&quot;)
+plt.plot(pred_test,color=&quot;red&quot;,marker=&quot;.&quot;,label=&quot;predict&quot;)
+plt.legend()
+plt.title(&quot;测试集对照&quot;)
+
+plt.tight_layout()
+plt.show()
+</code></pre>
+<p><img src="http://pan-yz.chaoxing.com/preview/showpreview_567850538144219136.html?v=1613315720000"></p>
+<h2 id="练习12："><a href="#练习12：" class="headerlink" title="练习12："></a>练习12：</h2><blockquote>
+<p>使用波士顿房价数据集中的所有属性，训练和测试多元线性回归模型，并可视化模型。</p>
+<p>要求：程序+文本（记录下超参数的调试过程，并简要总结）</p>
+</blockquote>
+<pre><code class="python">import numpy as  np
+import tensorflow as tf
+import matplotlib.pyplot as plt
+boston_housing=tf.keras.datasets.boston_housing
+(train_x,train_y),(test_x,test_y)=boston_housing.load_data()
+x_train=(train_x-train_x.min(axis=0))/(train_x.max(axis=0)-train_x.min(axis=0))
+y_train=train_y
+x_test=(test_x-test_x.min(axis=0))/(test_x.max(axis=0)-test_x.min(axis=0))
+y_test=test_y
+
+x0_train=np.ones(len(train_x)).reshape(-1,1)
+x0_test=np.ones(len(test_x)).reshape(-1,1)
+
+X_train=tf.cast(tf.concat([x0_train,x_train],axis=1),tf.float32)
+X_test=tf.cast(tf.concat([x0_test,x_test],axis=1),tf.float32)
+
+Y_train=tf.constant(y_train.reshape(-1,1),tf.float32)
+Y_test=tf.constant(y_test.reshape(-1,1),tf.float32)
+
+learn_rate=0.01
+epoch=2000
+np.random.seed(612)
+w=tf.Variable(np.random.randn(14,1),dtype=tf.float32)
+b=tf.Variable(np.random.randn(14,1),dtype=tf.float32)
+
+mse_train=[]
+mse_test=[]
+
+for i in range(0,epoch+1):
+    with tf.GradientTape() as tape:
+        pred_train=tf.matmul(X_train,w)
+        loss=0.5*tf.reduce_mean(tf.square(Y_train-pred_train))
+        pred_test=tf.matmul(X_test,w)
+        loss_=0.5*tf.reduce_mean(tf.square(Y_test-pred_test))
+    mse_train.append(loss)
+    mse_test.append(loss_)
+    dl_dw=tape.gradient(loss,w)
+    w.assign_sub(learn_rate*dl_dw)
+
+plt.figure(figsize=(15,4),dpi=150)
+plt.rcParams[&#39;font.sans-serif&#39;] = [&#39;SimHei&#39;]
+
+plt.subplot(131)
+plt.plot(mse_train,color=&quot;blue&quot;,linewidth=3,label=&quot;train loss&quot;)
+plt.plot(mse_test,color=&quot;red&quot;,linewidth=1.5,label=&quot;test loss&quot;)
+plt.legend(loc=&quot;upper right&quot;)
+plt.title(&quot;损失可视化&quot;)
+
+plt.subplot(132)
+plt.plot(y_train,color=&quot;blue&quot;,marker=&quot;*&quot;,label=&quot;true_price&quot;)
+plt.plot(pred_train,color=&quot;red&quot;,marker=&quot;.&quot;,label=&quot;predict&quot;)
+plt.legend()
+plt.title(&quot;训练集对照&quot;)
+
+plt.subplot(133)
+plt.plot(y_test,color=&quot;blue&quot;,marker=&quot;*&quot;,label=&quot;true_price&quot;)
+plt.plot(pred_test,color=&quot;red&quot;,marker=&quot;.&quot;,label=&quot;predict&quot;)
+plt.legend()
+plt.title(&quot;测试集对照&quot;)
+
+plt.tight_layout()
+plt.show()
+</code></pre>
+<p><img src="http://pan-yz.chaoxing.com/preview/showpreview_567855084990627840.html?v=1613316805000"></p>
+<p>可见预测比单一数据要好</p>
+<h2 id="练习14："><a href="#练习14：" class="headerlink" title="练习14："></a>练习14：</h2><blockquote>
+<p>( 15分 )</p>
+<p>选择不同的2种属性组合，区分山鸢尾和维吉尼亚鸢尾，编写程序，记录并分析结果，给出总结。</p>
+<p>(1) 编写代码 (8分)</p>
+<p>(2) 记录结果 (5分)</p>
+<p>  比较选择不同属性组合时的学习率、迭代次数、以及在训练集和测试集上的交叉熵损失和准确率，以表格或合适的图表形式展示。</p>
+<p>(3) 总结 (2分)</p>
+<p>  采用不同的属性组合效果是否相同，如果相同或者不同，对你有什么启发。</p>
+</blockquote>
+<p><img src="https://edu-image.nosdn.127.net/AE671975EBF9545FCA03C9576D3FFA7A.png?imageView&thumbnail=890x0&quality=100" alt="示例"></p>
+<p>由这张之前的图（蓝色和绿色是我们想区分的，可见还是很容易的）</p>
+<p>于是我们选取花瓣长与花瓣宽开始训练</p>
+<p>代码如下：</p>
+<pre><code class="python">import numpy as  np
+import tensorflow as tf
+import matplotlib.pyplot as plt
+import matplotlib as mpl
+from sklearn.datasets import load_iris
+from sklearn.model_selection import train_test_split
+
+plt.rcParams[&#39;font.sans-serif&#39;] = [&#39;SimHei&#39;]
+plt.rcParams[&#39;axes.unicode_minus&#39;] = False
+iris=load_iris()
+x_train,x_test,y_train,y_test=train_test_split(iris.data,iris.target,test_size=0.2,random_state=22)
+
+x_train=x_train[y_train!=1][:,2:4]
+y_train=y_train[y_train!=1]
+for i in range(len(y_train)):
+    if y_train[i]==2:
+        y_train[i]=1
+x_test=x_test[y_test!=1][:,2:4]
+y_test=y_test[y_test!=1]
+for i in range(len(y_test)):
+    if y_test[i]==2:
+        y_test[i]=1
+#数据处理区分
+
+x_train=x_train-np.mean(x_train,axis=0)
+#中心化数据
+
+x0_train=np.ones(len(x_train)).reshape(-1,1)
+
+X=tf.cast(tf.concat((x0_train,x_train),axis=1),tf.float32)
+Y=tf.cast(y_train.reshape(-1,1),tf.float32)
+
+learn_rate=0.2
+epoch=100
+display_step=30
+np.random.seed(612)
+W=tf.Variable(np.random.randn(3,1),dtype=tf.float32)
+ce =[]
+acc=[]
+for i in range(0,epoch):
+    with tf.GradientTape() as tap:
+        Pred=1/(1+tf.exp(-tf.matmul(X,W)))
+        Loss=-tf.reduce_mean(Y*tf.math.log(Pred)+(1-Y)*tf.math.log(1-Pred))
+    accuracy=tf.reduce_mean(tf.cast(tf.equal(tf.where(Pred.numpy()&lt;0.5,0.,1.),Y),tf.float32))
+    ce.append(Loss)
+    acc.append(accuracy)
+
+    dL_dW=tap.gradient(Loss,W)
+    W.assign_sub(learn_rate*dL_dW)
+    if i % display_step ==0:
+        print(&quot;i: %d, Acc:%f, Loss:%f&quot;%(i,accuracy,Loss))
+plt.figure(figsize=(20,8),dpi=150)
+
+plt.subplot(121)
+plt.plot(ce,color=&quot;b&quot;,label=&quot;Loss&quot;)
+plt.plot(acc,color=&quot;r&quot;,label=&quot;acc&quot;)
+plt.legend()
+plt.title(&quot;损失与准确率&quot;)
+
+plt.show()
+plt.subplot(122)
+cm_pt=mpl.colors.ListedColormap([&quot;blue&quot;,&quot;red&quot;])
+plt.scatter(x_train[:,0],x_train[:,1],c=y_train,cmap=cm_pt)
+x_=[-1.5,1.5]
+y_=-(W[1]*x_+W[0])/W[2]
+plt.plot(x_,y_,color=&#39;r&#39;)
+plt.title(&quot;数据与决策平面&quot;)
+plt.tight_layout()
+plt.show()</code></pre>
+<p><img src="http://pan-yz.chaoxing.com/preview/showpreview_567881528459591680.html?v=1613323111000" alt="数据可视化结果"></p>
+<h2 id="练习15："><a href="#练习15：" class="headerlink" title="练习15："></a>练习15：</h2><blockquote>
+<p>( 20分 )</p>
+<p>分别选择2种、3种和4种属性，编写程序，区分变色鸢尾和维吉尼亚鸢尾。记录和分析实验结果，并给出总结。</p>
+<p>(1) 编写代码 (8分)</p>
+<p>(2) 记录结果 (8分)</p>
+<p>  比较选择不同属性组合时的学习率、迭代次数、以及在训练集和测试集上的交叉熵损失和准确率，以表格或合适的图表形式展示。</p>
+<p>(3) 总结 (4分)</p>
+<p>  采用不同的属性组合效果是否相同，如果相同或者不同，对你有什么启发。</p>
+</blockquote>
+<h2 id="练习16："><a href="#练习16：" class="headerlink" title="练习16："></a>练习16：</h2><blockquote>
+<p>使用单层神经网络实现鸢尾花分类，编写程序，尝试改变训练轮数、调整学习率等超参数，记录并分析实验结果，给出总结。</p>
+<p>要求：</p>
+<p>（1）编写程序（7分）</p>
+<p>（2）记录超参数的调整过程和结果（3分）</p>
+<p>（3）总结（5分）</p>
+<p>比较时间代价、分析不同超参数对结果准确性的影响</p>
+</blockquote>
+<h2 id="练习17："><a href="#练习17：" class="headerlink" title="练习17："></a>练习17：</h2><blockquote>
+<p>使用多层神经网络实现鸢尾花分类，编写程序，尝试改变隐含层层数、隐含层中节点数以及其他超参数，记录并分析实验结果，给出总结。</p>
+<p>要求：</p>
+<p>（1）编写程序（7分）</p>
+<p>（2）记录超参数的调整过程和结果（3分）</p>
+<p>（3）总结（5分）</p>
+<p>比较时间代价、分析不同超参数对结果准确性的影响</p>
+</blockquote>
+<h2 id="练习18："><a href="#练习18：" class="headerlink" title="练习18："></a>练习18：</h2><blockquote>
+<p>使用TensorFlow中的keras库，实现Minist手写数字识别。编写程序，尝试调整神经网络的层数、节点个数以及优化器等参数，记录并分析实验结果，保存最佳训练模型，给出总结。</p>
+<p>要求：</p>
+<p>(1)编写程序（7分）</p>
+<p>(2)记录参数的调整过程和结果（3分）</p>
+<p>(3)总结。（5分）</p>
+<p>从准确率、时间效率等方面对实验结果进行分析</p>
+</blockquote>
+<h2 id="练习19："><a href="#练习19：" class="headerlink" title="练习19："></a>练习19：</h2><blockquote>
+<p>( 10分 )</p>
+<p>编写程序，使用作业1中训练好的模型，实现对自制手写数字数据集的识别。</p>
+<p>要求：</p>
+<p>(1) 将下面名为<strong>“自制手写数字.zip”</strong>压缩包中自制的手写数字转换为28*28的数组形式，并将数字放在图片中心。（5分）</p>
+<p>(2) 加载作业1中训练好的模型，使用该模型对要求(1)中的手写数字进行识别。（5分）</p>
+<p><strong>提示：</strong></p>
+<p>图像操作部分可参考第7讲“数字图像基础”</p>
+<p>可能用到的函数：</p>
+<p>裁剪图像：crop() </p>
+<p>转换成二值图像 ：convert()</p>
+<p>改变大小：resize()</p>
+</blockquote>
+
             </div>
             <hr/>
 
