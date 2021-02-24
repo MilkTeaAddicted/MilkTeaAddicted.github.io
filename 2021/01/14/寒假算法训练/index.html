@@ -488,7 +488,7 @@
                 
                 <div class="post-date info-break-policy">
                     <i class="far fa-calendar-check fa-fw"></i>更新日期:&nbsp;&nbsp;
-                    2021-01-15
+                    2021-02-18
                 </div>
                 
 
@@ -509,7 +509,175 @@
             <div id="articleContent">
                 <h1 id="寒假算法练习"><a href="#寒假算法练习" class="headerlink" title="寒假算法练习"></a>寒假算法练习</h1><h2 id="写在前面"><a href="#写在前面" class="headerlink" title="写在前面"></a>写在前面</h2><p>​    作为转专业fw自认为算法功底不如土著，本人认为对于计算机专业来说蓝桥杯的重要性大于美赛（事实上是因为美赛只剩下20天了参加也是白给，还不如参加两个月后的蓝桥杯，总之并不希望白给两场比赛），再加上刚学完数据结构，要是不好好进阶恐怕会忘干净，于是这个寒假决定好好训练下自己的算法功底，总之希望能以一天五道题的练习量坚持下去，望各位监督辽~（虽然并不会有人看）</p>
 <p>习题来源：牛客网</p>
-<h2 id="day-1"><a href="#day-1" class="headerlink" title="day 1"></a>day 1</h2><p>今天是<strong>2021/1/15</strong></p>
+<h2 id="week-1"><a href="#week-1" class="headerlink" title="week 1"></a>week 1</h2><p>今天是<strong>2021/1/15</strong></p>
+<p>然而写下这个的时候是2021/2/18</p>
+<p>。。。。。懒人本懒了</p>
+<h3 id="递归实现指数型枚举"><a href="#递归实现指数型枚举" class="headerlink" title="递归实现指数型枚举"></a>递归实现指数型枚举</h3><blockquote>
+<p>链接：<a target="_blank" rel="noopener" href="https://ac.nowcoder.com/acm/problem/50911">https://ac.nowcoder.com/acm/problem/50911</a><br>来源：牛客网</p>
+<h2 id="题目描述"><a href="#题目描述" class="headerlink" title="题目描述"></a>题目描述</h2><p>从 1∼n1\sim n1∼n这 n (n≤16)(n \leq 16)(n≤16) 个整数中随机选取任意多个，输出所有可能的选择方案。</p>
+<h2 id="输入描述"><a href="#输入描述" class="headerlink" title="输入描述:"></a>输入描述:</h2><pre><code>一个整数n。</code></pre>
+<h2 id="输出描述"><a href="#输出描述" class="headerlink" title="输出描述:"></a>输出描述:</h2><pre><code>每行一种方案。同一行内的数必须升序排列，相邻两个数用恰好1个空格隔开。对于没有选任何数的方案，输出空行。本题有自定义校验器（SPJ），各行（不同方案）之间的顺序任意。</code></pre>
+<p>示例1</p>
+<h2 id="输入"><a href="#输入" class="headerlink" title="输入"></a>输入</h2><pre><code>3</code></pre>
+<h2 id="输出"><a href="#输出" class="headerlink" title="输出"></a>输出</h2><pre><code>3
+
+2
+2 3
+1
+1 3
+1 2
+1 2 3</code></pre>
+</blockquote>
+<pre><code class="c++">/*
+                   _ooOoo_
+                  o8888888o
+                  88&quot; . &quot;88
+                  (| -_- |)
+                  O\  =  /O
+               ____/`---&#39;\____
+             .&#39;  \\|     |//  `.
+            /  \\|||  :  |||//  \
+           /  _||||| -:- |||||-  \
+           |   | \\\  -  /// |   |
+           | \_|  &#39;&#39;\---/&#39;&#39;  |   |
+           \  .-\__  `-`  ___/-. /
+         ___`. .&#39;  /--.--\  `. . __
+      .&quot;&quot; &#39;&lt;  `.___\_&lt;|&gt;_/___.&#39;  &gt;&#39;&quot;&quot;.
+     | | :  `- \`.;`\ _ /`;.`/ - ` : | |
+     \  \ `-.   \_ __\ /__ _/   .-` /  /
+======`-.____`-.___\_____/___.-`____.-&#39;======
+                   `=---=&#39;
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+            佛祖保佑       永无BUG
+
+            @Author: xiaomu
+            @Time: 2021/2/18 8:13
+            @Project_NAME：_Algorithm_training
+            @FileName: NC50911.cpp
+            @IDE: CLion
+*/
+#include &lt;cstdio&gt;
+#include &lt;iostream&gt;
+using namespace std;
+int pre[20];
+int n;
+void print(int len)
+&amp;#123;
+    for(int i=0;i&lt;len;i++)
+    &amp;#123;
+        printf(&quot;%d%c&quot;,pre[i],i==len-1?&#39;\n&#39;:&#39; &#39;);
+    &amp;#125;
+    if(len==0)
+        puts(&quot; &quot;);
+&amp;#125;//升序输出
+void dfs(int pr,int dep)
+&amp;#123;
+    for(int i =pr+1;i&lt;=n;i++)
+    &amp;#123;
+        pre[dep]=i;
+        dfs(i,dep+1);
+    &amp;#125;
+    print(dep);
+&amp;#125;
+int main()
+&amp;#123;
+    cin&gt;&gt;n;
+    dfs(0,0);
+    return 0;
+&amp;#125;</code></pre>
+<p>这道题目主要是为了考察了深度遍历树的建立</p>
+<h3 id="递归实现组合型枚举-·"><a href="#递归实现组合型枚举-·" class="headerlink" title="递归实现组合型枚举    ·"></a>递归实现组合型枚举    ·</h3><blockquote>
+<p>链接：<a target="_blank" rel="noopener" href="https://ac.nowcoder.com/acm/problem/50918">https://ac.nowcoder.com/acm/problem/50918</a><br>来源：牛客网</p>
+<h2 id="输入描述-1"><a href="#输入描述-1" class="headerlink" title="输入描述:"></a>输入描述:</h2><pre><code>两个整数n，m。</code></pre>
+<h2 id="输出描述-1"><a href="#输出描述-1" class="headerlink" title="输出描述:"></a>输出描述:</h2><pre><code>按照从小到大的顺序输出所有方案，每行1个。首先，同一行内的数升序排列，相邻两个数用一个空格隔开。其次，对于两个不同的行，对应下标的数一一比较，字典序较小的排在前面（例如1 3 9 12排在1 3 10 11前面）。</code></pre>
+<h2 id="输入-1"><a href="#输入-1" class="headerlink" title="输入"></a>输入</h2><pre><code>5 3</code></pre>
+<h2 id="输出-1"><a href="#输出-1" class="headerlink" title="输出"></a>输出</h2><pre><code>1 2 3
+1 2 4
+1 2 5
+1 3 4
+1 3 5
+1 4 5
+2 3 4
+2 3 5
+2 4 5
+3 4 5</code></pre>
+</blockquote>
+<pre><code class="c++">#include &lt;cstdio&gt;
+#include &lt;iostream&gt;
+using namespace std;
+int n,m;//n表示1-n,m表示行数；
+int pre[20];
+void print()
+&amp;#123;
+    for (int i = 1; i &lt;=m ; ++i) &amp;#123;
+        cout&lt;&lt;pre[i]&lt;&lt;&#39; &#39;;
+    &amp;#125;
+    cout&lt;&lt;&#39;\n&#39;;
+&amp;#125;
+void dfs(int node,int deep)
+&amp;#123;
+    if(deep&lt;=m&amp;&amp;node&lt;=n)
+    &amp;#123;   while(deep&lt;=m&amp;&amp;node&lt;=n)
+        &amp;#123;
+        pre[deep]=node;
+        dfs(node+1,deep+1);
+        if(deep==m) &amp;#123;
+            print();
+        &amp;#125;
+        node++;
+        &amp;#125;
+    &amp;#125;
+    else
+        return;
+&amp;#125;
+
+int main()
+&amp;#123;
+    cin&gt;&gt;n&gt;&gt;m;
+    dfs(1,1);
+
+    return 0;
+&amp;#125;</code></pre>
+<p>这里考察递归栈的使用</p>
+<p>第一个没看题解自己写出来的题目<del>~</del>开心</p>
+<h3 id="递归实现排列型枚举"><a href="#递归实现排列型枚举" class="headerlink" title="递归实现排列型枚举"></a>递归实现排列型枚举</h3><blockquote>
+<p>链接：<a target="_blank" rel="noopener" href="https://ac.nowcoder.com/acm/problem/50919">https://ac.nowcoder.com/acm/problem/50919</a><br>来源：牛客网</p>
+<h2 id="题目描述-1"><a href="#题目描述-1" class="headerlink" title="题目描述"></a>题目描述</h2><p>把 1∼n1\sim n1∼n 这 n(n&lt;10)(n \lt 10)(n&lt;10)个整数排成一行后随机打乱顺序，输出所有可能的次序。</p>
+<h2 id="输入描述-2"><a href="#输入描述-2" class="headerlink" title="输入描述:"></a>输入描述:</h2><pre><code>一个整数n。</code></pre>
+<h2 id="输出描述-2"><a href="#输出描述-2" class="headerlink" title="输出描述:"></a>输出描述:</h2><pre><code>按照从小到大的顺序输出所有方案，每行1个。 首先，同一行相邻两个数用一个空格隔开。其次，对于两个不同的行，对应下标的数一一比较，字典序较小的排在前面。</code></pre>
+<p>示例1</p>
+<h2 id="输入-2"><a href="#输入-2" class="headerlink" title="输入"></a>输入</h2><pre><code>3</code></pre>
+<h2 id="输出-2"><a href="#输出-2" class="headerlink" title="输出"></a>输出</h2><pre><code>1 2 3
+1 3 2
+2 1 3
+2 3 1
+3 1 2
+3 2 1</code></pre>
+</blockquote>
+<pre><code class="c++">#include&lt;stdio.h&gt;
+int a[11],n,used[11];
+void dfs(int dep)
+&amp;#123;
+    int i;
+    if(dep == n + 1)&amp;#123;                 printf(&quot;%d&quot;,a[1]);
+        for(i = 2; i &lt;= n; i++)
+            printf(&quot; %d&quot;,a[i]);       printf(&quot;\n&quot;);
+        return ;
+    &amp;#125;
+    for(i = 1; i &lt;= n; i++)
+        if(!used[i])&amp;#123;
+            used[i] = 1, a[dep] = i;
+            dfs(dep + 1);
+            used[i] = 0;
+        &amp;#125;
+&amp;#125;
+int main()
+&amp;#123;
+    scanf(&quot;%d&quot;,&amp;n);
+    dfs(1);
+    return 0;
+&amp;#125;</code></pre>
+<p>这次的退栈比较巧妙</p>
 
             </div>
             <hr/>

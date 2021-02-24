@@ -484,7 +484,7 @@
                 
                 <div class="post-date info-break-policy">
                     <i class="far fa-calendar-check fa-fw"></i>更新日期:&nbsp;&nbsp;
-                    2021-02-15
+                    2021-02-24
                 </div>
                 
 
@@ -981,7 +981,7 @@ plt.legend(loc=&quot;best&quot;)
 plt.suptitle(&quot;损失曲线&quot;)
 plt.show()</code></pre>
 <p><img src="http://pan-yz.chaoxing.com/preview/showpreview_567790281488953344.html?v=1613301355000" alt="损失可视化"></p>
-<h2 id="练习11：-1"><a href="#练习11：-1" class="headerlink" title="练习11："></a>练习11：</h2><blockquote>
+<h2 id="练习12："><a href="#练习12：" class="headerlink" title="练习12："></a>练习12：</h2><blockquote>
 <p>( 20分 )</p>
 <p>使用波士顿房价数据集中的“低收入人口比例”属性，来训练和测试一元线性回归模型，并对模型进行可视化。</p>
 <p>要求：程序+文本（记录下超参数的调试过程，并简要总结。）</p>
@@ -1054,7 +1054,7 @@ plt.tight_layout()
 plt.show()
 </code></pre>
 <p><img src="http://pan-yz.chaoxing.com/preview/showpreview_567850538144219136.html?v=1613315720000"></p>
-<h2 id="练习12："><a href="#练习12：" class="headerlink" title="练习12："></a>练习12：</h2><blockquote>
+<h2 id="练习13："><a href="#练习13：" class="headerlink" title="练习13："></a>练习13：</h2><blockquote>
 <p>使用波士顿房价数据集中的所有属性，训练和测试多元线性回归模型，并可视化模型。</p>
 <p>要求：程序+文本（记录下超参数的调试过程，并简要总结）</p>
 </blockquote>
@@ -1208,22 +1208,127 @@ plt.show()</code></pre>
 <p><img src="http://pan-yz.chaoxing.com/preview/showpreview_567881528459591680.html?v=1613323111000" alt="数据可视化结果"></p>
 <h2 id="练习15："><a href="#练习15：" class="headerlink" title="练习15："></a>练习15：</h2><blockquote>
 <p>( 20分 )</p>
-<p>分别选择2种、3种和4种属性，编写程序，区分变色鸢尾和维吉尼亚鸢尾。记录和分析实验结果，并给出总结。</p>
-<p>(1) 编写代码 (8分)</p>
-<p>(2) 记录结果 (8分)</p>
-<p>  比较选择不同属性组合时的学习率、迭代次数、以及在训练集和测试集上的交叉熵损失和准确率，以表格或合适的图表形式展示。</p>
-<p>(3) 总结 (4分)</p>
-<p>  采用不同的属性组合效果是否相同，如果相同或者不同，对你有什么启发。</p>
+<p>分别选择2种、3种和4种属性，编写程序，区分变色鸢尾、山鸢尾和维吉尼亚鸢尾。记录和分析实验结果，并给出总结。</p>
 </blockquote>
+<p>这里属于多分类，这里我们 同样选取花瓣长与花瓣宽</p>
+<pre><code class="python">import matplotlib.pyplot as plt
+import  tensorflow as tf
+import  numpy as np
+import  matplotlib as mpl
+from sklearn.datasets import  load_iris
+from sklearn.model_selection import train_test_split
+
+plt.rcParams[&#39;font.sans-serif&#39;] = [&#39;SimHei&#39;]
+plt.rcParams[&#39;axes.unicode_minus&#39;] = False
+iris=load_iris()
+x_train,x_test,y_train,y_test=train_test_split(iris.data,iris.target,test_size=0.2,random_state=22)
+
+x_train=x_train[:,2:4]
+y_train=y_train
+x_test=x_test[:,2:4]
+y_test=y_test
+#数据处理区分
+
+x0_train=np.ones(len(x_train)).reshape(-1,1)
+x0_test=np.ones(len(x_test)).reshape(-1,1)
+X_train=tf.cast(tf.concat([x0_train,x_train],axis=1),tf.float32)
+Y_train=tf.one_hot(tf.constant(y_train,dtype=tf.int32),3)
+Y_test=tf.one_hot(tf.constant(y_test,dtype=tf.int32),3)
+X_test=tf.cast(tf.concat([x0_test,x_test],axis=1),tf.float32)
+#处理数据
+
+learn_rate=0.2
+epoch=500
+display_step=100
+np.random.seed(612)
+W=tf.Variable(np.random.randn(3,3),dtype=tf.float32)
+
+acc=[]
+cce=[]
+acc_=[]
+cce_=[]
+
+for i in range(epoch+1):
+    with tf.GradientTape() as tape:
+        pred=tf.nn.softmax(tf.matmul(X_train,W))
+        Loss_train=-tf.reduce_mean(Y_train*tf.math.log(pred))
+    pred_= tf.nn.softmax(tf.matmul(X_test, W))
+    Loss_test = -tf.reduce_mean(Y_test * tf.math.log(pred_))
+    accuracy = tf.reduce_mean(tf.cast(tf.equal(tf.argmax(pred.numpy() ,axis=1), y_train), tf.float32))
+    accuracy_= tf.reduce_mean(tf.cast(tf.equal(tf.argmax(pred_.numpy(), axis=1), y_test), tf.float32))
+    #argmax()返回最大值索引号,所以这里校验时不用独热码而是用原始数据
+
+    acc.append(accuracy)
+    cce.append(Loss_train)
+    acc_.append(accuracy_)
+    cce_.append(Loss_test)
+
+    dl_dw=tape.gradient(Loss_train,W)
+    W.assign_sub(learn_rate*dl_dw)
+
+    if i%display_step ==0:
+        print(&quot;i: %d, trainAcc:%f, trainLoss:%f&quot;%(i,accuracy,Loss_train))
+        print(&quot;        testAcc:%f,  testLoss:%f&quot; % (accuracy_, Loss_test))
+
+plt.figure(figsize=(20,24),dpi=150)
+
+plt.subplot(221)
+plt.plot(cce,color=&quot;b&quot;,label=&quot;训练集损失&quot;)
+plt.plot(cce_,color=&quot;r&quot;,label=&quot;测试集损失&quot;)
+plt.legend()
+plt.title(&quot;数据集损失&quot;)
+
+plt.subplot(222)
+plt.plot(cce,color=&quot;b&quot;,label=&quot;训练集准确率&quot;)
+plt.plot(cce_,color=&quot;r&quot;,label=&quot;测试集准确率&quot;)
+plt.legend()
+plt.title(&quot;数据集准确率&quot;)
+
+
+plt.subplot(223)
+M=500
+x1_min,x2_min=x_train.min(axis=0)
+x1_max,x2_max=x_train.max(axis=0)
+t1=np.linspace(x1_min,x1_max,M)
+t2=np.linspace(x2_min,x2_max,M)
+m1,m2=np.meshgrid(t1,t2)
+m0=np.ones(M*M)
+X_=tf.cast(np.stack((m0,m1.reshape(-1),m2.reshape(-1)),axis=1),tf.float32)
+Y_=tf.nn.softmax(tf.matmul(X_,W))
+Y_=tf.argmax(Y_.numpy(),axis=1)
+n=tf.reshape(Y_,m1.shape)
+cm_bg=mpl.colors.ListedColormap([&quot;#A0FFA0&quot;,&quot;#FFA0A0&quot;,&quot;#A0A0FF&quot;])
+plt.pcolormesh(m1,m2,n,cmap=cm_bg)
+plt.scatter(x_train[:,0],x_train[:,1],c=y_train,cmap=&quot;brg&quot;)
+plt.title(&quot;训练数据与决策平面&quot;)
+
+plt.subplot(224)
+cm_bg_=mpl.colors.ListedColormap([&quot;#A0FFA0&quot;,&quot;#FFA0A0&quot;,&quot;#A0A0FF&quot;])
+plt.pcolormesh(m1,m2,n,cmap=cm_bg)
+plt.scatter(x_test[:,0],x_test[:,1],c=y_test,cmap=&quot;brg&quot;)
+plt.title(&quot;测试数据与决策平面&quot;)
+
+plt.tight_layout()
+plt.show()</code></pre>
+<blockquote>
+<p>输出如下：</p>
+<p>i: 0, trainAcc:0.366667, trainLoss:1.422851<br>        testAcc:0.200000,  testLoss:1.845798<br>i: 100, trainAcc:0.683333, trainLoss:0.237928<br>        testAcc:0.666667,  testLoss:0.234590<br>i: 200, trainAcc:0.808333, trainLoss:0.194367<br>        testAcc:0.833333,  testLoss:0.200174<br>i: 300, trainAcc:0.858333, trainLoss:0.170748<br>        testAcc:0.866667,  testLoss:0.180454<br>i: 400, trainAcc:0.875000, trainLoss:0.155550<br>        testAcc:0.900000,  testLoss:0.167200<br>i: 500, trainAcc:0.916667, trainLoss:0.144651<br>        testAcc:0.933333,  testLoss:0.157360</p>
+</blockquote>
+<p>画出来图如下，有点丑了，但还算能看：</p>
+<p><img src="http://pan-yz.chaoxing.com/preview/showpreview_568862217696559104.html?v=1613556927000"></p>
+<p>现在有个问题，就是这个决策平面显然并不是我们想要的，直觉告诉我，应该平面像是这样分类的准确性才会高一点：</p>
+<p><img src="http://pan-yz.chaoxing.com/preview/showpreview_568863457222438912.html?v=1613557222000"></p>
+<p>特别是在蓝绿两个类之间，不该是贯穿的切法，而应该是横切，认为是训练不充分，于是把训练轮数提高8倍到4000轮：</p>
+<p>结果是：</p>
+<blockquote>
+<p>i: 0, trainAcc:0.366667, trainLoss:1.422851<br>        testAcc:0.200000,  testLoss:1.845798<br>i: 100, trainAcc:0.683333, trainLoss:0.237928<br>        testAcc:0.666667,  testLoss:0.234590<br>i: 200, trainAcc:0.808333, trainLoss:0.194367<br>        testAcc:0.833333,  testLoss:0.200174<br>i: 300, trainAcc:0.858333, trainLoss:0.170748<br>        testAcc:0.866667,  testLoss:0.180454<br>i: 400, trainAcc:0.875000, trainLoss:0.155550<br>        testAcc:0.900000,  testLoss:0.167200<br>i: 500, trainAcc:0.916667, trainLoss:0.144651<br>        testAcc:0.933333,  testLoss:0.157360</p>
+<p>​                             ……………….</p>
+<p>i: 3800, trainAcc:0.966667, trainLoss:0.068734<br>        testAcc:0.933333,  testLoss:0.081017<br>i: 3900, trainAcc:0.966667, trainLoss:0.067992<br>        testAcc:0.933333,  testLoss:0.080229<br>i: 4000, trainAcc:0.966667, trainLoss:0.067277<br>        testAcc:0.933333,  testLoss:0.079468 </p>
+</blockquote>
+<p>虽然训练集上升并且没有产生过拟合但是测试集的准确率已经不动了（可能因为测试的数据少）,不过loss在下降，往后非常慢的降</p>
+<p><img src="http://pan-yz.chaoxing.com/preview/showpreview_568866095669407744.html?v=1613557851000"></p>
+<p>某种意义上是往着我们期望的方向发展，应该是达到了目的，也许会有更好的方法</p>
 <h2 id="练习16："><a href="#练习16：" class="headerlink" title="练习16："></a>练习16：</h2><blockquote>
-<p>使用单层神经网络实现鸢尾花分类，编写程序，尝试改变训练轮数、调整学习率等超参数，记录并分析实验结果，给出总结。</p>
-<p>要求：</p>
-<p>（1）编写程序（7分）</p>
-<p>（2）记录超参数的调整过程和结果（3分）</p>
-<p>（3）总结（5分）</p>
-<p>比较时间代价、分析不同超参数对结果准确性的影响</p>
-</blockquote>
-<h2 id="练习17："><a href="#练习17：" class="headerlink" title="练习17："></a>练习17：</h2><blockquote>
 <p>使用多层神经网络实现鸢尾花分类，编写程序，尝试改变隐含层层数、隐含层中节点数以及其他超参数，记录并分析实验结果，给出总结。</p>
 <p>要求：</p>
 <p>（1）编写程序（7分）</p>
@@ -1231,7 +1336,114 @@ plt.show()</code></pre>
 <p>（3）总结（5分）</p>
 <p>比较时间代价、分析不同超参数对结果准确性的影响</p>
 </blockquote>
-<h2 id="练习18："><a href="#练习18：" class="headerlink" title="练习18："></a>练习18：</h2><blockquote>
+<pre><code class="python">import matplotlib.pyplot as plt
+import  tensorflow as tf
+import  numpy as np
+import  matplotlib as mpl
+from sklearn.datasets import  load_iris
+from sklearn.model_selection import train_test_split
+
+plt.rcParams[&#39;font.sans-serif&#39;] = [&#39;SimHei&#39;]
+plt.rcParams[&#39;axes.unicode_minus&#39;] = False
+iris=load_iris()
+x_train,x_test,y_train,y_test=train_test_split(iris.data,iris.target,test_size=0.2,random_state=22)
+
+x_train=x_train[:,0:4]
+y_train=y_train
+x_test=x_test[:,0:4]
+y_test=y_test
+#数据处理区分
+
+x_train=x_train-np.mean(x_train,axis=0)
+x_test=x_test-np.mean(x_test,axis=0)
+
+X_train=tf.cast(x_train,tf.float32)
+Y_train=tf.one_hot(tf.constant(y_train,dtype=tf.int32),3)
+Y_test=tf.one_hot(tf.constant(y_test,dtype=tf.int32),3)
+X_test=tf.cast(x_test,tf.float32)
+#处理数据
+
+learn_rate=0.2
+epoch=4000
+display_step=100
+np.random.seed(612)
+W1=tf.Variable(np.random.randn(4,16),dtype=tf.float32)
+B1=tf.Variable(tf.zeros([16]),dtype=tf.float32)
+W2=tf.Variable(np.random.randn(16,3),dtype=tf.float32 )
+B2=tf.Variable(tf.zeros([3]),dtype=tf.float32)
+acc=[]
+cce=[]
+acc_=[]
+cce_=[]
+
+for i in range(epoch+1):
+    with tf.GradientTape() as tape:
+        Hidden_train=tf.nn.relu(tf.matmul(X_train,W1)+B1)
+        pred=tf.nn.softmax(tf.matmul(Hidden_train,W2)+B2)
+        Loss_train=tf.reduce_mean(tf.keras.losses.categorical_crossentropy(y_true=Y_train,y_pred=pred))
+
+        Hidden_test = tf.nn.relu(tf.matmul(X_test, W1) + B1)
+        pred_= tf.nn.softmax(tf.matmul(Hidden_test, W2) + B2)
+        Loss_test = tf.reduce_mean(tf.keras.losses.categorical_crossentropy(y_true=Y_test, y_pred=pred_))
+
+
+    accuracy = tf.reduce_mean(tf.cast(tf.equal(tf.argmax(pred.numpy() ,axis=1), y_train), tf.float32))
+    accuracy_= tf.reduce_mean(tf.cast(tf.equal(tf.argmax(pred_.numpy(), axis=1), y_test), tf.float32))
+
+    #argmax()返回最大值索引号,所以这里校验时不用独热码而是用原始数据
+
+    acc.append(accuracy)
+    cce.append(Loss_train)
+    acc_.append(accuracy_)
+    cce_.append(Loss_test)
+
+    grade=tape.gradient(Loss_train,[W1,B1,W2,B2])
+    W1.assign_sub(learn_rate*grade[0])
+    B1.assign_sub(learn_rate * grade[1])
+    W2.assign_sub(learn_rate * grade[2])
+    B2.assign_sub(learn_rate * grade[3])
+        if i&gt;0 and cce_[i]&gt;cce_[i-1]:
+        print(&quot;--------------------stop at %d epoch-----------------------&quot;%i)
+        break
+
+    if i%display_step ==0:
+        print(&quot;i: %d, trainAcc:%f, trainLoss:%f&quot;%(i,accuracy,Loss_train))
+        print(&quot;        testAcc:%f,  testLoss:%f&quot; % (accuracy_, Loss_test))
+
+plt.figure(figsize=(20,8),dpi=150)
+
+plt.subplot(121)
+plt.plot(cce,color=&quot;b&quot;,label=&quot;训练集损失&quot;)
+plt.plot(cce_,color=&quot;r&quot;,label=&quot;测试集损失&quot;)
+plt.legend()
+plt.title(&quot;数据集损失&quot;)
+
+plt.subplot(122)
+plt.plot(acc,color=&quot;b&quot;,label=&quot;训练集准确率&quot;)
+plt.plot(acc_ ,color=&quot;r&quot;,label=&quot;测试集准确率&quot;)
+plt.legend()
+plt.title(&quot;数据集准确率&quot;)
+
+
+
+plt.tight_layout()
+plt.show()
+</code></pre>
+<p>这次同样训练了4k轮，结果很amzing啊</p>
+<p>过拟合了</p>
+<p><img src="http://pan-yz.chaoxing.com/preview/showpreview_571008578306138112.html?v=1614068655000"></p>
+<p>看起来使用relu优化的两层神经网络好像没有在感知机中表现的好………，因为最后测试集的准确率连80%都没有</p>
+<p>不过relu下降的倒是很快，现在用early_stopping的方法控制，即当验证集损失开始上升时停止训练（这里就把测试集当验证集了</p>
+<pre><code class="python">  if i&gt;0 and cce_[i]&gt;cce_[i-1]:
+        print(&quot;--------------------stop at %d epoch-----------------------&quot;%i)
+        break</code></pre>
+<p>输出是：</p>
+<blockquote>
+<p>i: 0, trainAcc:0.450000, trainLoss:2.028374<br>        testAcc:0.233333,  testLoss:2.409625<br>——————–stop at 30 epoch———————–</p>
+</blockquote>
+<p>30轮就训练完了，可见下降相当之快啊,就是最后泛化性有点差</p>
+<p><img src="http://pan-yz.chaoxing.com/preview/showpreview_571013689459200000.html?v=1614069875000"></p>
+<h2 id="练习17："><a href="#练习17：" class="headerlink" title="练习17："></a>练习17：</h2><blockquote>
 <p>使用TensorFlow中的keras库，实现Minist手写数字识别。编写程序，尝试调整神经网络的层数、节点个数以及优化器等参数，记录并分析实验结果，保存最佳训练模型，给出总结。</p>
 <p>要求：</p>
 <p>(1)编写程序（7分）</p>
@@ -1239,7 +1451,54 @@ plt.show()</code></pre>
 <p>(3)总结。（5分）</p>
 <p>从准确率、时间效率等方面对实验结果进行分析</p>
 </blockquote>
-<h2 id="练习19："><a href="#练习19：" class="headerlink" title="练习19："></a>练习19：</h2><blockquote>
+<pre><code class="python">import tensorflow as tf
+import numpy as np
+import matplotlib.pyplot as plt
+
+mnist=tf.keras.datasets.mnist
+(train_x,train_y),(test_x,test_y)=mnist.load_data()
+
+# X_train=train_x.reshape((60000,28*28))
+# X_test=test_x.reshape((10000,28*28))
+#如果没有拉伸的层就用这个语句
+
+X_train,X_test=tf.cast(train_x/255.0,tf.float32),tf.cast(test_x/255.0,tf.float32)
+Y_train,Y_test=tf.cast(train_y,tf.int16),tf.cast(test_y,tf.int16)
+
+model=tf.keras.Sequential()
+model.add(tf.keras.layers.Flatten(input_shape=(28,28)))
+model.add(tf.keras.layers.Dense(128,activation=&quot;relu&quot;))
+model.add(tf.keras.layers.Dense(10,activation=&quot;softmax&quot;))
+
+model.compile(optimizer=&quot;adam&quot;,loss=&quot;sparse_categorical_crossentropy&quot;,metrics=[&#39;sparse_categorical_accuracy&#39;])
+
+model.fit(X_train,Y_train,batch_size=64,epochs=5,validation_split=0.2)
+model.evaluate(X_test,Y_test,verbose=2)
+
+y_pred=model.predict_classes(X_test[0:1000])
+
+plt.rcParams[&#39;font.sans-serif&#39;]=[&#39;SimHei&#39;]
+plt.rcParams[&#39;axes.unicode_minus&#39;]=False
+plt.figure(dpi=150)
+for i in range(25):
+    num=np.random.randint(0,1000)
+    plt.subplot(5,5,i+1)
+    plt.axis(&quot;off&quot;)
+    plt.imshow(test_x[num],cmap=&quot;gray&quot;)
+    title=&quot;y=&quot;+str(test_y[num])+&quot;\ny_pred=&quot;+str(y_pred[num])
+    plt.title(title)
+plt.tight_layout()
+plt.suptitle(&quot;手写数字样本预测 &quot;,x=0.5,y=1.02, fontsize=20)
+plt.show()</code></pre>
+<p>训练5轮的结果：</p>
+<blockquote>
+<p>Epoch 1/5<br>750/750 [==============================] - 2s 2ms/step - loss: 0.5641 - sparse_categorical_accuracy: 0.8408 - val_loss: 0.1859 - val_sparse_categorical_accuracy: 0.9454<br>Epoch 2/5<br>750/750 [==============================] - 1s 1ms/step - loss: 0.1547 - sparse_categorical_accuracy: 0.9554 - val_loss: 0.1272 - val_sparse_categorical_accuracy: 0.9621<br>Epoch 3/5<br>750/750 [==============================] - 1s 1ms/step - loss: 0.1054 - sparse_categorical_accuracy: 0.9691 - val_loss: 0.1139 - val_sparse_categorical_accuracy: 0.9653<br>Epoch 4/5<br>750/750 [==============================] - 1s 1ms/step - loss: 0.0788 - sparse_categorical_accuracy: 0.9764 - val_loss: 0.0931 - val_sparse_categorical_accuracy: 0.9721<br>Epoch 5/5<br>750/750 [==============================] - 1s 1ms/step - loss: 0.0609 - sparse_categorical_accuracy: 0.9825 - val_loss: 0.0902 - val_sparse_categorical_accuracy: 0.9720<br>313/313 - 0s - loss: 0.0823 - sparse_categorical_accuracy: 0.9748</p>
+</blockquote>
+<p>可见下降很快</p>
+<p><img src="http://pan-yz.chaoxing.com/preview/showpreview_571308404708585472.html?v=1614140140000"></p>
+<p>训练加到100轮后，几次训练集达到100%准确率，时间太长就不展示了</p>
+<p>总的来说使用tensorflow的高阶api不仅代码量少了很多而且更加准确</p>
+<h2 id="练习18："><a href="#练习18：" class="headerlink" title="练习18："></a>练习18：</h2><blockquote>
 <p>( 10分 )</p>
 <p>编写程序，使用作业1中训练好的模型，实现对自制手写数字数据集的识别。</p>
 <p>要求：</p>
@@ -1252,6 +1511,179 @@ plt.show()</code></pre>
 <p>转换成二值图像 ：convert()</p>
 <p>改变大小：resize()</p>
 </blockquote>
+<p>训练模型：</p>
+<pre><code class="python">import tensorflow as tf
+import numpy as np
+
+mnist=tf.keras.datasets.mnist
+(train_x,train_y),(test_x,test_y)=mnist.load_data()
+
+X_train,X_test=tf.cast(train_x/255.0,tf.float32),tf.cast(test_x/255.0,tf.float32)
+Y_train,Y_test=tf.cast(train_y,tf.int16),tf.cast(test_y,tf.int16)
+
+model=tf.keras.Sequential()
+model.add(tf.keras.layers.Flatten(input_shape=(28,28)))
+model.add(tf.keras.layers.Dense(128,activation=&quot;relu&quot;))
+model.add(tf.keras.layers.Dense(10,activation=&quot;softmax&quot;))
+
+model.compile(optimizer=&quot;adam&quot;,loss=&quot;sparse_categorical_crossentropy&quot;,metrics=[&#39;sparse_categorical_accuracy&#39;])
+
+model.fit(X_train,Y_train,batch_size=64,epochs=100,validation_split=0.2)
+#训练100轮，由于没有用GPU加速所以每轮用了1s
+model.evaluate(X_test,Y_test,verbose=2)
+
+model.save(&quot;mist_model.h5&quot;)</code></pre>
+<p>使用模型：</p>
+<pre><code class="python">import tensorflow as tf
+import numpy as np
+import matplotlib.pyplot as plt
+
+mnist=tf.keras.datasets.mnist
+(train_x,train_y),(test_x,test_y)=mnist.load_data()
+
+X_train,X_test=tf.cast(train_x/255.0,tf.float32),tf.cast(test_x/255.0,tf.float32)
+Y_train,Y_test=tf.cast(train_y,tf.int16),tf.cast(test_y,tf.int16)
+
+model=tf.keras.models.load_model(&quot;mist_model.h5&quot;)
+y_pred=model.predict_classes(X_test[0:1000])
+
+plt.rcParams[&#39;font.sans-serif&#39;]=[&#39;SimHei&#39;]
+plt.rcParams[&#39;axes.unicode_minus&#39;]=False
+plt.figure(dpi=150)
+for i in range(25):
+    num=np.random.randint(0,1000)
+    plt.subplot(5,5,i+1)
+    plt.axis(&quot;off&quot;)
+    plt.imshow(test_x[num],cmap=&quot;gray&quot;)
+    title=&quot;y=&quot;+str(test_y[num])+&quot;\ny_pred=&quot;+str(y_pred[num])
+    plt.title(title)
+plt.tight_layout()
+plt.suptitle(&quot;手写数字样本预测 &quot;,x=0.5,y=1.02, fontsize=20)
+plt.show()</code></pre>
+<p><img src="http://pan-yz.chaoxing.com/preview/showpreview_571374154019880960.html?v=1614155820000"></p>
+<p>说明保存成功，并且可以应用了</p>
+<p>现在开始实际应用：</p>
+<p>首先这是我们的测试样本：</p>
+<p><img src="http://pan-yz.chaoxing.com/preview/showpreview_571375447424217088.html?v=1614156125000"></p>
+<p>我们先处理下图片：</p>
+<p>基本处理操作包括：</p>
+<ul>
+<li>加载图像</li>
+<li>处理图像尺寸变成28*28</li>
+<li>二值化图像</li>
+<li>必要时对图像反色处理（因为这里是黑笔写的所以与MNIST不同）</li>
+</ul>
+<p>这里用了下os库，用于读写文件</p>
+<pre><code class="python">import matplotlib.pyplot as plt
+from PIL import Image
+import tensorflow as tf
+
+plt.rcParams[&#39;font.sans-serif&#39;]=[&#39;SimHei&#39;]
+plt.rcParams[&#39;axes.unicode_minus&#39;]=False
+plt.figure(figsize=(10,4),dpi=150)
+
+MyData=[]
+for i in range(9):
+    path=&quot;D:\code\ML\data\手写数字\\&quot;+str(i+1)+&quot;.png&quot;
+    MyData.append(Image.open(path))
+
+for i in range(9):
+    plt.subplot(2,5,i+1)
+    plt.axis(&quot;off&quot;)
+    plt.imshow(MyData[i], cmap=&quot;gray&quot;)</code></pre>
+<p>单个图片数据的形状：</p>
+<pre><code class="python">for i in range(9):
+    print(MyData[0].shape)</code></pre>
+<blockquote>
+<p>(93, 73, 4)<br>(93, 73, 4)<br>(93, 73, 4)<br>(93, 73, 4)<br>(93, 73, 4)<br>(93, 73, 4)<br>(93, 73, 4)<br>(93, 73, 4)<br>(93, 73, 4)</p>
+</blockquote>
+<p>可见这是一个尺寸93*73的rgba彩色文件，我们的目标是要把每个文件处理成28x28的二值文件</p>
+<pre><code class="python">import matplotlib.pyplot as plt
+from PIL import Image
+import tensorflow as tf
+import numpy as np
+
+plt.rcParams[&#39;font.sans-serif&#39;]=[&#39;SimHei&#39;]
+plt.rcParams[&#39;axes.unicode_minus&#39;]=False
+
+MyData=[]
+for i in range(9):
+    path=&quot;D:\code\ML\data\手写数字\\&quot;+str(i+1)+&quot;.png&quot;
+    Img=Image.open(path)
+    Img=Img.convert(&quot;1&quot;)#二值化图片
+    Img=Img.resize((28,28))#转换尺寸
+    Img=np.array(Img)
+    MyData.append(Img)
+
+for i in range(9):
+    plt.subplot(2,5,i+1)
+    plt.axis(&quot;off&quot;)
+    plt.imshow(MyData[i], cmap=&quot;gray&quot;)</code></pre>
+<p>但是，加载出来的图片却是这样的：</p>
+<p><img src="http://pan-yz.chaoxing.com/preview/showpreview_571390714891927552.html?v=1614159768000"></p>
+<p>这是个啥玩意。。。。。。，噪声太多了</p>
+<p>看来不是变成二值化啊，于是转换成灰度图</p>
+<p><img src="http://pan-yz.chaoxing.com/preview/showpreview_571391504861474816.html?v=1614159954000"></p>
+<p>效果好很多了，但不是我们想要的，因为我们训练的模型使用的数据是数字白，背景黑，而我们目标数据是数字黑背景白，所以要进行一个反色处理，结果就是这样</p>
+<p><img src="http://pan-yz.chaoxing.com/preview/showpreview_571392683166363648.html?v=1614160236000" alt="与MNIST几乎一样了"></p>
+<p>然后就可以套用模型辣</p>
+<p>结果是：</p>
+<p><img src="http://pan-yz.chaoxing.com/preview/showpreview_571395575248957440.html?v=1614161232000"></p>
+<p>这机器学了个寂寞啊。。。。。。</p>
+<p>但是在测试集上准确率的确是我们想要的，为什么应用起来就有问题了呢</p>
+<p>观察了下手写数字样本：</p>
+<p><img src="http://pan-yz.chaoxing.com/preview/showpreview_571399258676772864.html?v=1614161804000"></p>
+<p>和我们处理的图片比，可见图片中数字的部分占比比我们制作图的要大，应该是我的图还缺少一个裁切主体的部分</p>
+<p>于是把图片裁剪了下：</p>
+<p><img src="http://pan-yz.chaoxing.com/preview/showpreview_571392683166363648.html?v=1614160236000" alt="裁剪前"></p>
+<p><img src="http://pan-yz.chaoxing.com/preview/showpreview_571403782689386496.html?v=1614162881000" alt="裁剪后"></p>
+<p>然后预测。。。。。</p>
+<p><img src="http://pan-yz.chaoxing.com/preview/showpreview_571404697690816512.html?v=1614163099000" alt="裁剪处理后的"></p>
+<p><img src="http://pan-yz.chaoxing.com/preview/showpreview_571405484810211328.html?v=1614163287000" alt="对比之前"></p>
+<p>好歹对了一个……….准确率从10%提升到了20%,可喜可贺可喜可贺（泪目）</p>
+<p>现在分析问题原因可能在于我所用的数据笔画太细，而训练用的数据笔画太粗，也就是说训练的时候学到了不该考虑进去的征兆，很可能是训练次数过大</p>
+<p>调低训练次数到30次，再使用模型，但是并没有用。。。。。。</p>
+<p>可能还是有不足吧，以后学习了更多在再来挑战</p>
+<p>代码在这</p>
+<pre><code class="python">import matplotlib.pyplot as plt
+from PIL import Image
+import tensorflow as tf
+import numpy as np
+
+plt.rcParams[&#39;font.sans-serif&#39;]=[&#39;SimHei&#39;]
+plt.rcParams[&#39;axes.unicode_minus&#39;]=False
+
+MyData=[]
+for i in range(9):
+    path=&quot;D:\code\ML\data\手写数字\\&quot;+str(i+1)+&quot;.png&quot;
+    Img=Image.open(path)
+    Img=Img.convert(&quot;L&quot;)#二值化图片
+    Img=Img.resize((73,73))#转换尺寸
+    Img=Img.crop((9,9,63,63))
+    Img = Img.resize((28, 28))  # 转换尺寸
+    Img=np.array(Img)
+    Img = 255 - Img  # 图像反色
+    MyData.append(Img)
+
+MyData=np.array(MyData)
+MyData=tf.cast(MyData/255.0,tf.float32)#归一化处理
+
+model=tf.keras.models.load_model(&quot;mist_model.h5&quot;)
+y_pred=np.argmax(model.predict(MyData[0:9]),axis=1)
+
+
+for i in range(9):
+    plt.subplot(2,5,i+1)
+    plt.axis(&quot;off&quot;)
+    path = &quot;D:\code\ML\data\手写数字\\&quot; + str(i + 1) + &quot;.png&quot;
+    Img = Image.open(path)
+    plt.imshow(Img,cmap=&quot;gray&quot;)
+    title=&quot;pred=&quot;+str(y_pred[i])
+    plt.title(title)
+plt.tight_layout()
+plt.suptitle(&quot;自制手写数字样本预测 &quot;,x=0.5,y=1.02, fontsize=20)
+plt.show()</code></pre>
+<p>自此整个课程的作业就结束了，接下来要学习的是北京大学的Tensorflow课程</p>
 
             </div>
             <hr/>
