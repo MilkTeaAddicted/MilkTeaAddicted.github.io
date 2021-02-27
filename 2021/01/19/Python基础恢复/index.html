@@ -484,7 +484,7 @@
                 
                 <div class="post-date info-break-policy">
                     <i class="far fa-calendar-check fa-fw"></i>更新日期:&nbsp;&nbsp;
-                    2021-02-24
+                    2021-02-27
                 </div>
                 
 
@@ -1570,10 +1570,9 @@ plt.show()</code></pre>
 <ul>
 <li>加载图像</li>
 <li>处理图像尺寸变成28*28</li>
-<li>二值化图像</li>
+<li>二值化图像(事实上是灰度化)</li>
 <li>必要时对图像反色处理（因为这里是黑笔写的所以与MNIST不同）</li>
 </ul>
-<p>这里用了下os库，用于读写文件</p>
 <pre><code class="python">import matplotlib.pyplot as plt
 from PIL import Image
 import tensorflow as tf
@@ -1684,6 +1683,115 @@ plt.tight_layout()
 plt.suptitle(&quot;自制手写数字样本预测 &quot;,x=0.5,y=1.02, fontsize=20)
 plt.show()</code></pre>
 <p>自此整个课程的作业就结束了，接下来要学习的是北京大学的Tensorflow课程</p>
+<h3 id="尝试1"><a href="#尝试1" class="headerlink" title="尝试1"></a>尝试1</h3><p>重新制作了数据集，图片更加纯净而且笔画也更加粗</p>
+<p>结果是：</p>
+<p><img src="http://pan-yz.chaoxing.com/preview/showpreview_571451552705400832.html?v=1614174290000"></p>
+<p>实验结果提升到40%诶</p>
+<p>训练20轮的效果比100要好点</p>
+<pre><code class="python">import matplotlib.pyplot as plt
+from PIL import Image
+import tensorflow as tf
+import numpy as np
+
+plt.rcParams[&#39;font.sans-serif&#39;]=[&#39;SimHei&#39;]
+plt.rcParams[&#39;axes.unicode_minus&#39;]=False
+
+MyData=[]
+for i in range(10):
+    path=&quot;D:\code\ML\data\手写数字\\&quot;+str(i)+&quot;.png&quot;
+    Img=Image.open(path)
+    Img=Img.convert(&quot;L&quot;)#二值化图片
+    Img=Img.resize((73,73))#转换尺寸
+    Img=Img.crop((9,9,63,63))
+    Img = Img.resize((28, 28))  # 转换尺寸
+    Img=np.array(Img)
+    Img = 255 - Img  # 图像反色
+    MyData.append(Img)
+
+MyData=np.array(MyData)
+MyData=tf.cast(MyData/255.0,tf.float32)#归一化处理
+
+model=tf.keras.models.load_model(&quot;mist_model.h5&quot;)
+y_pred=np.argmax(model.predict(MyData[0:10]),axis=1)
+
+
+for i in range(10):
+    plt.subplot(2,5,i+1)
+    plt.axis(&quot;off&quot;)
+    path = &quot;D:\code\ML\data\手写数字\\&quot; + str(i) + &quot;.png&quot;
+    Img = Image.open(path)
+    plt.imshow(MyData[i],cmap=&quot;gray&quot;)
+    title=&quot;pred=&quot;+str(y_pred[i])
+    plt.title(title)
+plt.tight_layout()
+plt.suptitle(&quot;自制手写数字样本预测 &quot;,x=0.5,y=1.02, fontsize=20)
+plt.show()</code></pre>
+<h3 id="针对练习18的最终解决方案"><a href="#针对练习18的最终解决方案" class="headerlink" title="针对练习18的最终解决方案"></a>针对练习18的最终解决方案</h3><p>今天看了北京大学的mooc展示后我发现一个问题</p>
+<p>tensorflow提供的图片和图片矩阵是这样的：</p>
+<p><img src="http://pan-yz.chaoxing.com/preview/showpreview_572385229865652224.html?v=1614396873000"></p>
+<p><img src="http://pan-yz.chaoxing.com/preview/showpreview_572385228716888064.html?v=1614396919000"></p>
+<p>而要识别的图片经过灰度化以及裁剪反色等处理后，图片以及矩阵是这样的：</p>
+<p><img src="http://pan-yz.chaoxing.com/preview/showpreview_572385970097324032.html?v=1614397050000"></p>
+<p><img src="http://pan-yz.chaoxing.com/preview/showpreview_572385967886036992.html?v=1614397075000"></p>
+<p>也就是说我们处理后的图片还不够纯净，需要对图片进行进一步清洗</p>
+<p>把要识别的图片中所有小于102的数据变成0以后</p>
+<p><img src="http://pan-yz.chaoxing.com/preview/showpreview_572386742274048000.html?v=1614397234000"></p>
+<p>图片纯净多了</p>
+<p>调高阈值到130，进一步清洗，再对每个图片应用清洗的方法后，再套上模型</p>
+<p>这一次准确率大幅度提高：</p>
+<p><img src="http://pan-yz.chaoxing.com/preview/showpreview_572387651691442176.html?v=1614397451000"></p>
+<p>而且判别错误的两个就算判别有误也比原来5更加合理</p>
+<p>至于为什么8和9会判错，原因应该是8和9整体亮度比其他低，而我们用的是统一的阈值，所以更脏的8和9就没有洗干净</p>
+<p>放代码</p>
+<pre><code class="python">import matplotlib.pyplot as plt
+from PIL import Image
+import tensorflow as tf
+import numpy as np
+
+plt.rcParams[&#39;font.sans-serif&#39;]=[&#39;SimHei&#39;]
+plt.rcParams[&#39;axes.unicode_minus&#39;]=False
+
+MyData=[]
+
+mnist=tf.keras.datasets.mnist
+(x1,y1),(x2,y2)=mnist.load_data()
+
+for i in range(9):
+    path=&quot;D:\code\ML\data\手写数字_\\&quot;+str(i+1)+&quot;.png&quot;
+    Img=Image.open(path)
+    Img=Img.convert(&quot;L&quot;)#二值化图片
+    Img=Img.resize((73,73))#转换尺寸
+    Img=Img.crop((9,9,63,63))
+    Img = Img.resize((28, 28))  # 转换尺寸
+    Img=np.array(Img)
+    Img = 255 - Img  # 图像反色
+    MyData.append(Img)
+for k in range(9):
+    for i in range(28):
+        for j in range(28):
+            if MyData[k][i][j] &lt;130:
+                MyData[k][i][j]=0
+
+
+
+MyData=np.array(MyData)
+MyData=tf.cast(MyData/255.0,tf.float32)#归一化处理
+
+model=tf.keras.models.load_model(&quot;mist_model_.h5&quot;)
+y_pred=np.argmax(model.predict(MyData[0:9]),axis=1)
+
+
+for i in range(9):
+    plt.subplot(2,5,i+1)
+    plt.axis(&quot;off&quot;)
+    path = &quot;D:\code\ML\data\手写数字_\\&quot; + str(i + 1) + &quot;.png&quot;
+    Img = Image.open(path)
+    plt.imshow(Img,cmap=&quot;gray&quot;)
+    title=&quot;pred=&quot;+str(y_pred[i])
+    plt.title(title)
+plt.tight_layout()
+plt.suptitle(&quot;自制手写数字样本预测 &quot;,x=0.5,y=1.02, fontsize=20)
+plt.show()</code></pre>
 
             </div>
             <hr/>
