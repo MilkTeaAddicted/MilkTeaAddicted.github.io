@@ -488,7 +488,7 @@
                 
                 <div class="post-date info-break-policy">
                     <i class="far fa-calendar-check fa-fw"></i>更新日期:&nbsp;&nbsp;
-                    2021-02-18
+                    2021-03-07
                 </div>
                 
 
@@ -507,19 +507,22 @@
         <hr class="clearfix">
         <div class="card-content article-card-content">
             <div id="articleContent">
-                <h1 id="寒假算法练习"><a href="#寒假算法练习" class="headerlink" title="寒假算法练习"></a>寒假算法练习</h1><h2 id="写在前面"><a href="#写在前面" class="headerlink" title="写在前面"></a>写在前面</h2><p>​    作为转专业fw自认为算法功底不如土著，本人认为对于计算机专业来说蓝桥杯的重要性大于美赛（事实上是因为美赛只剩下20天了参加也是白给，还不如参加两个月后的蓝桥杯，总之并不希望白给两场比赛），再加上刚学完数据结构，要是不好好进阶恐怕会忘干净，于是这个寒假决定好好训练下自己的算法功底，总之希望能以一天五道题的练习量坚持下去，望各位监督辽~（虽然并不会有人看）</p>
-<p>习题来源：牛客网</p>
-<h2 id="week-1"><a href="#week-1" class="headerlink" title="week 1"></a>week 1</h2><p>今天是<strong>2021/1/15</strong></p>
+                <h1 id="寒假算法练习"><a href="#寒假算法练习" class="headerlink" title="寒假算法练习"></a>寒假算法练习</h1><h2 id="week-1"><a href="#week-1" class="headerlink" title="week 1"></a>week 1</h2><p>今天是<strong>2021/1/15</strong></p>
 <p>然而写下这个的时候是2021/2/18</p>
 <p>。。。。。懒人本懒了</p>
 <h3 id="递归实现指数型枚举"><a href="#递归实现指数型枚举" class="headerlink" title="递归实现指数型枚举"></a>递归实现指数型枚举</h3><blockquote>
 <p>链接：<a target="_blank" rel="noopener" href="https://ac.nowcoder.com/acm/problem/50911">https://ac.nowcoder.com/acm/problem/50911</a><br>来源：牛客网</p>
-<h2 id="题目描述"><a href="#题目描述" class="headerlink" title="题目描述"></a>题目描述</h2><p>从 1∼n1\sim n1∼n这 n (n≤16)(n \leq 16)(n≤16) 个整数中随机选取任意多个，输出所有可能的选择方案。</p>
-<h2 id="输入描述"><a href="#输入描述" class="headerlink" title="输入描述:"></a>输入描述:</h2><pre><code>一个整数n。</code></pre>
-<h2 id="输出描述"><a href="#输出描述" class="headerlink" title="输出描述:"></a>输出描述:</h2><pre><code>每行一种方案。同一行内的数必须升序排列，相邻两个数用恰好1个空格隔开。对于没有选任何数的方案，输出空行。本题有自定义校验器（SPJ），各行（不同方案）之间的顺序任意。</code></pre>
+<p>题目描述</p>
+<p>从 1∼n1\sim n1∼n这 n (n≤16)(n \leq 16)(n≤16) 个整数中随机选取任意多个，输出所有可能的选择方案。</p>
+<p>输入描述:</p>
+<pre><code>一个整数n。</code></pre>
+<p>输出描述:</p>
+<pre><code>每行一种方案。同一行内的数必须升序排列，相邻两个数用恰好1个空格隔开。对于没有选任何数的方案，输出空行。本题有自定义校验器（SPJ），各行（不同方案）之间的顺序任意。</code></pre>
 <p>示例1</p>
-<h2 id="输入"><a href="#输入" class="headerlink" title="输入"></a>输入</h2><pre><code>3</code></pre>
-<h2 id="输出"><a href="#输出" class="headerlink" title="输出"></a>输出</h2><pre><code>3
+<p>输入</p>
+<pre><code>3</code></pre>
+<p>输出</p>
+<pre><code>3
 
 2
 2 3
@@ -588,10 +591,14 @@ int main()
 <p>这道题目主要是为了考察了深度遍历树的建立</p>
 <h3 id="递归实现组合型枚举-·"><a href="#递归实现组合型枚举-·" class="headerlink" title="递归实现组合型枚举    ·"></a>递归实现组合型枚举    ·</h3><blockquote>
 <p>链接：<a target="_blank" rel="noopener" href="https://ac.nowcoder.com/acm/problem/50918">https://ac.nowcoder.com/acm/problem/50918</a><br>来源：牛客网</p>
-<h2 id="输入描述-1"><a href="#输入描述-1" class="headerlink" title="输入描述:"></a>输入描述:</h2><pre><code>两个整数n，m。</code></pre>
-<h2 id="输出描述-1"><a href="#输出描述-1" class="headerlink" title="输出描述:"></a>输出描述:</h2><pre><code>按照从小到大的顺序输出所有方案，每行1个。首先，同一行内的数升序排列，相邻两个数用一个空格隔开。其次，对于两个不同的行，对应下标的数一一比较，字典序较小的排在前面（例如1 3 9 12排在1 3 10 11前面）。</code></pre>
-<h2 id="输入-1"><a href="#输入-1" class="headerlink" title="输入"></a>输入</h2><pre><code>5 3</code></pre>
-<h2 id="输出-1"><a href="#输出-1" class="headerlink" title="输出"></a>输出</h2><pre><code>1 2 3
+<p>输入描述:</p>
+<pre><code>两个整数n，m。</code></pre>
+<p>输出描述:</p>
+<pre><code>按照从小到大的顺序输出所有方案，每行1个。首先，同一行内的数升序排列，相邻两个数用一个空格隔开。其次，对于两个不同的行，对应下标的数一一比较，字典序较小的排在前面（例如1 3 9 12排在1 3 10 11前面）。</code></pre>
+<p>输入</p>
+<pre><code>5 3</code></pre>
+<p>输出</p>
+<pre><code>1 2 3
 1 2 4
 1 2 5
 1 3 4
@@ -642,12 +649,17 @@ int main()
 <p>第一个没看题解自己写出来的题目<del>~</del>开心</p>
 <h3 id="递归实现排列型枚举"><a href="#递归实现排列型枚举" class="headerlink" title="递归实现排列型枚举"></a>递归实现排列型枚举</h3><blockquote>
 <p>链接：<a target="_blank" rel="noopener" href="https://ac.nowcoder.com/acm/problem/50919">https://ac.nowcoder.com/acm/problem/50919</a><br>来源：牛客网</p>
-<h2 id="题目描述-1"><a href="#题目描述-1" class="headerlink" title="题目描述"></a>题目描述</h2><p>把 1∼n1\sim n1∼n 这 n(n&lt;10)(n \lt 10)(n&lt;10)个整数排成一行后随机打乱顺序，输出所有可能的次序。</p>
-<h2 id="输入描述-2"><a href="#输入描述-2" class="headerlink" title="输入描述:"></a>输入描述:</h2><pre><code>一个整数n。</code></pre>
-<h2 id="输出描述-2"><a href="#输出描述-2" class="headerlink" title="输出描述:"></a>输出描述:</h2><pre><code>按照从小到大的顺序输出所有方案，每行1个。 首先，同一行相邻两个数用一个空格隔开。其次，对于两个不同的行，对应下标的数一一比较，字典序较小的排在前面。</code></pre>
+<p>题目描述</p>
+<p>把 1∼n1\sim n1∼n 这 n(n&lt;10)(n \lt 10)(n&lt;10)个整数排成一行后随机打乱顺序，输出所有可能的次序。</p>
+<p>输入描述:</p>
+<pre><code>一个整数n。</code></pre>
+<p>输出描述:</p>
+<pre><code>按照从小到大的顺序输出所有方案，每行1个。 首先，同一行相邻两个数用一个空格隔开。其次，对于两个不同的行，对应下标的数一一比较，字典序较小的排在前面。</code></pre>
 <p>示例1</p>
-<h2 id="输入-2"><a href="#输入-2" class="headerlink" title="输入"></a>输入</h2><pre><code>3</code></pre>
-<h2 id="输出-2"><a href="#输出-2" class="headerlink" title="输出"></a>输出</h2><pre><code>1 2 3
+<p>输入</p>
+<pre><code>3</code></pre>
+<p>输出</p>
+<pre><code>1 2 3
 1 3 2
 2 1 3
 2 3 1
@@ -678,6 +690,1041 @@ int main()
     return 0;
 &amp;#125;</code></pre>
 <p>这次的退栈比较巧妙</p>
+<p>或者利用c++的排列数函数来计算</p>
+<pre><code class="c++">#include&lt;iostream&gt;
+#include&lt;algorithm&gt;
+using namespace std;
+int a[15], n;
+int main()
+&amp;#123;
+    cin &gt;&gt; n;
+    for(int i = 1; i &lt;= n; i++)
+        a[i] = i;//先按照升序对创建数组
+    do//先do否则输出不了123.....n
+    &amp;#123;
+        for(int i = 1; i &lt;= n; i++)
+            cout &lt;&lt; a[i] &lt;&lt; &#39; &#39;;
+        cout &lt;&lt; endl;
+    &amp;#125;while(next_permutation(a + 1, a + n + 1));//求以ai开头的全排列
+    return 0;
+&amp;#125;</code></pre>
+<h3 id="翻硬币"><a href="#翻硬币" class="headerlink" title="翻硬币"></a>翻硬币</h3><blockquote>
+<p>链接：<a target="_blank" rel="noopener" href="https://ac.nowcoder.com/acm/problem/14355">https://ac.nowcoder.com/acm/problem/14355</a><br>来源：牛客网</p>
+<p>题目描述</p>
+<p>小明正在玩一个“翻硬币”的游戏。</p>
+<p>  桌上放着排成一排的若干硬币。我们用 * 表示正面，用 o 表示反面（是小写字母，不是零）。 </p>
+<p>  比如，可能情形是：*<em>oo**</em>oooo </p>
+<p>  如果同时翻转左边的两个硬币，则变为：oooo***oooo </p>
+<p>  现在小明的问题是：如果已知了初始状态和要达到的目标状态，每次只能同时翻转相邻的两个硬币,那么对特定的局面，最少要翻动多少次呢？ </p>
+<p>  我们约定：把翻动相邻的两个硬币叫做一步操作，那么要求： </p>
+<p>输入描述:</p>
+<pre><code>两行等长的字符串，分别表示初始状态和要达到的目标状态。每行的长度&lt;1000</code></pre>
+<p>输出描述:</p>
+<pre><code>一个整数，表示最小操作步数。</code></pre>
+<p>示例1</p>
+<p>输入</p>
+<pre><code>**********
+o****o****</code></pre>
+<p>输出</p>
+<pre><code>5</code></pre>
+<p>示例2</p>
+<p>输入</p>
+<pre><code>*o**o***o***
+*o***o**o***</code></pre>
+<p>输出</p>
+<pre><code>1</code></pre>
+</blockquote>
+<pre><code class="c++">#include &lt;cstring&gt;
+#include &lt;iostream&gt;
+using namespace std;
+const int N =110;
+int n;
+char str1[N],str2[N];
+void turn(int i)
+&amp;#123;
+    if(str1[i]==&#39;*&#39;)
+        str1[i]=&#39;o&#39;;
+    else
+        str1[i]=&#39;*&#39;;
+&amp;#125;
+int main()
+&amp;#123;
+    cin&gt;&gt;str1&gt;&gt;str2;
+    n=strlen(str1);
+    int res=0;
+    for(int i=0;i&lt;n-1;i++)
+        if(str1[i]!=str2[i])
+        &amp;#123;
+            turn(i),turn(i+1);
+            res++;
+        &amp;#125;
+    cout&lt;&lt;res;
+    return 0;
+&amp;#125;</code></pre>
+<p>这题用暴力搜素法来进行解题</p>
+<p>先读入字符串1和2</p>
+<p>当发现1和2有不同，立即翻1相邻两个硬币</p>
+<h3 id="带分数"><a href="#带分数" class="headerlink" title="带分数"></a>带分数</h3><blockquote>
+<p>链接：<a target="_blank" rel="noopener" href="https://ac.nowcoder.com/acm/problem/14353">https://ac.nowcoder.com/acm/problem/14353</a><br>来源：牛客网</p>
+<p>题目描述</p>
+<p>  100 可以表示为带分数的形式：100 = 3 + 69258 / 714。 </p>
+<p>  还可以表示为：100 = 82 + 3546 / 197。 </p>
+<p>  注意特征：带分数中，数字1~9分别出现且只出现一次（不包含0）。 </p>
+<p>  类似这样的带分数，100 有 11 种表示法。 </p>
+<p>输入描述:</p>
+<pre><code>从标准输入读入一个正整数N (N&lt;1000*1000)</code></pre>
+<p>输出描述:</p>
+<pre><code>程序首先输出正整数N，然后在输出该数字用数码1~9不重复不遗漏地组成带分数表示的全部种数n。
+注意：不要求输出每个表示，只统计有多少表示法！
+输出格式:N n</code></pre>
+<p>示例1</p>
+<p>输入</p>
+<pre><code>100</code></pre>
+<p>输出</p>
+<pre><code>100 11</code></pre>
+<p>示例2</p>
+<p>输入</p>
+<pre><code>105</code></pre>
+<p>输出</p>
+<pre><code>105 6</code></pre>
+</blockquote>
+<p>这题也是暴力搜索法解</p>
+<p>思路：</p>
+<p>先对1-9进行全排列</p>
+<p>然后对1-9进行分割和组合，然后暴力搜索能否符合和为目标数</p>
+<pre><code class="c++">#include&lt;iostream&gt;
+#include &lt;cstdio&gt;
+#include &lt;algorithm&gt;
+using namespace std;
+int asw=0;
+int flag[10],a[10];
+int sum(int start,int end)//字符串变成数字
+&amp;#123;
+    int i,sum=0;
+    for(i=start;i&lt;end;i++)
+        sum=sum*10+a[i+1];
+    return sum;
+&amp;#125;
+
+void Found(int a[],int n,int m)
+&amp;#123;
+    int i,j,begin=0;
+    //开始裁缝分数组
+    //吧全排列好的数组分别划分成整数，分子，分母
+    for (int k = 1; k &lt;n ; ++k) &amp;#123;
+        int m1=sum(0,i);//从1到9开始选择数
+        if(m1&gt;=m) return;//如果第一个整数就比给定的数要大就直接淘汰
+        for (int j=i+(n-i)/2; j&lt;n-1 ; ++j) &amp;#123;
+            int m2=sum(i,j);
+            int m3=sum(j,n-1);
+            if(m2&gt;m3&amp;&amp;m2%3==0&amp;&amp;m==m1+m2/3)
+            &amp;#123;
+                asw++;
+            &amp;#125;
+        &amp;#125;
+
+    &amp;#125;
+&amp;#125;
+void DFS(int start,int n,int m)
+&amp;#123;
+    if (start==n)//表示全排列完成
+    &amp;#123;
+        Found(a,n,m);
+    &amp;#125;
+    else
+    &amp;#123;
+        for (int i = 1; i &lt;10 ; ++i) &amp;#123;
+            if(flag[i])//如果没有搜索过
+            &amp;#123;
+                continue;//对于以这个开头的数
+                a[start]=i;
+                flag[i]=1;
+                DFS(start+1,n,m);
+                flag[i]=0;//重置，让后一个开头的数能够循环
+            &amp;#125;
+        &amp;#125;
+    &amp;#125;
+&amp;#125;
+int main()
+&amp;#123;
+   int i ,j,m;
+   double s1,s2;
+   fill(flag,flag+10,0);
+   cin&gt;&gt;m;
+   DFS(1,10,m);//1-9进行全排列
+   cout&lt;&lt;m&lt;&lt;&#39; &#39;&lt;&lt;asw;
+    return 0;
+&amp;#125;</code></pre>
+<h3 id="非递归实现组合型枚举"><a href="#非递归实现组合型枚举" class="headerlink" title="非递归实现组合型枚举"></a>非递归实现组合型枚举</h3><blockquote>
+<p>链接：<a target="_blank" rel="noopener" href="https://ac.nowcoder.com/acm/problem/50925">https://ac.nowcoder.com/acm/problem/50925</a><br>来源：牛客网</p>
+<p>题目描述</p>
+<p>从 1~n 这 n 个整数中随机选出 m 个，输出所有可能的选择方案。n&gt;0n \gt 0n&gt;0, 0≤m≤n0 \leq m \leq n0≤m≤n, n+(n−m)≤25n+(n-m)\leq 25n+(n−m)≤25。</p>
+<p>输入描述:</p>
+<pre><code>两个整数n，m。</code></pre>
+<p>输出描述:</p>
+<pre><code>按照从小到大的顺序输出所有方案，每行1个。首先，同一行内的数升序排列，相邻两个数用一个空格隔开。其次，对于两个不同的行，对应下标的数一一比较，字典序较小的排在前面（例如1 3 9 12排在1 3 10 11前面）。</code></pre>
+<p>示例1</p>
+<p>输入</p>
+<pre><code>5 3</code></pre>
+<p>输出</p>
+<pre><code>1 2 3
+1 2 4
+1 2 5
+1 3 4
+1 3 5
+1 4 5
+2 3 4
+2 3 5
+2 4 5
+3 4 5</code></pre>
+</blockquote>
+<pre><code class="c++">#include&lt;bits/stdc++.h&gt;
+using namespace std;
+int sz[100];
+int n,m;
+void dfs(int pos,int val)
+&amp;#123;
+    if(pos==m)
+    &amp;#123;
+        cout&lt;&lt;sz[0];
+        for(int i=1; i&lt;pos; i++)
+            cout&lt;&lt;&quot; &quot;&lt;&lt;sz[i];
+        cout&lt;&lt;endl;
+        return ;
+    &amp;#125;
+    for(int i=val+1; i&lt;=n; i++)
+    &amp;#123;
+        sz[pos]=i;
+        dfs(pos+1,i);
+    &amp;#125;
+&amp;#125;
+int main()
+&amp;#123;
+    cin&gt;&gt;n&gt;&gt;m;
+    if(m==0)
+        cout&lt;&lt;endl;
+    else if(m==1)
+    &amp;#123;
+        for(int i=1; i&lt;=n; i++)
+            cout&lt;&lt;i&lt;&lt;endl;
+    &amp;#125;
+    else
+    &amp;#123;
+        for(int i=1; i&lt;=n; i++)
+        &amp;#123;
+            sz[0]=i;//记录数组
+            dfs(1,sz[0]);
+        &amp;#125;
+    &amp;#125;
+
+    return 0;
+&amp;#125;</code></pre>
+<h3 id="费解的开关"><a href="#费解的开关" class="headerlink" title="费解的开关"></a>费解的开关</h3><blockquote>
+<p>链接：<a target="_blank" rel="noopener" href="https://ac.nowcoder.com/acm/problem/50920">https://ac.nowcoder.com/acm/problem/50920</a><br>来源：牛客网</p>
+<p>你玩过“拉灯”游戏吗？25盏灯排成一个5x5的方形。每一个灯都有一个开关，游戏者可以改变它的状态。每一步，游戏者可以改变某一个灯的状态。游戏者改变一个灯的状态会产生连锁反应：和这个灯上下左右相邻的灯也要相应地改变其状态。 </p>
+<p>  我们用数字“1”表示一盏开着的灯，用数字“0”表示关着的灯。下面这种状态 </p>
+<p> 10111<br> 01101<br> 10111<br> 10000<br> 11011 </p>
+<p>  在改变了最左上角的灯的状态后将变成： </p>
+<p>  01111<br> 11101<br> 10111<br> 10000<br> 11011 </p>
+<p>  再改变它正中间的灯后状态将变成： </p>
+<p>  01111<br> 11001<br> 11001<br> 10100<br> 11011 </p>
+<p>  给定一些游戏的初始状态，编写程序判断游戏者是否可能在6步以内使所有的灯都变亮。 </p>
+<p>输入描述:</p>
+<pre><code>第一行有一个正整数n，代表数据中共有n个待解决的游戏初始状态。
+以下若干行数据分为n组，每组数据有5行，每行5个字符。每组数据描述了一个游戏的初始状态。各组数据间用一个空行分隔。
+对于30%的数据，n≤5n \leq 5n≤5；
+对于100%的数据，n≤500n \leq 500n≤500。</code></pre>
+<p>输出描述:</p>
+<pre><code>输出数据一共有n行，每行有一个小于等于6的整数，它表示对于输入数据中对应的游戏状态最少需要几步才能使所有灯变亮。
+对于某一个游戏初始状态，若6步以内无法使所有灯变亮，请输出“-1”。</code></pre>
+<p>示例1</p>
+<p>输入</p>
+<pre><code>3
+00111
+01011
+10001
+11010
+11100
+
+11101
+11101
+11110
+11111
+11111
+
+01111
+11111
+11111
+11111
+11111</code></pre>
+<p>输出</p>
+<pre><code>3
+2
+-1</code></pre>
+</blockquote>
+<p>说明改变一盏灯后</p>
+<p>其上下左右十字形区域将会都取反</p>
+<p>注意以下：</p>
+<ul>
+<li>所有问题的最后的方案取决于第一行的初态，</li>
+<li>所以列举第一行32种初态，进行改变</li>
+<li>然后像解cube一样，一行行地进行消除，变成灯全开的状态</li>
+<li>每一行灯全开依赖于下一行的同列</li>
+<li>最后最后一行不能由下一行进行啊改变</li>
+<li>所以最后一行如果是全开的话 ，就有解，如果最后一行不是全开的话就无解，换而言之只用判断最后一行状态就行</li>
+<li>由于题目大小限制所以建议使用位运算进行操作</li>
+</ul>
+<p><a target="_blank" rel="noopener" href="https://blog.csdn.net/xiaonanxinyi/article/details/84349483?ops_request_misc=%257B%2522request%255Fid%2522%253A%2522161509708516780274122798%2522%252C%2522scm%2522%253A%252220140713.130102334..%2522%257D&request_id=161509708516780274122798&biz_id=0&utm_medium=distribute.pc_search_result.none-task-blog-2~all~sobaiduend~default-2-84349483.first_rank_v2_pc_rank_v29&utm_term=%E8%B4%B9%E8%A7%A3%E7%9A%84%E5%BC%80%E5%85%B3">题解blog</a></p>
+<pre><code class="c++">#include&lt;iostream&gt;
+#include&lt;cstring&gt;
+#include&lt;algorithm&gt;
+using namespace std;
+const int INF = 0x3f3f3f3f;
+char mp[7][7];
+int dx[5] = &amp;#123; 0,0,-1,1,0 &amp;#125;, dy[5] = &amp;#123; 1,-1,0,0,0 &amp;#125;;//方位数组
+void turn(int x, int y)//使坐标(x,y)周围的灯的状态改变
+&amp;#123;
+    for (int i = 0;i &lt; 5;i++)
+    &amp;#123;
+        int a = x + dx[i];
+        int b = y + dy[i];
+        if (a &gt;= 0 &amp;&amp; a &lt; 5 &amp;&amp; b &gt;= 0 &amp;&amp; b &lt; 5)//如果没有出边界
+            mp[a][b] = &#39;0&#39; + &#39;1&#39; - mp[a][b];//使满足条件的灯的状态改变
+    &amp;#125;
+&amp;#125;
+int work()
+&amp;#123;
+    int res = INF;
+    for (int k = 0;k &lt; (1 &lt;&lt; 5);k++)//第0行***有5个灯，每个灯都有按与不按两种选择，对应于k的2进制表示就是每位上的1/0。所以最后共有32种情况。我们将第一行所有按的情况都枚举一下，在第一行确定的情况下，剩下的行数，按与不按也就可以确定了(1往后移动5位，表示2的5次方)1*2次方
+    &amp;#123;
+        char re[7][7];
+        int ans = 0;
+        memcpy(re, mp, sizeof (mp));//把mp中的信息拷贝到re中
+        for (int i = 0;i &lt; 5;i++)
+            if (k &gt;&gt; i &amp; 1)//对于第一行的i个等，如果这个灯是开的
+            &amp;#123;
+                ans++;
+                turn(0, i);//根据k的2进制表示信息我们可以知道需要将(0,i)上的灯按一下
+            &amp;#125;
+        for (int i = 0;i &lt; 4;i++)//对于1-4行的灯，其状态都由第一行决定
+        &amp;#123;
+            for (int j = 0;j &lt; 5;j++)
+                if (mp[i][j] == &#39;0&#39;)//如果这一行的为0，按下一行同列的灯来改变，一行一行的进行消除
+                &amp;#123;
+                    ans++;
+                    turn(i + 1, j);
+                &amp;#125;
+        &amp;#125;
+        bool is_sucessful = true;//之后只有最后一行会产生错误，判断最后一行的灯是不是全部都是亮的，如果是的话就表示我们枚举的这个方案是成功的
+        for (int i = 0;i &lt; 5;i++)
+            if (mp[4][i] == &#39;0&#39;)
+            &amp;#123;
+                is_sucessful = false;
+                break;
+            &amp;#125;
+        if (is_sucessful)//如果该方案成功的话我们需要维护一下最小值便于最后输出方案最小值
+            res = min(res, ans);
+        memcpy(mp, re, sizeof (mp));//再把mp中灯的开关情况恢复，便于接下来对k的枚举
+    &amp;#125;
+    if(res&gt;6)
+       res=-1;
+    return res;
+&amp;#125;
+int main()
+&amp;#123;
+    ios::sync_with_stdio(false);
+    cin.tie(0);
+    int n;
+    cin &gt;&gt; n;
+    while (n--)
+    &amp;#123;
+        for (int i = 0;i &lt; 5;i++)
+        &amp;#123;
+            for (int j = 0;j &lt; 5;j++)
+                cin &gt;&gt; mp[i][j];
+        &amp;#125;
+        cout &lt;&lt; work() &lt;&lt; endl;
+    &amp;#125;
+    return 0;
+&amp;#125;</code></pre>
+<h3 id="汉诺塔问问题"><a href="#汉诺塔问问题" class="headerlink" title="汉诺塔问问题"></a>汉诺塔问问题</h3><blockquote>
+<p>链接：<a target="_blank" rel="noopener" href="https://ac.nowcoder.com/acm/problem/50921">https://ac.nowcoder.com/acm/problem/50921</a><br>来源：牛客网</p>
+<p>译文描述</p>
+<p>背景查理·黑褐色（Charlie Darkbrown）参加了另一门无聊的计算机科学课程：目前，老师只是在解释河内塔的标准问题，这使查理感到无聊！ 老师指着黑板（图4）说：“所以这是问题所在： </p>
+<p><img src="https://uploadfiles.nowcoder.com/files/20190708/314053_1562564708660_1958_1.jpg" alt="img"></p>
+<ul>
+<li><p>一共有三座塔楼：A，B和C。 </p>
+</li>
+<li><p>有n个磁盘。拼图游戏时，数字n是恒定的。 </p>
+</li>
+<li><p>所有磁盘的大小均不同。 </p>
+</li>
+<li><p>磁盘最初堆叠在塔A上，其大小从顶部到底部逐渐增加。 </p>
+</li>
+<li><p>难题的目标是将所有磁盘从塔A转移到塔C。 </p>
+</li>
+<li><p>一次可以将一个磁盘从塔架顶部移动到空塔架或顶部具有更大磁盘的塔架上。  </p>
+</li>
+</ul>
+<p>因此，您的任务是编写一个程序，以计算将所有磁盘从A塔移动到C所需的最小磁盘移动次数。”<br>Charlie：“这非常无聊，每个人都知道可以使用简单的递归来解决。拒绝编写像这样简单的代码！”<br>老师叹了口气：“好吧，查理，让我们考虑一下要为您做的事情：为您提供第四塔D。计算最小数量的磁盘移动以移动所有磁盘。塔A到D都使用了全部四个塔。”<br>查理看上去很生气：“嗯。。。好吧，我不知道四塔的最佳算法。。。“<br>问题<br>因此，真正的问题是解决问题不属于查理擅长的事情。实际上，查理唯一真正擅长的就是“坐在可以做这项工作的人旁边”。现在，猜猜是什么-完全是！坐在查理旁边的是你，他已经瞪着你。<br>幸运的是，您知道以下算法适用于n &lt;= 12：首先固定塔A上的k&gt; = 1个磁盘，然后使用四个塔的算法将剩余的nk个磁盘从塔A移至塔B.使用三个塔的算法，将k个塔中的k个磁盘移到塔D中。最后，使用用于四个塔的算法，将塔B中的n-k个磁盘再次移动到塔D中（从而不移动塔D上已有的k个磁盘中的任何一个）。对所有k 2∈{1，….，n}执行此操作，并找到移动次数最少的k。<br>因此，对于n = 3和k = 2，您首先需要使用四塔算法（一次移动）将1（3-2）个磁盘从塔A移到塔B。然后，您将使用三个塔的算法将剩余的两个磁盘从塔A移到塔D（三步）。最后一步是再次使用四个塔的算法将磁盘从塔B移到塔D（另一个移动）。因此，对于n = 3和k = 2的解是5个移动。为确保这确实是n = 3的最佳解决方案，您需要检查k的其他可能值1和3。（但是，顺便说一句，5是最佳的。。。）</p>
+<p>输入描述：</p>
+<pre><code>没有输入。</code></pre>
+<p>输出描述：</p>
+<pre><code>对于每个n（1 &lt;= n &lt;= 12），请打印一行以包含最少移动次数，以解决四个塔和n个磁盘的问题。</code></pre>
+</blockquote>
+<p>采用动态规划</p>
+<pre><code class="c++"></code></pre>
+<h2 id="蓝桥杯第十一届真题"><a href="#蓝桥杯第十一届真题" class="headerlink" title="蓝桥杯第十一届真题"></a>蓝桥杯第十一届真题</h2><h3 id="既约分数"><a href="#既约分数" class="headerlink" title="既约分数"></a>既约分数</h3><p><img src="https://img-blog.csdnimg.cn/20210213191801692.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_5rqQ5Luj56CB4oCi5a64,size_16,color_FFFFFF,t_70"></p>
+<pre><code class="c++">#include&lt;iostream&gt;
+using namespace std;
+int gcd(int a, int b)
+&amp;#123;
+    return b ? gcd(b, a % b) : a;
+&amp;#125;
+
+int main()
+&amp;#123;
+    int sum = 0;
+    //分子分母相同的情况
+    sum = 1;
+
+    int sum2 = 0;
+    //分子小于分母的情况
+    for(int i = 1; i &lt; 2020; i++)
+    &amp;#123;
+        for(int j = i + 1; j &lt;= 2020; j++)
+        &amp;#123;
+            if(gcd(i, j) == 1)
+            &amp;#123;
+                sum2++;
+            &amp;#125;
+        &amp;#125;
+    &amp;#125; 
+    sum += sum2 * 2;
+    cout &lt;&lt; sum &lt;&lt; endl;
+    return 0;
+&amp;#125;</code></pre>
+<h3 id="蛇形填数"><a href="#蛇形填数" class="headerlink" title="蛇形填数"></a>蛇形填数</h3><blockquote>
+<p>题目<br>试题 C: 蛇形填数<br>本题总分：10 分</p>
+<p>【问题描述】<br>如下图所示，小明用从 1 开始的正整数“蛇形”填充无限大的矩阵。<br>1 2 6 7 15 …<br>3 5 8 14 …<br>4 9 13 …<br>10 12 …<br>11 …<br>…</p>
+<p>容易看出矩阵第二行第二列中的数是 5。请你计算矩阵中第 20 行第 20 列的数是多少？</p>
+</blockquote>
+<pre><code class="c++">#include&lt;bits/stdc++.h&gt;
+using namespace std;
+
+
+int main()
+&amp;#123;
+    int s,t=0,sum=0;
+    s=2*20-1; // 根据等差数列计算出第二十行二十列是第几条对角线 
+    for(int i=1;i&lt;=s-1;i++) // 计算前38条对角线数字之和 
+    &amp;#123;
+        t++;
+        sum+=t;
+    &amp;#125;
+    s=s/2+1;  // 第39条对角线上属于范围内的数字之和 
+    sum+=s;
+    cout&lt;&lt;sum;
+ &amp;#125; </code></pre>
+<pre><code class="python">#蛇形填数
+def func(x):
+    if x == 1:
+        return 1
+    elif x == 2:
+        return 5
+    else:
+        return func(x - 1) + 4 * (x - 1)
+
+print(func(20))
+</code></pre>
+<h3 id="七段码"><a href="#七段码" class="headerlink" title="七段码"></a>七段码</h3><p><img src="https://img-blog.csdnimg.cn/20201018100053598.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3FxXzQzNzE3OTcy,size_16,color_FFFFFF,t_70#pic_center"></p>
+<pre><code class="c++">#include&lt;bits/stdc++.h&gt;
+using namespace std;
+const int N=10;
+int use[N],ans,e[N][N],fa[N];
+void init()&amp;#123;
+    //连边建图，e[i][j]==1表示i和j相邻
+    //a b c d e f g
+    //1 2 3 4 5 6 7
+    e[1][2]=e[1][6]=1;
+    e[2][1]=e[2][7]=e[2][3]=1;
+    e[3][2]=e[3][4]=e[3][7]=1;
+    e[4][3]=e[4][5]=1;
+    e[5][4]=e[5][6]=e[5][7]=1;
+    e[6][1]=e[6][5]=e[6][7]=1;
+&amp;#125;
+int find(int u)&amp;#123;if(fa[u]==u)return u;fa[u]=find(fa[u]);return fa[u];&amp;#125;//并查集
+void dfs(int d)&amp;#123;
+    if(d&gt;7)&amp;#123;
+        /* 并查集判联通 */
+        for(int i=1;i&lt;=7;i++)fa[i]=i;
+        for(int i=1;i&lt;=7;i++)
+        for(int j=1;j&lt;=7;j++)
+            if(e[i][j]&amp;&amp;use[i]&amp;&amp;use[j])&amp;#123;
+                int fx=find(i),fy=find(j);
+                if(fx!=fy)&amp;#123;
+                    fa[fx]=fy;
+                &amp;#125;
+            &amp;#125;
+        int k=0;
+        for(int i=1;i&lt;=7;i++)if(use[i]&amp;&amp;fa[i]==i)k++;
+        if(k==1)ans++;
+        return;
+    &amp;#125;
+    use[d]=1;//打开d这个灯，继续开关下一个灯
+    dfs(d+1);
+    use[d]=0;//关闭d这个灯，继续开关下一个灯
+    dfs(d+1);
+&amp;#125;
+int main()&amp;#123;
+    init();
+    dfs(1);
+    cout&lt;&lt;ans;
+&amp;#125;</code></pre>
+<pre><code class="python">import numpy as np
+import itertools as it
+
+
+class UnionFind:
+    def __init__(self, n):
+        self.father = list(range(n))
+        self.size = [1] * n
+        # 当前连通分量数目
+        self.setCount = n
+
+    def find(self, x):
+        if self.father[x] == x:
+            return x
+        self.father[x] = self.find(self.father[x])
+        return self.father[x]
+
+    def merge(self, x, y):
+        x, y = self.find(x), self.find(y)
+        if x == y:
+            return False
+        if self.size[x] &lt; self.size[y]:
+            x, y = y, x
+        self.father[y] = x
+        self.size[x] += self.size[y]
+        self.setCount -= 1
+        return True
+
+
+res = 0
+data = list(np.zeros((7, 7)))
+
+data[0][1] = data[0][5] = 1
+data[1][0] = data[1][6] = data[1][2] = 1
+data[2][1] = data[2][3] = data[2][6] = 1
+data[3][2] = data[3][4] = 1
+data[4][3] = data[4][5] = data[4][6] = 1
+data[5][0] = data[5][4] = data[5][6] = 1
+
+num = [i for i in range(0, 7)]
+
+for i in range(1, 8):
+    total = it.combinations(num, i)
+    for j in total:
+        uf = UnionFind(7)
+
+        for z in j:
+            for k in range(len(data[z])):
+                z = int(z)
+                b = int(data[z][k])
+                if b == 1 and k in j:
+                    uf.merge(z, k)
+
+        if uf.setCount == 7 - len(j) + 1:
+            res += 1
+
+print(res)</code></pre>
+<h3 id="成绩分析"><a href="#成绩分析" class="headerlink" title="成绩分析"></a>成绩分析</h3><p><img src="https://output-course-file.oss-cn-hangzhou.aliyuncs.com/courses%2F2786%2Fattachments%2F1614059341424%2F7.png?OSSAccessKeyId=LTAI4G6JuPaCndB3pE1nSCz9&Expires=1615105172&Signature=bNuQxcEwKwpinm9TluOc3ugYTFw="></p>
+<p>太简单就不贴代码了</p>
+<h3 id="回文日期"><a href="#回文日期" class="headerlink" title="回文日期"></a>回文日期</h3><p><img src="https://output-course-file.oss-cn-hangzhou.aliyuncs.com/courses%2F2786%2Fattachments%2F1614059341424%2F9.png?OSSAccessKeyId=LTAI4G6JuPaCndB3pE1nSCz9&Expires=1615105172&Signature=oGlQGxLIqXYAR3e0BDNkY7bnQ/g="></p>
+<pre><code class="c++">#include &lt;cstring&gt;
+#include &lt;iostream&gt;
+
+using namespace std;
+
+int days[13] = &amp;#123;0, 31, 28, 31, 30, 31, 30, 31, 31, 30, 31, 30, 31&amp;#125;;
+
+bool check(int date)
+&amp;#123;
+    int year = date / 10000;
+    int mouth = (date / 100) % 100;
+    int day = date % 100;
+
+    if(mouth &lt; 0 || mouth &gt; 12) return false;
+    if(day == 0 || mouth != 2 &amp;&amp; day &gt; days[mouth]) return false;
+
+    if(mouth == 2)
+    &amp;#123;
+        int leap = year % 100 &amp;&amp; year % 4 == 0 || year % 400 == 0;
+        if(day &gt; days[mouth] + leap)   return false;
+    &amp;#125;
+
+    return true;
+&amp;#125;
+
+int main()
+&amp;#123;
+    int date1, date2;
+    cin &gt;&gt; date1 &gt;&gt; date2;
+
+    int res = 0;
+    for(int i = 1000; i &lt; 10000; i ++)
+    &amp;#123;
+        int date = i, x = i;
+        for(int j = 0; j &lt; 4; j ++ )    date = date * 10 + x % 10, x /= 10;
+
+        if(date1 &lt;= date &amp;&amp; date &lt;= date2 &amp;&amp; check(date))   res ++;
+    &amp;#125;
+
+    cout &lt;&lt; res &lt;&lt; endl;
+
+    return 0;
+&amp;#125;</code></pre>
+<h3 id="子串分值"><a href="#子串分值" class="headerlink" title="子串分值"></a>子串分值</h3><p><img src="https://output-course-file.oss-cn-hangzhou.aliyuncs.com/courses%2F2786%2Fattachments%2F1614059341424%2F11.png?OSSAccessKeyId=LTAI4G6JuPaCndB3pE1nSCz9&Expires=1615105172&Signature=W9nNpL2cMSq6/8W9spMyn0K/nY0="></p>
+<p><img src="https://output-course-file.oss-cn-hangzhou.aliyuncs.com/courses%2F2786%2Fattachments%2F1614059341424%2F12.png?OSSAccessKeyId=LTAI4G6JuPaCndB3pE1nSCz9&Expires=1615105172&Signature=PbuPUxKXs3rmaSoClVQ+0DrqOjg="></p>
+<pre><code class="c++">#include &lt;iostream&gt;
+#include &lt;cstring&gt;
+using namespace std;
+int flag[26];
+int num;
+int main()
+&amp;#123;
+    string str;
+    cin &gt;&gt; str;
+    long long sum = 0;
+    for(int i = 0; i &lt; str.length(); ++i)&amp;#123;
+        for(int j = i; j &lt; str.length(); ++j)&amp;#123;
+            flag[str[j] - &#39;a&#39;]++;
+            if(flag[str[j] - &#39;a&#39;] == 1)&amp;#123;
+                num++;
+            &amp;#125;
+            sum += num;
+        &amp;#125;
+        memset(flag, 0, sizeof(flag));
+        num = 0;
+    &amp;#125;
+    cout &lt;&lt; sum &lt;&lt; &#39;\n&#39;;
+    return 0;
+&amp;#125;</code></pre>
+<h3 id="字串排序"><a href="#字串排序" class="headerlink" title="字串排序"></a>字串排序</h3><p><img src="https://output-course-file.oss-cn-hangzhou.aliyuncs.com/courses%2F2786%2Fattachments%2F1614059341424%2F15.png?OSSAccessKeyId=LTAI4G6JuPaCndB3pE1nSCz9&Expires=1615105172&Signature=Xd69ZvdnXAqa35LDuf+PZeVeTSs="></p>
+<p>DP</p>
+<pre><code class="c++">#include &lt;cstring&gt;
+#include &lt;iostream&gt;
+#include &lt;algorithm&gt;
+
+using namespace std;
+
+const int N = 135, M = 10010;
+
+int f[N][30][N];
+//chcnt[i][j]记录第i个位置取字母j+&#39;a&#39;的逆序对最大值 
+int chcnt[N][30];
+//mlen[i]记录每个位置的最大值 
+int mlen[N];
+
+void dp()
+&amp;#123;
+    for (int i = 2; i &lt; N; ++i)
+    &amp;#123;
+        int m = 0;
+        for (int j = 1; j &lt;= &#39;z&#39; - &#39;a&#39;; ++j)
+        &amp;#123;
+            for (int k = 1; k &lt; i; ++k)
+            &amp;#123;
+                if (k &gt; 1) f[i][j][k] = f[i - 1][j][k - 1] + i - k;
+                else f[i][j][k] = chcnt[i - 1][j - 1] + i - 1;
+                chcnt[i][j] = max(chcnt[i][j], f[i][j][k]);
+            &amp;#125;
+            m = max(m, chcnt[i][j]);
+        &amp;#125;
+        mlen[i] = m;
+    &amp;#125;
+
+&amp;#125;
+
+int main()
+&amp;#123;
+    dp();
+
+    int score = 0;
+    cin &gt;&gt; score;
+    //找出最短长度值
+    int beg = 0;
+    for (int i = 1; i &lt; N; ++i)
+        if (mlen[i] &gt;= score)
+        &amp;#123;
+            beg = i;
+            break;
+        &amp;#125;
+
+    int curr = 0;    //用于记录逆序值
+    int same = 1;    //记录后缀中有多少个相同字母
+    char last = &#39;z&#39; + 1;//记录上一个字母是什么 
+    for (int i = beg; i &gt; 0; --i)
+    &amp;#123;
+        //从a开始枚举
+        int j = 0;
+        for (; j &lt;= last - &#39;a&#39;; ++j)
+        &amp;#123;
+            if (j == last - &#39;a&#39;) curr -= same;
+            if (curr + chcnt[i][j] &gt;= score)
+            &amp;#123;
+                curr += i - 1;
+                break;
+            &amp;#125;
+        &amp;#125;
+        if (j == last - &#39;a&#39;) same++;
+        else
+        &amp;#123;
+            last = j + &#39;a&#39;;
+            same = 1;
+        &amp;#125;
+        cout &lt;&lt; last;
+    &amp;#125;
+    cout &lt;&lt; endl;
+
+    return 0;
+&amp;#125;</code></pre>
+<h2 id="蓝桥杯第十届"><a href="#蓝桥杯第十届" class="headerlink" title="蓝桥杯第十届"></a>蓝桥杯第十届</h2><h3 id="平方和"><a href="#平方和" class="headerlink" title="平方和"></a>平方和</h3><p><img src="https://output-course-file.oss-cn-hangzhou.aliyuncs.com/courses%2F2786%2Fattachments%2F1605771924939%2F2.png?OSSAccessKeyId=LTAI4G6JuPaCndB3pE1nSCz9&Expires=1615105521&Signature=gl5UYg5AUVUW3zpvD9TXrgB2nkg="></p>
+<h3 id="数列求和"><a href="#数列求和" class="headerlink" title="数列求和"></a>数列求和</h3><p><img src="https://output-course-file.oss-cn-hangzhou.aliyuncs.com/courses%2F2786%2Fattachments%2F1605771924939%2F3.png?OSSAccessKeyId=LTAI4G6JuPaCndB3pE1nSCz9&Expires=1615105521&Signature=iOmCIFJ4VAg3RLLW74clT/cN0Qw="></p>
+<pre><code class="c++">#include&lt;bits/stdc++.h&gt;
+using namespace std;
+
+int main()&amp;#123;
+    int a[4]=&amp;#123;1,1,1&amp;#125;;
+    int s = 0;
+    for(int i = 4;i&lt;=20190324;i++)&amp;#123;
+        s = a[0]+a[1]+a[2];
+        s = s%10000;
+        a[0]=a[1];
+        a[1]=a[2];
+        a[2]=s;
+//        cout&lt;&lt;a[2]&lt;&lt;endl;
+    &amp;#125;
+    cout&lt;&lt;a[2]&lt;&lt;endl;
+    return 0;
+&amp;#125;</code></pre>
+<h3 id="最大降雨量"><a href="#最大降雨量" class="headerlink" title="最大降雨量"></a>最大降雨量</h3><p><img src="https://output-course-file.oss-cn-hangzhou.aliyuncs.com/courses%2F2786%2Fattachments%2F1605771924939%2F4.png?OSSAccessKeyId=LTAI4G6JuPaCndB3pE1nSCz9&Expires=1615105521&Signature=04Ik9D5vXBGzcUP8pelB7yJm5GY="></p>
+<p>34</p>
+<p>证明：无法找到比34更优的方案了。如下图，假设每周选的数已经排好序</p>
+<p>第一周: x  x  x  x  x  x  x  ( x1,x2,x3,x4,x5,x6 满足 x1&lt;x2&lt;x3&lt;x4&lt;x5&lt;x6）<br>第二周: x  x  x  x  x  x  x<br>第三周: x  x  x  x  x  x  x<br>第四周: x  x  x  x  x  x  x<br>第五周: x  x  x  x  x  x  x<br>第六周: x  x  x  x  x  x  x<br>第七周: x  x  x  x  x  x  x </p>
+<p>则标记红色的是每周的中位数：</p>
+<p>第一周: x  x  x  x  x  x  x<br>第二周: x  x  x  x  x  x  x<br>第三周: x  x  x  x  x  x  x<br>第四周: x  x  x  x  x  x  x<br>第五周: x  x  x  x  x  x  x<br>第六周: x  x  x  x  x  x  x<br>第七周: x  x  x  x  x  x  x </p>
+<p>此时不看第几周,每一行里：红色的x右边的x必然比x大。</p>
+<p>假设上面的七行按行按照x由小到大重新排序后得到</p>
+<p>x  x  x  x1  x  x  x<br>x  x  x  x2  x  x  x<br>x  x  x  x3  x  x  x<br>x  x  x  x4  x  x  x<br>x  x  x  x5  x  x  x<br>x  x  x  x6  x  x  x<br>x  x  x  x7  x  x  x </p>
+<p>则x1&lt;x2&lt;x3&lt;x4&lt;x5&lt;x6&lt;x7  题目要求的中位数的中位数就是x4了</p>
+<p>问题是x4最大能取到多少呢？注意到上图中x4右下角(如下图）的元素都应比x4大。。(共15个)</p>
+<p>因此答案为49-15=34</p>
+<p>x  x  x  x    x  x  x<br>x  x  x  x    x  x  x<br>x  x  x  x    x  x  x<br>x  x  x  x4  x  x  x<br>x  x  x  x    x  x  x<br>x  x  x  x    x  x  x<br>x  x  x  x    x  x  x </p>
+<p>————————————————<br>原文链接：<a target="_blank" rel="noopener" href="https://blog.csdn.net/linruier2017/article/details/88803441">https://blog.csdn.net/linruier2017/article/details/88803441</a></p>
+<h3 id="迷宫"><a href="#迷宫" class="headerlink" title="迷宫"></a>迷宫</h3><p>bfs搜索即可</p>
+<pre><code class="#include&lt;iostream&gt;">#include&lt;queue&gt;
+#include&lt;cstdio&gt;
+#include&lt;string&gt;
+#include&lt;cstring&gt;
+using namespace std;
+
+char map[501][501];  //存成字符型 
+int vis[500][500];
+/*
+01010101001011001001010110010110100100001000101010
+00001000100000101010010000100000001001100110100101
+01111011010010001000001101001011100011000000010000
+01000000001010100011010000101000001010101011001011
+00011111000000101000010010100010100000101100000000
+11001000110101000010101100011010011010101011110111
+00011011010101001001001010000001000101001110000000
+10100000101000100110101010111110011000010000111010
+00111000001010100001100010000001000101001100001001
+11000110100001110010001001010101010101010001101000
+00010000100100000101001010101110100010101010000101
+11100100101001001000010000010101010100100100010100
+00000010000000101011001111010001100000101010100011
+10101010011100001000011000010110011110110100001000
+10101010100001101010100101000010100000111011101001
+10000000101100010000101100101101001011100000000100
+10101001000000010100100001000100000100011110101001
+00101001010101101001010100011010101101110000110101
+11001010000100001100000010100101000001000111000010
+00001000110000110101101000000100101001001000011101
+10100101000101000000001110110010110101101010100001
+00101000010000110101010000100010101001000100010101
+10100001000110010001000010101001110101011111010010
+00000100101000000110010100101001100001000000000010
+11010000001001110111001001000011101001011011101000
+00000110100010001000100000001000011101000000110011
+10101000101000100010001111100010101001010000001000
+10000010100101001010110000000100101010001011101000
+00111100001000010000000110111000000001000000001011
+10000001100111010111010001000110111010101101111000
+*/
+int dir[4][2] = &amp;#123;
+    &amp;#123;1, 0&amp;#125;,      //下 
+    &amp;#123;0, -1&amp;#125;,     //左 
+    &amp;#123;0, 1&amp;#125;,      //右 
+    &amp;#123;-1, 0&amp;#125;      //上 
+&amp;#125;;
+char dic[4]= &amp;#123;&#39;D&#39;,&#39;L&#39;,&#39;R&#39;,&#39;U&#39;&amp;#125;;
+
+struct node &amp;#123;
+    int x,y;
+    int step;            //到达该节点的步数
+    string path;          //到达该点路径
+&amp;#125;;
+
+int x1,x2,y1,y2,n,m;      //(x1,y1)起点，(x2,y2）终点 
+
+void bfs() &amp;#123;
+    queue&lt;node&gt; q;
+    node p;           //当前所在的节点
+    p.x=x1;p.y=y1;p.step=0;p.path=&quot;&quot;;
+    vis[x1][y1]=1;
+    q.push(p);
+    while(!q.empty())&amp;#123;
+        node p=q.front();        //宽搜  队列待遍历节点 
+        if(p.x==x2&amp;&amp;p.y==y2)&amp;#123;
+            if(p.step==0)&amp;#123;
+
+            &amp;#125; 
+            cout&lt;&lt;p.step&lt;&lt;endl&lt;&lt;p.path;
+        &amp;#125;
+        node v;      //下一步所要去往的节点 
+        for(int i=0;i&lt;4;i++)&amp;#123;      //依次四个方向遍历 
+            v.x=p.x+dir[i][0];
+            v.y=p.y+dir[i][1];
+            if(v.x&gt;=0&amp;&amp;v.y&gt;=0&amp;&amp;v.x&lt;n&amp;&amp;v.y&lt;m&amp;&amp;vis[v.x][v.y]==0&amp;&amp;map[v.x][v.y]!=&#39;1&#39;)&amp;#123;  //不能重复访问且走得通 
+                vis[v.x][v.y]=1;   //已访问 
+                v.step=p.step+1;
+                v.path=p.path+dic[i];
+                q.push(v); 
+            &amp;#125;
+        &amp;#125;
+        q.pop();
+    &amp;#125;
+&amp;#125;
+int main() &amp;#123;
+    n=30,m=50;
+    memset(map,&#39;1&#39;,sizeof(map));
+    memset(vis,0,sizeof(vis));
+    for(int i=0;i&lt;n;i++)&amp;#123;
+        for(int j=0;j&lt;m;j++)&amp;#123;
+            cin&gt;&gt;map[i][j];
+        &amp;#125;
+    &amp;#125;
+    x1=0;y1=0;
+    x2=n-1;y2=m-1;
+    bfs();
+    return 0;
+&amp;#125;</code></pre>
+<h3 id="完全二叉树权值"><a href="#完全二叉树权值" class="headerlink" title="完全二叉树权值"></a>完全二叉树权值</h3><blockquote>
+<p>时间限制: 1.0s 内存限制: 256.0MB 本题总分：15 分</p>
+<p>【问题描述】<br>给定一棵包含 N 个节点的完全二叉树，树上每个节点都有一个权值，按从上到下、从左到右的顺序依次是 A1, A2, · · · AN，如下图所示：<br>现在小明要把相同深度的节点的权值加在一起，他想知道哪个深度的节点权值之和最大？如果有多个深度的权值和同为最大，请你输出其中最小的深度。<br>注：根的深度是 1。<br>【输入格式】<br>第一行包含一个整数 N。<br>第二行包含 N 个整数 A1, A2, · · · AN 。<br>【输出格式】<br>输出一个整数代表答案。<br>【样例输入】<br>7<br>1 6 5 4 3 2 1</p>
+<p>【样例输出】<br>2</p>
+<p>【评测用例规模与约定】<br>对于所有评测用例，1 ≤ N ≤ 100000，−100000 ≤ Ai ≤ 100000<br>————————————————<br>原文链接：<a target="_blank" rel="noopener" href="https://blog.csdn.net/linruier2017/article/details/88803441">https://blog.csdn.net/linruier2017/article/details/88803441</a></p>
+</blockquote>
+<pre><code class="c++">#include&lt;bits/stdc++.h&gt;
+using namespace std;
+typedef long long ll;
+int a[100005];
+int n;
+int main()
+&amp;#123;
+    scanf(&quot;%d&quot;,&amp;n);
+    for(int i=1;i&lt;=n;i++)scanf(&quot;%d&quot;,&amp;a[i]);
+    int level=1;//层数
+    ll MAX=a[1];
+    ll ans=1;//第一层
+    int num=1;//该层的节点数
+    int pos=2;//下一层开头指针位置
+    for(;;)
+    &amp;#123;
+        level++;
+        num*=2;
+        ll sum=0;
+        for(int j=pos;j&lt;=min(pos+num-1,n);j++)sum+=a[j];
+        if(sum&gt;MAX)
+        &amp;#123;
+            ans=level;
+            MAX=sum;
+        &amp;#125;
+        pos=pos+num;
+        if(pos&gt;n)break;
+    &amp;#125;
+    printf(&quot;%lld\n&quot;,ans);
+    return 0;
+&amp;#125;</code></pre>
+<h3 id="外卖店优先级"><a href="#外卖店优先级" class="headerlink" title="外卖店优先级"></a>外卖店优先级</h3><p><img src="https://img-blog.csdnimg.cn/20200512172351279.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3FxXzQzNjUyMzI3,size_16,color_FFFFFF,t_70"></p>
+<p><img src="https://img-blog.csdnimg.cn/20200512172513541.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3FxXzQzNjUyMzI3,size_16,color_FFFFFF,t_70"></p>
+<p><img src="https://img-blog.csdnimg.cn/20200512172532964.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3FxXzQzNjUyMzI3,size_16,color_FFFFFF,t_70"></p>
+<pre><code class="c++">package JC2019;
+
+import java.util.*;
+
+public class Main &amp;#123;
+    public static void main(String[] args) &amp;#123;
+        Scanner sc=new Scanner(System.in);
+        int n=sc.nextInt();
+        int m=sc.nextInt();
+        int t=sc.nextInt();
+        HashMap&lt;Integer,Integer&gt; arr[]=new HashMap[t+1];
+        for(int i=0;i&lt;t+1;i++)&amp;#123;
+            arr[i]=new HashMap&lt;Integer,Integer&gt;();
+        &amp;#125;
+        int id,ti;
+        for(int i=0;i&lt;m;i++)&amp;#123;
+            ti=sc.nextInt();
+            id=sc.nextInt();
+            if(arr[ti].containsKey(id))&amp;#123;
+                arr[ti].put(id, arr[ti].get(id)+1);
+            &amp;#125;else&amp;#123;
+                arr[ti].put(id, 1);
+            &amp;#125;
+        &amp;#125;
+        int last[]=new int[n+1];
+        int scor[]=new int[n+1];
+        int prio[]=new int[n+1];
+        for(int i=0;i&lt;=t;i++)&amp;#123;
+            for(int temp:arr[i].keySet())&amp;#123;
+                scor[temp]=Math.max(scor[temp]-(i-last[temp]-1),0);
+                if(scor[temp]&gt;5&amp;&amp;prio[temp]==0)&amp;#123;
+                    prio[temp]=1;
+                &amp;#125;else if(scor[temp]&lt;4&amp;&amp;prio[temp]==1)&amp;#123;
+                    prio[temp]=0;
+                &amp;#125;
+                scor[temp]+=arr[i].get(temp)*2;
+                if(scor[temp]&gt;5&amp;&amp;prio[temp]==0)&amp;#123;
+                    prio[temp]=1;
+                &amp;#125;
+                last[temp]=i;
+            &amp;#125;
+        &amp;#125;
+        for(int i=0;i&lt;=n;i++)&amp;#123;
+            scor[i]=Math.max(scor[i]-(t-last[i]),0);
+            if(scor[i]&lt;4&amp;&amp;prio[i]==1)&amp;#123;
+                prio[i]=0;
+            &amp;#125;
+        &amp;#125;
+        int ans=0;
+        for(int i=0;i&lt;=n;i++)&amp;#123;
+            ans+=prio[i];
+        &amp;#125;
+        System.out.println(ans);
+    &amp;#125;
+&amp;#125;</code></pre>
+<h3 id="修改数组"><a href="#修改数组" class="headerlink" title="修改数组"></a>修改数组</h3><blockquote>
+<p>时间限制: 1.0s 内存限制: 256.0MB 本题总分：20 分</p>
+<p>【问题描述】<br>给定一个长度为 N 的数组 A = [A1, A2, · · · AN]，数组中有可能有重复出现的整数。<br>现在小明要按以下方法将其修改为没有重复整数的数组。小明会依次修改<br>A2, A3, · · · , AN。<br>当修改 Ai 时，小明会检查 Ai 是否在 A1 ∼ Ai−1 中出现过。如果出现过，则小明会给 Ai 加上 1 ；如果新的 Ai 仍在之前出现过，小明会持续给 Ai 加 1 ，直到 Ai 没有在 A1 ∼ Ai−1 中出现过。<br>当 AN 也经过上述修改之后，显然 A 数组中就没有重复的整数了。现在给定初始的 A 数组，请你计算出最终的 A 数组。<br>【输入格式】<br>第一行包含一个整数 N。<br>第二行包含 N 个整数 A1, A2, · · · , AN 。<br>【输出格式】<br>输出 N 个整数，依次是最终的 A1, A2, · · · , AN。<br>【样例输入】<br>5<br>2 1 1 3 4</p>
+<p>【样例输出】<br>2 1 3 4 5</p>
+<p>【评测用例规模与约定】<br>对于 80% 的评测用例，1 ≤ N ≤ 10000。<br>对于所有评测用例，1 ≤ N ≤ 100000，1 ≤ Ai ≤ 1000000。<br>————————————————</p>
+</blockquote>
+<pre><code class="c++">#include&lt;bits/stdc++.h&gt;
+using namespace std;
+typedef long long ll;
+int bit[2000050];
+int  n=1000001;
+int sum(int i)
+&amp;#123;
+    int s=0;
+    while(i&gt;0)
+    &amp;#123;
+        s+=bit[i];
+        i-=i&amp;-i;
+    &amp;#125;
+    return s;
+&amp;#125;
+void add(int i,int x)
+&amp;#123;
+    while(i&lt;=n)
+    &amp;#123;
+        bit[i]+=x;
+        i+=i&amp;-i;
+    &amp;#125;
+&amp;#125;
+bool ok(int k,int pre)
+&amp;#123;
+    int l=k-pre+1;
+    int cnt=sum(k)-sum(pre-1);
+    return cnt&lt;l;
+&amp;#125;
+bool vis[1000005];
+int ans[100005];
+int N;
+int a[100005];
+int main()
+&amp;#123;
+    scanf(&quot;%d&quot;,&amp;N);
+    for(int i=0;i&lt;N;i++)scanf(&quot;%d&quot;,&amp;a[i]);
+    for(int i=0;i&lt;N;i++)
+    &amp;#123;
+        if(!vis[a[i]])
+        &amp;#123;
+            ans[i]=a[i];
+            vis[a[i]]=1;
+            add(a[i],1);
+        &amp;#125;
+        else &amp;#123;
+            int l=a[i];int r=1000002;
+            int mid;
+            while(r-l&gt;1)
+            &amp;#123;
+                mid=(l+r)/2;
+                if(ok(mid,a[i]))r=mid;
+                else l=mid;
+            &amp;#125;
+            ans[i]=r;
+            vis[r]=1;
+            add(r,1);
+        &amp;#125;
+    &amp;#125;
+    for(int i=0;i&lt;N;i++)printf(&quot;%d%c&quot;,ans[i],i==N-1?&#39;\n&#39;:&#39; &#39;);
+    return 0;
+&amp;#125;</code></pre>
+<h3 id="糖果"><a href="#糖果" class="headerlink" title="糖果"></a>糖果</h3><blockquote>
+<p>糖果店的老板一共有 M 种口味的糖果出售。为了方便描述，我们将 M 种口味编号 1 ∼ M。<br>小明希望能品尝到所有口味的糖果。遗憾的是老板并不单独出售糖果，而 是 K 颗一包整包出售。<br>幸好糖果包装上注明了其中 K 颗糖果的口味，所以小明可以在买之前就知道每包内的糖果口味。<br>给定 N 包糖果，请你计算小明最少买几包，就可以品尝到所有口味的糖果。</p>
+<p>【输入格式】<br>第一行包含三个整数 N、M 和 K。<br>接下来 N 行每行 K 这整数 T1, T2, · · · , TK，代表一包糖果的口味。<br>【输出格式】<br>一个整数表示答案。如果小明无法品尝所有口味，输出 −1。<br>【样例输入】<br>6 5 3<br>1 1 2<br>1 2 3<br>1 1 3<br>2 3 5<br>5 4 2<br>5 1 2</p>
+<p>【样例输出】<br>2</p>
+<p>【评测用例规模与约定】<br>对于 30% 的评测用例，1 ≤ N ≤ 20 。<br>对于所有评测样例，1 ≤ N ≤ 100，1 ≤ M ≤ 20，1 ≤ K ≤ 20，1 ≤ Ti ≤ M。</p>
+</blockquote>
+<pre><code class="c++">#include&lt;bits/stdc++.h&gt;
+using namespace std;
+int dp[1000005];
+int n,m,k;
+int s[105];//代表第i包糖果
+int main()
+&amp;#123;
+    memset(dp,-1,sizeof(dp));
+    scanf(&quot;%d%d%d&quot;,&amp;n,&amp;m,&amp;k);
+    for(int i=0;i&lt;n;i++)
+    &amp;#123;
+        int ss=0;
+        int t;
+        for(int j=0;j&lt;k;j++)
+        &amp;#123;
+            scanf(&quot;%d&quot;,&amp;t);
+            ss|=(1&lt;&lt;(t-1));
+        &amp;#125;
+        s[i]=ss;
+        dp[ss]=1;
+    &amp;#125;
+
+    for(int i=0;i&lt;n;i++)
+    &amp;#123;
+        for(int j=0;j&lt;(1&lt;&lt;m);j++)
+        &amp;#123;
+            if(dp[j]==-1)continue;
+            if(dp[j|s[i]]==-1)dp[j|s[i]]=dp[j]+dp[s[i]];
+            else dp[j|s[i]]=min(dp[j|s[i]],dp[j]+dp[s[i]]);
+        &amp;#125;
+    &amp;#125;
+    printf(&quot;%d\n&quot;,dp[(1&lt;&lt;m)-1]);
+    return 0;
+&amp;#125;</code></pre>
+<h3 id="组合数问题"><a href="#组合数问题" class="headerlink" title="组合数问题"></a>组合数问题</h3><p>弃疗弃疗了</p>
 
             </div>
             <hr/>
