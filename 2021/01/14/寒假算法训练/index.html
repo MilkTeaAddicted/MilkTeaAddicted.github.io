@@ -488,7 +488,7 @@
                 
                 <div class="post-date info-break-policy">
                     <i class="far fa-calendar-check fa-fw"></i>更新日期:&nbsp;&nbsp;
-                    2021-03-07
+                    2021-04-10
                 </div>
                 
 
@@ -1074,6 +1074,286 @@ int main()
 </blockquote>
 <p>采用动态规划</p>
 <pre><code class="c++"></code></pre>
+<h2 id="week-2"><a href="#week-2" class="headerlink" title="week 2"></a>week 2</h2><h3 id="九宫重排"><a href="#九宫重排" class="headerlink" title="九宫重排"></a>九宫重排</h3><blockquote>
+<p>题目 1426: [蓝桥杯][历届试题]九宫重排</p>
+<p>时间限制: 1Sec 内存限制: 128MB 提交: 3297 解决: 955</p>
+<p>题目描述</p>
+<p>如下面第一个图的九宫格中，放着 1~8 的数字卡片，还有一个格子空着。与空格子相邻的格子中的卡片可以移动到空格中。经过若干次移动，可以形成第二个图所示的局面。</p>
+<p><img src="https://www.dotcpp.com/oj/upload/image/20170306/20170306084421_13973.png" alt="img"></p>
+<p>我们把第一个图的局面记为：12345678.<br>把第二个图的局面记为：123.46758<br>显然是按从上到下，从左到右的顺序记录数字，空格记为句点。<br>本题目的任务是已知九宫的初态和终态，求最少经过多少步的移动可以到达。如果无论多少步都无法到达，则输出-1。</p>
+<p>输入</p>
+<p>输入第一行包含九宫的初态，第二行包含九宫的终态。 </p>
+<p>输出</p>
+<p>输出最少的步数，如果不存在方案，则输出-1。</p>
+<p>样例输入</p>
+<pre><code>12345678. 
+123.46758 </code></pre>
+<p>样例输出</p>
+<pre><code>3</code></pre>
+</blockquote>
+<pre><code class="c++">#include &lt;iostream&gt;
+#include &lt;queue&gt;
+#include &lt;map&gt;
+#include &lt;algorithm&gt;
+#include &lt;algorithm&gt;
+
+using namespace std;
+string  first,last,string1,string2;
+int flag,x,y;
+map&lt;string,int&gt; dis,vis;
+queue&lt;string&gt; q1,q2;
+char a[3][3];
+const int dir[4][2]=&amp;#123;&amp;#123;0,1&amp;#125;,&amp;#123;0,-1&amp;#125;,&amp;#123;1,1&amp;#125;,&amp;#123;-1,-1&amp;#125;&amp;#125;;
+int ans;
+bool isIn(int x,int y)
+&amp;#123;
+    return (x&gt;=0&amp;&amp;x&lt;=3&amp;&amp;y&lt;=3&amp;&amp;y&gt;=0);
+&amp;#125;
+void toMatrix(string str)
+&amp;#123;
+    for (int i = 0; i &lt;9 ; ++i) &amp;#123;
+           a[i/3][i%3]=str[i];
+    &amp;#125;
+&amp;#125;
+string toString()
+&amp;#123;
+    string str;
+    for (int i = 0; i &lt; 9; ++i) &amp;#123;
+        str.push_back(a[i/3][i%3]);
+    &amp;#125;
+    return str;
+&amp;#125;
+int bfs()
+&amp;#123;
+    q1.push(first);
+    dis[first]=1;
+    vis[first]=1;
+    q2.push(last);
+    dis[last]=1;
+    vis[last]=2;
+    while (!q1.empty()&amp;&amp;!q2.empty())
+    &amp;#123;
+        if (q1.size()&lt;q2.size())
+        &amp;#123;
+            string1=q1.front();
+            q1.pop();
+            flag=1;
+        &amp;#125; else&amp;#123;
+            string1=q2.front();
+            q2.pop();
+            flag=2;
+        &amp;#125;
+        toMatrix(string1);
+        for (int i = 0; i &lt;9; ++i) &amp;#123;
+            if(a[i/3][i%3]==&#39;.&#39;)
+            &amp;#123;
+                x=i/3;
+                y=i%3;
+            &amp;#125;
+
+        &amp;#125;
+        for (int i = 0; i &lt;4 ; ++i) &amp;#123;
+            int tx=x+dir[i][0];
+            int ty=y+dir[i][1];
+            if (isIn(tx,ty))
+            &amp;#123;
+                swap(a[x][y],a[tx][ty]);
+                //改变数组；
+                string2=toString();
+                //产生新的状态
+                if(!dis.count(string2))//如果没有访问过
+                &amp;#123;
+                    dis[string2]=dis[string1]+1;//次态等于初态加一
+                    vis[string2]=vis[string1];//记录由上一个继承而来
+                    if(flag==1)
+                        q1.push(string2);
+                    if (flag==2)
+                        q2.push(string2);
+                &amp;#125;
+                else
+                &amp;#123;//如果访问过
+                    if (vis[string1]+vis[string2]==3)//如果重合，那么1达到的次态二的初态也能达到
+                    &amp;#123;
+                        ans=dis[string1]+dis[string2]-1;//注意有减一
+                        return ans;
+                    &amp;#125;
+
+
+                &amp;#125;
+                swap(a[x][y],a[tx][ty]);//注意转回初态
+
+            &amp;#125;
+        &amp;#125;
+
+
+    &amp;#125;
+    return -1;
+
+&amp;#125;
+
+int main()
+&amp;#123;
+    cin&gt;&gt;first&gt;&gt;last;
+    if (first==last)
+        cout&lt;&lt;0;
+    else
+        cout&lt;&lt;bfs()&lt;&lt;endl;
+    return 0;
+&amp;#125;</code></pre>
+<h3 id="random蚂蚁"><a href="#random蚂蚁" class="headerlink" title="random蚂蚁"></a>random蚂蚁</h3><blockquote>
+<p>题目 1429: [蓝桥杯][2014年第五届真题]兰顿蚂蚁</p>
+<p>时间限制: 1Sec 内存限制: 128MB 提交: 3824 解决: 1716</p>
+<p>题目描述</p>
+<p><img src="https://www.dotcpp.com/oj/upload/image/20170306/20170306151514_74936.png" alt="img"></p>
+<p>兰顿蚂蚁，是于1986年，由克里斯·兰顿提出来的，属于细胞自动机的一种。</p>
+<p>平面上的正方形格子被填上黑色或白色。在其中一格正方形内有一只“蚂蚁”。<br>蚂蚁的头部朝向为：上下左右其中一方。</p>
+<p>蚂蚁的移动规则十分简单：<br>若蚂蚁在黑格，右转90度，将该格改为白格，并向前移一格；<br>若蚂蚁在白格，左转90度，将该格改为黑格，并向前移一格。</p>
+<p>规则虽然简单，蚂蚁的行为却十分复杂。刚刚开始时留下的路线都会有接近对称，像是会重复，但不论起始状态如何，蚂蚁经过漫长的混乱活动后，会开辟出一条规则的“高速公路”。</p>
+<p>蚂蚁的路线是很难事先预测的。</p>
+<p>你的任务是根据初始状态，用计算机模拟兰顿蚂蚁在第n步行走后所处的位置。</p>
+<p>输入</p>
+<p>输入数据的第一行是 m n 两个整数（3 &lt;  m, n &lt;  100），表示正方形格子的行数和列数。<br>接下来是 m 行数据。<br>每行数据为 n 个被空格分开的数字。0 表示白格，1 表示黑格。 </p>
+<p>接下来是一行数据：x y s k, 其中x y为整数，表示蚂蚁所在行号和列号（行号从上到下增长，列号从左到右增长，都是从0开始编号）。s 是一个大写字母，表示蚂蚁头的朝向，我们约定：上下左右分别用：UDLR表示。k 表示蚂蚁走的步数。 </p>
+<p>输出</p>
+<p>输出数据为一个空格分开的整数 p q, 分别表示蚂蚁在k步后，所处格子的行号和列号。</p>
+<p>样例输入</p>
+<pre><code>5 6 
+0 0 0 0 0 0 
+0 0 0 0 0 0 
+0 0 1 0 0 0 
+0 0 0 0 0 0 
+0 0 0 0 0 0 
+2 3 L 5</code></pre>
+<p>样例输出</p>
+<pre><code>1 3</code></pre>
+</blockquote>
+<pre><code class="c++">#include &lt;iostream&gt;
+#include &lt;string&gt;
+using namespace std;
+typedef struct &amp;#123;
+    int x;
+    int y;
+    int dict;
+&amp;#125;ant;
+string  a=&quot;ULDR&quot;;//逆时针顺序，黑色加1，白色减1
+int dict[4][2]=&amp;#123;&amp;#123;0,-1&amp;#125;,&amp;#123;-1,0&amp;#125;,&amp;#123;0,1&amp;#125;,&amp;#123;1,0&amp;#125;&amp;#125;;
+int  MAP[20][100]=&amp;#123;0&amp;#125;;
+int K;
+int n,m;
+char d;
+
+int main()
+&amp;#123;
+    ant an;
+    cin&gt;&gt;m&gt;&gt;n;
+    for (int i=1;i&lt;=m;i++)
+        for (int j = 1; j &lt;=n ; ++j) &amp;#123;
+            cin&gt;&gt;MAP[i][j];
+        &amp;#125;
+    cin&gt;&gt;an.x&gt;&gt;an.y&gt;&gt;d&gt;&gt;K;
+    an.dict=a.find(d);
+    cout&lt;&lt;an.dict&lt;&lt;endl;
+    while (K--)
+    &amp;#123;
+        if (MAP[an.x][an.y])//如果是黑色的地区是话
+        &amp;#123;
+            MAP[an.x][an.y]=0;
+                an.dict=(an.dict+1)%4;
+                an.y+=dict[an.dict][0];
+                an.x+=dict[an.dict][1];
+
+        &amp;#125;
+        else//如果是白色的地区的话
+        &amp;#123;
+            MAP[an.x][an.y]=1;//改变颜色
+            if (an.dict==0)
+                an.dict=3;
+            else
+                an.dict--;//改变方向
+            an.y+=dict[an.dict][0];
+            an.x+=dict[an.dict][1];//改变位置
+        &amp;#125;
+
+
+    &amp;#125;
+    cout&lt;&lt;an.x&lt;&lt;&#39; &#39;&lt;&lt;an.y&lt;&lt;&#39; &#39;&lt;&lt;endl;
+
+    return 0;
+&amp;#125;</code></pre>
+<h3 id="剪格子"><a href="#剪格子" class="headerlink" title="剪格子"></a>剪格子</h3><blockquote>
+<p>题目 1432: [蓝桥杯][2013年第四届真题]剪格子</p>
+<p>时间限制: 1Sec 内存限制: 128MB 提交: 3196 解决: 1106</p>
+<p>题目描述</p>
+<p>历届试题 剪格子<br>时间限制：1.0s   内存限制：256.0MB</p>
+<p>问题描述<br>如下图所示，3 x 3 的格子中填写了一些整数。<br>+–<em>–+–+<br>|10</em> 1|52|<br>+–<strong><strong>–+<br>|20|30* 1|<br>***</strong></strong>–+<br>| 1| 2| 3|<br>+–+–+–+<br>我们沿着图中的星号线剪开，得到两个部分，每个部分的数字和都是60。<br>本题的要求就是请你编程判定：对给定的m x n 的格子中的整数，是否可以分割为两个部分，使得这两个区域的数字和相等。<br>如果存在多种解答，请输出包含左上角格子的那个区域包含的格子的最小数目。<br>如果无法分割，则输出 0。</p>
+<p>输入</p>
+<p>程序先读入两个整数 m n 用空格分割 (m,n&lt; 10)。<br>表示表格的宽度和高度。<br>接下来是n行，每行m个正整数，用空格分开。每个整数不大于10000。 </p>
+<p>输出</p>
+<p>输出一个整数，表示在所有解中，包含左上角的分割区可能包含的最小的格子数目。 </p>
+<p>样例输入</p>
+<pre><code>3 3
+10 1 52
+20 30 1
+1 2 3</code></pre>
+<p>样例输出</p>
+<pre><code>3</code></pre>
+</blockquote>
+<pre><code class="c++">#include &lt;iostream&gt;
+using namespace std;
+int map_[11][11];
+using namespace std;
+int ans=1;
+int goal=0;
+int dic[4][2]=&amp;#123;&amp;#123;0,1&amp;#125;,&amp;#123;1,0&amp;#125;,&amp;#123;0,-1&amp;#125;,&amp;#123;-1,0&amp;#125;&amp;#125;;
+int tx,ty;
+int visited[10][10];
+int m,n;
+void dfs(int x,int y,int total,int cnt)
+&amp;#123;
+    if (total==goal)
+    &amp;#123;
+        ans&lt;cnt?ans:cnt;
+        return;
+    &amp;#125;
+    if (total&gt;goal)
+        return;
+    else
+    &amp;#123;
+        for (auto &amp; i : dic) &amp;#123;
+          tx=x+i[0];
+          ty=y+i[1];
+            if (tx&gt;=0&amp;&amp;tx&lt;=m&amp;&amp;ty&gt;=0&amp;&amp;ty&lt;=n&amp;&amp;!visited[ty][tx])
+            &amp;#123;
+                total+=map_[ty][tx];
+                cnt++;
+                visited[ty][tx]= 1;
+                dfs(tx,ty,total,cnt);
+                visited[ty][tx]=0;
+
+            &amp;#125; else
+            &amp;#123;
+                continue;
+            &amp;#125;
+        &amp;#125;
+    &amp;#125;
+
+&amp;#125;
+
+int main()
+&amp;#123;
+    cin&gt;&gt;m&gt;&gt;n;
+     fill(visited,visited+10*10,0);//访问数组初始化
+    for (int i = 0; i &lt; n; ++i) &amp;#123;
+        for (int j = 0; j &lt; m; ++j) &amp;#123;
+            cin&gt;&gt;map_[i][j];
+            goal+=map_[i][j];
+        &amp;#125;
+    &amp;#125;
+    goal=goal/2;
+    dfs(0,0,map_[0][0],1);
+
+    return 0;
+&amp;#125;</code></pre>
 <h2 id="蓝桥杯第十一届真题"><a href="#蓝桥杯第十一届真题" class="headerlink" title="蓝桥杯第十一届真题"></a>蓝桥杯第十一届真题</h2><h3 id="既约分数"><a href="#既约分数" class="headerlink" title="既约分数"></a>既约分数</h3><p><img src="https://img-blog.csdnimg.cn/20210213191801692.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_5rqQ5Luj56CB4oCi5a64,size_16,color_FFFFFF,t_70"></p>
 <pre><code class="c++">#include&lt;iostream&gt;
 using namespace std;
@@ -1104,6 +1384,20 @@ int main()
     cout &lt;&lt; sum &lt;&lt; endl;
     return 0;
 &amp;#125;</code></pre>
+<pre><code class="python">
+
+def fun(a,b):
+    if a%b:
+        return fun(b,a%b)
+    else:
+        return b
+
+total=0
+for i in range(1,2020):
+    for j in range(1,2021):
+        if fun(i,j)==1:
+            total+=1
+print(total)#注意以上C++写法不对，要加1</code></pre>
 <h3 id="蛇形填数"><a href="#蛇形填数" class="headerlink" title="蛇形填数"></a>蛇形填数</h3><blockquote>
 <p>题目<br>试题 C: 蛇形填数<br>本题总分：10 分</p>
 <p>【问题描述】<br>如下图所示，小明用从 1 开始的正整数“蛇形”填充无限大的矩阵。<br>1 2 6 7 15 …<br>3 5 8 14 …<br>4 9 13 …<br>10 12 …<br>11 …<br>…</p>

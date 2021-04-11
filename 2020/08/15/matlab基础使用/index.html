@@ -484,7 +484,7 @@
                 
                 <div class="post-date info-break-policy">
                     <i class="far fa-calendar-check fa-fw"></i>更新日期:&nbsp;&nbsp;
-                    2020-08-28
+                    2021-03-14
                 </div>
                 
 
@@ -696,6 +696,16 @@
 <h3 id="linefit"><a href="#linefit" class="headerlink" title="linefit"></a>linefit</h3><p>顾名思义，直线拟合，基于最小二乘法</p>
 <p>[k,b]=linefit(x,y),求出系数和截距</p>
 <p>然后用y1=polyval([k,b],x);生成多项式函数</p>
+<h2 id="作业1"><a href="#作业1" class="headerlink" title="作业1"></a>作业1</h2><blockquote>
+<p>设A为3行4列的矩阵，B为一个行数大于3的矩阵，写出MATLAB命令。<br>（1）删除A的第1、3两列。<br>（2）删除B的倒数第3行。</p>
+</blockquote>
+<pre><code class="matlab">&gt;&gt; A=zeros(3,4);
+&gt;&gt; A(:,1)=[];
+&gt;&gt; A(:,3)=[];
+&gt;&gt; B=zeros(4,3);
+&gt;&gt; B(-3,:)=[];
+位置 1 处的索引无效。数组索引必须为正整数或逻辑值。
+&gt;&gt; B(end-3,:)=[];</code></pre>
 
             </div>
             <hr/>

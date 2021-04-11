@@ -1,0 +1,3154 @@
+<!DOCTYPE HTML>
+<html lang="zh-CN">
+
+
+<head>
+    <meta charset="utf-8">
+    <meta name="keywords" content="蓝桥杯Python算法训练, MilkTeaAddicted">
+    <meta name="description" content="生活就是奶茶">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
+    <meta name="renderer" content="webkit|ie-stand|ie-comp">
+    <meta name="mobile-web-app-capable" content="yes">
+    <meta name="format-detection" content="telephone=no">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+    <!-- Global site tag (gtag.js) - Google Analytics -->
+
+
+    <title>蓝桥杯Python算法训练 | MilkTeaAddicted</title>
+    <link rel="icon" type="image/png" href="/favicon.png">
+
+    <link rel="stylesheet" type="text/css" href="/libs/awesome/css/all.css">
+    <link rel="stylesheet" type="text/css" href="/libs/materialize/materialize.min.css">
+    <link rel="stylesheet" type="text/css" href="/libs/aos/aos.css">
+    <link rel="stylesheet" type="text/css" href="/libs/animate/animate.min.css">
+    <link rel="stylesheet" type="text/css" href="/libs/lightGallery/css/lightgallery.min.css">
+    <link rel="stylesheet" type="text/css" href="/css/matery.css">
+    <link rel="stylesheet" type="text/css" href="/css/my.css">
+
+    <script src="/libs/jquery/jquery.min.js"></script>
+
+<meta name="generator" content="Hexo 5.0.2"><link rel="alternate" href="/atom.xml" title="MilkTeaAddicted" type="application/atom+xml">
+</head>
+
+
+<body>
+    <!-- 页面点击小红心 -->
+    <script type="text/javascript" src="/js/click_show_text.js"></script>
+
+    <!-- <canvas class="fireworks" style="position: fixed;left: 0;top: 0;z-index: 1; pointer-events: none;" ></canvas> 
+    <script type="text/javascript" src="//cdn.bootcss.com/animejs/2.2.0/anime.min.js"></script> 
+    <script type="text/javascript" src="/js/fireworks.js"></script> -->
+
+
+    <header class="navbar-fixed">
+    <nav id="headNav" class="bg-color nav-transparent">
+        <div id="navContainer" class="nav-wrapper container">
+            <div class="brand-logo">
+                <a href="/" class="waves-effect waves-light">
+                    
+                    <img src="/medias/logo.png" class="logo-img" alt="LOGO">
+                    
+                    <span class="logo-span">MilkTeaAddicted</span>
+                </a>
+            </div>
+            
+
+<a href="#" data-target="mobile-nav" class="sidenav-trigger button-collapse"><i class="fas fa-bars"></i></a>
+<ul class="right nav-menu">
+  
+  <li class="hide-on-med-and-down nav-item">
+    
+    <a href="/" class="waves-effect waves-light">
+      
+      <i class="fas fa-home" style="zoom: 0.6;"></i>
+      
+      <span>首页</span>
+    </a>
+    
+  </li>
+  
+  <li class="hide-on-med-and-down nav-item">
+    
+    <a href="/tags" class="waves-effect waves-light">
+      
+      <i class="fas fa-tags" style="zoom: 0.6;"></i>
+      
+      <span>标签</span>
+    </a>
+    
+  </li>
+  
+  <li class="hide-on-med-and-down nav-item">
+    
+    <a href="/categories" class="waves-effect waves-light">
+      
+      <i class="fas fa-bookmark" style="zoom: 0.6;"></i>
+      
+      <span>分类</span>
+    </a>
+    
+  </li>
+  
+  <li class="hide-on-med-and-down nav-item">
+    
+    <a href="/archives" class="waves-effect waves-light">
+      
+      <i class="fas fa-archive" style="zoom: 0.6;"></i>
+      
+      <span>归档</span>
+    </a>
+    
+  </li>
+  
+  <li class="hide-on-med-and-down nav-item">
+    
+    <a href="/about" class="waves-effect waves-light">
+      
+      <i class="fas fa-user-circle" style="zoom: 0.6;"></i>
+      
+      <span>关于</span>
+    </a>
+    
+  </li>
+  
+  <li class="hide-on-med-and-down nav-item">
+    
+    <a href="/contact" class="waves-effect waves-light">
+      
+      <i class="fas fa-comments" style="zoom: 0.6;"></i>
+      
+      <span>留言板</span>
+    </a>
+    
+  </li>
+  
+  <li class="hide-on-med-and-down nav-item">
+    
+    <a href="/friends" class="waves-effect waves-light">
+      
+      <i class="fas fa-address-book" style="zoom: 0.6;"></i>
+      
+      <span>友情链接</span>
+    </a>
+    
+  </li>
+  
+  <li>
+    <a href="#searchModal" class="modal-trigger waves-effect waves-light">
+      <i id="searchIcon" class="fas fa-search" title="搜索" style="zoom: 0.85;"></i>
+    </a>
+  </li>
+</ul>
+
+
+<div id="mobile-nav" class="side-nav sidenav">
+
+    <div class="mobile-head bg-color">
+        
+        <img src="/medias/logo.png" class="logo-img circle responsive-img">
+        
+        <div class="logo-name">MilkTeaAddicted</div>
+        <div class="logo-desc">
+            
+            生活就是奶茶
+            
+        </div>
+    </div>
+
+    
+
+    <ul class="menu-list mobile-menu-list">
+        
+        <li class="m-nav-item">
+	  
+		<a href="/" class="waves-effect waves-light">
+			
+			    <i class="fa-fw fas fa-home"></i>
+			
+			首页
+		</a>
+          
+        </li>
+        
+        <li class="m-nav-item">
+	  
+		<a href="/tags" class="waves-effect waves-light">
+			
+			    <i class="fa-fw fas fa-tags"></i>
+			
+			标签
+		</a>
+          
+        </li>
+        
+        <li class="m-nav-item">
+	  
+		<a href="/categories" class="waves-effect waves-light">
+			
+			    <i class="fa-fw fas fa-bookmark"></i>
+			
+			分类
+		</a>
+          
+        </li>
+        
+        <li class="m-nav-item">
+	  
+		<a href="/archives" class="waves-effect waves-light">
+			
+			    <i class="fa-fw fas fa-archive"></i>
+			
+			归档
+		</a>
+          
+        </li>
+        
+        <li class="m-nav-item">
+	  
+		<a href="/about" class="waves-effect waves-light">
+			
+			    <i class="fa-fw fas fa-user-circle"></i>
+			
+			关于
+		</a>
+          
+        </li>
+        
+        <li class="m-nav-item">
+	  
+		<a href="/contact" class="waves-effect waves-light">
+			
+			    <i class="fa-fw fas fa-comments"></i>
+			
+			留言板
+		</a>
+          
+        </li>
+        
+        <li class="m-nav-item">
+	  
+		<a href="/friends" class="waves-effect waves-light">
+			
+			    <i class="fa-fw fas fa-address-book"></i>
+			
+			友情链接
+		</a>
+          
+        </li>
+        
+        
+        <li><div class="divider"></div></li>
+        <li>
+            <a href="https://github.com/blinkfox/hexo-theme-matery" class="waves-effect waves-light" target="_blank">
+                <i class="fab fa-github-square fa-fw"></i>Fork Me
+            </a>
+        </li>
+        
+    </ul>
+</div>
+
+
+        </div>
+
+        
+            <style>
+    .nav-transparent .github-corner {
+        display: none !important;
+    }
+
+    .github-corner {
+        position: absolute;
+        z-index: 10;
+        top: 0;
+        right: 0;
+        border: 0;
+        transform: scale(1.1);
+    }
+
+    .github-corner svg {
+        color: #0f9d58;
+        fill: #fff;
+        height: 64px;
+        width: 64px;
+    }
+
+    .github-corner:hover .octo-arm {
+        animation: a 0.56s ease-in-out;
+    }
+
+    .github-corner .octo-arm {
+        animation: none;
+    }
+
+    @keyframes a {
+        0%,
+        to {
+            transform: rotate(0);
+        }
+        20%,
+        60% {
+            transform: rotate(-25deg);
+        }
+        40%,
+        80% {
+            transform: rotate(10deg);
+        }
+    }
+</style>
+
+<a href="https://github.com/blinkfox/hexo-theme-matery" class="github-corner tooltipped hide-on-med-and-down" target="_blank"
+   data-tooltip="Fork Me" data-position="left" data-delay="50">
+    <svg viewBox="0 0 250 250" aria-hidden="true">
+        <path d="M0,0 L115,115 L130,115 L142,142 L250,250 L250,0 Z"></path>
+        <path d="M128.3,109.0 C113.8,99.7 119.0,89.6 119.0,89.6 C122.0,82.7 120.5,78.6 120.5,78.6 C119.2,72.0 123.4,76.3 123.4,76.3 C127.3,80.9 125.5,87.3 125.5,87.3 C122.9,97.6 130.6,101.9 134.4,103.2"
+              fill="currentColor" style="transform-origin: 130px 106px;" class="octo-arm"></path>
+        <path d="M115.0,115.0 C114.9,115.1 118.7,116.5 119.8,115.4 L133.7,101.6 C136.9,99.2 139.9,98.4 142.2,98.6 C133.8,88.0 127.5,74.4 143.8,58.0 C148.5,53.4 154.0,51.2 159.7,51.0 C160.3,49.4 163.2,43.6 171.4,40.1 C171.4,40.1 176.1,42.5 178.8,56.2 C183.1,58.6 187.2,61.8 190.9,65.4 C194.5,69.0 197.7,73.2 200.1,77.6 C213.8,80.2 216.3,84.9 216.3,84.9 C212.7,93.1 206.9,96.0 205.4,96.6 C205.1,102.4 203.0,107.8 198.3,112.5 C181.9,128.9 168.3,122.5 157.7,114.1 C157.9,116.9 156.7,120.9 152.7,124.9 L141.0,136.5 C139.8,137.7 141.6,141.9 141.8,141.8 Z"
+              fill="currentColor" class="octo-body"></path>
+    </svg>
+</a>
+        
+    </nav>
+
+</header>
+
+    
+<script src="/libs/cryptojs/crypto-js.min.js"></script>
+<script>
+    (function() {
+        let pwd = '';
+        if (pwd && pwd.length > 0) {
+            if (pwd !== CryptoJS.SHA256(prompt('请输入访问本文章的密码')).toString(CryptoJS.enc.Hex)) {
+                alert('密码错误，返回主页');
+                location.href = '/';
+            }
+        }
+    })();
+</script>
+
+
+
+
+<div class="bg-cover pd-header post-cover" style="background-image: url('/medias/featureimages/23.jpg')">
+    <div class="container" style="right: 0px;left: 0px;">
+        <div class="row">
+            <div class="col s12 m12 l12">
+                <div class="brand">
+                    <h1 class="description center-align post-title">蓝桥杯Python算法训练</h1>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+
+
+<main class="post-container content">
+
+    
+    <link rel="stylesheet" href="/libs/tocbot/tocbot.css">
+<style>
+    #articleContent h1::before,
+    #articleContent h2::before,
+    #articleContent h3::before,
+    #articleContent h4::before,
+    #articleContent h5::before,
+    #articleContent h6::before {
+        display: block;
+        content: " ";
+        height: 100px;
+        margin-top: -100px;
+        visibility: hidden;
+    }
+
+    #articleContent :focus {
+        outline: none;
+    }
+
+    .toc-fixed {
+        position: fixed;
+        top: 64px;
+    }
+
+    .toc-widget {
+        width: 345px;
+        padding-left: 20px;
+    }
+
+    .toc-widget .toc-title {
+        margin: 35px 0 15px 0;
+        padding-left: 17px;
+        font-size: 1.5rem;
+        font-weight: bold;
+        line-height: 1.5rem;
+    }
+
+    .toc-widget ol {
+        padding: 0;
+        list-style: none;
+    }
+
+    #toc-content {
+        height: calc(100vh - 250px);
+        overflow: auto;
+    }
+
+    #toc-content ol {
+        padding-left: 10px;
+    }
+
+    #toc-content ol li {
+        padding-left: 10px;
+    }
+
+    #toc-content .toc-link:hover {
+        color: #42b983;
+        font-weight: 700;
+        text-decoration: underline;
+    }
+
+    #toc-content .toc-link::before {
+        background-color: transparent;
+        max-height: 25px;
+
+        position: absolute;
+        right: 23.5vw;
+        display: block;
+    }
+
+    #toc-content .is-active-link {
+        color: #42b983;
+    }
+
+    #floating-toc-btn {
+        position: fixed;
+        right: 15px;
+        bottom: 76px;
+        padding-top: 15px;
+        margin-bottom: 0;
+        z-index: 998;
+    }
+
+    #floating-toc-btn .btn-floating {
+        width: 48px;
+        height: 48px;
+    }
+
+    #floating-toc-btn .btn-floating i {
+        line-height: 48px;
+        font-size: 1.4rem;
+    }
+</style>
+<div class="row">
+    <div id="main-content" class="col s12 m12 l9">
+        <!-- 文章内容详情 -->
+<div id="artDetail">
+    <div class="card">
+        <div class="card-content article-info">
+            <div class="row tag-cate">
+                <div class="col s7">
+                    
+                          <div class="article-tag">
+                            <span class="chip bg-color">无标签</span>
+                          </div>
+                    
+                </div>
+                <div class="col s5 right-align">
+                    
+                </div>
+            </div>
+
+            <div class="post-info">
+                
+                <div class="post-date info-break-policy">
+                    <i class="far fa-calendar-minus fa-fw"></i>发布日期:&nbsp;&nbsp;
+                    2021-03-18
+                </div>
+                
+
+                
+                <div class="post-date info-break-policy">
+                    <i class="far fa-calendar-check fa-fw"></i>更新日期:&nbsp;&nbsp;
+                    2021-04-06
+                </div>
+                
+
+                
+
+                
+
+                
+                    <div id="busuanzi_container_page_pv" class="info-break-policy">
+                        <i class="far fa-eye fa-fw"></i>阅读次数:&nbsp;&nbsp;
+                        <span id="busuanzi_value_page_pv"></span>
+                    </div>
+				
+            </div>
+        </div>
+        <hr class="clearfix">
+        <div class="card-content article-card-content">
+            <div id="articleContent">
+                <h1 id="蓝桥杯Python组算法训练"><a href="#蓝桥杯Python组算法训练" class="headerlink" title="蓝桥杯Python组算法训练"></a>蓝桥杯Python组算法训练</h1><h2 id="1"><a href="#1" class="headerlink" title="1"></a>1</h2><blockquote>
+<p>题目 1017: [编程入门]完数的判断</p>
+<p>时间限制: 1Sec 内存限制: 128MB 提交: 23074 解决: 10991</p>
+<p>题目描述</p>
+<p>一个数如果恰好等于不包含它本身所有因子之和，这个数就称为”完数”。 例如，6的因子为1、2、3，而6=1+2+3，因此6是”完数”。 编程序找出N之内的所有完数，并按下面格式输出其因子</p>
+<p>输入</p>
+<p>N</p>
+<p>输出</p>
+<p>? its factors are ? ? ?</p>
+<p>样例输入</p>
+<pre><code>1000</code></pre>
+<p>样例输出</p>
+<pre><code>6 its factors are 1 2 3 
+28 its factors are 1 2 4 7 14 
+496 its factors are 1 2 4 8 16 31 62 124 248 </code></pre>
+</blockquote>
+<pre><code class="python">n=int(input())
+list=[]
+for i in range(1,n+1):
+    sum=0
+    for j in range(1,i):
+        if(i%j==0):
+            sum+=j
+            list.append(j)
+    if sum==i:
+        print(sum,end=&#39; &#39;)
+        print(&#39;its factors are&#39;,end=&#39; &#39;)
+        for k in list:
+            print(k,end=&#39; &#39;)
+        print()
+    list=[]</code></pre>
+<p>时间超限50%</p>
+<p>以下是不超限的题解</p>
+<pre><code class="python">a=int(input())
+for i in range(2,a):
+    b=[1]
+    sums=1
+    c=int(pow(i,0.5))+1
+    for j in range(2,c):
+        if i%j==0:
+            b.append(j)
+            b.append(int(i/j))
+            sums+=j+int(i/j)
+    if sums==i:
+        b.sort()
+        print(i,&#39;its factors are &#39;,end=&#39;&#39;)
+        for j in range (len(b)):
+            print(b[j],end=&#39; &#39;)
+        print()</code></pre>
+<h2 id="2"><a href="#2" class="headerlink" title="2"></a>2</h2><blockquote>
+<p>题目 1021: [编程入门]迭代法求平方根</p>
+<p>时间限制: 1Sec 内存限制: 128MB 提交: 14256 解决: 7563</p>
+<p>题目描述</p>
+<p>用迭代法求 平方根</p>
+<p>公式：求a的平方根的迭代公式为： X[n+1]=(X[n]+a/X[n])/2 要求前后两次求出的差的绝对值少于0.00001。 输出保留3位小数</p>
+<p>输入</p>
+<p>X</p>
+<p>输出</p>
+<p>X的平方根</p>
+<p>样例输入</p>
+<pre><code>4</code></pre>
+<p>样例输出</p>
+<pre><code>2.000</code></pre>
+</blockquote>
+<pre><code class="python">from math import *
+a=int(input())
+b=a/2#从1开始迭代
+c=(b+a/b)/2
+while abs(c-b)&gt;=0.00001:
+    b=c
+    c=(b+a/b)/2
+print(&quot;%.3f&quot;%c)
+</code></pre>
+<h2 id="3"><a href="#3" class="headerlink" title="3"></a>3</h2><blockquote>
+<p>题目 1023: [编程入门]选择排序</p>
+<p>时间限制: 1Sec 内存限制: 128MB 提交: 22695 解决: 10654</p>
+<p>题目描述</p>
+<p>用选择法对10个整数从小到大排序。</p>
+<p>输入</p>
+<p>输入10个无序的数字</p>
+<p>输出</p>
+<p>排序好的10个整数</p>
+<p>样例输入</p>
+<pre><code>4 85  3 234 45 345 345 122 30 12</code></pre>
+</blockquote>
+<pre><code class="python">m=list(map(int,input().split()))
+m.sort()
+for i in m:
+    print(i)</code></pre>
+<h2 id="4"><a href="#4" class="headerlink" title="4"></a>4</h2><blockquote>
+<p>题目 1011: [编程入门]最大公约数与最小公倍数</p>
+<p>时间限制: 1Sec 内存限制: 128MB 提交: 29761 解决: 16522</p>
+<p>题目描述</p>
+<p>输入两个正整数m和n，求其最大公约数和最小公倍数。</p>
+<p>输入</p>
+<p>两个整数</p>
+<p>输出</p>
+<p>最大公约数，最小公倍数</p>
+<p>样例输入</p>
+<pre><code>5 7</code></pre>
+<p>样例输出</p>
+<pre><code>1 35</code></pre>
+</blockquote>
+<pre><code class="python">def gcd(a, b):
+    if a%b == 0:
+        return b
+    else: 
+        return gcd(b, a%b)
+a, b = map(int, input().split())
+if a&lt;b:
+    c=a
+    a=b
+    b=c
+s = gcd(a, b)
+print(&quot;&amp;#123;&amp;#125; &amp;#123;:.0f&amp;#125;&quot;.format(s, (a*b)/s))</code></pre>
+<h2 id="5"><a href="#5" class="headerlink" title="5"></a>5</h2><blockquote>
+<p>题目 1044: [编程入门]三个字符串的排序</p>
+<p>时间限制: 1Sec 内存限制: 128MB 提交: 11726 解决: 5993</p>
+<p>题目描述</p>
+<p>输入三个字符串，按由小到大的顺序输出</p>
+<p>输入</p>
+<p>3行字符串</p>
+<p>输出</p>
+<p>按照从小到大输出成3行</p>
+<p>样例输入</p>
+<pre><code>cde
+afg
+abc</code></pre>
+<p>样例输出</p>
+<pre><code>abc
+afg
+cde</code></pre>
+</blockquote>
+<pre><code class="python">a=input();b=input();c=input()
+x=[a,b,c]
+x.sort()
+for i in x:
+    print(i)</code></pre>
+<h2 id="6"><a href="#6" class="headerlink" title="6"></a>6</h2><blockquote>
+<p>题目 1047: [编程入门]报数问题</p>
+<p>时间限制: 1Sec 内存限制: 128MB 提交: 8494 解决: 4512</p>
+<p>题目描述</p>
+<p>有n人围成一圈，顺序排号。从第1个人开始报数（从1到3报数），凡报到3的人退出圈子，问最后留下的是原来的第几号的那位。</p>
+<p>输入</p>
+<p>初始人数n</p>
+<p>输出</p>
+<p>最后一人的初始编号</p>
+<p>样例输入</p>
+<pre><code>3</code></pre>
+<p>样例输出</p>
+<pre><code>2</code></pre>
+</blockquote>
+<pre><code class="python">n = int(input())
+s = [i for i in range(1,n+1)]
+i = 1    # 当前报的数
+index = 0    # 当前的位置
+while len(s) != 1:    # 当只剩一人的时候退出
+    if i == 3:
+        del s[index]    # 当前的人报数为3的时候删除，因为当前人的推出index不必+1即代表下一个人
+        i = 1    # 从新从1开始报数
+    else:
+        index += 1
+        i += 1
+    if index == len(s):    # 报到最后一位时，重新开始从第一个人开始报数
+        index = 0
+print(s[0])</code></pre>
+<p>如果每次len(数组)，会超时</p>
+<h2 id="7"><a href="#7" class="headerlink" title="7"></a>7</h2><blockquote>
+<p>题目 1084: 用筛法求之N内的素数。</p>
+<p>时间限制: 1Sec 内存限制: 64MB 提交: 16162 解决: 9636</p>
+<p>题目描述</p>
+<p>用筛法求之N内的素数。</p>
+<p>输入</p>
+<p>N</p>
+<p>输出</p>
+<p>0～N的素数</p>
+<p>样例输入</p>
+<pre><code>100</code></pre>
+<p>样例输出</p>
+<pre><code>2
+3
+5
+7
+11
+13
+17
+19
+23
+29
+31
+37
+41
+43
+47
+53
+59
+61
+67
+71
+73
+79
+83
+89
+97</code></pre>
+</blockquote>
+<pre><code class="python">a=int(input())
+l=[2]
+for i in range(2,a+1):
+    if i&lt;=2:
+        continue
+    for m in range(2,i):
+        if i%m==0:
+            break
+    else:
+        l.append(i)
+it = iter(l)
+for x in it:
+    print (x, end=&quot;\n&quot;)</code></pre>
+<p>以上有误</p>
+<h2 id="8"><a href="#8" class="headerlink" title="8"></a>8</h2><blockquote>
+<p>题目描述</p>
+<p>有一头母牛，它每年年初生一头小母牛。每头小母牛从第四个年头开始，每年年初也生一头小母牛。请编程实现在第n年的时候，共有多少头母牛？</p>
+<p>输入</p>
+<p>输入数据由多个测试实例组成，每个测试实例占一行，包括一个整数n(0&lt;n&lt;55)，n的含义如题目中描述。<br>n=0表示输入数据的结束，不做处理。</p>
+<p>输出</p>
+<p>对于每个测试实例，输出在第n年的时候母牛的数量。<br>每个输出占一行。</p>
+<p>样例输入</p>
+<pre><code>2
+4
+5
+0</code></pre>
+<p>样例输出</p>
+<pre><code>2
+4
+6</code></pre>
+</blockquote>
+<pre><code class="python">#递归表达式写出来是n=n-1+n-3
+
+n=int(input())
+
+while n:
+    n1, n2, n3 = 4, 3, 2
+    k=0
+    if n&lt;5:
+        print(n)
+    else:
+        n=n-4
+        while n:
+            k=n1 +n3
+            n3=n2
+            n2=n1
+            n1=k
+            n=n-1
+        print(k)
+    n=int(input())</code></pre>
+<h2 id="9"><a href="#9" class="headerlink" title="9"></a>9</h2><blockquote>
+<p>题目 1093: 字符逆序</p>
+<p>时间限制: 1Sec 内存限制: 64MB 提交: 20847 解决: 10636</p>
+<p>题目描述</p>
+<p>将一个字符串str的内容颠倒过来，并输出。str的长度不超过100个字符。</p>
+<p>输入</p>
+<p>输入包括一行。 第一行输入的字符串。</p>
+<p>输出</p>
+<p>输出转换好的逆序字符串。</p>
+<p>样例输入</p>
+<pre><code>I am a student</code></pre>
+<p>样例输出</p>
+<pre><code>tneduts a ma I</code></pre>
+</blockquote>
+<pre><code class="python">m=input().split()
+m.reverse()
+for i in m:
+    print(i,end=&quot; &quot;)
+#这是按单词逆序</code></pre>
+<pre><code class="python">x=input(&quot;&quot;)
+x=x[::-1] #列表切片，逆序输出
+print(x)
+#按字母输出</code></pre>
+<h2 id="10"><a href="#10" class="headerlink" title="10"></a>10</h2><blockquote>
+<p>题目 1094: 字符串的输入输出处理</p>
+<p>时间限制: 1Sec 内存限制: 64MB 提交: 19709 解决: 7115</p>
+<p>题目描述</p>
+<p>字符串的输入输出处理。</p>
+<p>输入</p>
+<p>第一行是一个正整数N，最大为100。之后是多行字符串（行数大于N）， 每一行字符串可能含有空格，字符数不超过1000。</p>
+<p>输出</p>
+<p>先将输入中的前N行字符串（可能含有空格）原样输出，再将余下的字符串（不含有空格）以空格或回车分割依次按行输出。每行输出之间输出一个空行。</p>
+<p>样例输入</p>
+<pre><code>2
+www.dotcpp.com DOTCPP
+A C M
+D O T CPP</code></pre>
+<p>样例输出</p>
+<pre><code>www.dotcpp.com DOTCPP
+
+A C M
+
+D
+
+O
+
+T
+
+CPP</code></pre>
+</blockquote>
+<pre><code class="python">n=int(input())
+for i in range(n):
+    str=input()
+    print(str)
+    print()
+while True:#注意这里，保持后续的输入
+    str=input().split(&#39; &#39;)
+    for i in str :
+        print(i)
+        print()</code></pre>
+<h2 id="11"><a href="#11" class="headerlink" title="11"></a>11</h2><blockquote>
+<p>题目 1097: 蛇行矩阵</p>
+<p>时间限制: 1Sec 内存限制: 64MB 提交: 10033 解决: 6737</p>
+<p>题目描述</p>
+<p>蛇形矩阵是由1开始的自然数依次排列成的一个矩阵上三角形。</p>
+<p>输入</p>
+<p>本题有多组数据，每组数据由一个正整数N组成。（N不大于100）</p>
+<p>输出</p>
+<p>对于每一组数据，输出一个N行的蛇形矩阵。两组输出之间不要额外的空行。矩阵三角中同一行的数字用一个空格分开。行尾不要多余的空格。</p>
+<p>样例输入</p>
+<pre><code>5</code></pre>
+<p>样例输出</p>
+<pre><code>1 3 6 10 15
+2 5 9 14
+4 8 13
+7 12
+11</code></pre>
+</blockquote>
+<pre><code class="python">n=int(input())
+list1=[ ]
+list1.append(1)
+for j in range(2,n+1):
+    list1.append(list1[-1]+j)
+for i in list1:
+    print(i,end=&#39; &#39;)
+n=n-1
+print()
+j=1
+while n:
+    for i in range(n):
+        list1[i] = list1[i] + j + i#对这个链表进行更新，保证从上一列取输出
+        print(list1[i],end=&#39; &#39;)
+    print()
+    n=n-1
+    j=j+1</code></pre>
+<h2 id="12"><a href="#12" class="headerlink" title="12"></a>12</h2><blockquote>
+<p>题目 1110: 2^k进制数</p>
+<p>时间限制: 1Sec 内存限制: 128MB 提交: 1953 解决: 966</p>
+<p>题目描述</p>
+<p>设r是个2^k 进制数，并满足以下条件：<br>（1）r至少是个2位的2^k 进制数。<br>（2）作为2^k 进制数，除最后一位外，r的每一位严格小于它右边相邻的那一位。<br>（3）将r转换为2进制数q后，则q的总位数不超过w。<br>在这里，正整数k（1≤k≤9）和w（k〈w≤30000）是事先给定的。</p>
+<p>问：满足上述条件的不同的r共有多少个？<br>我们再从另一角度作些解释：设S是长度为w 的01字符串（即字符串S由w个“0”或“1”组成），S对应于上述条件（3）中的q。将S从右起划分为若干个长度为k 的段，每段对应一位2^k进制的数，如果S至少可分成2段，则S所对应的二进制数又可以转换为上述的2^k 进制数r。<br>例：设k=3，w=7。则r是个八进制数（2^3=8）。由于w=7，长度为7的01字符串按3位一段分，可分为3段（即1，3，3，左边第一段只有一个二进制位），则满足条件的八进制数有：<br>2位数：高位为1：6个（即12，13，14，15，16，17），高位为2：5个，…，高位为6：1个（即67）。共6+5+…+1=21个。<br>3位数：高位只能是1，第2位为2：5个（即123，124，125，126，127），第2位为3：4个，…，第2位为6：1个（即167）。共5+4+…+1=15个。<br>所以，满足要求的r共有36个。</p>
+<p>输入</p>
+<p>只有1行，为两个正整数，用一个空格隔开：<br>k w</p>
+<p>输出</p>
+<p>1行，是一个正整数，为所求的计算结果，即满足条件的不同的r的个数（用十进制数表示），要求最高位不得为0，各数字之间不得插入数字以外的其他字符（例如空格、换行符、逗号等）。<br>（提示：作为结果的正整数可能很大，但不会超过200位）</p>
+<p>样例输入</p>
+<pre><code>3  7</code></pre>
+<p>样例输出</p>
+<pre><code>36</code></pre>
+</blockquote>
+<pre><code class="python">#一开始我想用dfs写，但是看了下题解好像有更简单的方法，把过程类比成二项式求解
+n, m = map(int, input().split())
+shang, yu = divmod(m, n)
+
+
+def zuheshu(j, i):
+    # 求组合数用
+    if i &gt; j:
+        return 0
+    if j &lt; 0:
+        return 0
+    sum = 1
+    for t in range(i):
+        sum = sum * (j - t) //(t + 1)
+    return sum
+
+
+s0 = sum([zuheshu(2 ** n-1, i) for i in range(2, shang + 1)])  # 当没有达到高位，只用非高位求组合数，结果同排序后的结果
+s1 = sum([zuheshu(2 ** n - 1 - x0, shang) for x0 in range(1, 2 ** yu)])  # 在全范围内减去高位范围的组合数
+print(s1 + s0)
+</code></pre>
+<blockquote>
+<p>原题链接：<a target="_blank" rel="noopener" href="https://www.dotcpp.com/oj/problem1110.html">2^k进制数</a></p>
+<p>解题思路:</p>
+<p>因为只要保证每个位置上的数不相同，自然可以把它们从小到大排列</p>
+<p>所以只需从第二个数（从右往左）一直计算当前位置的排列数最后加起来就行</p>
+<p>因为除最高位以外，别的位置的范围都是从  1 到 进制数减去当前位置<br>所以先计算除最高位以外的排列数，再计算最高位的排列数</p>
+<p>注意事项:</p>
+<p>最高位的排列数应该用减法思维，即拿k=3,w=8来说，最高位只能取1-3，实际计算的时候应该拿最高位可以取1-7的情况减去最高位可以取4-7的情况，因为假设最高位取了2，后面只能比前面大，所以此时要排除后面取1和2的情况，计算量大。如果计算4-7，则最高位和后面都只能取4-7，不存在最高位能取后面不能取的情况，即最高位和后面都只能取4-7等于从4张牌里挑3张，共4种，最高位可以取1-7即7张牌里挑3张，共35种，35减4=31</p>
+<p>当然加法也可以做，即最高位取1加最高位取2加最高位取3，即最高位取1，后面6张挑2张，等于15，最高位取2，后面取不了1了，5张挑2张，等于10，最高位取3，后面取不了1和2了，4张挑2张，等于6，15+10+6=31</p>
+<p>最终答案用最高位排列数加上最高位以外的排列数即 31+21=52 </p>
+</blockquote>
+<h2 id="13"><a href="#13" class="headerlink" title="13"></a>13</h2><blockquote>
+<p>题目 1115: DNA</p>
+<p>时间限制: 1Sec 内存限制: 128MB 提交: 9689 解决: 3342</p>
+<p>题目描述</p>
+<p>小强从小就喜欢生命科学，他总是好奇花草鸟兽从哪里来的。终于， 小强上中学了，接触到了神圣的名词–DNA.它有一个双螺旋的结构。这让一根筋的小强抓破头皮，“要是能画出来就好了” 小强喊道。现在就请你帮助他吧</p>
+<p>输入</p>
+<p>输入包含多组测试数据。第一个整数N（N&lt;=15）,N表示组数，每组数据包含两个整数a,b。a表示一个单位的DNA串的行数，a为奇数且 3&lt;=a&lt;=39。b表示重复度(1&lt;=b&lt;=20)。</p>
+<p>输出</p>
+<p>输出DNA的形状，每组输出间有一空行。</p>
+<p>样例输入</p>
+<pre><code>2
+3 1
+5 4</code></pre>
+<p>样例输出</p>
+<pre><code>X X
+ X
+X X
+
+X   X
+ X X
+  X
+ X X
+X   X
+ X X
+  X
+ X X
+X   X
+ X X
+  X
+ X X
+X   X
+ X X
+  X
+ X X
+X   X</code></pre>
+</blockquote>
+<pre><code class="python">n=int(input())
+for i in range(n):
+    col,num=map(int ,input().split())
+    list_=[[&#39; &#39; for i in range(col)] for i in range(col)]#创建一个二维矩阵
+    for j in range(col):
+        for k in range(col):
+            if j==k or (j+k)==col-1:
+                list_[k][j]=&#39;X&#39;
+    for j in range(1,num+1):
+        if j%2:
+            for l in range(col):
+                for t in range(col):
+                    print(list_[l][t], end=&#39;&#39;)
+                print()
+        else:
+            for l in range(1,col-1):
+                for t in range(col):
+                    print(list_[l][t],end=&#39;&#39;)
+                print()
+            if j==num:
+                for l in range(1):
+                    for t in range(col):
+                        print(list_[l][t], end=&#39;&#39;)
+                    print()
+        print()</code></pre>
+<h2 id="14"><a href="#14" class="headerlink" title="14"></a>14</h2><blockquote>
+<p>题目 1116: IP判断</p>
+<p>时间限制: 1Sec 内存限制: 128MB 提交: 8310 解决: 3380</p>
+<p>题目描述</p>
+<p>在基于Internet的程序中，我们常常需要判断一个IP字符串的合法性。<br>合法的IP是这样的形式：<br>A.B.C.D<br>其中A、B、C、D均为位于[0, 255]中的整数。为了简单起见，我们规定这四个整数中不允许有前导零存在，如001这种情况。<br>现在，请你来完成这个判断程序吧^_^</p>
+<p>输入</p>
+<p>输入由多行组成，每行是一个字符串，输入由“End of file”结束。<br>字符串长度最大为30，且不含空格和不可见字符</p>
+<p>输出</p>
+<p>对于每一个输入，单独输出一行<br>如果该字符串是合法的IP，输出Y，否则，输出N</p>
+<p>样例输入</p>
+<pre><code>1.2.3.4
+a.b.c.d
+267.43.64.12
+12.34.56.bb
+210.43.64.129
+-123.4.5.6</code></pre>
+<p>样例输出</p>
+<pre><code>Y
+N
+N
+N
+Y
+N</code></pre>
+</blockquote>
+<pre><code class="python">#这个题C做绝对没有python舒服</code></pre>
+<h2 id="15"><a href="#15" class="headerlink" title="15"></a>15</h2><blockquote>
+<p>题目 1117: K-进制数</p>
+<p>时间限制: 1Sec 内存限制: 128MB 提交: 3161 解决: 1247</p>
+<p>题目描述</p>
+<p>考虑包含N位数字的K-进制数. 定义一个数有效, 如果其K-进制表示不包含两连续的0.</p>
+<p>考虑包含N位数字的K-进制数. 定义一个数有效, 如果其K-进制表示不包含两连续的0.</p>
+<p>例:<br>1010230 是有效的7位数<br>1000198 无效<br>0001235 不是7位数, 而是4位数.</p>
+<p>给定两个数N和K, 要求计算包含N位数字的有效K-进制数的总数.</p>
+<p>假设2 &lt;= K &lt;= 10; 2 &lt;= N; 4 &lt;= N+K &lt;= 18.</p>
+<p>输入</p>
+<p>两个十进制整数N和K</p>
+<p>输出</p>
+<p>十进制表示的结果</p>
+<p>样例输入</p>
+<pre><code>2
+10</code></pre>
+<p>样例输出</p>
+<pre><code>90</code></pre>
+</blockquote>
+<pre><code class="python"># 写下思路：
+#   （1）dp
+#     这题是可以看成是一道dp题
+#     首先首位必须是除了0以外的数
+#     首位的可能性是确定为K-1:如果是十进制那么只有9个数在首位
+#     然后后面的每一列可以取0 或非0
+#     那么对于10进制dp表达式是：
+#     dp[i]=10*dp[i-1](如果前面串是非0那么此处10种取法)+9*dp[i-2](如果前面是0，那么有9种取法)
+#     dfs同理
+n=int(input())
+k=int(input())
+re=0
+def loop(c,m):
+    global n,k,re#全局变量应用
+    if c==1:#对于每个分支到尽头了
+        if m==0:
+            re+=k-1#这一分支最后有k-1种选择
+        else:
+            re+=k#这一分支最后有
+    elif c==n:
+        for i in range(1,k):#直接开启k-1个分支
+            loop(c-1,i)
+    else:
+        if m==0:#如果前面是0,那么开启k-1分支
+            for i in range(1,k):
+                loop(c-1,i)
+        else:#如果前面
+            for i in range(0,k):#如果前面不是0,那么开启k分支
+                loop(c-1,i)
+loop(n,1)
+print(re)</code></pre>
+<h2 id="16"><a href="#16" class="headerlink" title="16"></a>16</h2><blockquote>
+<p>题目 1118: Tom数</p>
+<p>时间限制: 1Sec 内存限制: 128MB 提交: 10594 解决: 4180</p>
+<p>题目描述</p>
+<p>正整数的各位数字之和被Tom称为Tom数。求输入数（&lt;2^32）的Tom数!</p>
+<p>输入</p>
+<p>每行一个整数(&lt;2^32).</p>
+<p>输出</p>
+<p>每行一个输出,对应该数的各位数之和.</p>
+<p>样例输入</p>
+<pre><code>12345
+56123
+82</code></pre>
+<p>样例输出</p>
+<pre><code>15
+17
+10</code></pre>
+</blockquote>
+<pre><code class="python">x=input()
+while x:
+    print(sum([int(i) for i in x]))
+    x=input()
+   #python就是这么优雅</code></pre>
+<h2 id="17"><a href="#17" class="headerlink" title="17"></a>17</h2><blockquote>
+<p>题目 1255: [蓝桥杯][算法提高]能量项链</p>
+<p>时间限制: 1Sec 内存限制: 128MB 提交: 3366 解决: 1094</p>
+<p>题目描述</p>
+<p>在Mars星球上，每个Mars人都随身佩带着一串能量项链。在项链上有 N颗能量珠。能量珠是一颗有头标记与尾标记的珠子，这些标记对应着某个正整数。并且，对于相邻的两颗珠子，前一颗珠子的尾标记一定等于后一颗珠子的头标 记。因为只有这样，通过吸盘（吸盘是Mars人吸收能量的一种器官）的作用，这两颗珠子才能聚合成一颗珠子，同时释放出可以被吸盘吸收的能量。如果前一颗 能量珠的头标记为m，尾标记为r，后一颗能量珠的头标记为r，尾标记为n，则聚合后释放的能量为m<em>r</em>n（Mars单位），新产生的珠子的头标记为m， 尾标记为n。<br>需要时，Mars人就用吸盘夹住相邻的两颗珠子，通过聚合得到能量，直到项链上只剩下一颗珠子为止。显然，不同的聚合顺序得到的总能量是不同的，请你设计一个聚合顺序，使一串项链释放出的总能量最大。<br>例如：设N=4，4颗珠子的头标记与尾标记依次为(2，3) (3，5) (5，10) (10，2)。我们用记号◎表示两颗珠子的聚合操作，(j◎k)表示第j，k两颗珠子聚合后所释放的能量。则第4、1两颗珠子聚合后释放的能量为：<br>(4◎1)=10<em>2</em>3=60。<br>这一串项链可以得到最优值的一个聚合顺序所释放的总能量为<br>((4◎1)◎2)◎3）=10<em>2</em>3+10<em>3</em>5+10<em>5</em>10=710。</p>
+<p>输入</p>
+<p>第一行是一个正整数N（4≤N≤100），表示项链上珠子的个数。第二行 是N个用空格隔开的正整数，所有的数均不超过1000。第i个数为第i颗珠子的头标记（1≤i≤N），当i〈N时，第i颗珠子的尾标记应该等于第i+1颗 珠子的头标记。第N颗珠子的尾标记应该等于第1颗珠子的头标记。<br>至于珠子的顺序，你可以这样确定：将项链放到桌面上，不要出现交叉，随意指定第一颗珠子，然后按顺时针方向确定其他珠子的顺序。</p>
+<p>输出</p>
+<p>只有一行，是一个正整数E（E≤2.1*10^9），为一个最优聚合顺序所释放的总能量</p>
+<p>样例输入</p>
+<pre><code>4
+2 3 5 10</code></pre>
+<p>样例输出</p>
+<pre><code>710</code></pre>
+</blockquote>
+<pre><code class="python"># 看了c++的题解，可以每次消掉最小的那一个进行排序
+#自己写的
+n = int(input())
+l = list(map(int, input().split()))
+l1 = l[:]
+# 作为副本
+l.sort()
+sum = 0
+
+
+def caculate(l):
+    global sum
+    if len(l) == 1:
+        pass
+    else:
+        i = l.pop(0)  # 每次弹出最小的
+        index_i = l1.index(i)
+        index_i_=(index_i + len(l1) + 1) % len(l1)
+        index_i__=(index_i + len(l1) - 1) % len(l1)
+        sum += i * l1[index_i_] * l1[index_i__]
+        l1.pop(index_i)
+        caculate(l)
+caculate(l)
+print(sum)
+</code></pre>
+<p>看过的一种简洁的题解</p>
+<pre><code class="python">num = int(input())
+lst = list(map(int,input().strip().split()))
+rst = 0
+for i in range(num-1):
+    a=lst.index(min(lst))
+    rst+=lst[a]*lst[a-1]*lst[(a+1)%(num-i)]
+    del lst[a]
+print(rst)</code></pre>
+<h2 id="18"><a href="#18" class="headerlink" title="18"></a>18</h2><blockquote>
+<p>如下面第一个图的九宫格中，放着 1~8 的数字卡片，还有一个格子空着。与空格子相邻的格子中的卡片可以移动到空格中。经过若干次移动，可以形成第二个图所示的局面。</p>
+<p><img src="https://www.dotcpp.com/oj/upload/image/20170306/20170306084421_13973.png" alt="img"></p>
+<p>我们把第一个图的局面记为：12345678.<br>把第二个图的局面记为：123.46758<br>显然是按从上到下，从左到右的顺序记录数字，空格记为句点。<br>本题目的任务是已知九宫的初态和终态，求最少经过多少步的移动可以到达。如果无论多少步都无法到达，则输出-1。</p>
+<p>输入</p>
+<p>输入第一行包含九宫的初态，第二行包含九宫的终态。 </p>
+<p>输出</p>
+<p>输出最少的步数，如果不存在方案，则输出-1。</p>
+<p>样例输入</p>
+<pre><code>12345678. 
+123.46758 </code></pre>
+<p>样例输出</p>
+<pre><code>3</code></pre>
+</blockquote>
+<pre><code class="python"></code></pre>
+<p>这道题主要考察双向BFs</p>
+<h2 id="19"><a href="#19" class="headerlink" title="19"></a>19</h2><blockquote>
+<p>题目 1427: [蓝桥杯][2013年第四届真题]买不到的数目</p>
+<p>时间限制: 1Sec 内存限制: 128MB 提交: 5850 解决: 2963</p>
+<p>题目描述</p>
+<p>小明开了一家糖果店。他别出心裁：把水果糖包成4颗一包和7颗一包的两种。糖果不能拆包卖。<br>小朋友来买糖的时候，他就用这两种包装来组合。当然有些糖果数目是无法组合出来的，比如要买 10 颗糖。<br>你可以用计算机测试一下，在这种包装情况下，最大不能买到的数量是17。大于17的任何数字都可以用4和7组合出来。<br>本题的要求就是在已知两个包装的数量时，求最大不能组合出的数字。</p>
+<p>输入</p>
+<p>两个正整数，表示每种包装中糖的颗数(都不多于1000) </p>
+<p>输出</p>
+<p>一个正整数，表示最大不能买到的糖数 </p>
+<p>样例输入</p>
+<pre><code>4 7 </code></pre>
+<p>样例输出</p>
+<pre><code>17</code></pre>
+</blockquote>
+<pre><code class="python">L=[int(i) for i in input().split()]
+re=(min(L)-1)*(max(L))-min(L)
+if min(L)==1:
+    print(0)
+else:
+    print(re)</code></pre>
+<p>自己写了下感觉 没有这个题解好</p>
+<p><a target="_blank" rel="noopener" href="https://blog.dotcpp.com/a/64446">[蓝桥杯][2013年第四届真题]买不到的数目-题解(Python代码) 一个公式而已</a></p>
+<h2 id="20"><a href="#20" class="headerlink" title="20"></a>20</h2><blockquote>
+<p>题目 1429: [蓝桥杯][2014年第五届真题]兰顿蚂蚁</p>
+<p>时间限制: 1Sec 内存限制: 128MB 提交: 3930 解决: 1772</p>
+<p>题目描述</p>
+<p><img src="https://www.dotcpp.com/oj/upload/image/20170306/20170306151514_74936.png" alt="img"></p>
+<p>兰顿蚂蚁，是于1986年，由克里斯·兰顿提出来的，属于细胞自动机的一种。</p>
+<p>平面上的正方形格子被填上黑色或白色。在其中一格正方形内有一只“蚂蚁”。<br>蚂蚁的头部朝向为：上下左右其中一方。</p>
+<p>蚂蚁的移动规则十分简单：<br>若蚂蚁在黑格，右转90度，将该格改为白格，并向前移一格；<br>若蚂蚁在白格，左转90度，将该格改为黑格，并向前移一格。</p>
+<p>规则虽然简单，蚂蚁的行为却十分复杂。刚刚开始时留下的路线都会有接近对称，像是会重复，但不论起始状态如何，蚂蚁经过漫长的混乱活动后，会开辟出一条规则的“高速公路”。</p>
+<p>蚂蚁的路线是很难事先预测的。</p>
+<p>你的任务是根据初始状态，用计算机模拟兰顿蚂蚁在第n步行走后所处的位置。</p>
+<p>输入</p>
+<p>输入数据的第一行是 m n 两个整数（3 &lt;  m, n &lt;  100），表示正方形格子的行数和列数。<br>接下来是 m 行数据。<br>每行数据为 n 个被空格分开的数字。0 表示白格，1 表示黑格。 </p>
+<p>接下来是一行数据：x y s k, 其中x y为整数，表示蚂蚁所在行号和列号（行号从上到下增长，列号从左到右增长，都是从0开始编号）。s 是一个大写字母，表示蚂蚁头的朝向，我们约定：上下左右分别用：UDLR表示。k 表示蚂蚁走的步数。 </p>
+<p>输出</p>
+<p>输出数据为一个空格分开的整数 p q, 分别表示蚂蚁在k步后，所处格子的行号和列号。</p>
+<p>样例输入</p>
+<pre><code>5 6 
+0 0 0 0 0 0 
+0 0 0 0 0 0 
+0 0 1 0 0 0 
+0 0 0 0 0 0 
+0 0 0 0 0 0 
+2 3 L 5</code></pre>
+<p>样例输出</p>
+<pre><code>1 3</code></pre>
+</blockquote>
+<pre><code class="python">m,n=map(int,input().split())#m行数和n列数
+Gra=[]
+dir=&quot;URDL&quot;#右手方向
+xx=[0,-1,0,1]
+yy=[-1,0,1,0]
+for i in range(m):
+    gra=list(map(int,input().split()))
+    Gra.append(gra)
+x,y,d,num=input().split()
+x,y,num=map(lambda i:int(i),[x,y,num])
+x,y=x-1,y-1
+def move_ant(x,y,d,n):
+    d=dir.index(d)
+    for i in range(n):
+        if(Gra[x][y]):#如果是黑色的格子
+            d=((d+4)+1)%4
+            x+=xx[d]
+            y+=yy[d]
+        else:
+            d=d=((d+4)-1)%4
+            x += xx[d]
+            y += yy[d]
+    return x,y
+x,y=move_ant(x,y,d,num)
+print(x,y)
+</code></pre>
+<h2 id="21"><a href="#21" class="headerlink" title="21"></a>21</h2><blockquote>
+<h4 id="题目-1432-蓝桥杯-2013年第四届真题-剪格子"><a href="#题目-1432-蓝桥杯-2013年第四届真题-剪格子" class="headerlink" title="题目 1432: [蓝桥杯][2013年第四届真题]剪格子"></a>题目 1432: [蓝桥杯][2013年第四届真题]剪格子</h4><p>时间限制: 1Sec 内存限制: 128MB 提交: 3361 解决: 1161</p>
+<p>题目描述</p>
+<p>历届试题 剪格子<br>时间限制：1.0s   内存限制：256.0MB</p>
+<p>问题描述<br>如下图所示，3 x 3 的格子中填写了一些整数。<br>+–<em>–+–+<br>|10</em> 1|52|<br>+–<strong><strong>–+<br>|20|30* 1|<br>***</strong></strong>–+<br>| 1| 2| 3|<br>+–+–+–+<br>我们沿着图中的星号线剪开，得到两个部分，每个部分的数字和都是60。<br>本题的要求就是请你编程判定：对给定的m x n 的格子中的整数，是否可以分割为两个部分，使得这两个区域的数字和相等。<br>如果存在多种解答，请输出包含左上角格子的那个区域包含的格子的最小数目。<br>如果无法分割，则输出 0。</p>
+<p>输入</p>
+<p>程序先读入两个整数 m n 用空格分割 (m,n&lt; 10)。<br>表示表格的宽度和高度。<br>接下来是n行，每行m个正整数，用空格分开。每个整数不大于10000。 </p>
+<p>输出</p>
+<p>输出一个整数，表示在所有解中，包含左上角的分割区可能包含的最小的格子数目。 </p>
+<p>样例输入</p>
+<pre><code>3 3
+10 1 52
+20 30 1
+1 2 3</code></pre>
+<p>样例输出</p>
+<pre><code>3</code></pre>
+</blockquote>
+<pre><code class="python">def dfs(x,y,ant,cur):
+    global sum_,count,vis,n,m
+    xx = [0, 1, 0, -1]
+    yy = [1, 0, -1, 0]
+    if cur==sum_ and ant&lt;count:
+        count=ant#当达到结尾的时候
+    else:
+        #四个方向寻找
+        for j in range(4):
+            x+=xx[j]
+            y+=yy[j]
+            if(x&gt;=0 and x&lt;m and y&gt;=0 and y&lt;n and vis[x][y]):#注意取反
+                #如果没有没出界而且没有访问
+                vis[x][y]=False
+                dfs(x,y,ant+1,cur+Gra[x][y])
+                vis[x][y]=True
+            else:
+                continue
+
+Gra=[]
+sum_=0
+count=1000
+n,m=map(int,input().split())#m列n行
+for i in range(n):
+    list_=list(map(int,input().split()))
+    sum_=sum_+sum(list_)
+    Gra.append(list_)
+vis=[[True for i in range(m)] for j in range(n)]
+vis[0][0]=False
+if sum_%2:#如果是基数那么结束
+    print(0)
+    exit()
+else:
+    sum_//=2
+dfs(0,0,1,Gra[0][0])
+if (count==1000):
+    print(0)
+else:
+    print(count)
+
+</code></pre>
+<h2 id="22"><a href="#22" class="headerlink" title="22"></a>22</h2><blockquote>
+<h4 id="题目-1433-蓝桥杯-2013年第四届真题-危险系数"><a href="#题目-1433-蓝桥杯-2013年第四届真题-危险系数" class="headerlink" title="题目 1433: [蓝桥杯][2013年第四届真题]危险系数"></a>题目 1433: [蓝桥杯][2013年第四届真题]危险系数</h4><p>时间限制: 1Sec 内存限制: 128MB 提交: 2897 解决: 1075</p>
+<p>题目描述</p>
+<p>问题描述<br>抗日战争时期，冀中平原的地道战曾发挥重要作用。<br>地道的多个站点间有通道连接，形成了庞大的网络。但也有隐患，当敌人发现了某个站点后，其它站点间可能因此会失去联系。<br>我们来定义一个危险系数DF(x,y)：<br>对于两个站点x和y (x != y), 如果能找到一个站点z，当z被敌人破坏后，x和y不连通，那么我们称z为关于x,y的关键点。相应的，对于任意一对站点x和y，危险系数DF(x,y)就表示为这两点之间的关键点个数。<br>本题的任务是：已知网络结构，求两站点之间的危险系数。</p>
+<p>输入</p>
+<p>输入数据第一行包含2个整数n(2 &lt; = n &lt; = 1000), m(0 &lt; = m &lt; = 2000),分别代表站点数，通道数；<br>接下来m行，每行两个整数 u,v (1 &lt; = u, v &lt; = n; u != v)代表一条通道；<br>最后1行，两个数u,v，代表询问两点之间的危险系数DF(u, v)。 </p>
+<p>输出</p>
+<p>一个整数，如果询问的两点不连通则输出-1. </p>
+<p>样例输入</p>
+<pre><code>7 6
+1 3
+2 3
+3 4
+3 5
+4 5
+5 6
+1 6</code></pre>
+<p>样例输出</p>
+<pre><code>2</code></pre>
+</blockquote>
+<pre><code class="python">n,m=map(int,input().split())#n个点m个通道
+Gra=[[False for i in range(n+1)]  for i in range(n+1)]
+Vis=[True for i in range(n+1)]
+path=[0 for i in range(n+1)]
+for i in range(m):
+    x,y=map(int,input().split())
+    Gra[x][y]=True
+    Gra[y][x]=True
+
+start,end=map(int,input().split())
+
+def dfs(s,e):
+    global Gra,Vis,path
+    if(s==e):
+        for i in range(n):
+            if not Vis[i]:
+                path[i]+=1#注意在最后数数和访问就数数不一样
+        return
+    else:
+        for i in range(1,n+1):
+            if Gra[s][i] and Vis[i]:
+                Vis[i]=False
+                dfs(i,e)
+                Vis[i]=True
+dfs(start,end)
+print(path.count(path[end])-1)#没有全对</code></pre>
+<h2 id="23"><a href="#23" class="headerlink" title="23"></a>23</h2><blockquote>
+<h4 id="题目-1434-蓝桥杯-历届试题-回文数字"><a href="#题目-1434-蓝桥杯-历届试题-回文数字" class="headerlink" title="题目 1434: [蓝桥杯][历届试题]回文数字"></a>题目 1434: [蓝桥杯][历届试题]回文数字</h4><p>时间限制: 1Sec 内存限制: 128MB 提交: 10531 解决: 4347</p>
+<p>题目描述</p>
+<p>观察数字：12321，123321 都有一个共同的特征，无论从左到右读还是从右向左读，都是相同的。这样的数字叫做：回文数字。</p>
+<p>本题要求你找到一些5位或6位的十进制数字。满足如下要求：<br>该数字的各个数位之和等于输入的整数。</p>
+<p>输入</p>
+<p>一个正整数 n (10&lt; n&lt; 100), 表示要求满足的数位和。</p>
+<p>输出</p>
+<p>若干行，每行包含一个满足要求的5位或6位整数。<br>数字按从小到大的顺序排列。<br>如果没有满足条件的，输出：-1 </p>
+<p>样例输入</p>
+<pre><code>44 </code></pre>
+<p>样例输出</p>
+<pre><code>99899
+499994
+589985
+598895
+679976
+688886
+697796
+769967
+778877
+787787
+796697
+859958
+868868
+877778
+886688
+895598
+949949
+958859
+967769
+976679
+985589
+994499</code></pre>
+</blockquote>
+<pre><code class="python">count=0
+goal=int(input())
+flag=True
+for i in range(100,1000):
+    j=str(i)
+    j=[int(i) for i in j]
+    if(sum(j[:-1])*2+j[-1]==goal):
+        j=str(i)
+        print(j[:-1]+j[::-1])
+        flag=False
+
+for i in range(100,1000):
+    j=str(i)
+    j=[int(i) for i in j]
+    if(sum(j)*2==goal):
+        j=str(i)
+        print(j+j[::-1])
+        flag = False
+if  flag:
+    print(-1)</code></pre>
+<h2 id="24"><a href="#24" class="headerlink" title="24"></a>24</h2><blockquote>
+<h4 id="题目-1435-蓝桥杯-历届试题-国王的烦恼"><a href="#题目-1435-蓝桥杯-历届试题-国王的烦恼" class="headerlink" title="题目 1435: [蓝桥杯][历届试题]国王的烦恼"></a>题目 1435: [蓝桥杯][历届试题]国王的烦恼</h4><p>时间限制: 1Sec 内存限制: 128MB 提交: 1607 解决: 459</p>
+<p>题目描述</p>
+<p>C国由n个小岛组成，为了方便小岛之间联络，C国在小岛间建立了m座大桥，每座大桥连接两座小岛。两个小岛间可能存在多座桥连接。然而，由于海水冲刷，有一些大桥面临着不能使用的危险。</p>
+<p>如果两个小岛间的所有大桥都不能使用，则这两座小岛就不能直接到达了。然而，只要这两座小岛的居民能通过其他的桥或者其他的小岛互相到达，他们就会安然无事。但是，如果前一天两个小岛之间还有方法可以到达，后一天却不能到达了，居民们就会一起抗议。</p>
+<p>现在C国的国王已经知道了每座桥能使用的天数，超过这个天数就不能使用了。现在他想知道居民们会有多少天进行抗议。</p>
+<p>下文中的样例说明<br>第一天后2和3之间的桥不能使用，不影响。<br>第二天后1和2之间，以及1和3之间的桥不能使用，居民们会抗议。<br>第三天后3和4之间的桥不能使用，居民们会抗议。<br>数据规模和约定<br>对于100%的数据，1&lt; =n&lt; =10000，1&lt; =m&lt; =100000，1&lt; =a, b&lt; =n， 1&lt; =t&lt; =100000。</p>
+<p>输入</p>
+<p>输入的第一行包含两个整数n, m，分别表示小岛的个数和桥的数量。<br>接下来m行，每行三个整数a, b, t，分别表示该座桥连接a号和b号两个小岛，能使用t天。小岛的编号从1开始递增。</p>
+<p>输出</p>
+<p>输出一个整数，表示居民们会抗议的天数。</p>
+<p>样例输入</p>
+<pre><code>4 4
+1 2 2
+1 3 2
+2 3 1
+3 4 3</code></pre>
+<p>样例输出</p>
+<pre><code>2</code></pre>
+</blockquote>
+<p>并查集</p>
+<p>思路：天数从大到小排序，如果有一个桥生成，那么居民抗议一天</p>
+<pre><code class="python">n,m=map(int,input().split())#n点个数m,桥个数
+Gra=[]
+fa=[0 for i in range(1000)]
+for i in range(m):
+    L=list(map(int ,input().split()))
+    Gra.append(L)
+def init():
+    global fa
+    for i in range(1,n+1):
+        fa[i]=i
+
+def find_(x):
+
+    if( x==fa[x]):
+        return x
+    else:
+        fa[x]=find_(fa[x])
+        return fa[x]
+def kruskal():
+    global fa ,n
+    init();#初始化并查集
+    Gra.sort(key=lambda x:x[2])
+    res=0;Time=-1
+    for i in range(m):
+        p1=find_(Gra[i][0])
+        p2=find_(Gra[i][1])
+        if (p1!=p2):#如果不是一个集合
+            fa[p2]=p1#连上，表示同一集合
+            if(Gra[i][2]!=Time):#开始断桥
+                res+=1
+                Time=Gra[i][2]
+            n-=1
+        if n ==1:
+            break
+    return res
+print(kruskal()-1)
+</code></pre>
+<h2 id="25"><a href="#25" class="headerlink" title="25"></a>25</h2><blockquote>
+<h4 id="题目-1436-蓝桥杯-2014年第五届真题-地宫取宝"><a href="#题目-1436-蓝桥杯-2014年第五届真题-地宫取宝" class="headerlink" title="题目 1436: [蓝桥杯][2014年第五届真题]地宫取宝"></a>题目 1436: [蓝桥杯][2014年第五届真题]地宫取宝</h4><p>时间限制: 1Sec 内存限制: 128MB 提交: 3733 解决: 1060</p>
+<p>题目描述</p>
+<p>X 国王有一个地宫宝库。是 n x m 个格子的矩阵。每个格子放一件宝贝。每个宝贝贴着价值标签。</p>
+<p>地宫的入口在左上角，出口在右下角。</p>
+<p>小明被带到地宫的入口，国王要求他只能向右或向下行走。</p>
+<p>走过某个格子时，如果那个格子中的宝贝价值比小明手中任意宝贝价值都大，小明就可以拿起它（当然，也可以不拿）。</p>
+<p>当小明走到出口时，如果他手中的宝贝恰好是k件，则这些宝贝就可以送给小明。</p>
+<p>请你帮小明算一算，在给定的局面下，他有多少种不同的行动方案能获得这k件宝贝。</p>
+<p>输入</p>
+<p>输入一行3个整数，用空格分开：n m k (1&lt; =n,m&lt; =50, 1&lt; =k&lt; =12) </p>
+<p>接下来有 n 行数据，每行有 m 个整数 Ci (0&lt; =Ci&lt; =12)代表这个格子上的宝物的价值 </p>
+<p>输出</p>
+<p>要求输出一个整数，表示正好取k个宝贝的行动方案数。该数字可能很大，输出它对 1000000007 取模的结果。</p>
+<p>样例输入</p>
+<pre><code>2 3 2
+1 2 3
+2 1 5</code></pre>
+<p>样例输出</p>
+<pre><code>14</code></pre>
+</blockquote>
+<pre><code class="python">n,m,k=map(int,input().split())
+# 记录迷宫的宝贝价值
+table=[]
+for _ in range(n):
+    table.append(list(map(int,input().split())))
+# 状态列表dp[1][2][3][4]=5 表示坐标（1,2)这个点物品数量为3最大价值为4的方案有5种
+dp=[[[[-1]*15 for _ in range(15)] for _ in range(51)]for _ in range(51)]
+#深度遍历
+def dfs(x,y,sum,max):
+    #因为如果这个方案先前采用了，就会有一个值而不是初始值-1
+    if dp[x][y][sum][max+1]!=-1:
+        #直接将记录过的状态返回
+        return dp[x][y][sum][max+1]
+    #方案数
+    t=0
+    #到达终点
+    if x==n-1 and y==m-1:
+        #最后一个格子能选
+        if table[x][y]&gt;max:
+            #可选可不选，若选那么只能再选最后一个（先前有k-1个)
+            if sum==k or sum==k-1:
+                t+=1
+        elif k==sum:
+            #不能选也算一种方案
+            t+=1
+        dp[x][y][sum][max+1]=t
+        #返回终点的方案数
+        return dp[x][y][sum][max+1]
+    #向下走
+    if x+1&lt;n:
+        #可选
+        if table[x][y]&gt;max:
+            t+=dfs(x+1,y,sum+1,table[x][y])
+            t%=1000000007
+        #不选
+        t+=dfs(x+1,y,sum,max)
+        t%=1000000007
+        #向右走
+    if y+1&lt;m:
+        #可选
+        if table[x][y]&gt;max:
+            t+=dfs(x,y+1,sum+1,table[x][y])
+            t%=1000000007
+        #不选
+        t+=dfs(x,y+1,sum,max)
+        t%=1000000007
+    dp[x][y][sum][max+1]=t
+    return dp[x][y][sum][max+1]
+dp[0][0][0][0]=dfs(0,0,0,-1)
+print(dp[0][0][0][0])</code></pre>
+<h2 id="26"><a href="#26" class="headerlink" title="26"></a>26</h2><blockquote>
+<h4 id="目-1439-蓝桥杯-历届试题-小朋友排队"><a href="#目-1439-蓝桥杯-历届试题-小朋友排队" class="headerlink" title="目 1439: [蓝桥杯][历届试题]小朋友排队"></a>目 1439: [蓝桥杯][历届试题]小朋友排队</h4><p>时间限制: 1Sec 内存限制: 128MB 提交: 2447 解决: 434</p>
+<p>题目描述</p>
+<p>n 个小朋友站成一排。现在要把他们按身高从低到高的顺序排列，但是每次只能交换位置相邻的两个小朋友。</p>
+<p>每个小朋友都有一个不高兴的程度。开始的时候，所有小朋友的不高兴程度都是0。</p>
+<p>如果某个小朋友第一次被要求交换，则他的不高兴程度增加1，如果第二次要求他交换，则他的不高兴程度增加2（即不高兴程度为3），依次类推。当要求某个小朋友第k次交换时，他的不高兴程度增加k。</p>
+<p>请问，要让所有小朋友按从低到高排队，他们的不高兴程度之和最小是多少。</p>
+<p>如果有两个小朋友身高一样，则他们谁站在谁前面是没有关系的。</p>
+<p>样例说明<br>首先交换身高为3和2的小朋友，再交换身高为3和1的小朋友，再交换身高为2和1的小朋友，每个小朋友的不高兴程度都是3，总和为9。<br>数据规模和约定<br>对于100%的数据，1&lt; =n&lt; =100000，0&lt; =Hi&lt; =1000000。</p>
+<p>输入</p>
+<p>输入的第一行包含一个整数n，表示小朋友的个数。<br>第二行包含 n 个整数 H1 H2 … Hn，分别表示每个小朋友的身高。</p>
+<p>输出</p>
+<p>输出一行，包含一个整数，表示小朋友的不高兴程度和的最小值。</p>
+<p>样例输入</p>
+<pre><code>3
+3 2 1</code></pre>
+<p>样例输出</p>
+<pre><code>9</code></pre>
+</blockquote>
+<h2 id="27"><a href="#27" class="headerlink" title="27"></a>27</h2><blockquote>
+<h4 id="题目-1440-蓝桥杯-2013年第四届真题-带分数"><a href="#题目-1440-蓝桥杯-2013年第四届真题-带分数" class="headerlink" title="题目 1440: [蓝桥杯][2013年第四届真题]带分数"></a>题目 1440: [蓝桥杯][2013年第四届真题]带分数</h4><p>时间限制: 1Sec 内存限制: 128MB 提交: 1390 解决: 796</p>
+<p>题目描述</p>
+<p>100 可以表示为带分数的形式：100 = 3 + 69258 / 714。<br>还可以表示为：100 = 82 + 3546 / 197。<br>注意特征：带分数中，数字1~9分别出现且只出现一次（不包含0）。<br>类似这样的带分数，100 有 11 种表示法。</p>
+<p>输入</p>
+<p>从标准输入读入一个正整数N (N&lt; 1000*1000) </p>
+<p>输出</p>
+<p>程序输出该数字用数码1~9不重复不遗漏地组成带分数表示的全部种数。<br>注意：不要求输出每个表示，只统计有多少表示法！ </p>
+<p>样例输入</p>
+<pre><code>100  </code></pre>
+<p>样例输出</p>
+<pre><code>11</code></pre>
+</blockquote>
+<h2 id="28"><a href="#28" class="headerlink" title="28"></a>28</h2><blockquote>
+<h4 id="题目-1441-蓝桥杯-2013年第四届真题-幸运数"><a href="#题目-1441-蓝桥杯-2013年第四届真题-幸运数" class="headerlink" title="题目 1441: [蓝桥杯][2013年第四届真题]幸运数"></a>题目 1441: [蓝桥杯][2013年第四届真题]幸运数</h4><p>时间限制: 1Sec 内存限制: 128MB 提交: 1479 解决: 642</p>
+<p>题目描述</p>
+<p>幸运数是波兰数学家乌拉姆命名的。它采用与生成素数类似的“筛法”生成<br>。<br>首先从1开始写出自然数1,2,3,4,5,6,….<br>1 就是第一个幸运数。<br>我们从2这个数开始。把所有序号能被2整除的项删除，变为：<br>1 _ 3 _ 5 _ 7 _ 9 ….<br>把它们缩紧，重新记序，为：<br>1 3 5 7 9 …. 。这时，3为第2个幸运数，然后把所有能被3整除的序号位置的数删去。注意，是序号位置，不是那个数本身能否被3整除!! 删除的应该是5，11, 17, …<br>此时7为第3个幸运数，然后再删去序号位置能被7整除的(19,39,…)<br>最后剩下的序列类似：<br>1, 3, 7, 9, 13, 15, 21, 25, 31, 33, 37, 43, 49, 51, 63, 67, 69, 73, 75, 79, …</p>
+<p>输入</p>
+<p>输入两个正整数m n, 用空格分开 (m &lt;  n &lt;  1000*1000) </p>
+<p>输出</p>
+<p>程序输出 位于m和n之间的幸运数的个数（不包含m和n）。 </p>
+<p>样例输入</p>
+<pre><code>30 69  </code></pre>
+<p>样例输出</p>
+<pre><code>8</code></pre>
+</blockquote>
+<pre><code class="python">s=[int(i) for i in input().split()]
+m=s[0]
+n=s[1]
+L=[i for i in range(n)]
+def check(i):
+    global L
+    k=L[i]
+    for j in range(len(L)-1,i-1,-1):
+        if j%L[i]==0:
+            L[j]=-1
+    while -1 in L:
+        L.remove(-1)
+    for j in L:
+        if j&gt;k:
+            if int((len(L)-1)/j)==0:
+                break
+            check(L.index(j))
+            break
+check(2)
+re=0
+for i in L:
+    if m&lt;i:
+        re+=1
+print(re)</code></pre>
+<h2 id="29"><a href="#29" class="headerlink" title="29"></a>29</h2><blockquote>
+<h4 id="题目-1442-蓝桥杯-2013年第四届真题-打印十字图"><a href="#题目-1442-蓝桥杯-2013年第四届真题-打印十字图" class="headerlink" title="题目 1442: [蓝桥杯][2013年第四届真题]打印十字图"></a>题目 1442: [蓝桥杯][2013年第四届真题]打印十字图</h4><p>时间限制: 1Sec 内存限制: 128MB 提交: 1056 解决: 739</p>
+<p>题目描述</p>
+<p>历届试题 打印十字图<br>时间限制：1.0s   内存限制：256.0MB</p>
+<p>问题描述<br>小明为某机构设计了一个十字型的徽标（并非红十字会啊），如下所示：</p>
+<pre><code class="cpp">..$$$$$$$$$$$$$..
+..$...........$..
+$$$.$$$$$$$$$.$$$
+$...$.......$...$
+$.$$$.$$$$$.$$$.$
+$.$...$...$...$.$
+$.$.$$$.$.$$$.$.$
+$.$.$...$...$.$.$
+$.$.$.$$$$$.$.$.$
+$.$.$...$...$.$.$
+$.$.$$$.$.$$$.$.$
+$.$...$...$...$.$
+$.$$$.$$$$$.$$$.$
+$...$.......$...$
+$$$.$$$$$$$$$.$$$
+..$...........$..
+..$$$$$$$$$$$$$..</code></pre>
+<p>对方同时也需要在电脑dos窗口中以字符的形式输出该标志，并能任意控制层数。</p>
+<p>提示<br>请仔细观察样例，尤其要注意句点的数量和输出位置。 </p>
+<p>输入</p>
+<p>一个正整数 n (n&lt; 30) 表示要求打印图形的层数。 </p>
+<p>输出</p>
+<p>对应包围层数的该标志。</p>
+<p>样例输入</p>
+<pre><code>3  </code></pre>
+</blockquote>
+<h2 id="30"><a href="#30" class="headerlink" title="30"></a>30</h2><blockquote>
+<h4 id="题目-1443-蓝桥杯-历届试题-数字游戏"><a href="#题目-1443-蓝桥杯-历届试题-数字游戏" class="headerlink" title="题目 1443: [蓝桥杯][历届试题]数字游戏"></a>题目 1443: [蓝桥杯][历届试题]数字游戏</h4><p>时间限制: 1Sec 内存限制: 128MB 提交: 9976 解决: 1656</p>
+<p>题目描述</p>
+<p>栋栋正在和同学们玩一个数字游戏。</p>
+<p>游戏的规则是这样的：栋栋和同学们一共n个人围坐在一圈。栋栋首先说出数字1。接下来，坐在栋栋左手边的同学要说下一个数字2。再下面的一个同学要从上一个同学说的数字往下数两个数说出来，也就是说4。下一个同学要往下数三个数，说7。依次类推。</p>
+<p>为了使数字不至于太大，栋栋和同学们约定，当在心中数到 k-1 时，下一个数字从0开始数。例如，当k=13时，栋栋和同学们报出的前几个数依次为：<br>1, 2, 4, 7, 11, 3, 9, 3, 11, 7。</p>
+<p>游戏进行了一会儿，栋栋想知道，到目前为止，他所有说出的数字的总和是多少。</p>
+<p>样例说明<br>栋栋说出的数依次为1, 7, 9，和为17。<br>数据规模和约定<br>1 &lt;  n,k,T &lt;  1,000,000；</p>
+<p>输入</p>
+<p>输入的第一行包含三个整数 n,k,T，其中 n 和 k 的意义如上面所述，T 表示到目前为止栋栋一共说出的数字个数。 </p>
+<p>输出</p>
+<p>输出一行，包含一个整数，表示栋栋说出所有数的和。 </p>
+<p>样例输入</p>
+<pre><code>3 13 3</code></pre>
+<p>样例输出</p>
+<pre><code>17</code></pre>
+</blockquote>
+<pre><code class="python">#自己写的错误的
+n,k,T=map(int,input().split())
+L=[[] for i in range(n)]#存储数组的数组
+count=0
+i=0
+sum_=1
+while len(L[0])&lt;T:
+    L[i].append(sum_)
+    count+=1
+    sum_=(sum_+count)%k
+    i=(i+1)%3
+print(sum(L[0]))</code></pre>
+<pre><code class="python">#别人写的，找规律
+n,k,T=map(int,input().split())
+s=0
+p=1
+sum=0
+for i in range(T):
+    sum=sum+p
+    s=s+n
+    p=(p+s*n-(n-1)*n//2)%k
+print(sum)</code></pre>
+<h2 id="31"><a href="#31" class="headerlink" title="31"></a>31</h2><blockquote>
+<h4 id="题目-1462-蓝桥杯-基础练习VIP-Huffuman树"><a href="#题目-1462-蓝桥杯-基础练习VIP-Huffuman树" class="headerlink" title="题目 1462: [蓝桥杯][基础练习VIP]Huffuman树"></a>题目 1462: [蓝桥杯][基础练习VIP]Huffuman树</h4><p>时间限制: 1Sec 内存限制: 128MB 提交: 2005 解决: 1326</p>
+<p>题目描述</p>
+<p>Huffman树在编码中有着广泛的应用。在这里，我们只关心Huffman树的构造过程。</p>
+<p>给出一列数{pi}={p0, p1, …, pn-1}，用这列数构造Huffman树的过程如下：</p>
+<p>\1. 找到{pi}中最小的两个数，设为pa和pb，将pa和pb从{pi}中删除掉，然后将它们的和加入到{pi}中。这个过程的费用记为pa + pb。</p>
+<p>\2. 重复步骤1，直到{pi}中只剩下一个数。</p>
+<p>在上面的操作过程中，把所有的费用相加，就得到了构造Huffman树的总费用。</p>
+<p>本题任务：对于给定的一个数列，现在请你求出用该数列构造Huffman树的总费用。</p>
+<p>例如，对于数列{pi}={5, 3, 8, 2, 9}，Huffman树的构造过程如下：</p>
+<p>\1. 找到{5, 3, 8, 2, 9}中最小的两个数，分别是2和3，从{pi}中删除它们并将和5加入，得到{5, 8, 9, 5}，费用为5。</p>
+<p>\2. 找到{5, 8, 9, 5}中最小的两个数，分别是5和5，从{pi}中删除它们并将和10加入，得到{8, 9, 10}，费用为10。</p>
+<p>\3. 找到{8, 9, 10}中最小的两个数，分别是8和9，从{pi}中删除它们并将和17加入，得到{10, 17}，费用为17。</p>
+<p>\4. 找到{10, 17}中最小的两个数，分别是10和17，从{pi}中删除它们并将和27加入，得到{27}，费用为27。</p>
+<p>\5. 现在，数列中只剩下一个数27，构造过程结束，总费用为5+10+17+27=59。</p>
+<p>输入</p>
+<p>输入的第一行包含一个正整数n（n&lt; =100）。 </p>
+<p>接下来是n个正整数，表示p0, p1, …, pn-1，每个数不超过1000。 </p>
+<p>输出</p>
+<p>输出用这些数构造Huffman树的总费用。 </p>
+<p>样例输入</p>
+<pre><code>5 
+5 3 8 2 9</code></pre>
+<p>样例输出</p>
+<pre><code>59</code></pre>
+</blockquote>
+<pre><code class="python">n=int(input())
+L=list(map(int,input().split()))
+sum=0
+while len(L)!=1:
+    a1=min(L)
+    L.remove(a1)
+    a2=min(L)
+    sum+=(a1+a2)
+    L[L.index(a2)]=a1+a2
+
+print(sum)</code></pre>
+<h2 id="32"><a href="#32" class="headerlink" title="32"></a>32</h2><blockquote>
+<h4 id="题目-1463-蓝桥杯-基础练习VIP-Sine之舞"><a href="#题目-1463-蓝桥杯-基础练习VIP-Sine之舞" class="headerlink" title="题目 1463: [蓝桥杯][基础练习VIP]Sine之舞"></a>题目 1463: [蓝桥杯][基础练习VIP]Sine之舞</h4><p>时间限制: 1Sec 内存限制: 128MB 提交: 2261 解决: 1374</p>
+<p>题目描述</p>
+<p>最近FJ为他的奶牛们开设了数学分析课，FJ知道若要学好这门课，必须有一个好的三角函数基本功。所以他准备和奶牛们做一个“Sine之舞”的游戏，寓教于乐，提高奶牛们的计算能力。<br>不妨设<br>An=sin(1–sin(2+sin(3–sin(4+…sin(n))…)<br>Sn=(…(A1+n)A2+n-1)A3+…+2)An+1<br>FJ想让奶牛们计算Sn的值，请你帮助FJ打印出Sn的完整表达式，以方便奶牛们做题。</p>
+<p>输入</p>
+<p>仅有一个数：N&lt;201。</p>
+<p>输出</p>
+<p>请输出相应的表达式Sn，以一个换行符结束。输出中不得含有多余的空格或换行、回车符。</p>
+<p>样例输入</p>
+<pre><code>3</code></pre>
+<p>样例输出</p>
+<pre><code>((sin(1)+3)sin(1-sin(2))+2)sin(1-sin(2+sin(3)))+1</code></pre>
+</blockquote>
+<pre><code class="python">n=int(input())
+
+def an(n):
+    for i in range(1,n+1):
+        print(&#39;sin&#39;,end=&#39;&#39;)
+        print(&#39;(&#39;,end=&#39;&#39;)
+        print(i,end=&#39;&#39;)
+        if i !=n:#注意这里
+            if i%2:
+                print(&#39;-&#39;,end=&#39;&#39;)
+            else:
+                print(&#39;+&#39;,end=&#39;&#39;)
+    for i in range(n):
+        print(&#39;)&#39;,end=&#39;&#39;)
+    return &#39;&#39;
+
+def sn(n):
+    for i in range(n-1):
+        print(&#39;(&#39;,end=&#39;&#39;)
+    for i in range(1,n+1):
+        print(an(i),end=&#39;&#39;)
+        print(&#39;+&#39;,end=&#39;&#39;)
+        print(n-i+1,end=&#39;&#39;)
+        if i!=n:
+            print(&#39;)&#39;,end=&#39;&#39;)
+
+
+
+sn(n)</code></pre>
+<h2 id="33"><a href="#33" class="headerlink" title="33"></a>33</h2><blockquote>
+<h4 id="题目-1464-蓝桥杯-基础练习VIP-分解质因数"><a href="#题目-1464-蓝桥杯-基础练习VIP-分解质因数" class="headerlink" title="题目 1464: [蓝桥杯][基础练习VIP]分解质因数"></a>题目 1464: [蓝桥杯][基础练习VIP]分解质因数</h4><p>时间限制: 1Sec 内存限制: 128MB 提交: 3039 解决: 1819</p>
+<p>题目描述</p>
+<p>求出区间[a,b]中所有整数的质因数分解。</p>
+<p>提示</p>
+<p>先筛出所有素数，然后再分解。</p>
+<p>数据规模和约定</p>
+<p>输入</p>
+<p>输入两个整数a，b。 </p>
+<p>2&lt; =a&lt; =b&lt; =10000</p>
+<p>输出</p>
+<p>每行输出一个数的分解，形如k=a1<em>a2</em>a3…(a1&lt; =a2&lt; =a3…，k也是从小到大的)(具体可看样例) </p>
+<p>样例输入</p>
+<pre><code>3 10</code></pre>
+<p>样例输出</p>
+<pre><code>3=3
+4=2*2
+5=5
+6=2*3
+7=7
+8=2*2*2
+9=3*3
+10=2*5</code></pre>
+</blockquote>
+<pre><code class="python">
+
+
+def fun2(i):
+    l1=[]
+    while True:
+        for j in range(2,i+1):
+            flag=True
+            if i%j==0:
+                l1.append(str(j))
+                i=i//j
+                break
+        if i==1:
+            break
+    s=&#39;*&#39;.join(l1)#注意这种用法
+    return s
+
+def fun(i):
+    if i in l:
+        return i
+    else:
+        return fun2(i)
+
+n,m=map(int,input().split())
+l=[]
+for i in range(n ,m+1):
+    flag=True
+    for j in range(2,i):
+        if i%j!=0:
+            flag=False
+            break
+    if flag:
+        l.append(i)
+for i in range(n,m+1):
+    print(&quot;&amp;#123;&amp;#125;=&amp;#123;&amp;#125;&quot;.format(i,fun(i)))</code></pre>
+<p>注意join的使用</p>
+<p>注意先排除之间的指数</p>
+<p>注意数的变化</p>
+<h2 id="34"><a href="#34" class="headerlink" title="34"></a>34</h2><blockquote>
+<h4 id="题目-1465-蓝桥杯-基础练习VIP-回形取数"><a href="#题目-1465-蓝桥杯-基础练习VIP-回形取数" class="headerlink" title="题目 1465: [蓝桥杯][基础练习VIP]回形取数"></a>题目 1465: [蓝桥杯][基础练习VIP]回形取数</h4><p>时间限制: 1Sec 内存限制: 128MB 提交: 2916 解决: 939</p>
+<p>题目描述</p>
+<p>回形取数就是沿矩阵的边取数，若当前方向上无数可取或已经取过，则左转90度。一开始位于矩阵左上角，方向向下。</p>
+<p>输入</p>
+<p>输入第一行是两个不超过200的正整数m, n，表示矩阵的行和列。接下来m行每行n个整数，表示这个矩阵。</p>
+<p>输出</p>
+<p>输出只有一行，共mn个数，为输入矩阵回形取数得到的结果。数之间用一个空格分隔，行末不要有多余的空格。</p>
+<p>样例输入</p>
+<pre><code>3 3
+1 2 3
+4 5 6
+7 8 9</code></pre>
+<p>样例输出</p>
+<pre><code>1 4 7 8 9 6 3 2 5</code></pre>
+</blockquote>
+<pre><code class="python">#这时间超限了
+n,m=map(int,input().split())
+#m行，n列
+L=[]
+for i in range(m):
+    l=list(map(int ,input().split()))
+    L.append(l)
+count=0
+x=0
+while count!=n*m:
+    for i in range(x,m-x):
+        if L[i][x]:
+            print(L[i][x],end=&#39; &#39;)
+            L[i][x]=0
+            count+=1
+        else:
+            break
+    for j in range(x+1,n-x):
+        if L[m-x-1][j]:
+            print(L[m-x-1][j],end=&#39; &#39;)
+            L[m-x-1][j]=0
+            count+=1
+        else:
+            break
+    for k in range(m-x-2,x-1,-1):
+        if L[k][n-x-1]:
+            print(L[k][n-x-1],end=&#39; &#39;)
+            L[k][n - x - 1]=0
+            count+=1
+        else:
+            break
+    for t in range(n-x-2,x,-1):
+        if L[x][t]:
+            print(L[x][t],end=&#39; &#39;)
+            L[x][t]=0
+            count+=1
+        else:
+            break
+    x+=1</code></pre>
+<p>以下是完美的题解</p>
+<pre><code class="python">m,n = map(int,input().split())
+mapL = [list(map(int,input().split())) for _ in range(m)]
+i,j = 0,0    #i表示行，j表示列
+flag = &quot;D&quot;    #从向下走开始
+result = []    #存结果
+while True:
+    if i&lt;0 or j&lt;0 or i&gt;=m or j&gt;=n or mapL[i][j] == -1:    #“i&lt;0 or j&lt;0 or i&gt;=m or j&gt;=n”这一段要加，不然一些单行，单列（n=1 or m=1）的用例通不过
+        break
+    result.append(mapL[i][j])
+    mapL[i][j] = -1
+    if flag == &quot;D&quot;:
+        i += 1
+    elif flag == &quot;R&quot;:
+        j += 1
+    elif flag == &quot;U&quot;:
+        i -= 1
+    elif flag == &quot;L&quot;:
+        j -= 1
+    if flag == &quot;D&quot; and (i&gt;=m or mapL[i][j]==-1):
+        flag = &quot;R&quot;
+        i -= 1
+        j += 1
+    elif flag == &quot;R&quot; and (j&gt;=n or mapL[i][j]==-1):
+        flag = &quot;U&quot;
+        j -= 1
+        i -= 1
+    elif flag == &quot;U&quot; and (i&lt;0 or mapL[i][j] == -1):
+        flag = &quot;L&quot;
+        i += 1
+        j -= 1
+    elif flag == &quot;L&quot; and (j&lt;0 or mapL[i][j] == -1):
+        flag = &quot;D&quot;
+        j += 1
+        i += 1
+
+for i in range(len(result)):
+    if i == len(result) -1:
+        print(result[i])
+    else:
+        print(result[i],end=&quot; &quot;)</code></pre>
+<h2 id="35"><a href="#35" class="headerlink" title="35"></a>35</h2><blockquote>
+<h4 id="题目-1466-蓝桥杯-基础练习VIP-字符串对比"><a href="#题目-1466-蓝桥杯-基础练习VIP-字符串对比" class="headerlink" title="题目 1466: [蓝桥杯][基础练习VIP]字符串对比"></a>题目 1466: [蓝桥杯][基础练习VIP]字符串对比</h4><p>时间限制: 1Sec 内存限制: 512MB 提交: 5542 解决: 3212</p>
+<p>题目描述</p>
+<p>给定两个仅由大写字母或小写字母组成的字符串(长度介于1到10之间)，它们之间的关系是以下4中情况之一：</p>
+<p>1：两个字符串长度不等。比如 Beijing 和 Hebei</p>
+<p>2：两个字符串不仅长度相等，而且相应位置上的字符完全一致(区分大小写)，比如 Beijing 和 Beijing</p>
+<p>3：两个字符串长度相等，相应位置上的字符仅在不区分大小写的前提下才能达到完全一致（也就是说，它并不满足情况2）。比如 beijing 和 BEIjing</p>
+<p>4：两个字符串长度相等，但是即使是不区分大小写也不能使这两个字符串一致。比如 Beijing 和 Nanjing</p>
+<p>编程判断输入的两个字符串之间的关系属于这四类中的哪一类，给出所属的类的编号。</p>
+<p>输入</p>
+<p>包括两行，每行都是一个字符串 </p>
+<p>输出</p>
+<p>仅有一个数字，表明这两个字符串的关系编号 </p>
+<p>样例输入</p>
+<pre><code>BEIjing
+beiJing</code></pre>
+<p>样例输出</p>
+<pre><code>3</code></pre>
+</blockquote>
+<pre><code class="python">s1=input()
+s2=input()
+if len(s1)!=len(s2):
+    print(1)
+elif s1!=s2:
+    if s1.lower()==s2.lower():
+        print(3)
+    else:
+        print(4)
+elif s1==s2:
+    print(2)</code></pre>
+<h2 id="36"><a href="#36" class="headerlink" title="36"></a>36</h2><blockquote>
+<h4 id="题目-1467-蓝桥杯-基础练习VIP-完美的代价"><a href="#题目-1467-蓝桥杯-基础练习VIP-完美的代价" class="headerlink" title="题目 1467: [蓝桥杯][基础练习VIP]完美的代价"></a>题目 1467: [蓝桥杯][基础练习VIP]完美的代价</h4><p>时间限制: 1Sec 内存限制: 128MB 提交: 2465 解决: 748</p>
+<p>题目描述</p>
+<p>回文串，是一种特殊的字符串，它从左往右读和从右往左读是一样的。小龙龙认为回文串才是完美的。现在给你一个串，它不一定是回文的，请你计算最少的交换次数使得该串变成一个完美的回文串。</p>
+<p>交换的定义是：交换两个相邻的字符</p>
+<p>例如mamad</p>
+<p>第一次交换 ad : mamda</p>
+<p>第二次交换 md : madma</p>
+<p>第三次交换 ma : madam (回文！完美！)</p>
+<p>输入</p>
+<p>第一行是一个整数N，表示接下来的字符串的长度(N &lt; = 8000) </p>
+<p>第二行是一个字符串，长度为N.只包含小写字母 </p>
+<p>输出</p>
+<p>如果可能，输出最少的交换次数。 </p>
+<p>否则输出Impossible </p>
+<p>样例输入</p>
+<pre><code>5 
+mamad </code></pre>
+<p>样例输出</p>
+<pre><code>3</code></pre>
+</blockquote>
+<pre><code class="python">n=int(input())
+s=input()
+L=len(s)
+s=list(s)
+alpha=[0 for i in range(26)]
+#判断是否能成为回文
+for i in range(5):
+    alpha[ord(s[i])-ord(&#39;a&#39;)]+=1#转换ascii马
+count=0
+for i in alpha:
+    if i%2:
+        count+=1
+if count&gt;1:
+    print(&quot;Impossible&quot;)
+else:
+    number=0
+    for i in range(L//2):
+        for j in range(L-(i+1),i,-1):
+            if(s[i]==s[j]):
+                for j2 in range (j,L-(i+1)):
+                    character=s[j2]
+                    s[j2]=s[j2+1]
+                    s[j2+1]=character
+                number+=L-(i+1)-j
+            if(s[L-(i+1)]==s[L-(j+1)]):
+                for j2 in range(L-(j+1),i,-1):
+                    a=s[j2]
+                    s[j2]=s[j2-1]
+                    s[j2-1]=a
+                number+=L-(j+1)-i
+    print(number)
+    #自己写的有问题的</code></pre>
+<h2 id="37"><a href="#37" class="headerlink" title="37"></a>37</h2><blockquote>
+<h4 id="题目-1468-蓝桥杯-基础练习VIP-报时助手"><a href="#题目-1468-蓝桥杯-基础练习VIP-报时助手" class="headerlink" title="题目 1468: [蓝桥杯][基础练习VIP]报时助手"></a>题目 1468: [蓝桥杯][基础练习VIP]报时助手</h4><p>时间限制: 1Sec 内存限制: 128MB 提交: 3230 解决: 1229</p>
+<p>题目描述</p>
+<p>给定当前的时间，请用英文的读法将它读出来。</p>
+<p>时间用时h和分m表示，在英文的读法中，读一个时间的方法是：</p>
+<p>如果m为0，则将时读出来，然后加上“o’clock”，如3:00读作“three o’clock”。</p>
+<p>如果m不为0，则将时读出来，然后将分读出来，如5:30读作“five thirty”。</p>
+<p>时和分的读法使用的是英文数字的读法，其中0~20读作：</p>
+<p>0:zero, 1: one, 2:two, 3:three, 4:four, 5:five, 6:six, 7:seven, 8:eight, 9:nine, 10:ten, 11:eleven, 12:twelve, 13:thirteen, 14:fourteen, 15:fifteen, 16:sixteen, 17:seventeen, 18:eighteen, 19:nineteen, 20:twenty。</p>
+<p>30读作thirty，40读作forty，50读作fifty。</p>
+<p>对于大于20小于60的数字，首先读整十的数，然后再加上个位数。如31首先读30再加1的读法，读作“thirty one”。</p>
+<p>按上面的规则21:54读作“twenty one fifty four”，9:07读作“nine seven”，0:15读作“zero fifteen”。</p>
+<p>输入</p>
+<p>输入包含两个非负整数h和m，表示时间的时和分。非零的数字前没有前导0。h小于24，m小于60。 </p>
+<p>输出</p>
+<p>输出时间时刻的英文。 </p>
+<p>样例输入</p>
+<pre><code>0 15 </code></pre>
+<p>样例输出</p>
+<pre><code>zero fifteen</code></pre>
+</blockquote>
+<h2 id="38"><a href="#38" class="headerlink" title="38"></a>38</h2><blockquote>
+<h4 id="题目-1471-蓝桥杯-基础练习VIP-矩形面积交"><a href="#题目-1471-蓝桥杯-基础练习VIP-矩形面积交" class="headerlink" title="题目 1471: [蓝桥杯][基础练习VIP]矩形面积交"></a>题目 1471: [蓝桥杯][基础练习VIP]矩形面积交</h4><p>时间限制: 1Sec 内存限制: 128MB 提交: 5912 解决: 1717</p>
+<p>题目描述</p>
+<p>平面上有两个矩形，它们的边平行于直角坐标系的X轴或Y轴。对于每个矩形，我们给出它的一对相对顶点的坐标，请你编程算出两个矩形的交的面积。</p>
+<p>输入</p>
+<p>输入仅包含两行，每行描述一个矩形。 </p>
+<p>在每行中，给出矩形的一对相对顶点的坐标，每个点的坐标都用两个绝对值不超过10^7的实数表示。</p>
+<p>输出</p>
+<p>输出仅包含一个实数，为交的面积，保留到小数后两位。 </p>
+<p>样例输入</p>
+<pre><code>1 1 3 3 
+2 2 4 4 </code></pre>
+<p>样例输出</p>
+<pre><code>1.00</code></pre>
+</blockquote>
+<pre><code class="python">#38的错误答案
+L1=list(map(float,input().split()))
+L2=list(map(float,input().split()))
+x1,y1=(L1[0]+L1[2])/2,(L1[1]+L1[3])/2
+x2,y2=(L2[0]+L2[2])/2,(L2[1]+L2[3])/2
+w1,h1=x1-L1[0],y1-L1[1]
+w2,h2=x2-L2[0],y2-L2[1]
+if w1+w2&gt;abs(x1-x2) and h1+h2&gt;abs(y1-y2):
+    w=(w1+w2)-abs(x1-x2)
+    h=(h1+h2)-abs(y1-y2)
+    print(&quot;%.2f&quot;%(w*h))
+else:print(0)</code></pre>
+<pre><code class="python">xy1 = list(map(float,input().split()))
+xy2 = list(map(float,input().split()))
+rx = min(max(xy1[0],xy1[2]),max(xy2[0],xy2[2]))
+lx = max(min(xy1[0],xy1[2]),min(xy2[0],xy2[2]))
+uy = min(max(xy1[1],xy1[3]),max(xy2[1],xy2[3]))
+dy = max(min(xy1[1],xy1[3]),min(xy2[1],xy2[3]))
+w,h = rx-lx,uy-dy
+if w&lt;=0.0 or h&lt;=0.00:
+    print(&quot;0.00&quot;)
+else:
+    #print((str(w*h)+&quot;00&quot;).split(&quot;.&quot;)[0]+&quot;.&quot;+(str(w*h)+&quot;00&quot;).split(&quot;.&quot;)[1][:2:])    不进位输出小数点后两位
+    print(&quot;%.2f&quot;%(w*h))</code></pre>
+<h2 id="39"><a href="#39" class="headerlink" title="39"></a>39</h2><blockquote>
+<h4 id="题目-1472-蓝桥杯-基础练习VIP-矩阵乘法"><a href="#题目-1472-蓝桥杯-基础练习VIP-矩阵乘法" class="headerlink" title="题目 1472: [蓝桥杯][基础练习VIP]矩阵乘法"></a>题目 1472: [蓝桥杯][基础练习VIP]矩阵乘法</h4><p>时间限制: 1Sec 内存限制: 128MB 提交: 2655 解决: 791</p>
+<p>题目描述</p>
+<p>给定一个N阶矩阵A，输出A的M次幂（M是非负整数）</p>
+<p>例如：</p>
+<p>A =</p>
+<p>1 2</p>
+<p>3 4</p>
+<p>A的2次幂</p>
+<p>7 10</p>
+<p>15 22</p>
+<p>输入</p>
+<p>第一行是一个正整数N、M（1&lt; =N&lt; =30, 0&lt; =M&lt; =5），表示矩阵A的阶数和要求的幂数 </p>
+<p>接下来N行，每行N个绝对值不超过10的非负整数，描述矩阵A的值 </p>
+<p>输出</p>
+<p>输出共N行，每行N个整数，表示A的M次幂所对应的矩阵。相邻的数之间用一个空格隔开 </p>
+<p>样例输入</p>
+<pre><code>2 2 
+1 2 
+3 4 </code></pre>
+<p>样例输出</p>
+<pre><code>7 10
+15 22</code></pre>
+</blockquote>
+<pre><code class="python">#输入方阵的大小(n*n) 和幂m
+n,m=map(int,input().split())
+# 输入数据生成矩阵
+matrix=[]
+for _ in range(n):
+    matrix.append(list(map(int,input().split())))
+#矩阵matrix_a和矩阵matrix_b相乘得到matrix_result
+def multi(matrix_a,matrix_b):
+    #对于a*b和b*c的矩阵,得到的规模是a*c
+    matrix_result=[[0 for _ in range(len(matrix_b[0]))] for _ in range(len(matrix_a))]
+    for i in range(len(matrix_a)):
+        for j in range(len(matrix_b[0])):
+            #这里len(matrix_b)也可以换成len(matrix_a[0])
+            for k in range(len(matrix_b)):
+                matrix_result[i][j]+=matrix_a[i][k]*matrix_b[k][j]
+    return matrix_result
+# 求和matrix规模相同的单位矩阵E
+def unit_1(n):
+    #print(&#39;unit进来了&#39;)
+    #初始化为0
+    E=[[0 for _  in range(n)]for _ in range(n)]
+    #对角线为1
+    for i in range(n):
+        E[i][i]=1
+    #print(E)
+    return E
+#矩阵快速幂
+def quick_multi(matrix,m):
+    #print(&#39;quick进来&#39;)
+    res=unit_1(len(matrix))
+    while m:
+        if m&amp;1:
+            res=multi(res,matrix)
+        matrix=multi(matrix,matrix)
+        m=m&gt;&gt;1
+    #print(&#39;quick结束&#39;)
+    return res
+#输出
+for r in quick_multi(matrix,m):
+    print(&#39; &#39;.join([str(i) for i in r]))</code></pre>
+<p><a target="_blank" rel="noopener" href="https://blog.dotcpp.com/a/77575">抄的题解的出处</a></p>
+<h2 id="40"><a href="#40" class="headerlink" title="40"></a>40</h2><blockquote>
+<h4 id="题目-1447-蓝桥杯-2013年第四届真题-格子刷油漆"><a href="#题目-1447-蓝桥杯-2013年第四届真题-格子刷油漆" class="headerlink" title="题目 1447: [蓝桥杯][2013年第四届真题]格子刷油漆"></a>题目 1447: [蓝桥杯][2013年第四届真题]格子刷油漆</h4><p>时间限制: 1Sec 内存限制: 128MB 提交: 684 解决: 174</p>
+<p>题目描述</p>
+<p>X国的一段古城墙的顶端可以看成 2*N个格子组成的矩形（如下图所示），现需要把这些格子刷上保护漆。</p>
+<p><img src="https://www.dotcpp.com/oj/upload/image/20180421/20180421182053_36275.jpg" alt="img"><br>你可以从任意一个格子刷起，刷完一格，可以移动到和它相邻的格子（对角相邻也算数），但不能移动到较远的格子（因为油漆未干不能踩！）<br>比如：a d b c e f 就是合格的刷漆顺序。<br>c e f d a b 是另一种合适的方案。<br>当已知 N 时，求总的方案数。当N较大时，结果会迅速增大，请把结果对 1000000007 (十亿零七) 取模。</p>
+<p>输入</p>
+<p>输入数据为一个正整数（不大于1000） </p>
+<p>输出</p>
+<p>输出数据为一个正整数。</p>
+<p>样例输入</p>
+<pre><code>3 </code></pre>
+<p>样例输出</p>
+<pre><code>96</code></pre>
+</blockquote>
+<h2 id="41"><a href="#41" class="headerlink" title="41"></a>41</h2><blockquote>
+<p>观察这个数列：<br>1 3 0 2 -1 1 -2 …</p>
+<p>这个数列中后一项总是比前一项增加2或者减少3。</p>
+<p>栋栋对这种数列很好奇，他想知道长度为 n 和为 s 而且后一项总是比前一项增加a或者减少b的整数数列可能有多少种呢？</p>
+<p>样例说明<br>这两个数列分别是2 4 1 3和7 4 1 -2。</p>
+<p>输入</p>
+<p>输入的第一行包含四个整数 n s a b，含义如前面说述。 </p>
+<p>数据规模和约定<br>对于100%的数据，1&lt; =n&lt; =1000，-1,000,000,000&lt; =s&lt; =1,000,000,000，1&lt; =a, b&lt; =1,000,000。</p>
+<p>输出</p>
+<p>输出一行，包含一个整数，表示满足条件的方案数。由于这个数很大，请输出方案数除以100000007的余数。 </p>
+<p>样例输入</p>
+<pre><code>4 10 2 3</code></pre>
+<p>样例输出</p>
+<pre><code>2</code></pre>
+</blockquote>
+<h2 id="42"><a href="#42" class="headerlink" title="42"></a>42</h2><blockquote>
+<h4 id="题目-1452-蓝桥杯-历届试题-网络寻路"><a href="#题目-1452-蓝桥杯-历届试题-网络寻路" class="headerlink" title="题目 1452: [蓝桥杯][历届试题]网络寻路"></a>题目 1452: [蓝桥杯][历届试题]网络寻路</h4><p>时间限制: 1Sec 内存限制: 128MB 提交: 610 解决: 248</p>
+<p>题目描述</p>
+<p>X 国的一个网络使用若干条线路连接若干个节点。节点间的通信是双向的。某重要数据包，为了安全起见，必须恰好被转发两次到达目的地。该包可能在任意一个节点产生，我们需要知道该网络中一共有多少种不同的转发路径。<br>源地址和目标地址可以相同，但中间节点必须不同。<br>如下图所示的网络。</p>
+<p>1 -&gt;  2 -&gt;  3 -&gt;  1 是允许的<br>1 -&gt;  2 -&gt;  1 -&gt;  2 或者 1 -&gt;  2 -&gt;  3 -&gt;  2 都是非法的。</p>
+<p>输入</p>
+<p>输入数据的第一行为两个整数N M，分别表示节点个数和连接线路的条数(1&lt; =N&lt; =10000; 0&lt; =M&lt; =100000)。<br>接下去有M行，每行为两个整数 u 和 v，表示节点u 和 v 联通(1&lt; =u,v&lt; =N , u!=v)。<br>输入数据保证任意两点最多只有一条边连接，并且没有自己连自己的边，即不存在重边和自环。 </p>
+<p>输出</p>
+<p>输出一个整数，表示满足要求的路径条数。</p>
+<p>样例输入</p>
+<pre><code>4 4
+1 2
+2 3
+3 1
+1 4</code></pre>
+<p>样例输出</p>
+<pre><code>10</code></pre>
+</blockquote>
+<h2 id="43"><a href="#43" class="headerlink" title="43"></a>43</h2><blockquote>
+<h4 id="题目-1450-蓝桥杯-2014年第五届真题-矩阵翻硬币"><a href="#题目-1450-蓝桥杯-2014年第五届真题-矩阵翻硬币" class="headerlink" title="题目 1450: [蓝桥杯][2014年第五届真题]矩阵翻硬币"></a>题目 1450: [蓝桥杯][2014年第五届真题]矩阵翻硬币</h4><p>时间限制: 1Sec 内存限制: 128MB 提交: 328 解决: 74</p>
+<p>题目描述</p>
+<p>小明先把硬币摆成了一个 n 行 m 列的矩阵。</p>
+<p>随后，小明对每一个硬币分别进行一次 Q 操作。</p>
+<p>对第x行第y列的硬币进行 Q 操作的定义：将所有第 i<em>x 行，第 j</em>y 列的硬币进行翻转。</p>
+<p>其中i和j为任意使操作可行的正整数，行号和列号都是从1开始。</p>
+<p>当小明对所有硬币都进行了一次 Q 操作后，他发现了一个奇迹——所有硬币均为正面朝上。</p>
+<p>小明想知道最开始有多少枚硬币是反面朝上的。于是，他向他的好朋友小M寻求帮助。</p>
+<p>聪明的小M告诉小明，只需要对所有硬币再进行一次Q操作，即可恢复到最开始的状态。然而小明很懒，不愿意照做。于是小明希望你给出他更好的方法。帮他计算出答案。</p>
+<p>输入</p>
+<p>输入数据包含一行，两个正整数 n m，含义见题目描述。 </p>
+<p>数据规模和约定<br>对于100%的数据，n、m &lt; = 10^1000（10的1000次方）。</p>
+<p>输出</p>
+<p>输出一个正整数，表示最开始有多少枚硬币是反面朝上的。 </p>
+<p>样例输入</p>
+<pre><code>2 3</code></pre>
+<p>样例输出</p>
+<pre><code>1</code></pre>
+</blockquote>
+<h2 id="44"><a href="#44" class="headerlink" title="44"></a>44</h2><blockquote>
+<h4 id="题目-1453-蓝桥杯-历届试题-翻硬币"><a href="#题目-1453-蓝桥杯-历届试题-翻硬币" class="headerlink" title="题目 1453: [蓝桥杯][历届试题]翻硬币"></a>题目 1453: [蓝桥杯][历届试题]翻硬币</h4><p>时间限制: 1Sec 内存限制: 128MB 提交: 2301 解决: 1242</p>
+<p>题目描述</p>
+<p>小明正在玩一个“翻硬币”的游戏。</p>
+<p>桌上放着排成一排的若干硬币。我们用 * 表示正面，用 o 表示反面（是小写字母，不是零）。</p>
+<p>比如，可能情形是：*<em>oo**</em>oooo</p>
+<p>如果同时翻转左边的两个硬币，则变为：oooo***oooo</p>
+<p>现在小明的问题是：如果已知了初始状态和要达到的目标状态，每次只能同时翻转相邻的两个硬币,那么对特定的局面，最少要翻动多少次呢？</p>
+<p>我们约定：把翻动相邻的两个硬币叫做一步操作。</p>
+<p>输入</p>
+<p>两行等长的字符串，分别表示初始状态和要达到的目标状态。每行的长度&lt; 1000 </p>
+<p>输出</p>
+<p>一个整数，表示最小操作步数。 </p>
+<p>样例输入</p>
+<pre><code>*o**o***o*** 
+*o***o**o*** </code></pre>
+<p>样例输出</p>
+<pre><code>1</code></pre>
+</blockquote>
+<h2 id="45"><a href="#45" class="headerlink" title="45"></a>45</h2><blockquote>
+<h4 id="题目-1454-蓝桥杯-历届试题-蚂蚁感冒"><a href="#题目-1454-蓝桥杯-历届试题-蚂蚁感冒" class="headerlink" title="题目 1454: [蓝桥杯][历届试题]蚂蚁感冒"></a>题目 1454: [蓝桥杯][历届试题]蚂蚁感冒</h4><p>时间限制: 1Sec 内存限制: 128MB 提交: 3449 解决: 1539</p>
+<p>题目描述</p>
+<p>长100厘米的细长直杆子上有n只蚂蚁。它们的头有的朝左，有的朝右。</p>
+<p>每只蚂蚁都只能沿着杆子向前爬，速度是1厘米/秒。</p>
+<p>当两只蚂蚁碰面时，它们会同时掉头往相反的方向爬行。</p>
+<p>这些蚂蚁中，有1只蚂蚁感冒了。并且在和其它蚂蚁碰面时，会把感冒传染给碰到的蚂蚁。</p>
+<p>请你计算，当所有蚂蚁都爬离杆子时，有多少只蚂蚁患上了感冒。</p>
+<p>输入</p>
+<p>第一行输入一个整数n (1 &lt;  n &lt;  50), 表示蚂蚁的总数。 </p>
+<p>接着的一行是n个用空格分开的整数 Xi (-100 &lt;  Xi &lt;  100), Xi的绝对值，表示蚂蚁离开杆子左边端点的距离。正值表示头朝右，负值表示头朝左，数据中不会出现0值，也不会出现两只蚂蚁占用同一位置。其中，第一个数 据代表的蚂蚁感冒了。</p>
+<p>输出</p>
+<p>要求输出1个整数，表示最后感冒蚂蚁的数目。 </p>
+<p>样例输入</p>
+<pre><code>5
+-10 8 -20 12 25</code></pre>
+<p>样例输出</p>
+<pre><code>3</code></pre>
+</blockquote>
+<h2 id="46"><a href="#46" class="headerlink" title="46"></a>46</h2><blockquote>
+<h4 id="题目-1456-蓝桥杯-历届试题-连号区间数"><a href="#题目-1456-蓝桥杯-历届试题-连号区间数" class="headerlink" title="题目 1456: [蓝桥杯][历届试题]连号区间数"></a>题目 1456: [蓝桥杯][历届试题]连号区间数</h4><p>时间限制: 1Sec 内存限制: 128MB 提交: 1001 解决: 515</p>
+<p>题目描述</p>
+<p>小明这些天一直在思考这样一个奇怪而有趣的问题：<br>在1~N的某个全排列中有多少个连号区间呢？这里所说的连号区间的定义是：<br>如果区间[L, R] 里的所有元素（即此排列的第L个到第R个元素）递增排序后能得到一个长度为R-L+1的“连续”数列，则称这个区间连号区间。<br>当N很小的时候，小明可以很快地算出答案，但是当N变大的时候，问题就不是那么简单了，现在小明需要你的帮助。</p>
+<p>输入</p>
+<p>第一行是一个正整数N (1 &lt; = N &lt; = 50000), 表示全排列的规模。<br>第二行是N个不同的数字Pi(1 &lt; = Pi &lt; = N)， 表示这N个数字的某一全排列。</p>
+<p>输出</p>
+<p>输出一个整数，表示不同连号区间的数目。</p>
+<p>样例输入</p>
+<pre><code>5
+3 4 2 5 1</code></pre>
+<p>样例输出</p>
+<pre><code>9</code></pre>
+</blockquote>
+<h2 id="46-1"><a href="#46-1" class="headerlink" title="46"></a>46</h2><blockquote>
+<h4 id="题目-1457-蓝桥杯-历届试题-邮局"><a href="#题目-1457-蓝桥杯-历届试题-邮局" class="headerlink" title="题目 1457: [蓝桥杯][历届试题]邮局"></a>题目 1457: [蓝桥杯][历届试题]邮局</h4><p>时间限制: 1Sec 内存限制: 128MB 提交: 461 解决: 98</p>
+<p>题目描述</p>
+<p>C村住着n户村民，由于交通闭塞，C村的村民只能通过信件与外界交流。为了方便村民们发信，C村打算在C村建设k个邮局，这样每户村民可以去离自己家最近的邮局发信。</p>
+<p>现在给出了m个备选的邮局，请从中选出k个来，使得村民到自己家最近的邮局的距离和最小。其中两点之间的距离定义为两点之间的直线距离。</p>
+<p>输入</p>
+<p>输入的第一行包含三个整数n, m, k，分别表示村民的户数、备选的邮局数和要建的邮局数。<br>接下来n行，每行两个整数x, y，依次表示每户村民家的坐标。<br>接下来m行，每行包含两个整数x, y，依次表示每个备选邮局的坐标。 </p>
+<p>在输入中，村民和村民、村民和邮局、邮局和邮局的坐标可能相同，但你应把它们看成不同的村民或邮局。</p>
+<p>数据规模和约定<br>对于100%的数据，1&lt; =n&lt; =50，1&lt; =m&lt; =25，1&lt; =k&lt; =10。</p>
+<p>输出</p>
+<p>输出一行，包含k个整数，从小到大依次表示你选择的备选邮局编号。（备选邮局按输入顺序由1到m编号）</p>
+<p>样例输入</p>
+<pre><code>5 4 2
+0 0
+2 0
+3 1
+3 3
+1 1
+0 1
+1 0
+2 1
+3 2</code></pre>
+<p>样例输出</p>
+<pre><code>2 4</code></pre>
+</blockquote>
+<h2 id="47"><a href="#47" class="headerlink" title="47"></a>47</h2><blockquote>
+<h4 id="题目-1458-蓝桥杯-2013年第四届真题-错误票据"><a href="#题目-1458-蓝桥杯-2013年第四届真题-错误票据" class="headerlink" title="题目 1458: [蓝桥杯][2013年第四届真题]错误票据"></a>题目 1458: [蓝桥杯][2013年第四届真题]错误票据</h4><p>时间限制: 1Sec 内存限制: 128MB 提交: 5332 解决: 1840</p>
+<p>题目描述</p>
+<p>某涉密单位下发了某种票据，并要在年终全部收回。<br>每张票据有唯一的ID号。全年所有票据的ID号是连续的，但ID的开始数码是随机选定的。<br>因为工作人员疏忽，在录入ID号的时候发生了一处错误，造成了某个ID断号，另外一个ID重号。<br>你的任务是通过编程，找出断号的ID和重号的ID。<br>假设断号不可能发生在最大和最小号。</p>
+<p>输入</p>
+<p>要求程序首先输入一个整数N(N&lt; 100)表示后面数据行数。<br>接着读入N行数据。<br>每行数据长度不等，是用空格分开的若干个（不大于100个）正整数（不大于100000），请注意行内和行末可能有多余的空格，你的程序需要能处理这些空格。<br>每个整数代表一个ID号。 </p>
+<p>输出</p>
+<p>要求程序输出1行，含两个整数m n，用空格分隔。<br>其中，m表示断号ID，n表示重号ID </p>
+<p>样例输入</p>
+<pre><code>2
+5 6 8 11 9
+10 12 9</code></pre>
+<p>样例输出</p>
+<pre><code>7 9</code></pre>
+</blockquote>
+<h2 id="48"><a href="#48" class="headerlink" title="48"></a>48</h2><blockquote>
+<h4 id="题目-1459-蓝桥杯-2013年第四届真题-高僧斗法"><a href="#题目-1459-蓝桥杯-2013年第四届真题-高僧斗法" class="headerlink" title="题目 1459: [蓝桥杯][2013年第四届真题]高僧斗法"></a>题目 1459: [蓝桥杯][2013年第四届真题]高僧斗法</h4><p>时间限制: 1Sec 内存限制: 128MB 提交: 446 解决: 104</p>
+<p>题目描述</p>
+<p>古时丧葬活动中经常请高僧做法事。仪式结束后，有时会有“高僧斗法”的趣味节目，以舒缓压抑的气氛。<br>节目大略步骤为：先用粮食（一般是稻米）在地上“画”出若干级台阶（表示N级浮屠）。又有若干小和尚随机地“站”在某个台阶上。最高一级台阶必须站人，其它任意。(如图1所示)<br>两位参加游戏的法师分别指挥某个小和尚向上走任意多级的台阶，但会被站在高级台阶上的小和尚阻挡，不能越过。两个小和尚也不能站在同一台阶，也不能向低级台阶移动。<br>两法师轮流发出指令，最后所有小和尚必然会都挤在高段台阶，再也不能向上移动。轮到哪个法师指挥时无法继续移动，则游戏结束，该法师认输。<br>对于已知的台阶数和小和尚的分布位置，请你计算先发指令的法师该如何决策才能保证胜出。</p>
+<p>输入</p>
+<p>输入数据为一行用空格分开的N个整数，表示小和尚的位置。台阶序号从1算起，所以最后一个小和尚的位置即是台阶的总数。（N&lt; 100, 台阶总数&lt; 1000）</p>
+<p>输出</p>
+<p>输出为一行用空格分开的两个整数: A B, 表示把A位置的小和尚移动到B位置。若有多个解，输出A值较小的解，若无解则输出-1。 </p>
+<p>样例输入</p>
+<pre><code>1 5 9</code></pre>
+<p>样例输出</p>
+<pre><code>1 4</code></pre>
+</blockquote>
+<h2 id="49"><a href="#49" class="headerlink" title="49"></a>49</h2><blockquote>
+<h4 id="题目-1460-蓝桥杯-基础练习VIP-2n皇后问题"><a href="#题目-1460-蓝桥杯-基础练习VIP-2n皇后问题" class="headerlink" title="题目 1460: [蓝桥杯][基础练习VIP]2n皇后问题"></a>题目 1460: [蓝桥杯][基础练习VIP]2n皇后问题</h4><p>时间限制: 1Sec 内存限制: 128MB 提交: 1667 解决: 841</p>
+<p>题目描述</p>
+<p>给定一个n*n的棋盘，棋盘中有一些位置不能放皇后。现在要向棋盘中放入n个黑皇后和n个白皇后，使任意的两个黑皇后都不在同一行、同一列或同一条对角线上，任意的两个白皇后都不在同一行、同一列或同一条对角线上。问总共有多少种放法？n小于等于8。</p>
+<p>输入</p>
+<p>输入的第一行为一个整数n，表示棋盘的大小。 n小于等于8</p>
+<p>接下来n行，每行n个0或1的整数，如果一个整数为1，表示对应的位置可以放皇后，如果一个整数为0，表示对应的位置不可以放皇后。 </p>
+<p>输出</p>
+<p>输出一个整数，表示总共有多少种放法。 </p>
+<p>样例输入</p>
+<pre><code>4
+1 1 1 1 
+1 1 1 1 
+1 1 1 1 
+1 1 1 1 </code></pre>
+<p>样例输出</p>
+<pre><code>2</code></pre>
+</blockquote>
+<h2 id="50"><a href="#50" class="headerlink" title="50"></a>50</h2><blockquote>
+<h4 id="题目-1461-蓝桥杯-基础练习VIP-FJ的字符串"><a href="#题目-1461-蓝桥杯-基础练习VIP-FJ的字符串" class="headerlink" title="题目 1461: [蓝桥杯][基础练习VIP]FJ的字符串"></a>题目 1461: [蓝桥杯][基础练习VIP]FJ的字符串</h4><p>时间限制: 1Sec 内存限制: 128MB 提交: 3710 解决: 2470</p>
+<p>题目描述</p>
+<p>FJ在沙盘上写了这样一些字符串：</p>
+<p>A1 = “A”</p>
+<p>A2 = “ABA”</p>
+<p>A3 = “ABACABA”</p>
+<p>A4 = “ABACABADABACABA”</p>
+<p>… …</p>
+<p>你能找出其中的规律并写所有的数列AN吗？</p>
+<p>输入</p>
+<p>仅有一个数：N ≤ 26。</p>
+<p>输出</p>
+<p>请输出相应的字符串AN，以一个换行符结束。输出中不得含有多余的空格或换行、回车符。 </p>
+<p>样例输入</p>
+<pre><code>3 </code></pre>
+<p>样例输出</p>
+<pre><code>ABACABA</code></pre>
+</blockquote>
+<p>[基础练习VIP]: </p>
+
+            </div>
+            <hr/>
+
+            
+
+    <div class="reprint" id="reprint-statement">
+        
+            <div class="reprint__author">
+                <span class="reprint-meta" style="font-weight: bold;">
+                    <i class="fas fa-user">
+                        文章作者:
+                    </i>
+                </span>
+                <span class="reprint-info">
+                    <a href="/about" rel="external nofollow noreferrer">晓沐</a>
+                </span>
+            </div>
+            <div class="reprint__type">
+                <span class="reprint-meta" style="font-weight: bold;">
+                    <i class="fas fa-link">
+                        文章链接:
+                    </i>
+                </span>
+                <span class="reprint-info">
+                    <a href="http://sweetheart.nefu.site/2021/03/18/%E8%93%9D%E6%A1%A5%E6%9D%AFPython%E7%AE%97%E6%B3%95%E8%AE%AD%E7%BB%83/">http://sweetheart.nefu.site/2021/03/18/%E8%93%9D%E6%A1%A5%E6%9D%AFPython%E7%AE%97%E6%B3%95%E8%AE%AD%E7%BB%83/</a>
+                </span>
+            </div>
+            <div class="reprint__notice">
+                <span class="reprint-meta" style="font-weight: bold;">
+                    <i class="fas fa-copyright">
+                        版权声明:
+                    </i>
+                </span>
+                <span class="reprint-info">
+                    本博客所有文章除特別声明外，均采用
+                    <a href="https://creativecommons.org/licenses/by/4.0/deed.zh" rel="external nofollow noreferrer" target="_blank">CC BY 4.0</a>
+                    许可协议。转载请注明来源
+                    <a href="/about" target="_blank">晓沐</a>
+                    !
+                </span>
+            </div>
+        
+    </div>
+
+    <script async defer>
+      document.addEventListener("copy", function (e) {
+        let toastHTML = '<span>复制成功，请遵循本文的转载规则</span><button class="btn-flat toast-action" onclick="navToReprintStatement()" style="font-size: smaller">查看</a>';
+        M.toast({html: toastHTML})
+      });
+
+      function navToReprintStatement() {
+        $("html, body").animate({scrollTop: $("#reprint-statement").offset().top - 80}, 800);
+      }
+    </script>
+
+
+
+            <div class="tag_share" style="display: block;">
+                <div class="post-meta__tag-list" style="display: inline-block;">
+                    
+                        <div class="article-tag">
+                            <span class="chip bg-color">无标签</span>
+                        </div>
+                    
+                </div>
+                <div class="post_share" style="zoom: 80%; width: fit-content; display: inline-block; float: right; margin: -0.15rem 0;">
+                    <link rel="stylesheet" type="text/css" href="/libs/share/css/share.min.css">
+<div id="article-share">
+
+    
+    <div class="social-share" data-sites="twitter,facebook,google,qq,qzone,wechat,weibo,douban,linkedin" data-wechat-qrcode-helper="<p>微信扫一扫即可分享！</p>"></div>
+    <script src="/libs/share/js/social-share.min.js"></script>
+    
+
+    
+
+</div>
+
+                </div>
+            </div>
+            
+                <style>
+    #reward {
+        margin: 40px 0;
+        text-align: center;
+    }
+
+    #reward .reward-link {
+        font-size: 1.4rem;
+        line-height: 38px;
+    }
+
+    #reward .btn-floating:hover {
+        box-shadow: 0 6px 12px rgba(0, 0, 0, 0.2), 0 5px 15px rgba(0, 0, 0, 0.2);
+    }
+
+    #rewardModal {
+        width: 320px;
+        height: 350px;
+    }
+
+    #rewardModal .reward-title {
+        margin: 15px auto;
+        padding-bottom: 5px;
+    }
+
+    #rewardModal .modal-content {
+        padding: 10px;
+    }
+
+    #rewardModal .close {
+        position: absolute;
+        right: 15px;
+        top: 15px;
+        color: rgba(0, 0, 0, 0.5);
+        font-size: 1.3rem;
+        line-height: 20px;
+        cursor: pointer;
+    }
+
+    #rewardModal .close:hover {
+        color: #ef5350;
+        transform: scale(1.3);
+        -moz-transform:scale(1.3);
+        -webkit-transform:scale(1.3);
+        -o-transform:scale(1.3);
+    }
+
+    #rewardModal .reward-tabs {
+        margin: 0 auto;
+        width: 210px;
+    }
+
+    .reward-tabs .tabs {
+        height: 38px;
+        margin: 10px auto;
+        padding-left: 0;
+    }
+
+    .reward-content ul {
+        padding-left: 0 !important;
+    }
+
+    .reward-tabs .tabs .tab {
+        height: 38px;
+        line-height: 38px;
+    }
+
+    .reward-tabs .tab a {
+        color: #fff;
+        background-color: #ccc;
+    }
+
+    .reward-tabs .tab a:hover {
+        background-color: #ccc;
+        color: #fff;
+    }
+
+    .reward-tabs .wechat-tab .active {
+        color: #fff !important;
+        background-color: #22AB38 !important;
+    }
+
+    .reward-tabs .alipay-tab .active {
+        color: #fff !important;
+        background-color: #019FE8 !important;
+    }
+
+    .reward-tabs .reward-img {
+        width: 210px;
+        height: 210px;
+    }
+</style>
+
+<div id="reward">
+    <a href="#rewardModal" class="reward-link modal-trigger btn-floating btn-medium waves-effect waves-light red">赏</a>
+
+    <!-- Modal Structure -->
+    <div id="rewardModal" class="modal">
+        <div class="modal-content">
+            <a class="close modal-close"><i class="fas fa-times"></i></a>
+            <h4 class="reward-title">你的赏识是我前进的动力</h4>
+            <div class="reward-content">
+                <div class="reward-tabs">
+                    <ul class="tabs row">
+                        <li class="tab col s6 alipay-tab waves-effect waves-light"><a href="#alipay">支付宝</a></li>
+                        <li class="tab col s6 wechat-tab waves-effect waves-light"><a href="#wechat">微 信</a></li>
+                    </ul>
+                    <div id="alipay">
+                        <img src="/medias/reward/alipay.jpg" class="reward-img" alt="支付宝打赏二维码">
+                    </div>
+                    <div id="wechat">
+                        <img src="/medias/reward/wechat.png" class="reward-img" alt="微信打赏二维码">
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<script>
+    $(function () {
+        $('.tabs').tabs();
+    });
+</script>
+
+            
+        </div>
+    </div>
+
+    
+
+    
+
+    
+
+    
+
+    
+        <style>
+    .valine-card {
+        margin: 1.5rem auto;
+    }
+
+    .valine-card .card-content {
+        padding: 20px 20px 5px 20px;
+    }
+
+    #vcomments textarea {
+        box-sizing: border-box;
+        background: url("/medias/comment_bg.png") 100% 100% no-repeat;
+    }
+
+    #vcomments p {
+        margin: 2px 2px 10px;
+        font-size: 1.05rem;
+        line-height: 1.78rem;
+    }
+
+    #vcomments blockquote p {
+        text-indent: 0.2rem;
+    }
+
+    #vcomments a {
+        padding: 0 2px;
+        color: #4cbf30;
+        font-weight: 500;
+        text-decoration: none;
+    }
+
+    #vcomments img {
+        max-width: 100%;
+        height: auto;
+        cursor: pointer;
+    }
+
+    #vcomments ol li {
+        list-style-type: decimal;
+    }
+
+    #vcomments ol,
+    ul {
+        display: block;
+        padding-left: 2em;
+        word-spacing: 0.05rem;
+    }
+
+    #vcomments ul li,
+    ol li {
+        display: list-item;
+        line-height: 1.8rem;
+        font-size: 1rem;
+    }
+
+    #vcomments ul li {
+        list-style-type: disc;
+    }
+
+    #vcomments ul ul li {
+        list-style-type: circle;
+    }
+
+    #vcomments table, th, td {
+        padding: 12px 13px;
+        border: 1px solid #dfe2e5;
+    }
+
+    #vcomments table, th, td {
+        border: 0;
+    }
+
+    table tr:nth-child(2n), thead {
+        background-color: #fafafa;
+    }
+
+    #vcomments table th {
+        background-color: #f2f2f2;
+        min-width: 80px;
+    }
+
+    #vcomments table td {
+        min-width: 80px;
+    }
+
+    #vcomments h1 {
+        font-size: 1.85rem;
+        font-weight: bold;
+        line-height: 2.2rem;
+    }
+
+    #vcomments h2 {
+        font-size: 1.65rem;
+        font-weight: bold;
+        line-height: 1.9rem;
+    }
+
+    #vcomments h3 {
+        font-size: 1.45rem;
+        font-weight: bold;
+        line-height: 1.7rem;
+    }
+
+    #vcomments h4 {
+        font-size: 1.25rem;
+        font-weight: bold;
+        line-height: 1.5rem;
+    }
+
+    #vcomments h5 {
+        font-size: 1.1rem;
+        font-weight: bold;
+        line-height: 1.4rem;
+    }
+
+    #vcomments h6 {
+        font-size: 1rem;
+        line-height: 1.3rem;
+    }
+
+    #vcomments p {
+        font-size: 1rem;
+        line-height: 1.5rem;
+    }
+
+    #vcomments hr {
+        margin: 12px 0;
+        border: 0;
+        border-top: 1px solid #ccc;
+    }
+
+    #vcomments blockquote {
+        margin: 15px 0;
+        border-left: 5px solid #42b983;
+        padding: 1rem 0.8rem 0.3rem 0.8rem;
+        color: #666;
+        background-color: rgba(66, 185, 131, .1);
+    }
+
+    #vcomments pre {
+        font-family: monospace, monospace;
+        padding: 1.2em;
+        margin: .5em 0;
+        background: #272822;
+        overflow: auto;
+        border-radius: 0.3em;
+        tab-size: 4;
+    }
+
+    #vcomments code {
+        font-family: monospace, monospace;
+        padding: 1px 3px;
+        font-size: 0.92rem;
+        color: #e96900;
+        background-color: #f8f8f8;
+        border-radius: 2px;
+    }
+
+    #vcomments pre code {
+        font-family: monospace, monospace;
+        padding: 0;
+        color: #e8eaf6;
+        background-color: #272822;
+    }
+
+    #vcomments pre[class*="language-"] {
+        padding: 1.2em;
+        margin: .5em 0;
+    }
+
+    #vcomments code[class*="language-"],
+    pre[class*="language-"] {
+        color: #e8eaf6;
+    }
+
+    #vcomments [type="checkbox"]:not(:checked), [type="checkbox"]:checked {
+        position: inherit;
+        margin-left: -1.3rem;
+        margin-right: 0.4rem;
+        margin-top: -1px;
+        vertical-align: middle;
+        left: unset;
+        visibility: visible;
+    }
+
+    #vcomments b,
+    strong {
+        font-weight: bold;
+    }
+
+    #vcomments dfn {
+        font-style: italic;
+    }
+
+    #vcomments small {
+        font-size: 85%;
+    }
+
+    #vcomments cite {
+        font-style: normal;
+    }
+
+    #vcomments mark {
+        background-color: #fcf8e3;
+        padding: .2em;
+    }
+
+    #vcomments table, th, td {
+        padding: 12px 13px;
+        border: 1px solid #dfe2e5;
+    }
+
+    table tr:nth-child(2n), thead {
+        background-color: #fafafa;
+    }
+
+    #vcomments table th {
+        background-color: #f2f2f2;
+        min-width: 80px;
+    }
+
+    #vcomments table td {
+        min-width: 80px;
+    }
+
+    #vcomments [type="checkbox"]:not(:checked), [type="checkbox"]:checked {
+        position: inherit;
+        margin-left: -1.3rem;
+        margin-right: 0.4rem;
+        margin-top: -1px;
+        vertical-align: middle;
+        left: unset;
+        visibility: visible;
+    }
+</style>
+
+<div class="card valine-card" data-aos="fade-up">
+    <div class="comment_headling" style="font-size: 20px; font-weight: 700; position: relative; padding-left: 20px; top: 15px; padding-bottom: 5px;">
+        <i class="fas fa-comments fa-fw" aria-hidden="true"></i>
+        <span>评论</span>
+    </div>
+    <div id="vcomments" class="card-content" style="display: grid">
+    </div>
+</div>
+
+<script src="/libs/valine/av-min.js"></script>
+<script src="/libs/valine/Valine.min.js"></script>
+<script>
+    new Valine({
+        el: '#vcomments',
+        appId: 'Om52MKm7YQjVc1iJPsts4J60-gzGzoHsz',
+        appKey: 'uK5GGz7Gau2tufy7gVIuueMN',
+        notify: 'false' === 'true',
+        verify: 'false' === 'true',
+        visitor: 'true' === 'true',
+        avatar: 'mm',
+        pageSize: '10',
+        lang: 'zh-cn',
+        placeholder: '有什么想说的欢迎留言鸭~'
+    });
+</script>
+
+    
+
+    
+
+    
+
+<article id="prenext-posts" class="prev-next articles">
+    <div class="row article-row">
+        
+        <div class="article col s12 m6" data-aos="fade-up" data-aos="fade-up">
+            <div class="article-badge left-badge text-color">
+                <i class="far fa-dot-circle"></i>&nbsp;本篇
+            </div>
+            <div class="card">
+                <a href="/2021/03/18/%E8%93%9D%E6%A1%A5%E6%9D%AFPython%E7%AE%97%E6%B3%95%E8%AE%AD%E7%BB%83/">
+                    <div class="card-image">
+                        
+                        
+                        <img src="/medias/featureimages/23.jpg" class="responsive-img" alt="蓝桥杯Python算法训练">
+                        
+                        <span class="card-title">蓝桥杯Python算法训练</span>
+                    </div>
+                </a>
+                <div class="card-content article-content">
+                    <div class="summary block-with-text">
+                        
+                            蓝桥杯Python组算法训练1
+题目 1017: [编程入门]完数的判断
+时间限制: 1Sec 内存限制: 128MB 提交: 23074 解决: 10991
+题目描述
+一个数如果恰好等于不包含它本身所有因子之和，这个数就称为”完数”。 例
+                        
+                    </div>
+                    <div class="publish-info">
+                            <span class="publish-date">
+                                <i class="far fa-clock fa-fw icon-date"></i>2021-03-18
+                            </span>
+                        <span class="publish-author">
+                            
+                            <i class="fas fa-user fa-fw"></i>
+                            晓沐
+                            
+                        </span>
+                    </div>
+                </div>
+
+                
+            </div>
+        </div>
+        
+        
+        <div class="article col s12 m6" data-aos="fade-up">
+            <div class="article-badge right-badge text-color">
+                下一篇&nbsp;<i class="fas fa-chevron-right"></i>
+            </div>
+            <div class="card">
+                <a href="/2021/01/24/Python-%E7%88%AC%E8%99%AB%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/">
+                    <div class="card-image">
+                        
+                        
+                        <img src="/medias/featureimages/15.jpg" class="responsive-img" alt="Python 爬虫学习笔记">
+                        
+                        <span class="card-title">Python 爬虫学习笔记</span>
+                    </div>
+                </a>
+                <div class="card-content article-content">
+                    <div class="summary block-with-text">
+                        
+                            Python 爬虫笔记为了学习机器学习时方便获取数据以及日后的web开发
+这个寒假又开始捡起爬虫（其实之前只会基本请求，网页源码全扒下来的那种~~）
+准备工作准备爬取豆瓣top250的信息
+规律：每页都是以25为间隔
+利用Chrome开发者
+                        
+                    </div>
+                    <div class="publish-info">
+                            <span class="publish-date">
+                                <i class="far fa-clock fa-fw icon-date"></i>2021-01-24
+                            </span>
+                        <span class="publish-author">
+                            
+                            <i class="fas fa-bookmark fa-fw icon-category"></i>
+                            
+                            <a href="/categories/web/" class="post-category">
+                                    web
+                                </a>
+                            
+                            <a href="/categories/web/Python/" class="post-category">
+                                    Python
+                                </a>
+                            
+                            <a href="/categories/web/Python/%E7%88%AC%E8%99%AB/" class="post-category">
+                                    爬虫
+                                </a>
+                            
+                            
+                        </span>
+                    </div>
+                </div>
+                
+                <div class="card-action article-tags">
+                    
+                    <a href="/tags/Python/">
+                        <span class="chip bg-color">Python</span>
+                    </a>
+                    
+                    <a href="/tags/%E7%88%AC%E8%99%AB/">
+                        <span class="chip bg-color">爬虫</span>
+                    </a>
+                    
+                </div>
+                
+            </div>
+        </div>
+        
+    </div>
+</article>
+
+</div>
+
+
+
+<!-- 代码块功能依赖 -->
+<script type="text/javascript" src="/libs/codeBlock/codeBlockFuction.js"></script>
+
+<!-- 代码语言 -->
+
+<script type="text/javascript" src="/libs/codeBlock/codeLang.js"></script>
+
+
+<!-- 代码块复制 -->
+
+<script type="text/javascript" src="/libs/codeBlock/codeCopy.js"></script>
+
+
+<!-- 代码块收缩 -->
+
+<script type="text/javascript" src="/libs/codeBlock/codeShrink.js"></script>
+
+
+<!-- 代码块折行 -->
+
+<style type="text/css">
+code[class*="language-"], pre[class*="language-"] { white-space: pre !important; }
+</style>
+
+
+    </div>
+    <div id="toc-aside" class="expanded col l3 hide-on-med-and-down">
+        <div class="toc-widget">
+            <div class="toc-title"><i class="far fa-list-alt"></i>&nbsp;&nbsp;目录</div>
+            <div id="toc-content"></div>
+        </div>
+    </div>
+</div>
+
+<!-- TOC 悬浮按钮. -->
+
+<div id="floating-toc-btn" class="hide-on-med-and-down">
+    <a class="btn-floating btn-large bg-color">
+        <i class="fas fa-list-ul"></i>
+    </a>
+</div>
+
+
+<script src="/libs/tocbot/tocbot.min.js"></script>
+<script>
+    $(function () {
+        tocbot.init({
+            tocSelector: '#toc-content',
+            contentSelector: '#articleContent',
+            headingsOffset: -($(window).height() * 0.4 - 45),
+            collapseDepth: Number('0'),
+            headingSelector: 'h2, h3, h4'
+        });
+
+        // modify the toc link href to support Chinese.
+        let i = 0;
+        let tocHeading = 'toc-heading-';
+        $('#toc-content a').each(function () {
+            $(this).attr('href', '#' + tocHeading + (++i));
+        });
+
+        // modify the heading title id to support Chinese.
+        i = 0;
+        $('#articleContent').children('h2, h3, h4').each(function () {
+            $(this).attr('id', tocHeading + (++i));
+        });
+
+        // Set scroll toc fixed.
+        let tocHeight = parseInt($(window).height() * 0.4 - 64);
+        let $tocWidget = $('.toc-widget');
+        $(window).scroll(function () {
+            let scroll = $(window).scrollTop();
+            /* add post toc fixed. */
+            if (scroll > tocHeight) {
+                $tocWidget.addClass('toc-fixed');
+            } else {
+                $tocWidget.removeClass('toc-fixed');
+            }
+        });
+
+        
+        /* 修复文章卡片 div 的宽度. */
+        let fixPostCardWidth = function (srcId, targetId) {
+            let srcDiv = $('#' + srcId);
+            if (srcDiv.length === 0) {
+                return;
+            }
+
+            let w = srcDiv.width();
+            if (w >= 450) {
+                w = w + 21;
+            } else if (w >= 350 && w < 450) {
+                w = w + 18;
+            } else if (w >= 300 && w < 350) {
+                w = w + 16;
+            } else {
+                w = w + 14;
+            }
+            $('#' + targetId).width(w);
+        };
+
+        // 切换TOC目录展开收缩的相关操作.
+        const expandedClass = 'expanded';
+        let $tocAside = $('#toc-aside');
+        let $mainContent = $('#main-content');
+        $('#floating-toc-btn .btn-floating').click(function () {
+            if ($tocAside.hasClass(expandedClass)) {
+                $tocAside.removeClass(expandedClass).hide();
+                $mainContent.removeClass('l9');
+            } else {
+                $tocAside.addClass(expandedClass).show();
+                $mainContent.addClass('l9');
+            }
+            fixPostCardWidth('artDetail', 'prenext-posts');
+        });
+        
+    });
+</script>
+
+    
+
+</main>
+
+
+
+
+    <footer class="page-footer bg-color">
+    
+    <div class="container row center-align" style="margin-bottom: 0px !important;">
+        <div class="col s12 m8 l8 copy-right">
+            Copyright&nbsp;&copy;
+            <span id="year">2020</span>
+            <a href="/about" target="_blank">晓沐</a>
+            |&nbsp;Powered by&nbsp;<a href="https://hexo.io/" target="_blank">Hexo</a>
+            |&nbsp;Theme&nbsp;<a href="https://github.com/blinkfox/hexo-theme-matery" target="_blank">Matery</a>
+            <br>
+            
+            
+            
+            
+            
+            
+            <span id="busuanzi_container_site_pv">
+                |&nbsp;<i class="far fa-eye"></i>&nbsp;总访问量:&nbsp;<span id="busuanzi_value_site_pv"
+                    class="white-color"></span>&nbsp;次
+            </span>
+            
+            
+            <span id="busuanzi_container_site_uv">
+                |&nbsp;<i class="fas fa-users"></i>&nbsp;总访问人数:&nbsp;<span id="busuanzi_value_site_uv"
+                    class="white-color"></span>&nbsp;人
+            </span>
+            
+            <br>
+            
+            <br>
+            
+        </div>
+        <div class="col s12 m4 l4 social-link social-statis">
+    <a href="https://github.com/MilkTeaAddicted" class="tooltipped" target="_blank" data-tooltip="访问我的GitHub" data-position="top" data-delay="50">
+        <i class="fab fa-github"></i>
+    </a>
+
+
+
+    <a href="mailto:3364268153@qq.com" class="tooltipped" target="_blank" data-tooltip="邮件联系我" data-position="top" data-delay="50">
+        <i class="fas fa-envelope-open"></i>
+    </a>
+
+
+
+
+
+    <a href="https://twitter.com/MilkTeaAddicted" class="tooltipped" target="_blank" data-tooltip="关注我的Twitter: https://twitter.com/MilkTeaAddicted" data-position="top" data-delay="50">
+        <i class="fab fa-twitter"></i>
+    </a>
+
+
+
+    <a href="tencent://AddContact/?fromId=50&fromSubId=1&subcmd=all&uin=3364268153" class="tooltipped" target="_blank" data-tooltip="QQ联系我: 3364268153" data-position="top" data-delay="50">
+        <i class="fab fa-qq"></i>
+    </a>
+
+
+
+
+
+
+
+</div>
+    </div>
+</footer>
+
+<div class="progress-bar"></div>
+
+
+    <!-- 搜索遮罩框 -->
+<div id="searchModal" class="modal">
+    <div class="modal-content">
+        <div class="search-header">
+            <span class="title"><i class="fas fa-search"></i>&nbsp;&nbsp;搜索</span>
+            <input type="search" id="searchInput" name="s" placeholder="请输入搜索的关键字"
+                   class="search-input">
+        </div>
+        <div id="searchResult"></div>
+    </div>
+</div>
+
+<script src="/js/search.js"></script>
+<script type="text/javascript">
+$(function () {
+    searchFunc("/search.xml", 'searchInput', 'searchResult');
+});
+</script>
+
+    <!-- 回到顶部按钮 -->
+<div id="backTop" class="top-scroll">
+    <a class="btn-floating btn-large waves-effect waves-light" href="#!">
+        <i class="fas fa-arrow-up"></i>
+    </a>
+</div>
+
+
+    <script src="/libs/materialize/materialize.min.js"></script>
+    <script src="/libs/masonry/masonry.pkgd.min.js"></script>
+    <script src="/libs/aos/aos.js"></script>
+    <script src="/libs/scrollprogress/scrollProgress.min.js"></script>
+    <script src="/libs/lightGallery/js/lightgallery-all.min.js"></script>
+    <script src="/js/matery.js"></script>
+
+    <!-- Baidu Analytics -->
+
+    <!-- Baidu Push -->
+
+<script>
+    (function () {
+        var bp = document.createElement('script');
+        var curProtocol = window.location.protocol.split(':')[0];
+        if (curProtocol === 'https') {
+            bp.src = 'https://zz.bdstatic.com/linksubmit/push.js';
+        } else {
+            bp.src = 'http://push.zhanzhang.baidu.com/push.js';
+        }
+        var s = document.getElementsByTagName("script")[0];
+        s.parentNode.insertBefore(bp, s);
+    })();
+</script>
+
+    
+    <script src="/libs/others/clicklove.js" async="async"></script>
+    
+    
+    <script async src="/libs/others/busuanzi.pure.mini.js"></script>
+    
+
+    
+
+    
+
+    
+    <script type="text/javascript" color="0,0,255"
+        pointColor="0,0,255" opacity='0.7'
+        zIndex="-1" count="99"
+        src="/libs/background/canvas-nest.js"></script>
+    
+
+    
+
+    
+    <script type="text/javascript" src="/libs/background/ribbon-dynamic.js" async="async"></script>
+    
+
+    
+    <script src="/libs/instantpage/instantpage.js" type="module"></script>
+    
+
+</body>
+
+</html>
