@@ -471,7 +471,7 @@
                 
                 <div class="post-date info-break-policy">
                     <i class="far fa-calendar-check fa-fw"></i>更新日期:&nbsp;&nbsp;
-                    2021-04-06
+                    2021-04-16
                 </div>
                 
 
@@ -2269,6 +2269,112 @@ for r in quick_multi(matrix,m):
 <pre><code>ABACABA</code></pre>
 </blockquote>
 <p>[基础练习VIP]: </p>
+<h2 id="51"><a href="#51" class="headerlink" title="51"></a>51</h2><blockquote>
+<p> 最长滑雪道<br>问题描述<br>　　小袁非常喜欢滑雪， 因为滑雪很刺激。为了获得速度，滑的区域必须向下倾斜，而且当你滑到坡底，你不得不再次走上坡或者等待升降机来载你。 小袁想知道在某个区域中最长的一个滑坡。区域由一个二维数组给出。数组的每个数字代表点的高度。如下：<br>　　<br>一个人可以从某个点滑向上下左右相邻四个点之一，当且仅当高度减小。在上面的例子中，一条可滑行的滑坡为24-17-16-1。当然25-24-23-…-3-2-1更长。事实上，这是最长的一条。<br>　　你的任务就是找到最长的一条滑坡，并且将滑坡的长度输出。 滑坡的长度定义为经过点的个数，例如滑坡24-17-16-1的长度是4。<br>输入格式<br>　　输入的第一行表示区域的行数R和列数C(1&lt;=R, C&lt;=10)。下面是R行，每行有C个整数，依次是每个点的高度h（0&lt;= h &lt;=10000）。<br>输出格式<br>　　只有一行，为一个整数，即最长区域的长度。<br>样例输入<br>5 5<br>1 2 3 4 5<br>16 17 18 19 6<br>15 24 25 20 7<br>14 23 22 21 8<br>13 12 11 10 9<br>样例输出<br>25</p>
+</blockquote>
+<pre><code class="python">def dfs(x, y):
+    &quot;&quot;&quot;
+    深度递归搜索
+    :param x: 横坐标
+    :param y: 纵坐标
+    :return: 最大距离
+    &quot;&quot;&quot;
+    max_height = 1  # 初始距离为1
+    if dp[x][y] &gt; 0:  # 如果已经有了当前位置出发的最大距离，则直接返回
+        return dp[x][y]
+    for k in range(4):  # 判断该位置的上下左右四个位置
+        tx = x + next_[k][0]
+        ty = y + next_[k][1]
+        if tx &lt; 0 or tx &gt;= row or ty &lt; 0 or ty &gt;= col:  # 越界情况
+            continue
+        if arr[tx][ty] &gt;= arr[x][y]:  # 不符合高到低的情况
+            continue
+        max_height = max(max_height, dfs(tx, ty) + 1)  # 符合，递归搜索下一个位置且距离加1
+
+    dp[x][y] = max_height  # 最终距离放在此矩阵中保存
+
+    return dp[x][y]  # 返回该位置下的最大距离
+
+
+row, col = map(int, input().split())
+
+dp = [[0 for _ in range(col)] for _ in range(row)]  # 记录从每个位置(x, y)开始，它的最大长度
+
+arr = [list(map(int, input().split())) for _ in range(row)]  # 这里发明了二位数组python输入方法的一种全新方式，偶然发现的
+
+next_ = [[0, 1], [1, 0], [0, -1], [-1, 0]]  # 用来表示(x, y)的上下左右四个位置
+
+ans = 0
+
+for i in range(row):
+    for j in range(col):
+        ans = max(ans, dfs(i, j))
+
+print(ans)</code></pre>
+<pre><code class="python">#自己写的失败的代码
+
+def dfs(x,y):
+    if DP[x][y]&gt;0:
+        return  DP[x][y]
+    maxLength=1
+    for i in range(4):
+        tx=x+Direct[i][0]
+        ty=y+Direct[i][1]
+        if  tx&gt;=R or tx&lt;0 or ty&gt;=C or ty&lt;0:
+            continue
+        if G[ty][tx]&gt;G[x][y]:
+            continue
+        else:
+            maxLength=max(maxLength,dfs(tx,ty)+1)
+    DP[x][y]=maxLength
+    return  DP[x][y]
+
+
+R,C=map(int,input().split())
+G=[]
+for i in range(R):
+    L=list(map(int ,input().split()))
+    G.append(L)
+DP=[[0 for j in range(C)] for i in range(R)]
+ans=0
+Direct=[[0,1],[1,0],[-1,0],[0,-1]]
+for i in range(R):
+    for j in range(C):
+        ans=max(ans,dfs(i,j))
+print(ans)</code></pre>
+<h2 id="52"><a href="#52" class="headerlink" title="52"></a>52</h2><p>龟兔赛跑</p>
+<pre><code class="python">R,T=0,0
+count=0
+flag=0
+while R&lt;l and T&lt;l:
+    count+=1
+    R+=v1
+    T+=v2
+    if R&gt;=l:
+        flag=1
+        break
+    if T&gt;=l:
+        flag=2
+        break
+    if R-T&gt;=t:
+        count1=count
+        while count&gt;=count1+s:
+            count+=1
+            T+=v1
+            if T &gt;=l:
+                flag=3
+                break
+        if flag==3:
+            break
+if R&gt;T:
+    print(&quot;R&quot;)
+    print(count)
+if T&gt;R:
+    print(&quot;T&quot;)
+    print(count)
+if T==R:
+    print(&quot;R T&quot;)
+    print(count)</code></pre>
 
             </div>
             <hr/>
