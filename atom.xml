@@ -6,7 +6,7 @@
   <link href="http://sweetheart.nefu.site/atom.xml" rel="self"/>
   
   <link href="http://sweetheart.nefu.site/"/>
-  <updated>2021-04-16T13:41:14.440Z</updated>
+  <updated>2021-04-17T12:14:26.841Z</updated>
   <id>http://sweetheart.nefu.site/</id>
   
   <author>
@@ -15,6 +15,30 @@
   </author>
   
   <generator uri="https://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>使用Python语言刷蓝桥杯历年真题</title>
+    <link href="http://sweetheart.nefu.site/2021/04/17/%E4%BD%BF%E7%94%A8Python%E8%AF%AD%E8%A8%80%E5%88%B7%E8%93%9D%E6%A1%A5%E6%9D%AF%E5%8E%86%E5%B9%B4%E7%9C%9F%E9%A2%98/"/>
+    <id>http://sweetheart.nefu.site/2021/04/17/%E4%BD%BF%E7%94%A8Python%E8%AF%AD%E8%A8%80%E5%88%B7%E8%93%9D%E6%A1%A5%E6%9D%AF%E5%8E%86%E5%B9%B4%E7%9C%9F%E9%A2%98/</id>
+    <published>2021-04-17T09:56:56.000Z</published>
+    <updated>2021-04-17T12:14:26.841Z</updated>
+    
+    <content type="html"><![CDATA[<h1 id="用Python来刷蓝桥杯历年真题吧"><a href="#用Python来刷蓝桥杯历年真题吧" class="headerlink" title="用Python来刷蓝桥杯历年真题吧"></a>用Python来刷蓝桥杯历年真题吧</h1><p>其实看这发布时间就知道应该是就是<del>考前抱佛脚</del>考前演练</p><h2 id="11届蓝桥杯-Python组"><a href="#11届蓝桥杯-Python组" class="headerlink" title="11届蓝桥杯 Python组"></a>11届蓝桥杯 Python组</h2><p>11届是蓝桥杯第一次开Python赛道，之前刷题都是按照C/C艹组的难度来刷的题目</p><p>看看第一届Python组会有多难吧</p><h3 id="试题A-：门牌制作"><a href="#试题A-：门牌制作" class="headerlink" title="试题A ：门牌制作"></a>试题A ：门牌制作</h3><p>【问题描述】<br>小蓝要为一条街的住户制作门牌号。这条街一共有 2020 位住户，门牌号从 1 到 2020 编号。小蓝制作门牌的方法是先制作 0 到 9 这几个数字字符，最后根据需要将字符粘贴到门牌上，例如门牌 1017 需要依次粘贴字符 1、0、1、7，即需要 1 个字符 0，2 个字符 1，1 个字符 7。<br>请问要制作所有的 1 到 2020 号门牌，总共需要多少个字符 2？</p><pre><code class="python">count_n=0for i in range(1,2021):    j=str(i)    count_n+=j.count(&#39;2&#39;)print(count_n)#624</code></pre><h3 id="试题-B-寻找-2020"><a href="#试题-B-寻找-2020" class="headerlink" title="试题 B: 寻找 2020"></a>试题 B: 寻找 2020</h3><p>【问题描述】<br>小蓝有一个数字矩阵，里面只包含数字 0 和 2。小蓝很喜欢 2020，他想找<br>到这个数字矩阵中有多少个 2020 。<br>小蓝只关注三种构成 2020 的方式：<br>• 同一行里面连续四个字符从左到右构成 2020。<br>• 同一列里面连续四个字符从上到下构成 2020。<br>• 在一条从左上到右下的斜线上连续四个字符，从左上到右下构成 2020。<br>例如，对于下面的矩阵：<br>220000<br>000000<br>002202<br>000000<br>000022<br>002020<br>一共有 5 个 2020。其中 1 个是在同一行里的，1 个是在同一列里的，3 个<br>是斜线上的。<br>小蓝的矩阵比上面的矩阵要大，由于太大了，他只好将这个矩阵放在了一个文件里面，在试题目录下有一个文件 2020.txt，里面给出了小蓝的矩阵。<br>请帮助小蓝确定在他的矩阵中有多少个 2020。<br>文件2020.txt找不到了，所以大概的写了用例的解决代码。找到2020.txt其实只要改下for循环的长度就可以了。</p><pre><code class="python">count=0with open(&#39;2020.txt&#39;) as f:    L=f.readlines()    for i in L:       count+=i.count(&quot;2020&quot;)    len_col=len(L[0])    len_row=len(L)    for j in range(len_row-3):        for i in range(len_col):            if L[j][i]==&#39;2&#39; and L[j][i+1]==&#39;0&#39; and L[j][i+2]==&#39;2&#39; and L[j][i+3]==&#39;0&#39; :                count+=1    for i in range(len_col):        for j in range(len_row-3):            if L[j][i]==&#39;2&#39; and L[j+1][i]==&#39;0&#39; and L[j+2][i]==&#39;2&#39; and L[j+3][i]==&#39;0&#39; :                count+=1    #最重点的一步来了，    for i in range(len_col-3):        for j in range(len_row-3):            if L[j][i] == &#39;2&#39; and L[j + 1][i+1] == &#39;0&#39; and L[j + 2][i+2] == &#39;2&#39; and L[j + 3][i+3] == &#39;0&#39;:                count += 1    print(count)#20915#很奇怪，列用count来找和一个个匹配结果不一样</code></pre><h3 id="试题C：跑步锻炼"><a href="#试题C：跑步锻炼" class="headerlink" title="试题C：跑步锻炼"></a>试题C：跑步锻炼</h3><p><img src="https://img-blog.csdnimg.cn/20210313204033753.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L0d5Z2VydA==,size_16,color_FFFFFF,t_70"></p><pre><code class="python">import datetimea=datetime.date(2000,1,1)b=datetime.date(2020,10,1)sub=datetime.timedelta(days=1)c=1while a&lt;=b:    if a.day==1 or a.weekday()==1:        c+=2    else:        c+=1    a+=subprint(c)</code></pre><p><a href="https://blog.csdn.net/u011250186/article/details/103972471?ops_request_misc=%257B%2522request%255Fid%2522%253A%2522161865844116780264014572%2522%252C%2522scm%2522%253A%252220140713.130102334..%2522%257D&request_id=161865844116780264014572&biz_id=0&utm_medium=distribute.pc_search_result.none-task-blog-2~all~top_positive~default-1-103972471.first_rank_v2_pc_rank_v29&utm_term=datetime">datatime的用法</a></p><h3 id="试题D-蛇形填数"><a href="#试题D-蛇形填数" class="headerlink" title="试题D:蛇形填数"></a>试题D:蛇形填数</h3><p><img src="https://img-blog.csdnimg.cn/20210316200806449.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L0d5Z2VydA==,size_16,color_FFFFFF,t_70"></p><p>找规律的题，建议手写找出规律后用python计算</p><h3 id="试题F-成绩统计"><a href="#试题F-成绩统计" class="headerlink" title="试题F:成绩统计"></a>试题F:成绩统计</h3><p><img src="https://img-blog.csdnimg.cn/20210316202208452.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L0d5Z2VydA==,size_16,color_FFFFFF,t_70"></p><p><img src="https://img-blog.csdnimg.cn/20210316202222162.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L0d5Z2VydA==,size_16,color_FFFFFF,t_70"></p><p>送分题就不打了</p><h3 id="试题G-单词分析"><a href="#试题G-单词分析" class="headerlink" title="试题G:单词分析"></a>试题G:单词分析</h3><p><img src="https://img-blog.csdnimg.cn/20210316202338139.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L0d5Z2VydA==,size_16,color_FFFFFF,t_70"></p><p>白给题又一道</p><pre><code class="python">L=input()c=0max=0for i in L:    c=L.count(i)    if c&gt;max:        max=c        j=iprint(j)print(max)</code></pre><h3 id="试题H：数字三角形"><a href="#试题H：数字三角形" class="headerlink" title="试题H：数字三角形"></a>试题H：数字三角形</h3><p><img src="https://img-blog.csdnimg.cn/20210316201907139.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L0d5Z2VydA==,size_16,color_FFFFFF,t_70"></p><p><img src="https://img-blog.csdnimg.cn/20210316201946889.png"></p><p>比上面两个有难度，但还是一道送分的题</p><pre><code class="python">n=int(input())m=[]for i in range(n):    m.append(list(map(int,input().split())))print(m)for i in range(n):    for j in range(i):        m[i][j]+=max(m[i-1][j-1],m[i-1][j])if(n%2==0):    print(max(m[n-1][n//2],m[n-1][n//2-1]))else:    print(m[n-1][n//2])</code></pre><h3 id="试题I-平面切分"><a href="#试题I-平面切分" class="headerlink" title="试题I:平面切分"></a>试题I:平面切分</h3><p>平面切分，不会写，空了</p><p>抄来的思路：</p><p>每有一条平行线则平面＋1，每条线每和其他线产生一个交点，则新增平面数=产生交点数+1<br>初版代码先放这（提供下思路，后面还会修改）</p><pre><code class="python">def px(a1,a2,b1,b2):    if(a1==a2 and b1!=b2):        return 1    else:        return 0def xj(a1,a2):    if(a1!=a2):        return 1    else:        return 0n=int(input())a=[0]*nb=[0]*nx=[0]*ny=[0]*ns=2point=0for i in range(n):    a[i],b[i]=map(int,input().split())for i in range(n):    if(i&gt;0):        for j in range(i):            if(px(a[i],a[j],b[i],b[j])):#如果平行则平面+1                s+=1            elif(xj(a[i],a[j])):                x[i]=(b[i]-b[j])/(a[j]-a[i])                y[i]=a[i]*x[i]+b[i]                if(x[i]==x[j] and y[i]==y[j]):                    point+=1                s+=point+1print(s)</code></pre><p>emmmmm总结一下，第一次开的python组试题基本上大多为送分题，虽然不知道我将要参加的第二届蓝桥杯会是什么一种情况，要是真就这难度那就好了，辣鸡只想搞一个省二以上</p>]]></content>
+    
+    
+      
+      
+    <summary type="html">&lt;h1 id=&quot;用Python来刷蓝桥杯历年真题吧&quot;&gt;&lt;a href=&quot;#用Python来刷蓝桥杯历年真题吧&quot; class=&quot;headerlink&quot; title=&quot;用Python来刷蓝桥杯历年真题吧&quot;&gt;&lt;/a&gt;用Python来刷蓝桥杯历年真题吧&lt;/h1&gt;&lt;p&gt;其实看这发布时间就知</summary>
+      
+    
+    
+    
+    <category term="蓝桥杯" scheme="http://sweetheart.nefu.site/categories/%E8%93%9D%E6%A1%A5%E6%9D%AF/"/>
+    
+    
+    <category term="Python" scheme="http://sweetheart.nefu.site/tags/Python/"/>
+    
+  </entry>
   
   <entry>
     <title>蓝桥杯Python算法训练</title>
